@@ -97,3 +97,21 @@
 ## Déclencheur
 
 ### A l'aparition des "glass card" suite au scroll
+
+---
+
+# Page Compétences
+
+## Élément a animer 01
+
+### les barre de pourcentages pour les compétences
+
+## Type D'animation
+
+### Aparation dune barre de pourcentage qui aparais jusqu'au chifre
+
+## Déclencheur
+
+### Au chargement de la page
+
+---
