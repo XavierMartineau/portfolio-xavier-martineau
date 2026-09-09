@@ -4,15 +4,19 @@
 
 #### 3. Qu'est-ce que cette personne cherche à voir en premier ?
 
-Mes meilleurs projets réalisés.
+##### Mes meilleurs projets réalisés.
 
 #### 4. Quel style visuel (couleurs, typographie, ambiance générale) représenterait le mieux l'identité professionnelle que je veux projeter ?
 
-Un style aux couleurs sombres mais lumineuses, harmonieux et animé.
+##### Un style aux couleurs sombres mais lumineuses, harmonieux et animé.
 
 #### 1. Quelle impression je veux que cette personne retienne après avoir visité mon site ?
 
-Je veux qu'il retienne ce que je fais le mieux et qu'il voie de beaux projets.
+##### Je veux qu'il retienne ce que je fais le mieux et qu'il voie de beaux projets.
+
+### Réponse
+
+####
 
 ---
 
