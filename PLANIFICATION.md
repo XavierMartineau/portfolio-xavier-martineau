@@ -71,3 +71,29 @@
 ### Au chargement de la page jusquau changement de page
 
 ---
+
+## Élément a animer 02
+
+### Le texte "scroll"
+
+## Type d'animation
+
+### Défilement
+
+## Déclencheur
+
+### Le défilement de la page jusqua la suite de la page
+
+---
+
+## Élément a animer 03
+
+### Les "Glass-card"
+
+## Type D'animation
+
+### Opcacité et rotation
+
+## Déclencheur
+
+### A l'aparition des "glass card" suite au scroll
