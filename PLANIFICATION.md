@@ -25,3 +25,17 @@
 ## Au chargement de la page jusquau changement de page
 
 --
+
+# Élément a animer
+
+## Les petit cercle lumineux en ariere plan
+
+# Type D'animation
+
+## Translation et roation de petit cercle de couleur en arière plan
+
+# Déclencheur
+
+## Au chargement de la page jusquau changement de page
+
+---
