@@ -55,3 +55,19 @@
 ### Le mouvement du curseur sur la page
 
 --
+
+# Page Accueil
+
+## Élément a animer 01
+
+### Le petit cercle sur "Disponible pour de nouveaux projets"
+
+## Type D'animation
+
+### Fondu d'opacité
+
+## Déclencheur
+
+### Au chargement de la page jusquau changement de page
+
+---
