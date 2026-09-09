@@ -14,10 +14,6 @@
 
 ##### Je veux qu'il retienne ce que je fais le mieux et qu'il voie de beaux projets
 
-### Réponse
-
-####
-
 ---
 
 ### Réponse : Il a créé le site
@@ -27,3 +23,5 @@
 ### Prompt : Salut, je veux afficher ma grille en quadrillage derrière ma page, mais elle n'apparaît pas
 
 ### Réponse : Pas de souci, change ton radial gradient pour un linear radiant
+
+---
