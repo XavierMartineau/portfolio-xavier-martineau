@@ -25,3 +25,27 @@
 ### Réponse : Pas de souci, change ton radial gradient pour un linear radiant
 
 ---
+
+# Date : 2026-09-09
+
+## Question 01: Qu'est-ce que j'ai accompli depuis le dernier bloc?
+
+### Réponse: Jai ajouter linformation dans planification.md pour les type d'animation que je vais vouloir inclure dans mon projets
+
+### Jai aussi cree le figma design et fini le figma design
+
+## Question 02: Quelle a été ma principale difficulté et comment je l'ai surmontée?
+
+### Reponse: Ma principale dificulté a été de deplacer le scroll text dans figma design. Je l'ai surmonté a regardant comment je pouvais le bouger sans détruire mon design
+
+## Question 03: Qu'est-ce que j'ai appris que je ne savais pas avant?
+
+### Que je pouvais copier le figma make dans le figma design
+
+## Question 04: Quelle est ma prochaine étape concrète?
+
+### Ma prochaine étape serais de commencer a lire et comprendre le code donee suite a la creation du prototypes du portfolio
+
+## Question 05: Est-ce que j'ai utilisé l'IA? Si oui, pour quoi et qu'est-ce que ça m'a appris?
+
+### Non je n'ai pas utulisée l'IA
