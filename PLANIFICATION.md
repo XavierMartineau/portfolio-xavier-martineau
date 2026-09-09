@@ -26,7 +26,7 @@
 
 ### Au chargement de la page jusquau changement de page
 
---
+---
 
 ## Élément a animer 03
 
@@ -54,7 +54,7 @@
 
 ### Le mouvement du curseur sur la page
 
---
+---
 
 # Page Accueil
 
