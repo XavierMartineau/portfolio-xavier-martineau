@@ -115,3 +115,17 @@
 ### Au chargement de la page
 
 ---
+
+# Page A Propos
+
+## Élément a animer
+
+### Les petit point de couleur a coter des carte de parcours
+
+## Type d'animations
+
+### Opcacité en fondu
+
+## Déclencheur
+
+### Au contact des carte de parcours
