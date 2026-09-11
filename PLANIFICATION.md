@@ -1,147 +1,151 @@
-# Page atérisage
+# Animations
 
-## Élement a animer 01
+### Page atérisage
 
-### Une bare de chargement sur la page D'atérissage
+### Élement a animer 01
 
-## Type D'animation
+#### Une bare de chargement sur la page D'atérissage
 
-### Bare de progression qui augmente au chargment
+### Type D'animation
 
-## Déclencheur
+#### Bare de progression qui augmente au chargment
 
-### Chargement de la page
+### Déclencheur
 
----
-
-## Élément a animer 02
-
-### Le petit cercle du mots "ONLINE"
-
-## Type D'animation
-
-### Fondu d'opacité
-
-## Déclencheur
-
-### Au chargement de la page jusquau changement de page
+#### Chargement de la page
 
 ---
 
-## Élément a animer 03
+### Élément a animer 02
 
-### Les petit cercle lumineux en ariere plan
+#### Le petit cercle du mots "ONLINE"
 
-## Type D'animation
+### Type D'animation
 
-### Translation et roation de petit cercle de couleur en arière plan
+#### Fondu d'opacité
 
-## Déclencheur
+### Déclencheur
 
-### Au chargement de la page jusquau changement de page
-
----
-
-## Élement a animer 04
-
-### Le cercle lumineux qui suis le curseur
-
-## Type d'animation
-
-### Poursuite du curseur de la souris
-
-## Déclencheur
-
-### Le mouvement du curseur sur la page
+#### Au chargement de la page jusquau changement de page
 
 ---
 
-# Page Accueil
+### Élément a animer 03
 
-## Élément a animer 01
+#### Les petit cercle lumineux en ariere plan
 
-### Le petit cercle sur "Disponible pour de nouveaux projets"
+### Type D'animation
 
-## Type D'animation
+#### Translation et roation de petit cercle de couleur en arière plan
 
-### Fondu d'opacité
+### Déclencheur
 
-## Déclencheur
-
-### Au chargement de la page jusquau changement de page
+#### Au chargement de la page jusquau changement de page
 
 ---
 
-## Élément a animer 02
+### Élement a animer 04
 
-### Le texte "scroll"
+#### Le cercle lumineux qui suis le curseur
 
-## Type d'animation
+### Type d'animation
 
-### Défilement
+#### Poursuite du curseur de la souris
 
-## Déclencheur
+### Déclencheur
 
-### Le défilement de la page jusqua la suite de la page
-
----
-
-## Élément a animer 03
-
-### Les "Glass-card"
-
-## Type D'animation
-
-### Opcacité et rotation
-
-## Déclencheur
-
-### A l'aparition des "glass card" suite au scroll
+#### Le mouvement du curseur sur la page
 
 ---
 
-# Menu de Navigation
+## Page Accueil
 
-## Éléments a animer 01
+### Élément a animer 01
 
-### Les boutons du Menu UI
+#### Le petit cercle sur "Disponible pour de nouveaux projets"
 
-## Type d'animation
+### Type D'animation
 
-### Les texte devienne 0.5x plus gros au survol
+#### Fondu d'opacité
 
-## Déclencheur
+### Déclencheur
 
-### Survol des menus
+#### Au chargement de la page jusquau changement de page
 
 ---
 
-# Page Compétences
+### Élément a animer 02
 
-## Élément a animer 01
+#### Le texte "scroll"
 
-### les barre de pourcentages pour les compétences
+### Type d'animation
 
-## Type D'animation
+#### Défilement
 
-### Aparation dune barre de pourcentage qui aparais jusqu'au chifre
+### Déclencheur
 
-## Déclencheur
+#### Le défilement de la page jusqua la suite de la page
+
+---
+
+### Élément a animer 03
+
+#### Les "Glass-card"
+
+### Type D'animation
+
+#### Opcacité et rotation
+
+### Déclencheur
+
+#### A l'aparition des "glass card" suite au scroll
+
+---
+
+## Menu de Navigation
+
+### Éléments a animer 01
+
+#### Les boutons du Menu UI
+
+### Type d'animation
+
+#### Les texte devienne 0.5x plus gros au survol
+
+### Déclencheur
+
+#### Survol des menus
+
+---
+
+## Page Compétences
+
+### Élément a animer 01
+
+#### les barre de pourcentages pour les compétences
+
+### Type D'animation
+
+#### Aparation dune barre de pourcentage qui aparais jusqu'au chifre
+
+### Déclencheur
 
 ### Au chargement de la page
 
 ---
 
-# Page A Propos
+## Page A Propos
 
-## Élément a animer
+### Élément a animer
 
-### Les petit point de couleur a coter des carte de parcours
+#### Les petit point de couleur a coter des carte de parcours
 
-## Type d'animations
+### Type d'animations
 
-### Opcacité en fondu
+#### Opcacité en fondu
 
-## Déclencheur
+### Déclencheur
 
-### Au contact des carte de parcours
+#### Au contact des carte de parcours
+
+---
