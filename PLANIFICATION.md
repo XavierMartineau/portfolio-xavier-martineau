@@ -1,6 +1,6 @@
 # Animations
 
-### Page atérisage
+## Page atérisage
 
 ### Élement a animer 01
 
