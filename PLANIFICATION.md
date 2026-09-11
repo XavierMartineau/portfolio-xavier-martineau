@@ -1,3 +1,47 @@
+# Choix technologiques
+
+## Gestion des données
+
+### Type
+
+#### Fichier .json
+
+### Justification
+
+#### Je trouve que l'utulisation d'un fichier resque dêtre plus simple car il est le plus simple et facile a utulisé pour le github
+
+## Animations
+
+### Type
+
+#### Animations GSAP,CSS pur
+
+### Justificiation
+
+#### L'utulisation du GSAP risque detre utulie pour les plus grosse animation que je vais choisir comme celle qui suis la souris, tandis que le CSS pur va etre plus simple pour lutulisation des mes animations plus petites comme la barre de chargement et de pourcentage
+
+## Structure de navigation
+
+### Type
+
+#### Multipage avec paramètre d'URL
+
+### Justification
+
+#### L'utulisation dun mutlipage permet de rendre le site le plus minimaliste possible en gardant que le nécéssaire desuss. Les page ne seront pas condensé et seront réparti sur plusieur page. Lutulisation aussi dun multipage permet de réparer plus facilement une erreur sur une page vu que chaque page serais diferent HTML
+
+## Hébergement
+
+### Type
+
+#### Netlify
+
+### Justification
+
+#### L'utulisation de Netlify permet davoir un nom de domaine gratuit et plus simple que le nom complet avec github.io a la fin. Cela rends le site plus Professionel
+
+---
+
 # Animations
 
 ## Page atérisage
