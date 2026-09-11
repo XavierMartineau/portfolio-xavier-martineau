@@ -49,3 +49,27 @@
 ## Question 05: Est-ce que j'ai utilisé l'IA? Si oui, pour quoi et qu'est-ce que ça m'a appris?
 
 ### Non je n'ai pas utulisée l'IA
+
+---
+
+# Date : 2026-09-11
+
+## Question 01: Qu'est-ce que j'ai accompli depuis le dernier bloc?
+
+### Réponse: Jai ajouter mes choix technologiques dans PLANIFICATION.MD et corriger des erreur
+
+## Question 02: Quelle a été ma principale difficulté et comment je l'ai surmontée?
+
+### Reponse: De faire en sorte que les H et le MARKDOWN sois bien lisible et clair. Je lai regler en ajustant les H
+
+## Question 03: Qu'est-ce que j'ai appris que je ne savais pas avant?
+
+### Rien
+
+## Question 04: Quelle est ma prochaine étape concrète?
+
+### Ma prochaine étape serais de commencer a lire et comprendre le code donee suite a la creation du prototypes du portfolio
+
+## Question 05: Est-ce que j'ai utilisé l'IA? Si oui, pour quoi et qu'est-ce que ça m'a appris?
+
+### Non je n'ai pas utulisée l'IA
