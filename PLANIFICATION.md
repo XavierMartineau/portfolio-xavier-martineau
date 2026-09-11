@@ -112,7 +112,9 @@
 
 ## Déclencheur
 
-### Survol des menu
+### Survol des menus
+
+---
 
 # Page Compétences
 
