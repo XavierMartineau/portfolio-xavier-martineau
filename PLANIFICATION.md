@@ -100,6 +100,20 @@
 
 ---
 
+# Menu de Navigation
+
+## Éléments a animer 01
+
+### Les boutons du Menu UI
+
+## Type d'animation
+
+### Les texte devienne 0.5x plus gros au survol
+
+## Déclencheur
+
+### Survol des menu
+
 # Page Compétences
 
 ## Élément a animer 01
