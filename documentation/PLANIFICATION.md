@@ -162,6 +162,22 @@
 
 ---
 
+## Page Projets (solo)
+
+### Élément a animer 01
+
+#### Le bouton pour agrandir le projet en plein ecran
+
+### Type d'animation
+
+#### La page prends la taille de la page au complet
+
+### Déclencheur
+
+#### Lors du clic
+
+---
+
 ## Page Compétences
 
 ### Élément a animer 01
