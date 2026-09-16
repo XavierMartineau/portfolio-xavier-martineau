@@ -1,10 +1,12 @@
-/* ====== RESET ====== */
+/* ====== RESET GLOBAL ====== */
+/* Réinitialisation des marges, espacements et du modèle de boîte pour tous les éléments */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Style général du corps de la page (fond sombre, police et couleur par défaut) */
 body {
   background: #0d0d12;
   overflow: hidden;
@@ -12,6 +14,7 @@ body {
   color: white;
 }
 
+/* Grille géométrique d'arrière-plan avec des lignes subtiles */
 .grid-bg {
   position: fixed;
   inset: 0;
@@ -20,12 +23,13 @@ body {
       40px,
     linear-gradient(90deg, rgba(99, 102, 241, 0.15) 1px, transparent 1px) 0 0 /
       40px 40px;
-  opacity: 0.3;
-  pointer-events: none;
-  z-index: -2;
+  opacity: 0.3; /* Opacité globale de la grille */
+  pointer-events: none; /* Empêche les interactions souris sur la grille */
+  z-index: -2; /* Place la grille tout au fond */
 }
 
 /* ====== SPLASH CONTAINER ====== */
+/* Conteneur principal plein écran qui centre la carte de chargement */
 .splash {
   position: fixed;
   inset: 0;
@@ -34,9 +38,10 @@ body {
   align-items: center;
   justify-content: center;
   background: #0d0d12;
-  transition: opacity 0.6s ease;
+  transition: opacity 0.6s ease; /* Transition fluide lors de la fermeture */
 }
 
+/* Zone du canvas pour le rendu des particules en JavaScript */
 .canvas {
   position: absolute;
   inset: 0;
@@ -44,6 +49,7 @@ body {
 }
 
 /* ====== ORBES (Pilotés en JS pour les mouvements) ====== */
+/* Conteneur global des orbes lumineux en arrière-plan */
 .orb-container {
   position: absolute;
   inset: 0;
@@ -54,14 +60,16 @@ body {
   z-index: -1;
 }
 
+/* Style de base commun à tous les orbes (formes floues) */
 .orb {
   position: absolute;
   border-radius: 50%;
   pointer-events: none;
-  filter: blur(100px);
-  will-change: transform;
+  filter: blur(100px); /* Flou artistique intense */
+  will-change: transform; /* Optimisation des performances pour les animations JS */
 }
 
+/* Premier orbe (Teinte indigo/bleu) */
 .orb-1 {
   width: 700px;
   height: 700px;
@@ -70,6 +78,7 @@ body {
   left: -15%;
 }
 
+/* Deuxième orbe (Teinte magenta/rose) */
 .orb-2 {
   width: 500px;
   height: 500px;
@@ -78,6 +87,7 @@ body {
   right: -10%;
 }
 
+/* Troisième orbe (Teinte cyan/bleu clair) */
 .orb-3 {
   width: 400px;
   height: 400px;
@@ -86,7 +96,8 @@ body {
   right: 5%;
 }
 
-/* ====== CARD ====== */
+/* ====== CARD (Effet Glassmorphism) ====== */
+/* Carte centrale regroupant les informations du portfolio */
 .card {
   position: relative;
   z-index: 10;
@@ -94,16 +105,18 @@ body {
   padding: 3.5rem 3rem;
   text-align: center;
   border-radius: 16px;
-  background: rgba(255, 255, 255, 0.02);
-  backdrop-filter: blur(25px) saturate(180%);
-  -webkit-backdrop-filter: blur(25px) saturate(180%);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.02); /* Fond très transparent */
+  backdrop-filter: blur(25px) saturate(180%); /* Effet de verre dépoli */
+  -webkit-backdrop-filter: blur(25px) saturate(180%); /* Compatibilité Safari */
+  border: 1px solid rgba(255, 255, 255, 0.08); /* Bordure fine et subtile */
   box-shadow:
     0 20px 50px rgba(0, 0, 0, 0.5),
-    inset 0 1px 0 rgba(255, 255, 255, 0.1),
-    inset 0 -1px 0 rgba(0, 0, 0, 0.2);
+    /* Ombre portée profonde */ inset 0 1px 0 rgba(255, 255, 255, 0.1),
+    /* Reflet lumineux sur le bord supérieur */ inset 0 -1px 0
+      rgba(0, 0, 0, 0.2); /* Ombre interne sur le bord inférieur */
 }
 
+/* Lignes décoratives lumineuses horizontales en haut et en bas de la carte */
 .card-top-line,
 .card-bottom-line {
   position: absolute;
@@ -128,11 +141,13 @@ body {
 }
 
 /* ====== LOGO ====== */
+/* Conteneur de l'icône/logo */
 .logo {
   position: relative;
   margin-bottom: 2rem;
 }
 
+/* Boîte carrée centrale du logo */
 .logo-inner {
   width: 64px;
   height: 64px;
@@ -153,6 +168,7 @@ body {
   text-shadow: 0 0 20px rgba(99, 102, 241, 1);
 }
 
+/* Effet de lueur diffuse derrière le logo */
 .logo-glow {
   position: absolute;
   inset: 0;
@@ -163,6 +179,7 @@ body {
 }
 
 /* ====== TITLE ====== */
+/* Style du titre principal (Nom) */
 .title {
   font-size: clamp(1.8rem, 5vw, 2.6rem);
   font-weight: 700;
@@ -171,6 +188,7 @@ body {
   margin-bottom: 0.5rem;
 }
 
+/* Effet de dégradé coloré sur le texte */
 .gradient {
   background: linear-gradient(90deg, #6366f1, #ff00ea, #00f3ff);
   background-clip: text;
@@ -179,6 +197,7 @@ body {
 }
 
 /* ====== SUBTITLE ====== */
+/* Style du sous-titre (Profession / Rôle) */
 .subtitle {
   font-family: monospace;
   font-size: 0.75rem;
@@ -189,6 +208,7 @@ body {
 }
 
 /* ====== DIVIDER ====== */
+/* Ligne séparatrice avec un point lumineux au centre */
 .divider {
   display: flex;
   align-items: center;
@@ -211,6 +231,7 @@ body {
 }
 
 /* ====== SKILLS ====== */
+/* Conteneur des badges de compétences */
 .skills {
   display: flex;
   flex-wrap: wrap;
@@ -219,6 +240,7 @@ body {
   margin-bottom: 2rem;
 }
 
+/* Style individuel de chaque boîte de compétence */
 .skill {
   font-family: monospace;
   font-size: 0.65rem;
@@ -230,6 +252,7 @@ body {
 }
 
 /* ====== PROGRESS ====== */
+/* Barre de progression globale en bas de la carte */
 .progress {
   width: 100%;
   height: 4px;
@@ -239,6 +262,7 @@ body {
   margin-bottom: 2rem;
 }
 
+/* Remplissage animé de la barre de progression */
 .progress-bar {
   width: 100%;
   height: 100%;
@@ -247,6 +271,7 @@ body {
   animation: load 2.4s ease forwards;
 }
 
+/* Animation d'apparition de la barre de progression */
 @keyframes load {
   from {
     width: 0%;
@@ -257,6 +282,7 @@ body {
 }
 
 /* ====== BUTTON ====== */
+/* Bouton d'entrée principal pour accéder au portfolio */
 .enter-btn {
   width: 100%;
   padding: 0.9rem;
@@ -281,6 +307,7 @@ body {
   gap: 0.7rem;
 }
 
+/* Effet au survol du bouton (lueur renforcée et bordure plus claire) */
 .enter-btn:hover {
   background: linear-gradient(
     135deg,
@@ -292,6 +319,7 @@ body {
 }
 
 /* ====== META ====== */
+/* Style des textes informatifs positionnés dans les coins (version, signature) */
 .meta {
   position: absolute;
   font-family: monospace;
@@ -311,6 +339,7 @@ body {
 }
 
 /* ====== ONLINE ====== */
+/* Indicateur de statut en ligne dans le coin supérieur droit */
 .online {
   position: absolute;
   top: 1.5rem;
@@ -323,6 +352,7 @@ body {
   color: #888899;
 }
 
+/* Point lumineux clignotant du statut en ligne */
 .online-dot {
   width: 6px;
   height: 6px;
@@ -332,6 +362,7 @@ body {
   animation: pulse 1.4s infinite;
 }
 
+/* Animation de clignotement (pulsation de l'opacité) */
 @keyframes pulse {
   0% {
     opacity: 1;
