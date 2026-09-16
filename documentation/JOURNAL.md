@@ -73,3 +73,9 @@
 ## Question 05: Est-ce que j'ai utilisé l'IA? Si oui, pour quoi et qu'est-ce que ça m'a appris?
 
 ### Non je n'ai pas utulisée l'IA
+
+### Date: 2026-09-16
+
+#### Prompt: Cree moi un javascript qui va afficher les orb comme sur le script précédent. Les animations doivent rester en css ou html. Je veux que tu cree les orb, leur couleur et les ligne entre eux. Et de plus rajoute la lumiere au hover de la page avec la souris
+
+# Réponse: Salut voici ton script (splash.js)
