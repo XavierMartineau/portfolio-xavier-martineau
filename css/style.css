@@ -190,7 +190,7 @@ body {
 
 /* Effet de dégradé coloré sur le texte */
 .gradient {
-  background: linear-gradient(90deg, #6366f1, #ff00ea, #00f3ff);
+  background: linear-gradient(90deg, #6366f1, #00f3ff, #ff00ea, #6366f1);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
