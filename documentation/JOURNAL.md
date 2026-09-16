@@ -79,3 +79,9 @@
 #### Prompt: Cree moi un javascript qui va afficher les orb comme sur le script précédent. Les animations doivent rester en css ou html. Je veux que tu cree les orb, leur couleur et les ligne entre eux. Et de plus rajoute la lumiere au hover de la page avec la souris
 
 # Réponse: Salut voici ton script (splash.js)
+
+### Date: 2026-09-16
+
+#### Prompt: Salut, peut tu me mettre des commentaire claire et compremable dans mon fichier style.css? Merci
+
+#### Reponse: Oui bien sur voici le code de (Style.css) avec les commentaire
