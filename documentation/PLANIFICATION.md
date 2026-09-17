@@ -1,36 +1,36 @@
 # Choix technologiques
 
-## Gestion des données
+## 1. Gestion des données
 
 ### Type
 
-#### Fichier .json
+#### Fichier `.json`
 
 ### Justification
 
-#### Je trouve que l'utulisation d'un fichier resque dêtre plus simple car il est le plus simple et facile a utulisé pour le github
+L'utilisation d'un fichier JSON est plus simple et plus facile à gérer sur GitHub. Il reste léger, lisible et pratique pour organiser des données sans complexifier le projet.
 
-## Animations
-
-### Type
-
-#### Animations GSAP,CSS pur
-
-### Justificiation
-
-#### L'utulisation du GSAP risque detre utulie pour les plus grosse animation que je vais choisir comme celle qui suis la souris, tandis que le CSS pur va etre plus simple pour lutulisation des mes animations plus petites comme la barre de chargement et de pourcentage
-
-## Structure de navigation
+## 2. Animations
 
 ### Type
 
-#### Multipage avec paramètre d'URL
+#### GSAP + CSS pur
 
 ### Justification
 
-#### L'utulisation dun mutlipage permet de rendre le site le plus minimaliste possible en gardant que le nécéssaire desuss. Les page ne seront pas condensé et seront réparti sur plusieur page. Lutulisation aussi dun multipage permet de réparer plus facilement une erreur sur une page vu que chaque page serais diferent HTML
+GSAP sera utile pour les animations plus complexes, comme le suivi de la souris. Le CSS pur sera préféré pour les animations plus légères, comme la barre de chargement ou les effets de pourcentage.
 
-## Hébergement
+## 3. Structure de navigation
+
+### Type
+
+#### Multipage avec paramètres d'URL
+
+### Justification
+
+Un site multipage permet de garder une structure minimaliste et claire, avec des pages distinctes selon les sections. Cela rend aussi la maintenance plus simple, car chaque page est séparée et plus facile à corriger en cas d'erreur.
+
+## 4. Hébergement
 
 ### Type
 
@@ -38,21 +38,21 @@
 
 ### Justification
 
-#### L'utulisation de Netlify permet davoir un nom de domaine gratuit et plus simple que le nom complet avec github.io a la fin. Cela rends le site plus Professionel
+Netlify permet d'avoir un nom de domaine gratuit et plus professionnel qu'un simple nom complet avec GitHub Pages. Il est simple à utiliser et offre une meilleure présentation du site.
 
 ---
 
 # Animations
 
-## Page atérisage
+## Page d'atterrissage
 
-### Élement a animer 01
+### Élément à animer 01
 
-#### Une bare de chargement sur la page D'atérissage
+#### Une barre de chargement sur la page d'atterrissage
 
-### Type D'animation
+### Type d'animation
 
-#### Bare de progression qui augmente au chargment
+#### Barre de progression qui augmente au chargement
 
 ### Déclencheur
 
@@ -60,37 +60,37 @@
 
 ---
 
-### Élément a animer 02
+### Élément à animer 02
 
-#### Le petit cercle du mots "ONLINE"
+#### Le petit cercle du mot "ONLINE"
 
-### Type D'animation
+### Type d'animation
 
 #### Fondu d'opacité
 
 ### Déclencheur
 
-#### Au chargement de la page jusquau changement de page
+#### Au chargement de la page jusqu'au changement de page
 
 ---
 
-### Élément a animer 03
+### Élément à animer 03
 
-#### Les petit cercle lumineux en ariere plan
+#### Les petits cercles lumineux en arrière-plan
 
-### Type D'animation
+### Type d'animation
 
-#### Translation et roation de petit cercle de couleur en arière plan
+#### Translation et rotation de petits cercles colorés en arrière-plan
 
 ### Déclencheur
 
-#### Au chargement de la page jusquau changement de page
+#### Au chargement de la page jusqu'au changement de page
 
 ---
 
-### Élement a animer 04
+### Élément à animer 04
 
-#### Le cercle lumineux qui suis le curseur
+#### Le cercle lumineux qui suit le curseur
 
 ### Type d'animation
 
@@ -98,27 +98,27 @@
 
 ### Déclencheur
 
-#### Le mouvement du curseur sur la page
+#### Mouvement du curseur sur la page
 
 ---
 
-## Page Accueil
+## Page d'accueil
 
-### Élément a animer 01
+### Élément à animer 01
 
 #### Le petit cercle sur "Disponible pour de nouveaux projets"
 
-### Type D'animation
+### Type d'animation
 
 #### Fondu d'opacité
 
 ### Déclencheur
 
-#### Au chargement de la page jusquau changement de page
+#### Au chargement de la page jusqu'au changement de page
 
 ---
 
-### Élément a animer 02
+### Élément à animer 02
 
 #### Le texte "scroll"
 
@@ -128,33 +128,33 @@
 
 ### Déclencheur
 
-#### Le défilement de la page jusqua la suite de la page
+#### Le défilement de la page jusqu'à la suite de la page
 
 ---
 
-### Élément a animer 03
+### Élément à animer 03
 
-#### Les "Glass-card"
-
-### Type D'animation
-
-#### Opcacité et rotation
-
-### Déclencheur
-
-#### A l'aparition des "glass card" suite au scroll
-
----
-
-## Menu de Navigation
-
-### Éléments a animer 01
-
-#### Les boutons du Menu UI
+#### Les "glass cards"
 
 ### Type d'animation
 
-#### Les texte devienne 0.5x plus gros au survol
+#### Opacité et rotation
+
+### Déclencheur
+
+#### À l'apparition des "glass cards" lors du scroll
+
+---
+
+## Menu de navigation
+
+### Élément à animer 01
+
+#### Les boutons du menu UI
+
+### Type d'animation
+
+#### Le texte devient 0.5x plus grand au survol
 
 ### Déclencheur
 
@@ -164,13 +164,13 @@
 
 ## Page Projets (solo)
 
-### Élément a animer 01
+### Élément à animer 01
 
-#### Le bouton pour agrandir le projet en plein ecran
+#### Le bouton pour agrandir le projet en plein écran
 
 ### Type d'animation
 
-#### La page prends la taille de la page au complet
+#### La page prend la taille de la page au complet
 
 ### Déclencheur
 
@@ -180,32 +180,32 @@
 
 ## Page Compétences
 
-### Élément a animer 01
+### Élément à animer 01
 
-#### les barre de pourcentages pour les compétences
+#### Les barres de pourcentage pour les compétences
 
-### Type D'animation
+### Type d'animation
 
-#### Aparation dune barre de pourcentage qui aparais jusqu'au chifre
+#### Apparition d'une barre de pourcentage jusqu'au chiffre ciblé
 
 ### Déclencheur
 
-### Au chargement de la page
+#### Au chargement de la page
 
 ---
 
-## Page A Propos
+## Page À propos
 
-### Élément a animer
+### Élément à animer
 
-#### Les petit point de couleur a coter des carte de parcours
+#### Les petits points de couleur à côté des cartes de parcours
 
-### Type d'animations
+### Type d'animation
 
-#### Opcacité en fondu
+#### Opacité en fondu
 
 ### Déclencheur
 
-#### Au contact des carte de parcours
+#### Au contact des cartes de parcours
 
 ---
