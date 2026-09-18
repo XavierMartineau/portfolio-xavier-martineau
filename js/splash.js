@@ -99,6 +99,6 @@ window.addEventListener("mousemove", (e) => {
 enterBtn.addEventListener("click", () => {
   splash.style.opacity = "0"; // Fait disparaître la page en fondu
   setTimeout(() => {
-    window.location.href = "accueil.html"; // Redirige vers la page d'accueil après 0.6 seconde
+    window.location.href = "./html/accueil.html"; // Redirige vers la page d'accueil après 0.6 seconde
   }, 600);
 });

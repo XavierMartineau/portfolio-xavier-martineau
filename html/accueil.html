@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Accueil – Xavier Martineau</title>
+    <link rel="stylesheet" href="../css/header_nav.css" />
+    <link rel="stylesheet" href="../css/body.css" />
+  </head>
+
+  <body class="root">
+    <!-- ORBES NÉON (Root) -->
+    <div class="orb orb-indigo"></div>
+    <div class="orb orb-rose"></div>
+    <div class="orb orb-cyan"></div>
+
+    <!-- GRILLE DE FOND (Root) -->
+    <div class="grid-bg"></div>
+
+    <!-- NAVBAR (Root) -->
+    <header class="navbar">
+      <a href="../Index.html" class="navbar-left">
+        <div class="logo">
+          <div class="logo-inner">XM</div>
+        </div>
+        <h1 class="brand">
+          Xavier <span class="brand-accent">Martineau</span>
+        </h1>
+      </a>
+
+      <nav class="navbar-links">
+        <a href="accueil.html">ACCUEIL</a>
+        <a href="projets.html">PROJETS</a>
+        <a href="competence.html">COMPÉTENCES</a>
+        <a href="apropos.html">À PROPOS</a>
+        <a href="contact.html">CONTACT</a>
+      </nav>
+
+      <div class="navbar-right">
+        <a href="contact.html" class="btn-engage">Engagez‑moi</a>
+      </div>
+    </header>
+
+    <!-- CONTENU HOME -->
+    <main class="home-content">
+      <!-- HERO -->
+      <section class="home-hero">
+        <div class="hero-grid">
+          <!-- LEFT SIDE -->
+          <div class="hero-left">
+            <div class="hero-label">
+              <div class="hero-label-line"></div>
+              <span class="section-label"> Portfolio de Xavier Martineau </span>
+            </div>
+
+            <h1 class="hero-title">
+              Je construis des <span class="neon-indigo">expériences</span
+              ><br />
+              qui <span class="neon-gradient">marquent les esprits.</span>
+            </h1>
+
+            <p class="hero-desc">
+              Spécialisé en interfaces haute performance, systèmes distribués et
+              intégration IA. Chaque projet est conçu pour être le meilleur de
+              sa catégorie.
+            </p>
+
+            <div class="hero-buttons">
+              <a href="projets.html" class="btn-primary">Voir mes projets</a>
+              <a href="contact.html" class="btn-outline">Me contacter</a>
+            </div>
+
+            <div class="hero-availability">
+              <div class="availability-dot"></div>
+              <span>Disponible pour de nouveaux projets</span>
+            </div>
+          </div>
+
+          <!-- RIGHT SIDE — STATS -->
+          <div class="hero-stats" id="stats-container">
+            <!-- JS injecte les cartes ici -->
+          </div>
+        </div>
+
+        <!-- SCROLL INDICATOR -->
+        <div class="scroll-indicator">
+          <span>SCROLL</span>
+          <div class="scroll-line"></div>
+        </div>
+      </section>
+
+      <!-- FEATURED PROJECTS -->
+      <section class="featured-section">
+        <div class="featured-wrapper">
+          <div class="featured-header">
+            <div>
+              <div class="featured-label">
+                <div class="featured-label-line"></div>
+                <span>// Projets en vedette</span>
+              </div>
+              <h2 class="featured-title">
+                Mes meilleures <span class="neon-rose">réalisations</span>
+              </h2>
+            </div>
+
+            <a href="projets.html" class="btn-outline featured-link">
+              Voir tout →
+            </a>
+          </div>
+
+          <div class="featured-grid" id="featured-container">
+            <!-- JS injecte les projets ici -->
+          </div>
+
+          <div class="featured-mobile">
+            <a href="projets.html" class="btn-outline">
+              Voir tous les projets →
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER (Root) -->
+    <footer class="footer">
+      <span>© 2024 Xavier Martineau — Tous droits réservés</span>
+      <div class="footer-right">
+        <div class="pulse-dot"></div>
+        <span>BUILT WITH PASSION</span>
+      </div>
+    </footer>
+
+    <script src="home.js"></script>
+  </body>
+</html>

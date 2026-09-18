@@ -1,0 +1,89 @@
+/* ===========================
+   NAVBAR
+=========================== */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  background: rgba(10, 10, 15, 0.85);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  z-index: 100;
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  text-decoration: none;
+  transition: transform 0.25s ease;
+}
+
+.navbar-left:hover {
+  transform: scale(1.03);
+}
+
+.logo {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #6366f1, #ff00ea);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-inner {
+  font-family: monospace;
+  font-weight: bold;
+  color: white;
+}
+
+.brand {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #e8e8f0;
+}
+
+.brand-accent {
+  color: #6366f1;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.navbar-links a {
+  font-family: monospace;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  color: #aaaacc;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.navbar-links a:hover {
+  color: #6366f1;
+}
+
+.btn-engage {
+  padding: 0.6rem 1.4rem;
+  border-radius: 6px;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+  transition: box-shadow 0.3s ease;
+}
+
+.btn-engage:hover {
+  box-shadow: 0 0 20px rgba(99, 102, 241, 0.5);
+}

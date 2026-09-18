@@ -14,6 +14,12 @@ body {
   color: white;
 }
 
+.texte-entrer {
+  color: #888899; /* Couleur plus douce et moins intense */
+  font-weight: 400; /* Moins gras pour contraster avec le reste */
+  margin-right: 0.4em; /* Petit espace pour séparer les mots */
+}
+
 /* Grille géométrique d'arrière-plan avec des lignes subtiles */
 .grid-bg {
   position: fixed;
