@@ -382,7 +382,7 @@ body {
 
 .neon-rose {
   background: linear-gradient(90deg, #ff00ea, #6366f1);
-  -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
