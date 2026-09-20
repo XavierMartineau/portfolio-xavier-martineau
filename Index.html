@@ -13,9 +13,6 @@
     <div class="grid-bg"></div>
 
     <div id="splash" class="splash">
-      <!-- ====== TITRE PRINCIPAL DU SITE ====== -->
-      <h1 class="site-title">Portfolio de Xavier Martineau</h1>
-
       <!-- Canvas pour les particules et lignes gérées en JS -->
       <canvas id="splash-canvas" class="canvas"></canvas>
 
@@ -33,16 +30,16 @@
         <!-- ====== LOGO ====== -->
         <div class="logo">
           <div class="logo-inner">
-            <img src="assets/svg/Logo_svg.svg" alt="Logo XM" />
+            <img src="../assets/svg/Logo_svg.svg" alt="Logo XM" />
           </div>
           <div class="logo-glow"></div>
         </div>
 
         <!-- ====== NOM PRINCIPAL ====== -->
-        <h2 class="title">Xavier <span class="gradient">Martineau</span></h2>
+        <h1 class="title">Xavier <span class="gradient">Martineau</span></h1>
 
         <!-- Sous-titre -->
-        <h3 class="subtitle">Portfolio de Xavier Martineau</h3>
+        <h2 class="subtitle">Portfolio de Xavier Martineau</h2>
 
         <!-- Séparateur avec le point lumineux -->
         <div class="divider">
@@ -52,7 +49,6 @@
         </div>
 
         <!-- ====== SECTION COMPÉTENCES ====== -->
-        <h4 class="skills-title">Compétences principales</h4>
 
         <div class="skills">
           <span class="skill" style="color: #6366f1">Jeux vidéo</span>
@@ -62,16 +58,16 @@
         </div>
 
         <!-- Progression / chargement -->
-        <h5 class="loading-title">Chargement de l’expérience</h5>
         <div class="progress">
           <div class="progress-bar"></div>
         </div>
-
-        <!-- Bouton d'entrée -->
         <button id="enter-btn" class="enter-btn">
-          <span class="texte-entrer">ENTRER DANS</span>
-          <span><strong>LE PORTFOLIO</strong></span>
-          <svg width="16" height="16" viewBox="0 0 16 16">
+          <h4 class="enter-title">
+            <span class="texte-entrer">ENTRER DANS</span>
+            <span><strong>LE PORTFOLIO</strong></span>
+          </h4>
+
+          <svg width="16" height="16" viewBox="0 0 16 16" class="enter-arrow">
             <path
               d="M3 8h10M9 4l4 4-4 4"
               stroke="currentColor"
@@ -86,9 +82,11 @@
       </div>
 
       <!-- Meta -->
-      <div class="meta meta-left">v1.7.0 // 2026-09-16</div>
+      <div class="meta meta-left">v1.9.0 // 2026-09-20</div>
       <div class="meta meta-right">PORTFOLIO // XM</div>
-
+      <div class="meta meta-center">
+        © 2026 Xavier Martineau. Tous droits réservés.
+      </div>
       <div class="online">
         <div class="online-dot"></div>
         <span>EN LIGNE</span>

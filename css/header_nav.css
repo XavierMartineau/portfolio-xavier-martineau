@@ -30,21 +30,54 @@
   transform: scale(1.03);
 }
 
+/* ===========================
+   LOGO
+=========================== */
+
 .logo {
-  width: 36px;
-  height: 36px;
-  border-radius: 8px;
-  background: linear-gradient(135deg, #6366f1, #ff00ea);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  position: relative;
+  margin-bottom: 2rem;
+  margin-top: 25px;
 }
 
 .logo-inner {
-  font-family: monospace;
-  font-weight: bold;
-  color: white;
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+    135deg,
+    rgba(99, 102, 241, 0.3),
+    rgba(255, 0, 234, 0.2)
+  );
+  border: 1px solid rgba(99, 102, 241, 0.4);
+  overflow: hidden;
+  position: relative;
+  margin-top: 4px;
 }
+
+.logo-inner img {
+  width: 80%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.logo-glow {
+  position: absolute;
+  inset: 15%;
+  border-radius: 10px;
+  background: rgba(99, 102, 241, 0.25);
+  filter: blur(12px);
+  opacity: 0.6;
+  z-index: -1;
+}
+
+/* ===========================
+   BRAND
+=========================== */
 
 .brand {
   font-size: 1rem;
@@ -55,6 +88,10 @@
 .brand-accent {
   color: #6366f1;
 }
+
+/* ===========================
+   NAVBAR LINKS
+=========================== */
 
 .navbar-links {
   display: flex;
@@ -67,12 +104,63 @@
   letter-spacing: 0.1em;
   color: #aaaacc;
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: all 0.25s ease;
+  transform: scale(1);
+  position: relative;
 }
 
+/* ===========================
+   HOVER (non-actifs)
+=========================== */
+
 .navbar-links a:hover {
-  color: #6366f1;
+  color: #7f7bff; /* 🔥 bleu/mauve différent du actif */
+  transform: scale(1.25);
 }
+
+/* ===========================
+   ACTIVE LINK (page actuelle)
+=========================== */
+
+.navbar-links a.active {
+  color: #b197ff; /* 🔥 violet clair spécial */
+  transform: scale(1.25); /* +25% */
+  font-weight: 700;
+  text-shadow: 0 0 12px #8b5cf6; /* glow néon */
+}
+
+/* Hover sur actif */
+.navbar-links a.active:hover {
+  color: #d2b8ff;
+}
+
+/* ===========================
+   UNDERLINE NÉON ANIMÉ
+=========================== */
+
+.navbar-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0%;
+  height: 2px;
+  background: linear-gradient(90deg, #6366f1, #ff00ea);
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+.navbar-links a:hover::after {
+  width: 100%;
+}
+
+.navbar-links a.active::after {
+  width: 100%;
+}
+
+/* ===========================
+   BUTTON
+=========================== */
 
 .btn-engage {
   padding: 0.6rem 1.4rem;
