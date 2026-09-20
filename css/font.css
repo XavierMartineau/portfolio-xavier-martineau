@@ -32,89 +32,124 @@
 }
 
 /* ===========================
-   TITRES PAR CLASSES
-   =========================== */
+   TYPOGRAPHIE GLOBALE
+=========================== */
 
-/* H1 — Nom principal */
-h1.title {
+/* H1 — Speedy (Hero principal) */
+h1.hero-title {
   font-family: "Speedy", sans-serif;
   font-weight: 400;
-  font-size: clamp(1.8rem, 5vw, 2.6rem);
-  letter-spacing: -0.02em;
+  font-size: clamp(2.625rem, 5.25vw, 4.125rem); /* 🔥 réduction 0.75 */
   line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: #e8e8f0;
 }
 
-/* Dégradé du nom */
-.title .gradient {
-  background: linear-gradient(90deg, #6366f1, #00f3ff, #ff00ea, #6366f1);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-/* H3 — Sous-titre */
-h2.subtitle {
-  font-family: "Inter", monospace;
-  font-size: 0.75rem;
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
-  color: #888899;
-}
-
-/* H3 — Titre des compétences */
-h3.skills-title {
-  font-family: "Syne", sans-serif;
-  font-size: 0.9rem;
+/* H2 — Space Grotesk (Boutons + Scroll + Titres de section) */
+h2.btn-title,
+h2.scroll-title,
+h2.featured-title {
+  font-family: "Space-Grotesk", sans-serif;
   font-weight: 600;
+  font-size: clamp(1rem, 2vw, 1.25rem);
   letter-spacing: 0.15em;
   text-transform: uppercase;
+  color: #e8e8f0;
+}
+
+/* H3 — Inter (Descriptions, stats, sous-titres) */
+h3.hero-desc,
+h3.featured-title,
+h3.featured-category,
+h3.featured-stat,
+h3.glass-value {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+  line-height: 1.6;
   color: #888899;
 }
 
-/* H4 — Titre du chargement */
-h4.loading-title {
-  font-family: "Inter", monospace;
+/* H4 — Syne (Labels, sous-sections, petits titres) */
+h4.section-label {
+  font-family: "Syne", sans-serif;
+  font-weight: 600;
   font-size: 0.75rem;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.25em;
   text-transform: uppercase;
   color: #888899;
 }
 
 /* ===========================
-   TEXTE PAR CLASSES
-   =========================== */
+   SPÉCIFIQUES
+=========================== */
 
-/* Badges de compétences */
-.skill {
-  font-family: "Inter", monospace;
-  font-size: 0.65rem;
+/* Hero description */
+.hero-desc {
+  max-width: 600px;
+  margin-bottom: 2rem;
 }
 
-/* Texte du bouton */
-.enter-btn {
-  font-family: "Inter", sans-serif;
+/* Boutons */
+.btn-title a {
+  text-decoration: none;
   font-weight: 600;
   letter-spacing: 0.15em;
   text-transform: uppercase;
 }
 
-.texte-entrer {
+/* Scroll indicator */
+.scroll-title {
+  opacity: 0.6;
+  color: #6366f1;
+}
+
+/* Glass cards */
+.glass-value {
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 700;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.glass-label {
+  font-family: "Inter", monospace;
+  font-size: 0.75rem;
+  color: #888899;
+  letter-spacing: 0.15em;
+}
+
+/* Featured section */
+.featured-title {
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 700;
+  color: #e8e8f0;
+}
+
+/* ===========================
+   APPLICATION DES POLICES
+   =========================== */
+
+body {
   font-family: "Inter", sans-serif;
-  font-weight: 400;
-  color: #888899;
 }
 
-/* Meta */
-.meta {
-  font-family: "Inter", monospace;
-  font-size: 0.65rem;
-  letter-spacing: 0.25em;
-  color: #333355;
+h1,
+.title {
+  font-family: "Speedy", sans-serif;
 }
 
-/* Online */
-.online {
-  font-family: "Inter", monospace;
-  font-size: 0.65rem;
-  color: #888899;
+h2,
+h3,
+.subtitle {
+  font-family: "Space-Grotesk", sans-serif;
+}
+
+.skill {
+  font-family: "Inter", sans-serif;
+}
+
+.logo-text {
+  font-family: "Speedy", sans-serif;
 }

@@ -135,7 +135,9 @@ Gemini
 
 ### Réponse
 
-Oui bien sûr, voici le code de `style.css` avec des commentaires clairs et compréhensibles.
+## Oui bien sûr, voici le code de `style.css` avec des commentaires clairs et compréhensibles.
+
+---
 
 ## 2026-09-20
 
@@ -149,6 +151,18 @@ Gemini
 
 Oui avec plaisir voici le code headernav.css corriger pour que ton logo sois descendu et fonctionnel a 100%.
 
+---
+
 ## 2026-09-20
 
 ### Salut jessaye de faire fonctionner ma nav bar pour que lorsque on est sur la page acceuil le nav bar avec le mots acceuil sois zoomer de 0.15x plus et a une autre couleur dessus: lorsque on hover sur dautre bouton les autre boutons font pareil sauf que il redeviene normal lorsque le contact est fini. Fais moi la meme chose pour tout les pages (Code la page headernav.css integrer)
+
+### Outil
+
+Gemini
+
+### Reponse
+
+Oui bien sur voici le css modifier de headernav.css
+
+---

@@ -36,3 +36,204 @@
   color: #888899;
   letter-spacing: 0.15em;
 }
+
+/* =========================================================
+   GLASS CARD — BASE
+========================================================= */
+
+.gc {
+  --gc-color: #7b80ff;
+  --gc-rgb: 123, 128, 255;
+  position: relative;
+  padding: 1.25rem 1.4rem;
+  border-radius: 12px;
+  text-align: left;
+
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(30px) saturate(150%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.07);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.gc:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 0 30px rgba(255, 255, 255, 0.1),
+    0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
+/* =========================================================
+   SHIMMER TOP
+========================================================= */
+
+.gc-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gc-color), transparent);
+  box-shadow: 0 0 12px var(--gc-color);
+}
+
+.gc-value {
+  margin: 0 0 0.25rem;
+  color: var(--gc-color);
+  font-size: clamp(1.7rem, 3vw, 2.25rem);
+  line-height: 1;
+  text-shadow: 0 0 18px rgba(var(--gc-rgb), 0.35);
+}
+
+.gc-label {
+  margin: 0;
+  color: rgba(var(--gc-rgb), 0.8);
+  font-family: "Inter", sans-serif;
+  font-size: 0.68rem;
+  line-height: 1.35;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* =========================================================
+   META (catégorie + année)
+========================================================= */
+
+.gc-meta {
+  display: flex;
+  justify-content: space-between;
+  font-family: "Syne", sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  color: #888899;
+}
+
+/* =========================================================
+   TITRE
+========================================================= */
+
+.gc-title {
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-size: 1.3rem;
+  margin-bottom: 0.75rem;
+  color: #e8e8f0;
+}
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.gc-desc {
+  font-family: "Inter", sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #888899;
+  margin-bottom: 1.25rem;
+}
+
+/* =========================================================
+   FOOTER + BOUTON
+========================================================= */
+
+.gc-footer {
+  margin-top: 1rem;
+}
+
+.gc-btn {
+  font-family: "Space-Grotesk", sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #7b80ff; /* Indigo vibrant */
+  transition: color 0.3s ease;
+}
+
+.gc-btn:hover {
+  color: #9fa3ff;
+}
+
+/* =========================================================
+   COLOR VARIANTS
+========================================================= */
+
+/* Indigo vibrant */
+.gc-indigo {
+  --gc-color: #7b80ff;
+  --gc-rgb: 123, 128, 255;
+  border-color: rgba(99, 102, 241, 0.25);
+}
+.gc-indigo .gc-category {
+  color: #7b80ff;
+}
+
+/* Rose */
+.gc-rose {
+  --gc-color: #ff00ea;
+  --gc-rgb: 255, 0, 234;
+  border-color: rgba(255, 0, 234, 0.25);
+}
+.gc-rose .gc-category {
+  color: #ff00ea;
+}
+
+/* Cyan */
+.gc-cyan {
+  --gc-color: #00f3ff;
+  --gc-rgb: 0, 243, 255;
+  border-color: rgba(0, 243, 255, 0.25);
+}
+.gc-cyan .gc-category {
+  color: #00f3ff;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 900px) {
+  .gc {
+    padding: 1.1rem 1.2rem;
+  }
+  .gc-title {
+    font-size: 1.15rem;
+  }
+  .gc-desc {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .gc {
+    padding: 1rem;
+  }
+  .gc-meta {
+    font-size: 0.65rem;
+  }
+  .gc-title {
+    font-size: 1.05rem;
+  }
+  .gc-btn {
+    font-size: 0.8rem;
+  }
+}
+
+/* =========================================================
+   ANIMATION OPTIONNELLE (Glow subtil)
+========================================================= */
+
+.gc:hover {
+  box-shadow:
+    0 0 40px rgba(123, 128, 255, 0.25),
+    0 8px 32px rgba(0, 0, 0, 0.5);
+}

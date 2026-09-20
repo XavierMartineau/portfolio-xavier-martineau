@@ -4,35 +4,35 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Accueil – Xavier Martineau</title>
+
+    <!-- CSS -->
     <link rel="stylesheet" href="../css/header_nav.css" />
     <link rel="stylesheet" href="../css/body.css" />
     <link rel="stylesheet" href="../css/footer.css" />
     <link rel="stylesheet" href="../css/font.css" />
-    <link rel="stylesheet" href="../css/style2.css" />
-    <link rel="stylesheet" href="../css/footer.css  " />
+    <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/glasscard.css" />
   </head>
 
   <body class="root">
-    <!-- ORBES NÉON (Root) -->
+    <!-- ORBES NÉON -->
     <div class="orb orb-indigo"></div>
     <div class="orb orb-rose"></div>
     <div class="orb orb-cyan"></div>
 
-    <!-- GRILLE DE FOND (Root) -->
+    <!-- GRILLE DE FOND -->
     <div class="grid-bg"></div>
 
-    <!-- NAVBAR (Root) -->
+    <!-- NAVBAR -->
     <header class="navbar">
       <a href="../Index.html" class="navbar-left">
-        <!-- ====== LOGO ====== -->
         <div class="logo">
           <div class="logo-glow"></div>
           <div class="logo-inner">
             <img src="../assets/svg/Logo_svg.svg" alt="Logo XM" />
           </div>
         </div>
-        <!-- brand devient H3 -->
+
         <h3 class="brand">
           Xavier <span class="brand-accent">Martineau</span>
         </h3>
@@ -58,56 +58,90 @@
         <div class="hero-grid">
           <!-- LEFT SIDE -->
           <div class="hero-left">
+            <!-- Label -->
             <div class="hero-label">
               <div class="hero-label-line"></div>
-              <h3 class="section-label">Portfolio de Xavier Martineau</h3>
+              <h4 class="section-label">Portfolio de Xavier Martineau</h4>
             </div>
 
-            <!-- H1 : hero-title -->
+            <!-- HERO TITLE -->
             <h1 class="hero-title">
               Je construis des <span class="neon-indigo">expériences</span
               ><br />
               qui <span class="neon-gradient">marquent les esprits.</span>
             </h1>
 
-            <!-- H2 : hero-desc -->
-            <h2 class="hero-desc">
+            <!-- HERO DESC -->
+            <h3 class="hero-desc">
               Spécialisé en interfaces haute performance, systèmes distribués et
               intégration IA. Chaque projet est conçu pour être le meilleur de
               sa catégorie.
-            </h2>
+            </h3>
 
-            <div class="hero-buttons">
-              <h3>
+            <!-- HERO BUTTONS -->
+            <div class="hero-buttons spaced-buttons">
+              <h2>
                 <a href="projets.html" class="btn-primary">Voir mes projets</a>
-              </h3>
-              <h3>
+              </h2>
+              <h2>
                 <a href="contact.html" class="btn-outline">Me contacter</a>
-              </h3>
+              </h2>
             </div>
 
+            <!-- AVAILABILITY -->
             <div class="hero-availability">
               <div class="availability-dot"></div>
               <h3>Disponible pour de nouveaux projets</h3>
             </div>
           </div>
+          <!-- END LEFT SIDE -->
 
           <!-- RIGHT SIDE — STATS -->
-          <div class="hero-stats" id="stats-container">
-            <!-- JS injecte les cartes ici -->
+          <div class="hero-stats">
+            <!-- Stat 1 -->
+            <div class="gc gc-indigo">
+              <div class="gc-top"></div>
+              <h3 class="gc-value">6+</h3>
+              <p class="gc-label">Années d'expérience</p>
+            </div>
+
+            <!-- Stat 2 -->
+            <div class="gc gc-rose">
+              <div class="gc-top"></div>
+              <h3 class="gc-value">40+</h3>
+              <p class="gc-label">Projets livrés</p>
+            </div>
+
+            <!-- Stat 3 -->
+            <div class="gc gc-indigo">
+              <div class="gc-top"></div>
+              <h3 class="gc-value">12</h3>
+              <p class="gc-label">Clients actifs</p>
+            </div>
+
+            <!-- Stat 4 -->
+            <div class="gc gc-rose">
+              <div class="gc-top"></div>
+              <h3 class="gc-value">99%</h3>
+              <p class="gc-label">Taux de satisfaction</p>
+            </div>
           </div>
+          <!-- END RIGHT SIDE -->
         </div>
+        <!-- END HERO GRID -->
 
         <!-- SCROLL INDICATOR -->
-        <div class="scroll-indicator">
-          <h3>SCROLL</h3>
+        <div class="scroll-indicator extra-scroll-space">
+          <h2>SCROLL</h2>
           <div class="scroll-line"></div>
         </div>
       </section>
+      <!-- END HERO -->
 
       <!-- FEATURED PROJECTS -->
       <section class="featured-section">
         <div class="featured-wrapper">
+          <!-- HEADER -->
           <div class="featured-header">
             <div>
               <div class="featured-label">
@@ -115,7 +149,6 @@
                 <h3>// Projets en vedette</h3>
               </div>
 
-              <!-- featured-title devient H2 -->
               <h2 class="featured-title">
                 Mes meilleures <span class="neon-rose">réalisations</span>
               </h2>
@@ -128,10 +161,66 @@
             </h3>
           </div>
 
-          <div class="featured-grid" id="featured-container">
-            <!-- JS injecte les projets ici -->
-          </div>
+          <!-- FEATURED GRID -->
+          <div class="featured-grid">
+            <!-- Project 1 -->
+            <a href="projets.html" class="featured-card cyan">
+              <div class="featured-top"></div>
 
+              <div class="featured-meta">
+                <span class="featured-category">Data Visualization</span>
+                <span class="featured-year">2024</span>
+              </div>
+
+              <h3 class="featured-title">NeuralDash</h3>
+              <p class="featured-desc">
+                Tableau de bord d'intelligence artificielle en temps réel avec
+                visualisation de données complexes et prédictions ML intégrées.
+              </p>
+
+              <h3 class="featured-stat">98% précision</h3>
+            </a>
+
+            <!-- Project 2 -->
+            <a href="projets.html" class="featured-card rose">
+              <div class="featured-top"></div>
+
+              <div class="featured-meta">
+                <span class="featured-category">Fintech</span>
+                <span class="featured-year">2024</span>
+              </div>
+
+              <h3 class="featured-title">CryptoFlow</h3>
+              <p class="featured-desc">
+                Plateforme d'échanges crypto avec algorithmes de trading
+                automatisés, analyse technique avancée et gestion de
+                portefeuille.
+              </p>
+
+              <h3 class="featured-stat">2M+ transactions</h3>
+            </a>
+
+            <!-- Project 3 -->
+            <a href="projets.html" class="featured-card indigo">
+              <div class="featured-top"></div>
+
+              <div class="featured-meta">
+                <span class="featured-category">Creative Tool</span>
+                <span class="featured-year">2023</span>
+              </div>
+
+              <h3 class="featured-title">Synthwave Studio</h3>
+              <p class="featured-desc">
+                DAW basé sur le navigateur avec synthèse sonore en temps réel,
+                effets audio WebAudio et collaboration multi‑utilisateur.
+              </p>
+
+              <h3 class="featured-stat">12k utilisateurs</h3>
+            </a>
+          </div>
+          <!-- END FEATURED GRID -->
+
+          <!-- MOBILE BUTTON -->
           <div class="featured-mobile">
             <h3>
               <a href="projets.html" class="btn-outline">
@@ -141,9 +230,10 @@
           </div>
         </div>
       </section>
+      <!-- END FEATURED PROJECTS -->
     </main>
 
-    <!-- FOOTER (Root) -->
+    <!-- FOOTER -->
     <footer class="footer">
       <h3>© 2026 Xavier Martineau — Tous droits réservés</h3>
       <div class="footer-right">
@@ -151,7 +241,5 @@
         <h3>Bati avec passion</h3>
       </div>
     </footer>
-
-    <script src="home.js"></script>
   </body>
 </html>

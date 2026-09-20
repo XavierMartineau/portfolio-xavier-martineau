@@ -8,8 +8,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: #333355;
+  color: #e8e8f0;
   margin-top: 4rem;
+  font-family: monospace;
 }
 
 .footer-right {
@@ -19,22 +20,25 @@
 }
 
 .pulse-dot {
-  width: 6px;
-  height: 6px;
+  width: 8px;
+  height: 8px;
   background: #6366f1;
   border-radius: 50%;
-  box-shadow: 0 0 6px #6366f1;
+  box-shadow: 0 0 10px #6366f1;
   animation: pulse 1.4s infinite;
 }
 
 @keyframes pulse {
   0% {
     opacity: 1;
+    transform: scale(1);
   }
   50% {
     opacity: 0.3;
+    transform: scale(0.8);
   }
   100% {
     opacity: 1;
+    transform: scale(1);
   }
 }
