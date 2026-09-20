@@ -1,8 +1,18 @@
 /* ===========================
-   GLOBAL
+   GLOBAL A CORRIGER DEAMIN
 =========================== */
 
+body {
+  background: #0d0d12;
+  color: #e8e8f0;
+  font-family: "Space Grotesk", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
 .section-label {
+  font-family: monospace;
+  font-size: 0.7rem;
   letter-spacing: 0.25em;
   color: #888899;
   text-transform: uppercase;
@@ -16,9 +26,93 @@
       40px,
     linear-gradient(90deg, rgba(99, 102, 241, 0.15) 1px, transparent 1px) 0 0 /
       40px 40px;
-  opacity: 0.3;
+  opacity: 0.3; /* <<< opacité globale */
   pointer-events: none;
   z-index: -2;
+}
+
+/* ===========================
+   NAVBAR
+=========================== */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  background: rgba(10, 10, 15, 0.85);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  z-index: 100;
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.logo {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #6366f1, #ff00ea);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-inner {
+  font-family: monospace;
+  font-weight: bold;
+  color: white;
+}
+
+.brand {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #e8e8f0;
+}
+
+.brand-accent {
+  color: #6366f1;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.navbar-links a {
+  font-family: monospace;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  color: #aaaacc;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.navbar-links a:hover {
+  color: #6366f1;
+}
+
+.btn-engage {
+  padding: 0.6rem 1.4rem;
+  border-radius: 6px;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+  transition: box-shadow 0.3s ease;
+}
+
+.btn-engage:hover {
+  box-shadow: 0 0 20px rgba(99, 102, 241, 0.5);
 }
 
 /* ===========================
@@ -96,6 +190,8 @@
 }
 
 .hero-title {
+  font-size: clamp(2.8rem, 6vw, 5rem);
+  font-weight: 700;
   letter-spacing: -0.02em;
   line-height: 1.1;
   margin-bottom: 1rem;
@@ -117,6 +213,7 @@
 
 .hero-desc {
   color: #888899;
+  font-size: 1.2rem;
   line-height: 1.6;
   max-width: 600px;
   margin-bottom: 2rem;
@@ -137,6 +234,7 @@
   border: 1px solid rgba(99, 102, 241, 0.5);
   color: #e8e8f0;
   text-decoration: none;
+  font-weight: 600;
   letter-spacing: 0.15em;
   text-transform: uppercase;
   transition: all 0.3s ease;
@@ -157,6 +255,7 @@
   border: 1px solid rgba(255, 255, 255, 0.15);
   color: #e8e8f0;
   text-decoration: none;
+  font-weight: 600;
   letter-spacing: 0.15em;
   text-transform: uppercase;
   transition: all 0.3s ease;
@@ -230,10 +329,14 @@
 }
 
 .glass-value {
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 700;
   margin-bottom: 0.5rem;
 }
 
 .glass-label {
+  font-family: monospace;
+  font-size: 0.75rem;
   color: #888899;
   letter-spacing: 0.15em;
 }
@@ -270,6 +373,11 @@
   height: 1px;
   background: #ff00ea;
   opacity: 0.6;
+}
+
+.featured-title {
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 700;
 }
 
 .neon-rose {
@@ -320,10 +428,35 @@
   margin-bottom: 1rem;
 }
 
+.featured-category {
+  font-family: monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+}
+
+.featured-year {
+  font-family: monospace;
+  font-size: 0.75rem;
+  color: #444466;
+}
+
+.featured-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
 .featured-desc {
   color: #888899;
+  font-size: 0.9rem;
   line-height: 1.5;
   margin-bottom: 1rem;
+}
+
+.featured-stat {
+  font-family: monospace;
+  font-size: 1rem;
+  font-weight: bold;
 }
 
 /* ===========================
@@ -340,6 +473,13 @@
   flex-direction: column;
   align-items: center;
   gap: 0.4rem;
+}
+
+.scroll-indicator span {
+  font-family: monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.3em;
+  color: #6366f1;
 }
 
 .scroll-line {
@@ -362,4 +502,43 @@
   .featured-mobile {
     display: block;
   }
+}
+
+/* ===========================
+   FOOTER
+=========================== */
+
+.footer {
+  border-top: 1px solid rgba(99, 102, 241, 0.1);
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: monospace;
+  font-size: 0.75rem;
+  color: #333355;
+  margin-top: 4rem;
+}
+
+.footer-right {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.pulse-dot {
+  width: 6px;
+  height: 6px;
+  background: #6366f1;
+  border-radius: 50%;
+  box-shadow: 0 0 6px #6366f1;
+  animation: pulse 1.4s infinite;
+}
+.navbar-left {
+  text-decoration: none;
+  transition: transform 0.25s ease;
+}
+
+.navbar-left:hover {
+  transform: scale(1.03);
 }

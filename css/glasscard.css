@@ -1,0 +1,38 @@
+/* ===========================
+   GLASS CARD (Stats)
+=========================== */
+
+.glass-card {
+  position: relative;
+  padding: 2rem;
+  text-align: center;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(30px) saturate(150%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.07);
+  transition: transform 0.3s ease;
+}
+
+.glass-card:hover {
+  transform: translateY(-4px);
+}
+
+.glass-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+}
+
+.glass-value {
+  margin-bottom: 0.5rem;
+}
+
+.glass-label {
+  color: #888899;
+  letter-spacing: 0.15em;
+}
