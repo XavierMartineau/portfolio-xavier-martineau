@@ -404,3 +404,75 @@ Copilot
 La statistique de la première carte vedette affiche maintenant 85% précision.
 
 ---
+
+## 2026-09-20
+
+### Prompt
+
+Correction complète du splash screen (HTML + CSS).
+
+### Outil
+
+Copilot
+
+### Réponse
+
+Refactorisation complète du splash screen : correction du HTML, optimisation du CSS, ajustement du logo, du titre et du sous‑titre, et restructuration des styles pour un rendu plus cohérent.
+
+---
+
+### Prompt
+
+Augmenter la taille du logo, du titre, et réduire celle du sous‑titre.
+
+### Outil
+
+Copilot
+
+### Réponse
+
+Le logo a été agrandi à 90×90px, le titre augmenté à 2.6rem, et le sous‑titre réduit à 0.8rem pour améliorer l’équilibre visuel de la carte.
+
+---
+
+### Prompt
+
+Générer le fichier `font.css` complet.
+
+### Outil
+
+Copilot
+
+### Réponse
+
+Création d’un fichier `font.css` complet incluant les déclarations des polices Inter, Space Grotesk, Syne et Speedy, avec organisation par poids et application aux éléments typographiques du site.
+
+---
+
+### Prompt
+
+Refactor styles and update HTML structure (traduction formelle).
+
+### Outil
+
+Copilot
+
+### Réponse
+
+Rédaction d’une version formelle en français décrivant la refactorisation des styles, la mise à jour de la structure HTML, la suppression de fichiers obsolètes et l’ajout du fichier `splash.css`.
+
+---
+
+### Prompt
+
+Enhance hero section and featured projects… (traduction formelle).
+
+### Outil
+
+Copilot
+
+### Réponse
+
+Production d’une version formelle en français décrivant l’amélioration de la section héro et des projets en vedette, ainsi que l’intégration d’un système de révélation au défilement pour renforcer la dynamique visuelle.
+
+---
