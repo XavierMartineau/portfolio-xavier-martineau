@@ -101,7 +101,7 @@
             <!-- Stat 1 -->
             <div class="gc gc-indigo">
               <div class="gc-top"></div>
-              <h3 class="gc-value">6+</h3>
+              <h3 class="gc-value">4+</h3>
               <p class="gc-label">Années d'expérience</p>
             </div>
 
@@ -111,35 +111,26 @@
               <h3 class="gc-value">40+</h3>
               <p class="gc-label">Projets livrés</p>
             </div>
-
-            <!-- Stat 3 -->
-            <div class="gc gc-indigo">
-              <div class="gc-top"></div>
-              <h3 class="gc-value">12</h3>
-              <p class="gc-label">Clients actifs</p>
-            </div>
-
-            <!-- Stat 4 -->
-            <div class="gc gc-rose">
-              <div class="gc-top"></div>
-              <h3 class="gc-value">99%</h3>
-              <p class="gc-label">Taux de satisfaction</p>
-            </div>
           </div>
           <!-- END RIGHT SIDE -->
         </div>
         <!-- END HERO GRID -->
 
         <!-- SCROLL INDICATOR -->
-        <div class="scroll-indicator extra-scroll-space">
-          <h2>SCROLL</h2>
+        <a
+          class="scroll-indicator extra-scroll-space"
+          href="#featured-projects"
+          aria-label="Voir les projets en vedette"
+        >
+          <span class="scroll-label">SCROLL</span>
+          <span class="scroll-arrow" aria-hidden="true">↓</span>
           <div class="scroll-line"></div>
-        </div>
+        </a>
       </section>
       <!-- END HERO -->
 
       <!-- FEATURED PROJECTS -->
-      <section class="featured-section">
+      <section class="featured-section reveal-on-scroll" id="featured-projects">
         <div class="featured-wrapper">
           <!-- HEADER -->
           <div class="featured-header">
@@ -164,56 +155,96 @@
           <!-- FEATURED GRID -->
           <div class="featured-grid">
             <!-- Project 1 -->
-            <a href="projets.html" class="featured-card cyan">
+            <a
+              href="projets.html"
+              class="featured-card rose project-neuraldash"
+              data-project="neuraldash"
+            >
               <div class="featured-top"></div>
+              <img
+                class="featured-background"
+                src="../assets/images/projet01.webp"
+                alt=""
+                aria-hidden="true"
+              />
 
               <div class="featured-meta">
-                <span class="featured-category">Data Visualization</span>
+                <span class="featured-category" data-project-category></span>
                 <span class="featured-year">2024</span>
               </div>
 
-              <h3 class="featured-title">NeuralDash</h3>
+              <h3 class="featured-title" data-project-title>
+                Animation &amp; 3D
+              </h3>
               <p class="featured-desc">
                 Tableau de bord d'intelligence artificielle en temps réel avec
                 visualisation de données complexes et prédictions ML intégrées.
               </p>
 
-              <h3 class="featured-stat">98% précision</h3>
+              <div
+                class="featured-technologies"
+                data-project-technologies
+                aria-label="Technologies utilisées"
+              ></div>
+
+              <h3 class="featured-stat">85% précision</h3>
             </a>
 
             <!-- Project 2 -->
-            <a href="projets.html" class="featured-card rose">
+            <a
+              href="projets.html"
+              class="featured-card indigo"
+              data-project="generique"
+            >
               <div class="featured-top"></div>
 
               <div class="featured-meta">
-                <span class="featured-category">Fintech</span>
+                <span class="featured-category" data-project-category></span>
                 <span class="featured-year">2024</span>
               </div>
 
-              <h3 class="featured-title">CryptoFlow</h3>
+              <h3 class="featured-title" data-project-title>Générique</h3>
               <p class="featured-desc">
                 Plateforme d'échanges crypto avec algorithmes de trading
                 automatisés, analyse technique avancée et gestion de
                 portefeuille.
               </p>
 
+              <div
+                class="featured-technologies"
+                data-project-technologies
+                aria-label="Technologies utilisées"
+              ></div>
+
               <h3 class="featured-stat">2M+ transactions</h3>
             </a>
 
             <!-- Project 3 -->
-            <a href="projets.html" class="featured-card indigo">
+            <a
+              href="projets.html"
+              class="featured-card cyan"
+              data-project="synthwave"
+            >
               <div class="featured-top"></div>
 
               <div class="featured-meta">
-                <span class="featured-category">Creative Tool</span>
+                <span class="featured-category" data-project-category></span>
                 <span class="featured-year">2023</span>
               </div>
 
-              <h3 class="featured-title">Synthwave Studio</h3>
+              <h3 class="featured-title" data-project-title>
+                Synthwave Studio
+              </h3>
               <p class="featured-desc">
                 DAW basé sur le navigateur avec synthèse sonore en temps réel,
                 effets audio WebAudio et collaboration multi‑utilisateur.
               </p>
+
+              <div
+                class="featured-technologies"
+                data-project-technologies
+                aria-label="Technologies utilisées"
+              ></div>
 
               <h3 class="featured-stat">12k utilisateurs</h3>
             </a>
@@ -241,5 +272,7 @@
         <h3>Bati avec passion</h3>
       </div>
     </footer>
+    <script src="../js/featured-projects.js"></script>
+    <script src="../js/scroll-reveal.js"></script>
   </body>
 </html>

@@ -1,0 +1,19 @@
+{
+  "featured": {
+    "neuraldash": {
+      "name": "Animation & 3D",
+      "category": "Animation & 3D",
+      "technologies": ["3D", "Animation", "MAYA", "Rendu"]
+    },
+    "generique": {
+      "name": "Générique",
+      "category": "Gaming",
+      "technologies": ["Next.js", "Node.js", "PostgreSQL", "WebSocket"]
+    },
+    "synthwave": {
+      "name": "Synthwave Studio",
+      "category": "Creative Tool",
+      "technologies": ["React", "Web Audio", "WebRTC", "TypeScript"]
+    }
+  }
+}

@@ -166,3 +166,241 @@ Gemini
 Oui bien sur voici le css modifier de headernav.css
 
 ---
+
+## 2026-09-20
+
+### Prompt: Corrige le doublon du HERO et des projets vedettes dans accueil.html afin de rétablir une structure HTML correcte.
+
+### Outil
+
+Copilot
+
+### Réponse
+
+Le HERO dupliqué a été supprimé, la fermeture de la balise main a été ajoutée et la structure HTML a été vérifiée.
+
+---
+
+## 2026-09-20
+
+### Prompt: Ajoute les couleurs, les bordures et les effets de survol aux cartes des projets vedettes.
+
+### Outil
+
+Copilot
+
+### Réponse
+
+Les cartes cyan, rose et indigo ont reçu leurs couleurs, leurs bordures lumineuses, leurs halos au survol et un état focus accessible. Le bloc CSS dupliqué des glass cards a aussi été nettoyé.
+
+---
+
+## 2026-09-20
+
+### Prompt: Affiche les catégories sur les trois cartes vedettes et rends les quatre statistiques du HERO plus petites et colorées.
+
+### Outil
+
+Copilot
+
+### Réponse
+
+Les catégories Data Visualization, Fintech et Creative Tool sont devenues des badges visibles. Les statistiques ont été réduites, regroupées et colorées selon leur carte indigo ou rose.
+
+---
+
+## 2026-09-20
+
+### Prompt: Remets les catégories directement sur les trois glass cards des meilleurs projets.
+
+### Outil
+
+Copilot
+
+### Réponse
+
+Les catégories ont été converties en éléments span dédiés pour rester visibles directement en haut des trois cartes.
+
+---
+
+## 2026-09-20
+
+### Prompt: Remets la carte d'accueil comme la référence avec Xavier Martineau, le sous-titre développeur full-stack et les catégories techniques.
+
+### Outil
+
+Copilot
+
+### Réponse
+
+La carte de Index.html affiche maintenant Xavier Martineau en grand, Développeur full-stack & architecte logiciel, ainsi que React / Next.js, Architecture Cloud, Intégration IA et UI Haute Perf.
+
+---
+
+## 2026-09-20
+
+### Prompt: Ajoute des catégories technologiques sur les trois glass cards vedettes comme sur l'image.
+
+### Outil
+
+Copilot
+
+### Réponse
+
+Quatre technologies ont été ajoutées à chaque carte : React, Python, TensorFlow et D3.js pour NeuralDash; Next.js, Node.js, PostgreSQL et WebSocket pour CryptoFlow; React, Web Audio, WebRTC et TypeScript pour Synthwave Studio.
+
+---
+
+## 2026-09-20
+
+### Prompt: Corrige la taille des boutons Voir mes projets et Me contacter, puis rends-les plus grands et plus attrayants.
+
+### Outil
+
+Copilot
+
+### Réponse
+
+Les deux boutons du HERO ont reçu une taille uniforme, un padding amélioré, un effet de soulèvement et des halos indigo et cyan au survol. Leur affichage mobile a aussi été corrigé.
+
+---
+
+## 2026-09-20
+
+### Prompt: Ajoute un espace entre le HERO et les projets, rends le scroll plus petit et bleu foncé, puis ajoute une flèche animée et un fondu lors du défilement.
+
+### Outil
+
+Copilot
+
+### Réponse
+
+Le scroll est devenu un lien vers la section projets avec une flèche descendante animée. Un espace supplémentaire a été ajouté entre les sections et la section des projets apparaît en fondu avec IntersectionObserver.
+
+---
+
+## 2026-09-20
+
+### Prompt: Améliore les deux cartes statistiques du HERO avec un effet visuel plus attrayant.
+
+### Outil
+
+Copilot
+
+### Réponse
+
+Les deux cartes statistiques ont été uniformisées, mieux centrées et dotées d'un effet de survol reprenant leur couleur indigo ou rose, avec un glow renforcé sur les chiffres et les libellés.
+
+---
+
+## 2026-09-20
+
+### Prompt: Ajoute l'image assets/images/projet01.webp en arrière-plan flouté de la première carte vedette.
+
+### Outil
+
+Copilot
+
+### Réponse
+
+L'image a été ajoutée à la carte Animation & 3D avec un flou et une opacité contrôlée, tout en gardant le contenu de la carte au premier plan.
+
+---
+
+## 2026-09-20
+
+### Prompt: Configure l'opacité de l'image à 80% au départ et 60% au survol.
+
+### Outil
+
+Copilot
+
+### Réponse
+
+L'image de la première carte affiche maintenant une opacité de 80% au repos et de 60% au survol, avec une transition douce.
+
+---
+
+## 2026-09-20
+
+### Prompt: Gère toutes les catégories des projets vedettes avec un fichier JSON.
+
+### Outil
+
+Copilot
+
+### Réponse
+
+Le fichier data/projects.json et le script featured-projects.js ont été créés. Les noms, catégories et technologies des trois cartes sont maintenant chargés depuis le JSON.
+
+---
+
+## 2026-09-20
+
+### Prompt: Change l'ordre des couleurs des cartes pour obtenir rose, indigo puis bleu.
+
+### Outil
+
+Copilot
+
+### Réponse
+
+Les classes des cartes ont été réordonnées visuellement : première carte rose, deuxième carte indigo et troisième carte cyan.
+
+---
+
+## 2026-09-20
+
+### Prompt: Ajoute Animation & 3D comme nom de la première carte vedette.
+
+### Outil
+
+Copilot
+
+### Réponse
+
+Le nom Animation & 3D a été ajouté au JSON et injecté automatiquement comme titre de la première carte.
+
+---
+
+## 2026-09-20
+
+### Prompt: Remplace Data Visualization par le même nom que le projet.
+
+### Outil
+
+Copilot
+
+### Réponse
+
+La catégorie de la première carte est maintenant Animation & 3D, comme son titre.
+
+---
+
+## 2026-09-20
+
+### Prompt: Ajoute des catégories au projet Animation & 3D, notamment MAYA.
+
+### Outil
+
+Copilot
+
+### Réponse
+
+Les tags 3D, Animation, MAYA et Rendu sont maintenant gérés dans le fichier JSON et affichés automatiquement sur la carte.
+
+---
+
+## 2026-09-20
+
+### Prompt: Change la statistique de la première carte pour afficher 85% précision.
+
+### Outil
+
+Copilot
+
+### Réponse
+
+La statistique de la première carte vedette affiche maintenant 85% précision.
+
+---

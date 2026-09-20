@@ -87,8 +87,10 @@
   margin: 0 0 0.25rem;
   color: var(--gc-color);
   font-size: clamp(1.7rem, 3vw, 2.25rem);
+  font-weight: 700;
   line-height: 1;
   text-shadow: 0 0 18px rgba(var(--gc-rgb), 0.35);
+  transition: text-shadow 0.3s ease;
 }
 
 .gc-label {
@@ -99,6 +101,15 @@
   line-height: 1.35;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+  transition: color 0.3s ease;
+}
+
+.hero-stats .gc:hover .gc-value {
+  text-shadow: 0 0 24px rgba(var(--gc-rgb), 0.7);
+}
+
+.hero-stats .gc:hover .gc-label {
+  color: var(--gc-color);
 }
 
 /* =========================================================
