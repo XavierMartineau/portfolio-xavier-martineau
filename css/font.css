@@ -1,0 +1,52 @@
+/* ===========================
+   FONT‑FACE LOCAUX
+   =========================== */
+
+/* Inter */
+@font-face {
+  font-family: "Inter";
+  src: url("assets/fonts/inter/Inter-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Speedy */
+@font-face {
+  font-family: "Speedy";
+  src: url("assets/fonts/speedy/Speedy-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Syne SemiBold */
+@font-face {
+  font-family: "Syne";
+  src: url("assets/fonts/syne/Syne-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+/* Space Grotesk */
+@font-face {
+  font-family: "Space-Grotesk";
+  src: url("assets/fonts/space-grotesk/SpaceGrotesk-Regular.ttf")
+    format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* ===========================
+   TITRES
+   =========================== */
+
+h1 {
+  font-family: "Space-Grotesk", sans-serif;
+}
+
+h2 {
+  font-family: "Speedy", sans-serif;
+}
+
+h3 {
+  font-family: "Syne", sans-serif;
+}
