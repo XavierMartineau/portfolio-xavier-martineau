@@ -1,14 +1,18 @@
-// Sélection des éléments HTML principaux de la page
+// ==============================
+// RÉFÉRENCES DE L'ÉCRAN D'INTRODUCTION
+// ==============================
 const canvas = document.getElementById("splash-canvas");
 const ctx = canvas.getContext("2d");
 const splash = document.getElementById("splash");
 const enterBtn = document.getElementById("enter-btn");
 
-// Position initiale de la souris (placée hors écran par défaut pour éviter un effet bizarre au chargement)
+// Position initiale de la souris, placée hors écran au chargement
 let mouse = { x: -1000, y: -1000 };
 let particles = [];
 
-// Fonction pour redimensionner le canvas dynamiquement selon la taille de la fenêtre
+// ==============================
+// DIMENSIONS DU CANVAS
+// ==============================
 function resize() {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
@@ -16,10 +20,12 @@ function resize() {
 resize();
 window.addEventListener("resize", resize);
 
-// Palette de couleurs utilisée pour les points lumineux
+// Palette utilisée par les particules lumineuses
 const colors = ["#6366f1", "#ff00ea", "#00f3ff", "#8b5cf6"];
 
-// Initialisation du tableau de particules (création de 80 points avec des positions et vitesses aléatoires)
+// ==============================
+// INITIALISATION DES PARTICULES
+// ==============================
 particles = Array.from({ length: 80 }, () => ({
   x: Math.random() * canvas.width,
   y: Math.random() * canvas.height,
@@ -30,7 +36,9 @@ particles = Array.from({ length: 80 }, () => ({
   alpha: Math.random() * 0.6 + 0.2, // Opacité aléatoire
 }));
 
-// Fonction principale d'animation et de dessin sur le canvas
+// ==============================
+// BOUCLE DE DESSIN ET D'ANIMATION
+// ==============================
 function draw() {
   // Efface le contenu précédent du canvas à chaque frame
   ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -90,12 +98,14 @@ function draw() {
 }
 draw();
 
-// Écouteur d'événement pour suivre les mouvements de la souris
+// Suit la position de la souris pour déplacer le halo lumineux
 window.addEventListener("mousemove", (e) => {
   mouse = { x: e.clientX, y: e.clientY };
 });
 
-// Gestion du clic sur le bouton "Entrer" pour déclencher la transition de sortie
+// ==============================
+// TRANSITION VERS LA PAGE D'ACCUEIL
+// ==============================
 enterBtn.addEventListener("click", () => {
   splash.style.opacity = "0"; // Fait disparaître la page en fondu
   setTimeout(() => {

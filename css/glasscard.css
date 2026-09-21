@@ -1,5 +1,5 @@
 /* ===========================
-   GLASS CARD (Stats)
+  CARTE VITRÉE DES STATISTIQUES
 =========================== */
 
 .glass-card {
@@ -38,7 +38,7 @@
 }
 
 /* =========================================================
-   GLASS CARD — BASE
+  CARTE VITRÉE — STRUCTURE DE BASE
 ========================================================= */
 
 .gc {
@@ -70,7 +70,7 @@
 }
 
 /* =========================================================
-   SHIMMER TOP
+  LIGNE LUMINEUSE SUPÉRIEURE
 ========================================================= */
 
 .gc-top {
@@ -89,18 +89,20 @@
   font-size: clamp(1.7rem, 3vw, 2.25rem);
   font-weight: 700;
   line-height: 1;
-  text-shadow: 0 0 18px rgba(var(--gc-rgb), 0.35);
+  text-shadow:
+    0 0 18px rgba(var(--gc-rgb), 0.5),
+    0 1px 3px rgba(0, 0, 0, 0.9);
   transition: text-shadow 0.3s ease;
 }
 
 .gc-label {
   margin: 0;
-  color: rgba(var(--gc-rgb), 0.8);
-  font-family: "Inter", sans-serif;
+  color: #f0f0f7;
   font-size: 0.68rem;
   line-height: 1.35;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.85);
   transition: color 0.3s ease;
 }
 
@@ -113,46 +115,46 @@
 }
 
 /* =========================================================
-   META (catégorie + année)
+  MÉTADONNÉES : CATÉGORIE ET ANNÉE
 ========================================================= */
 
 .gc-meta {
   display: flex;
   justify-content: space-between;
-  font-family: "Syne", sans-serif;
   font-size: 0.75rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
   margin-bottom: 1rem;
-  color: #888899;
+  color: #d7d7e4;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.85);
 }
 
 /* =========================================================
-   TITRE
+  TITRE DE LA CARTE
 ========================================================= */
 
 .gc-title {
-  font-family: "Inter", sans-serif;
   font-weight: 700;
   font-size: 1.3rem;
   margin-bottom: 0.75rem;
-  color: #e8e8f0;
+  color: #ffffff;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.9);
 }
 
 /* =========================================================
-   DESCRIPTION
+  DESCRIPTION DE LA CARTE
 ========================================================= */
 
 .gc-desc {
-  font-family: "Inter", sans-serif;
   font-size: 0.95rem;
   line-height: 1.6;
-  color: #888899;
+  color: #e2e2eb;
   margin-bottom: 1.25rem;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.9);
 }
 
 /* =========================================================
-   FOOTER + BOUTON
+  PIED DE CARTE ET BOUTON
 ========================================================= */
 
 .gc-footer {
@@ -160,7 +162,6 @@
 }
 
 .gc-btn {
-  font-family: "Space-Grotesk", sans-serif;
   font-weight: 600;
   font-size: 0.9rem;
   letter-spacing: 0.05em;
@@ -175,10 +176,10 @@
 }
 
 /* =========================================================
-   COLOR VARIANTS
+  VARIANTES DE COULEUR
 ========================================================= */
 
-/* Indigo vibrant */
+/* Variante indigo */
 .gc-indigo {
   --gc-color: #7b80ff;
   --gc-rgb: 123, 128, 255;
@@ -188,7 +189,7 @@
   color: #7b80ff;
 }
 
-/* Rose */
+/* Variante rose */
 .gc-rose {
   --gc-color: #ff00ea;
   --gc-rgb: 255, 0, 234;
@@ -198,7 +199,7 @@
   color: #ff00ea;
 }
 
-/* Cyan */
+/* Variante cyan */
 .gc-cyan {
   --gc-color: #00f3ff;
   --gc-rgb: 0, 243, 255;
@@ -209,7 +210,7 @@
 }
 
 /* =========================================================
-   RESPONSIVE
+  ADAPTATION AUX PETITS ÉCRANS
 ========================================================= */
 
 @media (max-width: 900px) {
@@ -240,7 +241,7 @@
 }
 
 /* =========================================================
-   ANIMATION OPTIONNELLE (Glow subtil)
+  ANIMATION OPTIONNELLE : HALO DISCRET
 ========================================================= */
 
 .gc:hover {

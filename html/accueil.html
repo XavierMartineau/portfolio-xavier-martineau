@@ -126,9 +126,9 @@
         </div>
         <!-- END HERO GRID -->
 
-        <!-- SCROLL INDICATOR -->
+        <!-- INDICATEUR DE DÉFILEMENT -->
         <a
-          class="scroll-indicator extra-scroll-space"
+          class="scroll-indicator"
           href="#featured-projects"
           aria-label="Voir les projets en vedette"
         >
@@ -179,11 +179,11 @@
               />
 
               <div class="featured-meta">
-                <span class="featured-category" data-project-category></span>
+                <span class="featured-category">Animation &amp; 3D</span>
                 <span class="featured-year">2025</span>
               </div>
 
-              <h3 class="featured-title" data-project-title>Animation et 3D</h3>
+              <h3 class="featured-title">Animation &amp; 3D</h3>
               <p class="featured-desc">
                 Un générique de fin plongé dans une ambiance sombre, teintée de
                 rouge, où chaque élément renforce la tension et la dernière note
@@ -192,11 +192,13 @@
 
               <div
                 class="featured-technologies"
-                data-project-technologies
                 aria-label="Technologies utilisées"
-              ></div>
-
-              <h3 class="featured-stat">85% précision</h3>
+              >
+                <span>3D</span>
+                <span>Animation</span>
+                <span>MAYA</span>
+                <span>Rendu</span>
+              </div>
             </a>
 
             <!-- Project 2 -->
@@ -214,11 +216,11 @@
               />
 
               <div class="featured-meta">
-                <span class="featured-category" data-project-category></span>
+                <span class="featured-category">2D</span>
                 <span class="featured-year">2024</span>
               </div>
 
-              <h3 class="featured-title" data-project-title>La Maison</h3>
+              <h3 class="featured-title">La Maison</h3>
               <p class="featured-desc">
                 On est enfermé dans une maison mystérieuse, et pour réussir à en
                 sortir, il faut explorer les différents chemins qui s’offrent à
@@ -227,17 +229,19 @@
 
               <div
                 class="featured-technologies"
-                data-project-technologies
                 aria-label="Technologies utilisées"
-              ></div>
-
-              <h3 class="featured-stat">2M+ transactions</h3>
+              >
+                <span>2D</span>
+                <span>3D</span>
+                <span>Illustrator</span>
+                <span>Vectoriel</span>
+              </div>
             </a>
 
             <!-- Project 3 -->
             <a
               href="projets.html"
-              class="featured-card cyan has-featured-image"
+              class="featured-card cyan has-featured-image project-stitch"
               data-project="synthwave"
             >
               <div class="featured-top"></div>
@@ -249,11 +253,11 @@
               />
 
               <div class="featured-meta">
-                <span class="featured-category" data-project-category></span>
+                <span class="featured-category">Vectoriel</span>
                 <span class="featured-year">2025</span>
               </div>
 
-              <h3 class="featured-title" data-project-title>Stitch</h3>
+              <h3 class="featured-title">Stitch</h3>
               <p class="featured-desc">
                 Un dessin vectoriel de Stitch, aux couleurs vives et aux lignes
                 nettes, tenant un grand cœur rouge avec un regard doux et
@@ -262,11 +266,13 @@
 
               <div
                 class="featured-technologies"
-                data-project-technologies
                 aria-label="Technologies utilisées"
-              ></div>
-
-              <h3 class="featured-stat">12k utilisateurs</h3>
+              >
+                <span>React</span>
+                <span>Web Audio</span>
+                <span>WebRTC</span>
+                <span>TypeScript</span>
+              </div>
             </a>
           </div>
           <!-- END FEATURED GRID -->
@@ -283,7 +289,5 @@
         <h3>Bati avec passion</h3>
       </div>
     </footer>
-    <script src="../js/featured-projects.js"></script>
-    <script src="../js/scroll-reveal.js"></script>
   </body>
 </html>

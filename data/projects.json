@@ -7,12 +7,12 @@
     },
     "generique": {
       "name": "Générique",
-      "category": "3D",
+      "category": "2D",
       "technologies": ["2D", "3D", "Illustrator", "Vectoriel"]
     },
     "synthwave": {
       "name": "Synthwave Studio",
-      "category": "Creative Tool",
+      "category": "Vectoriel",
       "technologies": ["React", "Web Audio", "WebRTC", "TypeScript"]
     }
   }

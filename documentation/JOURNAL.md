@@ -131,7 +131,7 @@ _Salut, peux-tu ajouter des commentaires clairs et compréhensibles dans mon fic
 
 ### Outil
 
-Gemini
+Gemini dans VS Code
 
 ### Réponse
 
@@ -145,7 +145,7 @@ Gemini
 
 ### Outil
 
-Gemini
+Gemini dans VS Code
 
 ### Réponse:
 
@@ -159,7 +159,7 @@ Oui avec plaisir voici le code headernav.css corriger pour que ton logo sois des
 
 ### Outil
 
-Gemini
+Gemini dans VS Code
 
 ### Reponse
 
@@ -167,7 +167,7 @@ Oui bien sur voici le css modifier de headernav.css
 
 ---
 
-## 2026-09-20
+## 2026-09-21
 
 ### Prompt: Corrige le doublon du HERO et des projets vedettes dans accueil.html afin de rétablir une structure HTML correcte.
 
@@ -179,9 +179,34 @@ Copilot
 
 Le HERO dupliqué a été supprimé, la fermeture de la balise main a été ajoutée et la structure HTML a été vérifiée.
 
+## 2026-09-21
+
+### Prompt
+
+Améliorer les projets featured et toute la section d'accueil, puis documenter les changements réalisés.
+
+### Outil
+
+Gemini dans VS Code
+
+### Réponse
+
+La conversation du jour a permis de :
+
+- Ajouter les images `projet_02.png` et `Projet_03.jpg` aux cartes featured.
+- Modifier les catégories des projets en `2D`, `3D`, `Illustrator`, `Vectoriel` et `Animation & 3D`.
+- Ajouter un flou renforcé sur l'image de Stitch et améliorer le contraste des textes avec Inter et des ombres lisibles.
+- Supprimer les statistiques sous les cartes featured et conserver un seul bouton `Voir tout`.
+- Adapter l'accueil aux écrans mobiles avec une navbar responsive et un menu hamburger en HTML/CSS.
+- Masquer les cartes statistiques sur mobile et placer le bouton `Engagez-moi` dans le menu mobile.
+- Ajouter des commentaires en français dans les fichiers CSS et JavaScript.
+- Remplacer le chargement dynamique des cartes featured par du contenu statique en HTML/CSS.
+- Transformer le scroll reveal et l'animation de la flèche en animations CSS natives.
+- Centrer le bloc de scroll, lui réserver un espace de 300px et faire descendre progressivement la flèche avec le défilement.
+
 ---
 
-## 2026-09-20
+## 2026-09-21
 
 ### Prompt: Ajoute les couleurs, les bordures et les effets de survol aux cartes des projets vedettes.
 
@@ -195,7 +220,7 @@ Les cartes cyan, rose et indigo ont reçu leurs couleurs, leurs bordures lumineu
 
 ---
 
-## 2026-09-20
+## 2026-09-21
 
 ### Prompt: Affiche les catégories sur les trois cartes vedettes et rends les quatre statistiques du HERO plus petites et colorées.
 
@@ -209,7 +234,7 @@ Les catégories Data Visualization, Fintech et Creative Tool sont devenues des b
 
 ---
 
-## 2026-09-20
+## 2026-09-21
 
 ### Prompt: Remets les catégories directement sur les trois glass cards des meilleurs projets.
 
@@ -223,7 +248,7 @@ Les catégories ont été converties en éléments span dédiés pour rester vis
 
 ---
 
-## 2026-09-20
+## 2026-09-21
 
 ### Prompt: Remets la carte d'accueil comme la référence avec Xavier Martineau, le sous-titre développeur full-stack et les catégories techniques.
 
@@ -237,7 +262,7 @@ La carte de Index.html affiche maintenant Xavier Martineau en grand, Développeu
 
 ---
 
-## 2026-09-20
+## 2026-09-21
 
 ### Prompt: Ajoute des catégories technologiques sur les trois glass cards vedettes comme sur l'image.
 
@@ -251,7 +276,7 @@ Quatre technologies ont été ajoutées à chaque carte : React, Python, TensorF
 
 ---
 
-## 2026-09-20
+## 2026-09-21
 
 ### Prompt: Corrige la taille des boutons Voir mes projets et Me contacter, puis rends-les plus grands et plus attrayants.
 
@@ -265,7 +290,7 @@ Les deux boutons du HERO ont reçu une taille uniforme, un padding amélioré, u
 
 ---
 
-## 2026-09-20
+## 2026-09-21
 
 ### Prompt: Ajoute un espace entre le HERO et les projets, rends le scroll plus petit et bleu foncé, puis ajoute une flèche animée et un fondu lors du défilement.
 
@@ -279,7 +304,7 @@ Le scroll est devenu un lien vers la section projets avec une flèche descendant
 
 ---
 
-## 2026-09-20
+## 2026-09-21
 
 ### Prompt: Améliore les deux cartes statistiques du HERO avec un effet visuel plus attrayant.
 
@@ -293,7 +318,7 @@ Les deux cartes statistiques ont été uniformisées, mieux centrées et dotées
 
 ---
 
-## 2026-09-20
+## 2026-09-21
 
 ### Prompt: Ajoute l'image assets/images/projet01.webp en arrière-plan flouté de la première carte vedette.
 
@@ -307,7 +332,7 @@ L'image a été ajoutée à la carte Animation & 3D avec un flou et une opacité
 
 ---
 
-## 2026-09-20
+## 2026-09-21
 
 ### Prompt: Configure l'opacité de l'image à 80% au départ et 60% au survol.
 
@@ -321,7 +346,7 @@ L'image de la première carte affiche maintenant une opacité de 80% au repos et
 
 ---
 
-## 2026-09-20
+## 2026-09-21
 
 ### Prompt: Gère toutes les catégories des projets vedettes avec un fichier JSON.
 
@@ -335,7 +360,7 @@ Le fichier data/projects.json et le script featured-projects.js ont été créé
 
 ---
 
-## 2026-09-20
+## 2026-09-21
 
 ### Prompt: Change l'ordre des couleurs des cartes pour obtenir rose, indigo puis bleu.
 
@@ -349,7 +374,7 @@ Les classes des cartes ont été réordonnées visuellement : première carte ro
 
 ---
 
-## 2026-09-20
+## 2026-09-21
 
 ### Prompt: Ajoute Animation & 3D comme nom de la première carte vedette.
 
@@ -363,7 +388,7 @@ Le nom Animation & 3D a été ajouté au JSON et injecté automatiquement comme 
 
 ---
 
-## 2026-09-20
+## 2026-09-21
 
 ### Prompt: Remplace Data Visualization par le même nom que le projet.
 
@@ -377,7 +402,7 @@ La catégorie de la première carte est maintenant Animation & 3D, comme son tit
 
 ---
 
-## 2026-09-20
+## 2026-09-21
 
 ### Prompt: Ajoute des catégories au projet Animation & 3D, notamment MAYA.
 
@@ -391,7 +416,7 @@ Les tags 3D, Animation, MAYA et Rendu sont maintenant gérés dans le fichier JS
 
 ---
 
-## 2026-09-20
+## 2026-09-21
 
 ### Prompt: Change la statistique de la première carte pour afficher 85% précision.
 
@@ -405,7 +430,7 @@ La statistique de la première carte vedette affiche maintenant 85% précision.
 
 ---
 
-## 2026-09-20
+## 2026-09-21
 
 ### Prompt
 
