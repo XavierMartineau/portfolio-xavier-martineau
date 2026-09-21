@@ -444,6 +444,10 @@ body {
   overflow: hidden;
 }
 
+.featured-card.has-featured-image {
+  min-height: 360px;
+}
+
 .featured-background {
   position: absolute;
   inset: -12px;
@@ -456,11 +460,23 @@ body {
   filter: blur(8px);
   transform: scale(1.04);
   pointer-events: none;
-  transition: opacity 0.4s ease;
+  transition:
+    opacity 0.4s ease,
+    filter 0.4s ease;
 }
 
-.featured-card.project-neuraldash:hover .featured-background {
-  opacity: 0.6;
+.featured-card.has-featured-image:hover .featured-background,
+.featured-card.has-featured-image:active .featured-background,
+.featured-card.has-featured-image:focus-visible .featured-background {
+  opacity: 1;
+  filter: blur(0);
+}
+
+.featured-card.has-featured-image:hover > :not(.featured-background),
+.featured-card.has-featured-image:active > :not(.featured-background),
+.featured-card.has-featured-image:focus-visible > :not(.featured-background) {
+  opacity: 0;
+  transition: opacity 0.25s ease;
 }
 
 .featured-card:hover {
@@ -698,6 +714,30 @@ body {
 }
 
 @media (max-width: 768px) {
+  .featured-section {
+    padding: 4rem 1rem;
+  }
+
+  .featured-header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .featured-grid {
+    gap: 1.25rem;
+  }
+
+  .featured-card {
+    min-width: 0;
+    padding: 1.5rem;
+  }
+
+  .featured-card.has-featured-image {
+    min-height: 320px;
+  }
+
   .featured-mobile {
     display: block;
   }

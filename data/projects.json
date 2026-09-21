@@ -7,8 +7,8 @@
     },
     "generique": {
       "name": "Générique",
-      "category": "Gaming",
-      "technologies": ["Next.js", "Node.js", "PostgreSQL", "WebSocket"]
+      "category": "3D",
+      "technologies": ["2D", "3D", "Illustrator", "Vectoriel"]
     },
     "synthwave": {
       "name": "Synthwave Studio",
