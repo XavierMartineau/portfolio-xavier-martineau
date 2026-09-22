@@ -69,6 +69,34 @@
     0 8px 32px rgba(0, 0, 0, 0.5);
 }
 
+.projects-grid .gc {
+  border-color: rgba(var(--gc-rgb), 0.45);
+  box-shadow:
+    0 0 24px rgba(var(--gc-rgb), 0.16),
+    0 20px 60px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.projects-grid .gc:hover {
+  border-color: var(--gc-color);
+  box-shadow:
+    0 0 18px rgba(var(--gc-rgb), 0.55),
+    0 0 48px rgba(var(--gc-rgb), 0.28),
+    0 14px 36px rgba(0, 0, 0, 0.55),
+    inset 0 1px 0 rgba(255, 255, 255, 0.14);
+}
+
+.projects-grid .gc:hover .gc-top {
+  height: 2px;
+  box-shadow: 0 0 22px var(--gc-color);
+}
+
+.projects-grid .gc:hover .gc-title {
+  text-shadow:
+    0 0 14px rgba(var(--gc-rgb), 0.7),
+    0 1px 4px rgba(0, 0, 0, 0.9);
+}
+
 /* =========================================================
   LIGNE LUMINEUSE SUPÉRIEURE
 ========================================================= */
