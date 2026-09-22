@@ -1190,12 +1190,17 @@ body {
   pointer-events: none;
 }
 
-.project-visual img {
-  display: block;
-  width: 100%;
-  height: 280px;
+.project-visual .images-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.project-visual .images-container img {
+  width: 45%;
+  height: auto;
   object-fit: contain;
-  background: rgba(5, 5, 12, 0.55);
 }
 
 .project-embed {
@@ -1647,8 +1652,12 @@ body {
   }
 
   .project-visual img {
-    height: 220px;
-    min-height: 220px;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* ou contain selon ton rendu préféré */
+    border-radius: 12px; /* pour garder les coins doux */
+    background: transparent; /* supprime le fond gris */
   }
 
   .project-visual-media,
