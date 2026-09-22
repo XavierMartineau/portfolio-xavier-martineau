@@ -1,9 +1,26 @@
 /* ===========================
    FONT‑FACE LOCAUX
    =========================== */
+
 @font-face {
   font-family: "Inter";
-  src: url("../assets/fonts/inter/static/Inter-VariableFont_opsz,wght.ttf")
+  src: url("../assets/fonts/inter/Inter-VariableFont_opsz_wght.ttf")
+    format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Inter-Italic";
+  src: url("../assets/fonts/inter/Inter-Italic-VariableFont_opsz_wght.ttf")
+    format("truetype");
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Space-Grotesk";
+  src: url("../assets/fonts/space/SpaceGrotesk-VariableFont_wght.ttf")
     format("truetype");
   font-weight: 400;
   font-style: normal;
@@ -18,20 +35,10 @@
 
 @font-face {
   font-family: "Syne";
-  src: url("../assets/fonts/syne/static/Syne-VariableFont_wght.ttf")
-    format("truetype");
+  src: url("../assets/fonts/syne/Syne-VariableFont_wght.ttf") format("truetype");
   font-weight: 600;
   font-style: normal;
 }
-
-@font-face {
-  font-family: "Space-Grotesk";
-  src: url("../assets/fonts/space/static/SpaceGrotesk-VariableFont_wght.ttf")
-    format("truetype");
-  font-weight: 400;
-  font-style: normal;
-}
-
 /* ===========================
    TYPOGRAPHIE GLOBALE
 =========================== */
