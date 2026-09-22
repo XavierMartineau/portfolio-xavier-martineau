@@ -1133,14 +1133,6 @@ body {
   text-shadow: 0 0 12px rgba(255, 0, 234, 0.65);
 }
 
-.project-category {
-  padding: 0.35rem 0.7rem;
-  border: 1px solid rgba(0, 243, 255, 0.45);
-  border-radius: 999px;
-  color: #00f3ff;
-  background: rgba(0, 243, 255, 0.08);
-}
-
 .project-detail-title {
   margin: 1rem 0 0.75rem;
   color: #f4f4fb;
@@ -1675,4 +1667,52 @@ body {
   .project-detail-grid {
     grid-template-columns: 1fr;
   }
+}
+/* ===========================
+   Projet 03 — Stitch : mode normal
+=========================== */
+
+.project-visual.stitch-mode {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto !important;
+  min-height: auto !important;
+  padding: 1rem;
+}
+
+.project-visual.stitch-mode img {
+  width: auto;
+  max-width: 70%; /* Taille normale (ajustable) */
+  height: auto;
+  object-fit: contain;
+  margin: auto;
+}
+
+/* Désactive les règles vidéos pour Stitch */
+.project-visual.stitch-mode.project-visual-media {
+  min-height: auto !important;
+}
+
+.project-visual.stitch-mode.project-visual-media img {
+  height: auto !important;
+}
+/* ===========================
+   Projet 03 — Stitch : mode zoom contrôlé
+=========================== */
+
+.project-visual.is-expanded.stitch-mode {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto !important;
+  padding: 1rem;
+}
+
+.project-visual.is-expanded.stitch-mode img {
+  width: auto;
+  max-width: 85%; /* 🔥 Zoom mais contrôlé */
+  max-height: 85vh; /* 🔥 Ne dépasse jamais l’écran */
+  object-fit: contain;
+  margin: auto;
 }

@@ -102,6 +102,25 @@ setText("#project-description", project.description);
 setText("#project-summary", project.description);
 setText("#project-category-panel", project.category);
 
+// Ajout des classes de couleur pour la catégorie
+const categoryElement = document.querySelector("#project-category");
+categoryElement.classList.add("couleur-categorie");
+
+switch (project.category) {
+  case "3D":
+    categoryElement.classList.add("couleur-categorie--3d");
+    break;
+  case "2D":
+    categoryElement.classList.add("couleur-categorie--2d");
+    break;
+  case "Site web":
+    categoryElement.classList.add("couleur-categorie--site");
+    break;
+  case "Jeu vidéo":
+    categoryElement.classList.add("couleur-categorie--jeu");
+    break;
+}
+
 // Titre de l’onglet
 document.title = `${project.name} – Xavier Martineau`;
 
@@ -284,6 +303,7 @@ if (embeddedProjects[projectId]) {
   youtubeLink.href = project.youtubeUrl;
 } else {
   // Projets 2D → image pleine
+  visual.classList.add("stitch-mode");
   visual.classList.add("project-visual-media", "project-visual-2d");
   projectImage.src = `../assets/images/${project.image}`;
   projectImage.alt = project.name;
