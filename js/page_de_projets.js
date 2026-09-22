@@ -103,22 +103,18 @@ setText("#project-summary", project.description);
 setText("#project-category-panel", project.category);
 
 // Ajout des classes de couleur pour la catégorie
+// Couleur de la catégorie sur la page projet
 const categoryElement = document.querySelector("#project-category");
 categoryElement.classList.add("couleur-categorie");
 
-switch (project.category) {
-  case "3D":
-    categoryElement.classList.add("couleur-categorie--3d");
-    break;
-  case "2D":
-    categoryElement.classList.add("couleur-categorie--2d");
-    break;
-  case "Site web":
-    categoryElement.classList.add("couleur-categorie--site");
-    break;
-  case "Jeu vidéo":
-    categoryElement.classList.add("couleur-categorie--jeu");
-    break;
+if (project.category === "Site web") {
+  categoryElement.classList.add("couleur-categorie--web"); // bleu
+} else if (project.category === "3D") {
+  categoryElement.classList.add("couleur-categorie--3d"); // violet
+} else if (project.category === "2D") {
+  categoryElement.classList.add("couleur-categorie--2d"); // magenta
+} else {
+  categoryElement.classList.add("couleur-categorie--other"); // vert
 }
 
 // Titre de l’onglet
@@ -394,12 +390,28 @@ expandButton.addEventListener("click", () => {
 // TAGS TECHNOLOGIES
 // ===============================
 const technologies = document.querySelector("#project-technologies");
+
 project.technologies.forEach((technology) => {
   const tag = document.createElement("span");
   tag.textContent = technology;
+  tag.classList.add("couleur-categorie");
+
+  if (["Web", "UX/UI", "Responsive", "Interface"].includes(technology)) {
+    tag.classList.add("couleur-categorie--web"); // bleu
+  } else if (["3D", "Animation", "MAYA", "Rendu"].includes(technology)) {
+    tag.classList.add("couleur-categorie--3d"); // violet
+  } else if (
+    ["2D", "Vectoriel", "Illustration", "Couleur", "Typographie"].includes(
+      technology,
+    )
+  ) {
+    tag.classList.add("couleur-categorie--2d"); // magenta
+  } else {
+    tag.classList.add("couleur-categorie--other"); // vert
+  }
+
   technologies.append(tag);
 });
-
 // ===============================
 // LIEN RETOUR
 // ===============================

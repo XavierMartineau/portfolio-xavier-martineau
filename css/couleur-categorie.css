@@ -15,26 +15,29 @@
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Variantes */
-.couleur-categorie--3d {
+/* BLEU — Site web */
+.couleur-categorie--web {
   color: #00f3ff;
   border-color: rgba(0, 243, 255, 0.45);
   background: rgba(0, 243, 255, 0.08);
 }
 
+/* VIOLET — 3D / Animation */
+.couleur-categorie--3d {
+  color: #6366f1;
+  border-color: rgba(99, 102, 241, 0.45);
+  background: rgba(99, 102, 241, 0.08);
+}
+
+/* MAGENTA — 2D */
 .couleur-categorie--2d {
   color: #ff00ea;
   border-color: rgba(255, 0, 234, 0.45);
   background: rgba(255, 0, 234, 0.08);
 }
 
-.couleur-categorie--site {
-  color: #6366f1;
-  border-color: rgba(99, 102, 241, 0.45);
-  background: rgba(99, 102, 241, 0.08);
-}
-
-.couleur-categorie--jeu {
+/* VERT — Autres / Jeu vidéo */
+.couleur-categorie--other {
   color: #63ff9b;
   border-color: rgba(99, 255, 155, 0.45);
   background: rgba(99, 255, 155, 0.08);
