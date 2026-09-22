@@ -133,6 +133,15 @@
   color: #d2b8ff;
 }
 
+.projects-navbar .navbar-links a.active {
+  color: #ff00ea;
+  text-shadow: 0 0 12px rgba(255, 0, 234, 0.8);
+}
+
+.projects-navbar .navbar-links a.active:hover {
+  color: #ff7af4;
+}
+
 /* ===========================
    UNDERLINE NÉON ANIMÉ
 =========================== */
@@ -235,7 +244,7 @@
 }
 
 /* Mise en page compacte et menu déroulant sur mobile */
-@media (max-width: 768px) {
+@media (max-width: 1100px) {
   .navbar {
     box-sizing: border-box;
     height: 76px;

@@ -1,19 +1,104 @@
 {
   "featured": {
     "neuraldash": {
+      "id": 1,
       "name": "Animation & 3D",
-      "category": "Animation & 3D",
+      "category": "3D",
+      "year": "2025",
+      "image": "projet_01.webp",
+      "youtubeUrl": "https://www.youtube.com/results?search_query=Animation+3D+Xavier+Martineau",
+      "description": "Un générique de fin sombre où chaque élément renforce la tension et la dernière note dramatique de l'histoire.",
       "technologies": ["3D", "Animation", "MAYA", "Rendu"]
     },
     "generique": {
-      "name": "Générique",
-      "category": "2D",
-      "technologies": ["2D", "3D", "Illustrator", "Vectoriel"]
+      "id": 2,
+      "name": "La Maison",
+      "category": "Site web",
+      "year": "2024",
+      "image": "projet_02.png",
+      "description": "Une maison mystérieuse à explorer, où chaque chemin mène à un choix qui change la suite de l'histoire.",
+      "technologies": ["Web", "UX/UI", "Design", "Responsive"]
     },
     "synthwave": {
-      "name": "Synthwave Studio",
-      "category": "Vectoriel",
-      "technologies": ["React", "Web Audio", "WebRTC", "TypeScript"]
+      "id": 3,
+      "name": "Stitch",
+      "category": "2D",
+      "year": "2025",
+      "image": "Projet_03.jpg",
+      "description": "Une direction artistique colorée construite autour de formes vectorielles, de textures et d'une énergie pop assumée.",
+      "technologies": ["Vectoriel", "Illustration", "Couleur", "Composition"]
+    }
+  },
+  "projects": {
+    "project01": {
+      "id": 1,
+      "name": "Animation & 3D",
+      "category": "3D",
+      "year": "2025",
+      "image": "projet_01.webp",
+      "youtubeUrl": "https://www.youtube.com/results?search_query=Animation+3D+Xavier+Martineau",
+      "description": "Un générique de fin sombre où chaque élément renforce la tension et la dernière note dramatique de l'histoire.",
+      "technologies": ["3D", "Animation", "MAYA", "Rendu"]
+    },
+    "project02": {
+      "id": 2,
+      "name": "La Maison",
+      "category": "Site web",
+      "year": "2024",
+      "image": "projet_02.png",
+      "description": "Une maison mystérieuse à explorer, où chaque chemin mène à un choix qui change la suite de l'histoire.",
+      "technologies": ["Web", "UX/UI", "Design", "Responsive"]
+    },
+    "project03": {
+      "id": 3,
+      "name": "Stitch",
+      "category": "2D",
+      "year": "2025",
+      "image": "Projet_03.jpg",
+      "description": "Une direction artistique colorée construite autour de formes vectorielles, de textures et d'une énergie pop assumée.",
+      "technologies": ["Vectoriel", "Illustration", "Couleur", "Composition"]
+    },
+    "project04": {
+      "id": 4,
+      "name": "Logo-bouclier",
+      "category": "2D",
+      "year": "2026",
+      "image": "Projet_04.png",
+      "description": "Une identité graphique précise qui rassemble rythme, contraste et supports numériques dans un univers cohérent.",
+      "technologies": ["Identité", "Direction artistique", "Print", "Digital"]
+    },
+    "project05": {
+      "id": 5,
+      "name": "Noel vectoriel",
+      "category": "2D",
+      "year": "2024",
+      "image": "Projet_05.png",
+      "secondaryImage": "Projet_05_2.png",
+      "description": "Une composition pensée pour raconter une histoire forte avec une image, une typographie et des détails soigneusement hiérarchisés.",
+      "technologies": [
+        "Direction artistique",
+        "Composition",
+        "Typographie",
+        "Image"
+      ]
+    },
+    "project06": {
+      "id": 6,
+      "name": "Jeu video",
+      "category": "Jeu vidéo",
+      "year": "2025",
+      "image": "Projet_06.png",
+      "description": "Une expérience interactive fluide qui met l'utilisateur au cœur du parcours et donne du relief à chaque interaction.",
+      "technologies": ["Interface", "Interaction", "Web", "Expérience"]
+    },
+    "project07": {
+      "id": 7,
+      "name": "Color palet",
+      "category": "Site web",
+      "year": "2025-2026",
+      "image": "Projet_07.png",
+      "description": "Un projet digital immersif où la lumière, le mouvement et la composition créent une expérience mémorable.",
+      "technologies": ["Web", "UX/UI", "Design", "Responsive"]
     }
   }
 }

@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projet – Xavier Martineau</title>
+    <link rel="stylesheet" href="../css/body.css" />
+    <link rel="stylesheet" href="../css/font.css" />
+    <link rel="stylesheet" href="../css/header_nav.css" />
+    <link rel="stylesheet" href="../css/logo.css" />
+    <link rel="stylesheet" href="../css/footer.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
+
+  <body class="root project-detail-page">
+    <div class="orb orb-indigo"></div>
+    <div class="orb orb-rose"></div>
+    <div class="orb orb-cyan"></div>
+    <div class="grid-bg"></div>
+
+    <header class="navbar">
+      <a href="../Index.html" class="navbar-left">
+        <div class="logo">
+          <div class="logo-glow"></div>
+          <div class="logo-inner">
+            <img src="../assets/svg/Logo_svg.svg" alt="Logo XM" />
+          </div>
+        </div>
+        <h1 class="brand">
+          Xavier <span class="brand-accent">Martineau</span>
+        </h1>
+      </a>
+
+      <input class="menu-checkbox" type="checkbox" id="menu-toggle" />
+      <nav class="navbar-links">
+        <h3><a href="accueil.html">ACCUEIL</a></h3>
+        <h3><a href="projets.html">PROJETS</a></h3>
+        <h3><a href="competence.html">COMPÉTENCES</a></h3>
+        <h3><a href="apropos.html">À PROPOS</a></h3>
+        <h3><a href="contact.html">CONTACT</a></h3>
+        <h3 class="mobile-menu-cta"><a href="contact.html">ENGAGEZ-MOI</a></h3>
+      </nav>
+      <label class="menu-toggle" for="menu-toggle" aria-label="Ouvrir le menu">
+        <span></span><span></span><span></span>
+      </label>
+      <div class="navbar-right">
+        <h3><a href="contact.html" class="btn-engage">Engagez-moi</a></h3>
+      </div>
+    </header>
+
+    <main class="project-detail" id="project-detail">
+      <a class="project-back" href="projets.html">← Retour aux projets</a>
+      <div class="project-detail-header">
+        <span class="project-index" id="project-index">[01] / 07</span>
+        <span class="project-category" id="project-category">Projet</span>
+        <span class="project-year" id="project-year">2025</span>
+      </div>
+      <h2 class="project-detail-title" id="project-title">Chargement...</h2>
+      <p class="project-detail-intro" id="project-description"></p>
+
+      <section class="project-visual" aria-label="Aperçu du projet">
+        <img
+          id="project-image"
+          src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
+          alt="Projet sélectionné"
+        />
+        <img
+          id="project-secondary-image"
+          class="is-secondary"
+          src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
+          alt=""
+        />
+        <iframe
+          id="project-embed"
+          class="project-embed"
+          title="Contenu interactif du projet"
+          src="about:blank"
+          loading="lazy"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allow="
+            accelerometer;
+            clipboard-write;
+            encrypted-media;
+            gyroscope;
+            picture-in-picture;
+          "
+          allowfullscreen
+          hidden
+        ></iframe>
+        <button
+          id="project-mute"
+          class="project-mute"
+          type="button"
+          aria-label="Couper le son du jeu"
+          aria-pressed="false"
+          hidden
+        >
+          🔊
+        </button>
+        <span id="project-mute-message" class="project-mute-message" hidden>
+          En mode mute, le jeu ne joue pas.
+        </span>
+        <div id="project-interactive" class="project-interactive" hidden></div>
+        <a
+          id="project-youtube"
+          class="project-youtube"
+          href="#"
+          target="_blank"
+          rel="noreferrer"
+          hidden
+        >
+          Voir la vidéo sur YouTube →
+        </a>
+        <button
+          id="project-expand"
+          class="project-expand"
+          type="button"
+          aria-label="Agrandir le projet"
+          aria-pressed="false"
+        >
+          ⛶ Agrandir
+        </button>
+      </section>
+
+      <section class="project-detail-grid">
+        <article class="detail-panel">
+          <span class="detail-label">// Projet</span>
+          <p id="project-summary"></p>
+        </article>
+        <article class="detail-panel detail-panel-accent">
+          <span class="detail-label">// Catégorie</span>
+          <strong id="project-category-panel"></strong>
+        </article>
+      </section>
+
+      <section class="detail-tags-panel">
+        <span class="detail-label">// Technologies</span>
+        <div id="project-technologies" class="detail-tags"></div>
+      </section>
+
+      <nav class="project-pager" aria-label="Retour aux projets">
+        <a id="return-project" href="projets.html">← Retour aux projets</a>
+      </nav>
+    </main>
+
+    <footer class="footer">
+      <span>© 2026 Xavier Martineau — Tous droits réservés</span>
+      <div class="footer-right">
+        <div class="pulse-dot"></div>
+        <span>BUILT WITH PASSION</span>
+      </div>
+    </footer>
+
+    <script src="../js/page_de_projets.js"></script>
+  </body>
+</html>

@@ -24,7 +24,7 @@
     <div class="grid-bg"></div>
 
     <!-- NAVBAR (Root) -->
-    <header class="navbar">
+    <header class="navbar projects-navbar">
       <a href="../Index.html" class="navbar-left">
         <div class="logo">
           <div class="logo-glow"></div>
@@ -39,16 +39,27 @@
         </h1>
       </a>
 
+      <input class="menu-checkbox" type="checkbox" id="menu-toggle" />
+
       <nav class="navbar-links">
-        <a href="accueil.html">ACCUEIL</a>
-        <a href="projets.html" class="active">PROJETS</a>
-        <a href="competence.html">COMPÉTENCES</a>
-        <a href="apropos.html">À PROPOS</a>
-        <a href="contact.html">CONTACT</a>
+        <h3><a href="accueil.html">ACCUEIL</a></h3>
+        <h3><a href="projets.html" class="active">PROJETS</a></h3>
+        <h3><a href="competence.html">COMPÉTENCES</a></h3>
+        <h3><a href="apropos.html">À PROPOS</a></h3>
+        <h3><a href="contact.html">CONTACT</a></h3>
+        <h3 class="mobile-menu-cta">
+          <a href="contact.html">ENGAGEZ-MOI</a>
+        </h3>
       </nav>
 
+      <label class="menu-toggle" for="menu-toggle" aria-label="Ouvrir le menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+
       <div class="navbar-right">
-        <a href="contact.html" class="btn-engage">Engagez‑moi</a>
+        <h3><a href="contact.html" class="btn-engage">Engagez‑moi</a></h3>
       </div>
     </header>
 
@@ -70,10 +81,41 @@
               Mes <span class="neon-rose">projets</span>
             </h2>
 
-            <div class="filter-buttons">
-              <button class="filter-btn active" data-filter="all">Tous</button>
-              <button class="filter-btn" data-filter="featured">
-                Sélection
+            <div class="project-categories" aria-label="Filtrer les projets">
+              <button
+                class="project-category-btn active"
+                type="button"
+                data-category="all"
+              >
+                Tous
+              </button>
+              <button
+                class="project-category-btn"
+                type="button"
+                data-category="3d"
+              >
+                3D
+              </button>
+              <button
+                class="project-category-btn"
+                type="button"
+                data-category="jeu-video"
+              >
+                Jeu vidéo
+              </button>
+              <button
+                class="project-category-btn"
+                type="button"
+                data-category="2d"
+              >
+                2D
+              </button>
+              <button
+                class="project-category-btn"
+                type="button"
+                data-category="site-web"
+              >
+                Site web
               </button>
             </div>
           </div>
@@ -81,13 +123,29 @@
 
         <!-- GRID -->
         <div class="projects-grid" id="projects-container">
-          <article class="gc gc-indigo project-card">
+          <article
+            class="gc gc-indigo project-card"
+            data-project-id="1"
+            data-category="3d"
+          >
             <div class="gc-top"></div>
+            <img
+              class="project-background"
+              src="../assets/images/projet_01.webp"
+              alt=""
+              aria-hidden="true"
+            />
             <div class="gc-meta">
-              <span class="gc-category">Animation &amp; 3D</span>
+              <span class="gc-project-category">3D</span>
               <span>2025</span>
             </div>
             <h3 class="gc-title">Animation &amp; 3D</h3>
+            <div class="gc-technologies" aria-label="Technologies utilisées">
+              <span>3D</span>
+              <span>Animation</span>
+              <span>MAYA</span>
+              <span>Rendu</span>
+            </div>
             <p class="gc-desc">
               Un générique de fin sombre où chaque élément renforce la tension
               et la dernière note dramatique de l'histoire.
@@ -97,13 +155,29 @@
             </div>
           </article>
 
-          <article class="gc gc-rose project-card">
+          <article
+            class="gc gc-rose project-card"
+            data-project-id="2"
+            data-category="site-web"
+          >
             <div class="gc-top"></div>
+            <img
+              class="project-background"
+              src="../assets/images/projet_02.png"
+              alt=""
+              aria-hidden="true"
+            />
             <div class="gc-meta">
-              <span class="gc-category">2D</span>
+              <span class="gc-project-category">Site web</span>
               <span>2024</span>
             </div>
             <h3 class="gc-title">La Maison</h3>
+            <div class="gc-technologies" aria-label="Technologies utilisées">
+              <span>Web</span>
+              <span>UX/UI</span>
+              <span>Design</span>
+              <span>Responsive</span>
+            </div>
             <p class="gc-desc">
               Une maison mystérieuse à explorer, où chaque chemin mène à un
               choix qui change la suite de l'histoire.
@@ -113,13 +187,29 @@
             </div>
           </article>
 
-          <article class="gc gc-cyan project-card">
+          <article
+            class="gc gc-cyan project-card"
+            data-project-id="3"
+            data-category="2d"
+          >
             <div class="gc-top"></div>
+            <img
+              class="project-background"
+              src="../assets/images/Projet_03.jpg"
+              alt=""
+              aria-hidden="true"
+            />
             <div class="gc-meta">
-              <span class="gc-category">Vectoriel</span>
+              <span class="gc-project-category">2D</span>
               <span>2025</span>
             </div>
             <h3 class="gc-title">Stitch</h3>
+            <div class="gc-technologies" aria-label="Technologies utilisées">
+              <span>Vectoriel</span>
+              <span>Illustration</span>
+              <span>Couleur</span>
+              <span>Composition</span>
+            </div>
             <p class="gc-desc">
               Une direction artistique colorée construite autour de formes
               vectorielles, de textures et d'une énergie pop assumée.
@@ -129,13 +219,29 @@
             </div>
           </article>
 
-          <article class="gc gc-rose project-card">
+          <article
+            class="gc gc-rose project-card"
+            data-project-id="4"
+            data-category="2d"
+          >
             <div class="gc-top"></div>
+            <img
+              class="project-background"
+              src="../assets/images/Projet_04.png"
+              alt=""
+              aria-hidden="true"
+            />
             <div class="gc-meta">
-              <span class="gc-category">Identité visuelle</span>
-              <span>2024</span>
+              <span class="gc-project-category">2D</span>
+              <span>2026</span>
             </div>
-            <h3 class="gc-title">Projet 04</h3>
+            <h3 class="gc-title">Logo-bouclier</h3>
+            <div class="gc-technologies" aria-label="Technologies utilisées">
+              <span>Identité</span>
+              <span>Direction artistique</span>
+              <span>Print</span>
+              <span>Digital</span>
+            </div>
             <p class="gc-desc">
               Une identité graphique précise qui rassemble rythme, contraste et
               supports numériques dans un univers cohérent.
@@ -145,13 +251,35 @@
             </div>
           </article>
 
-          <article class="gc gc-indigo project-card">
+          <article
+            class="gc gc-indigo project-card"
+            data-project-id="5"
+            data-category="2d"
+          >
             <div class="gc-top"></div>
+            <img
+              class="project-background"
+              src="../assets/images/Projet_05.png"
+              alt=""
+              aria-hidden="true"
+            />
+            <img
+              class="project-background project-background-secondary"
+              src="../assets/images/Projet_05_2.png"
+              alt=""
+              aria-hidden="true"
+            />
             <div class="gc-meta">
-              <span class="gc-category">Direction artistique</span>
-              <span>2025</span>
+              <span class="gc-project-category">2D</span>
+              <span>2024</span>
             </div>
-            <h3 class="gc-title">Projet 05</h3>
+            <h3 class="gc-title">Noel vectoriel</h3>
+            <div class="gc-technologies" aria-label="Technologies utilisées">
+              <span>Direction artistique</span>
+              <span>Composition</span>
+              <span>Typographie</span>
+              <span>Image</span>
+            </div>
             <p class="gc-desc">
               Une composition pensée pour raconter une histoire forte avec une
               image, une typographie et des détails soigneusement hiérarchisés.
@@ -161,16 +289,67 @@
             </div>
           </article>
 
-          <article class="gc gc-cyan project-card">
+          <article
+            class="gc gc-cyan project-card"
+            data-project-id="6"
+            data-category="jeu-video"
+          >
             <div class="gc-top"></div>
+            <img
+              class="project-background"
+              src="../assets/images/Projet_06.png"
+              alt=""
+              aria-hidden="true"
+            />
             <div class="gc-meta">
-              <span class="gc-category">Expérience numérique</span>
+              <span class="gc-project-category">Jeu vidéo</span>
               <span>2025</span>
             </div>
-            <h3 class="gc-title">Projet 06</h3>
+            <h3 class="gc-title">Jeu video</h3>
+            <div class="gc-technologies" aria-label="Technologies utilisées">
+              <span>Interface</span>
+              <span>Interaction</span>
+              <span>Web</span>
+              <span>Expérience</span>
+            </div>
             <p class="gc-desc">
               Une expérience interactive fluide qui met l'utilisateur au cœur du
               parcours et donne du relief à chaque interaction.
+            </p>
+            <div class="gc-footer">
+              <span class="gc-btn">Voir le projet →</span>
+            </div>
+          </article>
+
+          <article
+            class="gc gc-indigo project-card"
+            data-project-id="7"
+            data-category="site-web"
+          >
+            <div class="gc-top"></div>
+            <img
+              class="project-background"
+              src="../assets/images/Projet_07.png"
+              alt=""
+              aria-hidden="true"
+            />
+            <div class="gc-meta">
+              <span class="gc-project-category">Site web</span>
+              <span>2025-2026</span>
+            </div>
+            <h3 class="gc-title">Color palet</h3>
+            <div
+              class="gc-technologies site-web-tags"
+              aria-label="Technologies utilisées"
+            >
+              <span>Web</span>
+              <span>UX/UI</span>
+              <span>Design</span>
+              <span>Responsive</span>
+            </div>
+            <p class="gc-desc">
+              Un projet digital immersif où la lumière, le mouvement et la
+              composition créent une expérience mémorable.
             </p>
             <div class="gc-footer">
               <span class="gc-btn">Voir le projet →</span>
@@ -189,6 +368,7 @@
       </div>
     </footer>
 
-    <script src="projets.js"></script>
+    <script src="../js/projets.js"></script>
+    <script src="../js/project-navigation.js"></script>
   </body>
 </html>
