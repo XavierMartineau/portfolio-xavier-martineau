@@ -266,6 +266,28 @@ html {
   margin-bottom: 1rem;
 }
 
+.hero-hook {
+  max-width: 520px;
+  margin: 0 0 1rem;
+  color: #00f3ff;
+  font-family: "Space-Grotesk", sans-serif;
+  font-size: clamp(1rem, 2vw, 1.35rem);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  line-height: 1.3;
+  text-shadow: 0 0 18px rgba(0, 243, 255, 0.28);
+}
+
+.hero-subhook {
+  max-width: 560px;
+  margin: 0 0 1.25rem;
+  color: #b7b7c9;
+  font-family: "Inter", sans-serif;
+  font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+  font-weight: 500;
+  line-height: 1.5;
+}
+
 .hero-desc {
   color: #888899;
   font-size: 1.2rem;
@@ -2211,6 +2233,318 @@ html {
     justify-self: stretch;
     width: 100% !important;
     text-align: center;
+  }
+}
+
+/* ==========================================================================\n+   15. PAGE COMPÉTENCES\n+   ========================================================================== */
+:root {
+  --skills-cyan: #00f3ff;
+  --skills-indigo: #6366f1;
+  --skills-text-muted: #888899;
+}
+
+.page-container {
+  min-height: 100vh;
+  padding: 8rem 2rem 4rem;
+}
+
+.max-width {
+  width: min(100%, 1200px);
+  margin: 0 auto;
+}
+
+.page-container .header {
+  margin-bottom: 3rem;
+}
+
+.page-container .header-line {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.cyan-line {
+  width: 2rem;
+  height: 1px;
+  background: var(--skills-cyan);
+  opacity: 0.7;
+}
+
+.page-container .section-label {
+  margin: 0;
+  color: var(--skills-cyan);
+  font-family: "Space-Grotesk", sans-serif;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.page-container .title {
+  margin: 0;
+  color: #f4f4fb;
+  font-family: "Speedy", sans-serif;
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 400;
+  line-height: 1.05;
+}
+
+.neon-text-cyan {
+  color: var(--skills-cyan);
+  text-shadow: 0 0 12px rgba(0, 243, 255, 0.7);
+}
+
+.page-container .glass-card,
+.expert-card {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.035);
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.07);
+  backdrop-filter: blur(24px) saturate(140%);
+}
+
+.page-container .glass-card {
+  border-radius: 16px;
+}
+
+.page-container .glass-card::before,
+.expert-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(0, 243, 255, 0.55),
+    transparent
+  );
+}
+
+.main-card {
+  margin-bottom: 2.5rem;
+  padding: clamp(1.25rem, 4vw, 2.5rem);
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: clamp(2rem, 6vw, 5rem);
+  align-items: start;
+}
+
+.desc {
+  max-width: 38rem;
+  margin: 0 0 1.5rem;
+  color: var(--skills-text-muted);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.bullet-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.bullet-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: #d8d8e6;
+  font-size: 0.9rem;
+}
+
+.bullet-dot {
+  flex: 0 0 6px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--skills-indigo);
+  box-shadow: 0 0 8px var(--skills-indigo);
+}
+
+.skill-block {
+  margin-bottom: 1.5rem;
+}
+
+.skill-block:last-child {
+  margin-bottom: 0;
+}
+
+.skill-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.45rem;
+}
+
+.skill-label {
+  color: #f0f0f7;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.skill-level {
+  color: var(--skills-indigo);
+  font-family: monospace;
+  font-size: 0.75rem;
+}
+
+.skill-bar-bg {
+  height: 5px;
+  margin-bottom: 0.7rem;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.skill-bar-fill {
+  width: 0;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--skills-indigo), var(--skills-cyan));
+  box-shadow: 0 0 12px rgba(0, 243, 255, 0.45);
+  transition: width 1s ease-out;
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.skill-tag {
+  display: inline-block;
+  padding: 0.3rem 0.6rem;
+  border: 1px solid rgba(123, 128, 255, 0.35);
+  border-radius: 5px;
+  color: #c0c0d8;
+  background: rgba(255, 255, 255, 0.05);
+  font-size: 0.72rem;
+}
+
+.expertise-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+.expert-card {
+  min-width: 0;
+  padding: 1.5rem;
+  border-color: rgba(var(--rgb), 0.28);
+  border-radius: 14px;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.expert-card:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 0 28px rgba(var(--rgb), 0.2),
+    0 16px 36px rgba(0, 0, 0, 0.45);
+}
+
+.expert-top {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(var(--rgb), 0.7),
+    transparent
+  );
+}
+
+.expert-icon {
+  display: grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  margin-bottom: 1rem;
+  border: 1px solid rgba(var(--rgb), 0.35);
+  border-radius: 8px;
+  background: rgba(var(--rgb), 0.15);
+}
+
+.expert-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color);
+  box-shadow: 0 0 8px var(--color);
+}
+
+.expert-title {
+  margin: 0 0 0.5rem;
+  color: var(--color);
+  font-family: "Space-Grotesk", sans-serif;
+  font-size: 1.1rem;
+}
+
+.expert-desc {
+  margin: 0;
+  color: var(--skills-text-muted);
+  font-size: 0.88rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 900px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .expertise-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .page-container {
+    padding: 6.5rem 1rem 2.5rem;
+  }
+
+  .page-container .header {
+    margin-bottom: 2rem;
+  }
+
+  .page-container .title {
+    font-size: clamp(2.25rem, 12vw, 3.4rem);
+  }
+
+  .main-card {
+    padding: 1.15rem;
+  }
+
+  .desc {
+    font-size: 0.92rem;
+  }
+
+  .expertise-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .expert-card {
+    padding: 1.25rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skill-bar-fill,
+  .expert-card {
+    transition: none;
   }
 }
 
