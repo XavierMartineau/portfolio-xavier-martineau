@@ -260,7 +260,9 @@ const renderInteractive = () => {
 const isMobileScreen = window.matchMedia("(max-width: 768px)").matches;
 
 if (projectId === 6 && isMobileScreen) {
-  if (visual) visual.classList.add("project-visual-interactive");
+  if (visual) {
+    visual.classList.add("project-visual-interactive", "is-game-project");
+  }
   if (interactive) {
     interactive.hidden = false;
     if (projectImage) projectImage.hidden = true;
@@ -275,7 +277,9 @@ if (projectId === 6 && isMobileScreen) {
       </div>`;
   }
 } else if (projectId === 6 && !isMobileScreen) {
-  if (visual) visual.classList.add("project-visual-interactive");
+  if (visual) {
+    visual.classList.add("project-visual-interactive", "is-game-project");
+  }
   if (interactive) {
     interactive.hidden = false;
     if (projectImage) projectImage.hidden = true;
@@ -466,25 +470,13 @@ document.addEventListener("DOMContentLoaded", () => {
   // Création dynamique de l'overlay d'avertissement "OOPS!"
   const oopsOverlay = document.createElement("div");
   oopsOverlay.id = "oops-overlay";
-  oopsOverlay.style.cssText = `
-    position: absolute;
-    inset: 0;
-    background: rgba(10, 10, 15, 0.95);
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    z-index: 100;
-    text-align: center;
-    padding: 2rem;
-    font-family: monospace;
-  `;
+  oopsOverlay.className = "game-contact-lost";
   oopsOverlay.innerHTML = `
-    <span style="color: #ff007f; font-size: 1.2rem; margin-bottom: 0.5rem; font-weight: bold;">// OOPS!</span>
-    <strong style="color: #ffffff; font-size: 1.1rem; margin-bottom: 1.5rem;">Contact perdu</strong>
-    <button id="resume-btn" class="interactive-action" type="button" style="padding: 10px 24px; cursor: pointer;">Reprendre</button>
+    <span class="game-contact-kicker">// CONNEXION INTERROMPUE</span>
+    <strong>Le contact avec le jeu a été perdu</strong>
+    <p>Le jeu a été mis en pause pour réduire le chargement.</p>
+    <button id="resume-btn" class="interactive-action" type="button">Reprendre</button>
   `;
-  visualContainer.style.position = "relative";
   visualContainer.appendChild(oopsOverlay);
 
   let manualPause = false;
@@ -498,11 +490,11 @@ document.addEventListener("DOMContentLoaded", () => {
           !entry.isIntersecting &&
           activeEmbedSource &&
           projectEmbed &&
-          projectEmbed.src !== "about:blank" &&
+          projectEmbed.getAttribute("src") !== "about:blank" &&
           !manualPause
         ) {
           projectEmbed.src = "about:blank"; // Stoppe net le jeu et le son du projet 06
-          oopsOverlay.style.display = "flex"; // Affiche l'écran OOPS
+          oopsOverlay.classList.add("is-visible"); // Affiche l'écran de perte de contact
         }
       });
     },
@@ -515,10 +507,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const resumeBtn = oopsOverlay.querySelector("#resume-btn");
   if (resumeBtn) {
     resumeBtn.addEventListener("click", () => {
-      oopsOverlay.style.display = "none";
+      oopsOverlay.classList.remove("is-visible");
       manualPause = true;
 
       if (projectEmbed && activeEmbedSource) {
+        setEmbedLoading(true);
         projectEmbed.src = activeEmbedSource; // Relance le jeu et le son
       }
 
