@@ -919,9 +919,12 @@ body {
 =========================== */
 
 .projects-page {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: stretch !important;
+  width: 100% !important;
   padding: 120px 2rem 60px;
 }
-
 .projects-wrapper {
   max-width: 1400px;
   margin: auto;
@@ -952,13 +955,22 @@ body {
   -webkit-text-fill-color: transparent;
 }
 
+.projects-header {
+  display: flex !important;
+  flex-direction: column !important;
+  width: 100% !important;
+  margin-bottom: 2rem !important;
+}
+/* Conteneur principal (Titre + Boutons) */
 .header-flex {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
-  align-items: flex-end;
-  margin-top: 1rem;
+  align-items: center;
+  width: 100%;
+  gap: 1rem;
+  flex-wrap: nowrap; /* Empêche les éléments de passer à la ligne */
 }
-
 /* FILTER BUTTONS */
 .filter-buttons {
   display: flex;
@@ -988,7 +1000,8 @@ body {
   display: flex;
   flex-wrap: wrap;
   gap: 0.45rem;
-  margin-top: 1rem;
+  align-items: center;
+  justify-content: flex-end; /* Aligne les boutons vers la droite */
 }
 
 .project-category-btn {
@@ -1047,11 +1060,17 @@ body {
   --category-rgb: 99, 255, 155;
 }
 
-/* GRID */
+/* ===========================
+   GRID (Version propre et corrigée)
+=========================== */
+
 .projects-grid {
   margin-top: 3rem;
   display: grid;
   gap: 2rem;
+  max-width: 1400px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .projects-grid .gc {
@@ -1087,7 +1106,6 @@ body {
     grid-template-columns: repeat(3, 1fr);
   }
 }
-
 /* PAGE DETAIL D'UN PROJET */
 .project-detail-page {
   min-height: 100vh;
