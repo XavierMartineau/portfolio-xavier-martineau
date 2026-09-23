@@ -84,6 +84,17 @@ h4.section-label {
   color: #888899;
 }
 
+/* H4 — Syne pour les libellés courts des panneaux projet. */
+h4.detail-label {
+  margin: 0;
+  font-family: "Syne", sans-serif;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
 /* ===========================
    SPÉCIFIQUES
 =========================== */

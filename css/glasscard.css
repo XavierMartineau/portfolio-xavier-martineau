@@ -310,6 +310,7 @@
 .gc-project-category {
   display: inline-flex;
   width: fit-content;
+  margin: 0;
   padding: 0.35rem 0.6rem;
   border: 1px solid rgba(var(--gc-rgb), 0.5);
   border-radius: 999px;
@@ -320,6 +321,15 @@
   letter-spacing: 0.14em;
   line-height: 1.2;
   text-shadow: 0 0 10px rgba(var(--gc-rgb), 0.65);
+}
+
+.gc-year {
+  margin: 0;
+  color: #d7d7e4;
+  font-family: "Syne", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
 }
 
 .projects-grid .gc:hover .gc-project-category {

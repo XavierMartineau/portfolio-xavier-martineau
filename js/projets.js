@@ -1,6 +1,31 @@
 const categoryButtons = document.querySelectorAll(".project-category-btn");
 const projectCards = document.querySelectorAll(".project-card");
 
+// Force ou rétablit le rendu hover des cartes sur mobile et tablette.
+const effectsToggle = document.querySelector(".projects-effects-toggle");
+if (effectsToggle) {
+  const projectsPage = document.querySelector(".projects-page");
+  const label = effectsToggle.querySelector(".projects-effects-toggle-label");
+
+  effectsToggle.addEventListener("click", () => {
+    const effectsForced = projectsPage.classList.toggle("is-effects-forced");
+
+    effectsToggle.setAttribute("aria-pressed", String(effectsForced));
+    effectsToggle.setAttribute(
+      "aria-label",
+      effectsForced
+        ? "Désactiver le texte et le blur"
+        : "Activer le texte et le blur",
+    );
+
+    if (label) {
+      label.textContent = effectsForced
+        ? "Désactiver texte + blur"
+        : "Activer texte + blur";
+    }
+  });
+}
+
 categoryButtons.forEach((button) => {
   button.addEventListener("click", () => {
     if (button.dataset.category === "all") {

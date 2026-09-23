@@ -72,3 +72,27 @@ document.querySelectorAll(".featured-grid").forEach((grid) => {
       });
     });
 });
+
+// Force ou rétablit le rendu produit par le hover desktop sur mobile.
+document.querySelectorAll(".carousel-effects-toggle").forEach((button) => {
+  const container = button.closest(".featured-grid-container");
+  const label = button.querySelector(".carousel-effects-toggle-label");
+
+  button.addEventListener("click", () => {
+    const effectsForced = container.classList.toggle("is-effects-forced");
+
+    button.setAttribute("aria-pressed", String(effectsForced));
+    button.setAttribute(
+      "aria-label",
+      effectsForced
+        ? "Désactiver le texte et le blur"
+        : "Activer le texte et le blur",
+    );
+
+    if (label) {
+      label.textContent = effectsForced
+        ? "Désactiver texte + blur"
+        : "Activer texte + blur";
+    }
+  });
+});

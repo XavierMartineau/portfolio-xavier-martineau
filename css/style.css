@@ -492,6 +492,25 @@ html {
   right: 0.75rem;
 }
 
+/* Contrôle mobile des effets texte et blur du carousel. */
+.carousel-effects-toggle {
+  display: none;
+}
+
+.featured-grid-container.is-effects-forced
+  .featured-card.has-featured-image
+  .featured-background {
+  opacity: 1 !important;
+  filter: blur(0) !important;
+}
+
+.featured-grid-container.is-effects-forced
+  .featured-card.has-featured-image
+  > :not(.featured-background) {
+  opacity: 0 !important;
+  transition: opacity 0.25s ease;
+}
+
 /* Grille par défaut sur Bureau (> 1024x600px) : 3 Colonnes */
 .featured-grid,
 .projects-grid {
@@ -653,6 +672,7 @@ html {
 }
 
 .featured-year {
+  margin: 0;
   font-size: 0.75rem;
   color: #c3c3d2;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.85);
@@ -1009,10 +1029,34 @@ html {
   display: none !important;
 }
 
+/* Reproduit le hover des cartes quand le toggle mobile est activé. */
+.projects-page.is-effects-forced .projects-grid .gc .project-background {
+  opacity: 0.82;
+  filter: blur(0);
+  transform: scale(1.01);
+}
+
+.projects-page.is-effects-forced
+  .projects-grid
+  .gc
+  > :not(.project-background) {
+  opacity: 0;
+}
+
+.projects-page.is-effects-forced .projects-grid .gc::after {
+  opacity: 0.35;
+}
+
+.projects-effects-toggle {
+  display: none;
+}
+
 /* ==========================================================================
    10. PAGE DÉTAIL D'UN PROJET
    ========================================================================== */
 .project-detail-page {
+  --project-accent: #00f3ff;
+  --project-rgb: 0, 243, 255;
   min-height: 100vh;
 }
 
@@ -1024,7 +1068,7 @@ html {
 
 .project-back,
 .project-pager a {
-  color: #00f3ff;
+  color: var(--project-accent);
   font-family: monospace;
   font-size: 0.72rem;
   letter-spacing: 0.12em;
@@ -1035,7 +1079,7 @@ html {
 .project-back:hover,
 .project-pager a:hover {
   color: #ffffff;
-  text-shadow: 0 0 12px #00f3ff;
+  text-shadow: 0 0 12px var(--project-accent);
 }
 
 .project-detail-header {
@@ -1052,8 +1096,8 @@ html {
 }
 
 .project-index {
-  color: #ff00ea;
-  text-shadow: 0 0 12px rgba(255, 0, 234, 0.65);
+  color: var(--project-accent);
+  text-shadow: 0 0 12px rgba(var(--project-rgb), 0.65);
 }
 
 .project-detail-title {
@@ -1063,7 +1107,7 @@ html {
   font-size: clamp(2.4rem, 7vw, 5.5rem);
   line-height: 1;
   text-align: center;
-  text-shadow: 0 0 24px rgba(123, 128, 255, 0.35);
+  text-shadow: 0 0 24px rgba(var(--project-rgb), 0.35);
 }
 
 .project-detail-intro {
@@ -1099,6 +1143,13 @@ html {
   display: flex;
   flex-direction: column;
   gap: 16px;
+}
+
+.project-detail-page .detail-panel {
+  border-color: rgba(var(--project-rgb), 0.24);
+  box-shadow:
+    0 0 20px rgba(var(--project-rgb), 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
 }
 
 /* Regroupe les informations courtes dans une seule carte de synthèse. */
@@ -1154,7 +1205,7 @@ html {
 
 .detail-panel-large {
   background: rgba(18, 20, 28, 0.7);
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(var(--project-rgb), 0.2);
   border-radius: 12px;
   padding: 24px;
   backdrop-filter: blur(10px);
@@ -1186,11 +1237,11 @@ html {
   min-height: 600px;
   margin: 3rem auto;
   overflow: hidden;
-  border: 1px solid rgba(0, 243, 255, 0.38);
+  border: 1px solid rgba(var(--project-rgb), 0.55);
   border-radius: 12px;
   background: rgba(255, 255, 255, 0.04);
   box-shadow:
-    0 0 38px rgba(0, 243, 255, 0.14),
+    0 0 38px rgba(var(--project-rgb), 0.2),
     0 24px 70px rgba(0, 0, 0, 0.45);
 }
 
@@ -1278,8 +1329,8 @@ html {
 .project-loading-spinner {
   width: 1rem;
   height: 1rem;
-  border: 2px solid rgba(0, 243, 255, 0.25);
-  border-top-color: #00f3ff;
+  border: 2px solid rgba(var(--project-rgb), 0.25);
+  border-top-color: var(--project-accent);
   border-radius: 50%;
   animation: project-loading-spin 0.8s linear infinite;
 }
@@ -1317,13 +1368,13 @@ html {
   min-width: 132px;
   min-height: 46px;
   padding: 0.75rem 1rem;
-  border: 2px solid #00f3ff;
+  border: 2px solid var(--project-accent);
   border-radius: 6px;
   color: #ffffff;
   background: linear-gradient(135deg, #087fbb, #7b1fa2 55%, #d4148e);
   box-shadow:
-    0 0 12px rgba(0, 243, 255, 0.8),
-    0 0 30px rgba(255, 0, 234, 0.45);
+    0 0 12px rgba(var(--project-rgb), 0.8),
+    0 0 30px rgba(var(--project-rgb), 0.45);
   cursor: pointer;
   font-family: monospace;
   font-size: 0.78rem;
@@ -1371,11 +1422,11 @@ html {
   height: calc(100vh - 2rem) !important;
   min-height: 0 !important;
   margin: 0 !important;
-  border-color: #00f3ff;
+  border-color: var(--project-accent);
   background: rgba(4, 5, 12, 0.98);
   box-shadow:
-    0 0 36px rgba(0, 243, 255, 0.4),
-    0 0 120px rgba(255, 0, 234, 0.18);
+    0 0 36px rgba(var(--project-rgb), 0.4),
+    0 0 120px rgba(var(--project-rgb), 0.18);
 }
 
 .project-visual.is-expanded img,
@@ -1702,7 +1753,7 @@ html {
 }
 
 .detail-label {
-  color: #00f3ff;
+  color: var(--project-accent);
   font-family: monospace;
   font-size: 0.7rem;
   letter-spacing: 0.15em;
@@ -1782,6 +1833,38 @@ html {
   .detail-panel-large {
     padding: 1.15rem;
     backdrop-filter: none;
+  }
+
+  .projects-effects-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 2.25rem;
+    margin-left: auto;
+    padding: 0.55rem 0.8rem;
+    border: 1px solid rgba(0, 243, 255, 0.45);
+    border-radius: 6px;
+    color: #63ff9b;
+    background: rgba(0, 0, 0, 0.72);
+    cursor: pointer;
+  }
+
+  .projects-effects-toggle-label {
+    margin: 0;
+    font-size: 0.72rem;
+    font-weight: 700;
+    line-height: 1.2;
+    text-align: center;
+  }
+
+  .projects-effects-toggle[aria-pressed="true"] {
+    border-color: #ff007f;
+    color: #ff5c8a;
+  }
+
+  .projects-effects-toggle:focus-visible {
+    outline: 2px solid #00f3ff;
+    outline-offset: 3px;
   }
 }
 
@@ -2169,6 +2252,11 @@ html {
     box-sizing: border-box;
     padding-right: 3.25rem;
     padding-left: 3.25rem;
+    padding-bottom: 4rem;
+  }
+
+  .featured-section {
+    overflow: visible;
   }
 
   .featured-grid {
@@ -2225,6 +2313,54 @@ html {
     display: grid;
     width: 2.5rem;
     height: 2.5rem;
+  }
+
+  .carousel-effects-toggle {
+    position: absolute;
+    right: 50%;
+    bottom: -2.75rem;
+    z-index: 5;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 2.25rem;
+    max-width: calc(100% - 1rem);
+    padding: 0.55rem 0.8rem;
+    border: 1px solid rgba(0, 243, 255, 0.45);
+    border-radius: 6px;
+    color: #00f3ff;
+    background: rgba(0, 0, 0, 0.72);
+    cursor: pointer;
+    font-family: monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    transform: translateX(50%);
+  }
+
+  .carousel-effects-toggle-label {
+    margin: 0;
+    color: #63ff9b;
+    font-size: 0.72rem;
+    font-weight: 700;
+    line-height: 1.2;
+    text-align: center;
+  }
+
+  .carousel-effects-toggle[aria-pressed="true"] .carousel-effects-toggle-label {
+    color: #ff5c8a;
+  }
+
+  .carousel-effects-toggle:hover,
+  .carousel-effects-toggle:focus-visible {
+    border-color: #ff00ea;
+    color: #ffffff;
+    background: rgba(255, 0, 234, 0.18);
+  }
+
+  .carousel-effects-toggle:focus-visible {
+    outline: 2px solid #00f3ff;
+    outline-offset: 3px;
   }
 
   .carousel-prev {

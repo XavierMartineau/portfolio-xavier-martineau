@@ -108,6 +108,34 @@ setText("#project-category-panel", project.category);
 // 4. ATTRIBUTION DES COULEURS DE CATÉGORIE
 // =========================================================================
 const categoryElement = document.querySelector("#project-category");
+const categoryThemes = {
+  "3D": {
+    className: "category-3d",
+    color: "#00f3ff",
+    rgb: "0, 243, 255",
+  },
+  "2D": {
+    className: "category-2d",
+    color: "#ff00ea",
+    rgb: "255, 0, 234",
+  },
+  "Site web": {
+    className: "category-site",
+    color: "#6366f1",
+    rgb: "99, 102, 241",
+  },
+  "Jeu vidéo": {
+    className: "category-game",
+    color: "#63ff9b",
+    rgb: "99, 255, 155",
+  },
+};
+
+const categoryTheme = categoryThemes[project.category] || categoryThemes["3D"];
+document.body.classList.add(categoryTheme.className);
+document.body.style.setProperty("--project-accent", categoryTheme.color);
+document.body.style.setProperty("--project-rgb", categoryTheme.rgb);
+
 if (categoryElement) {
   categoryElement.classList.add("couleur-categorie");
 

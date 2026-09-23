@@ -1,889 +1,475 @@
-# Journal de projet - Portfolio
+# **Journal de projet - Portfolio**
 
-## **2026-09-02**
+## Date: 2026-09-02
 
-### Prompt
+### Outil: Non précisé
 
-_Crée-moi un design pour respecter ces critères-là._
+### <u>Prompt</u>: Crée-moi un design pour respecter ces critères-là.
 
-#### _Questions clés_
+### Réponse:
 
-1. _Qu'est-ce que cette personne cherche à voir en premier ?_
-   - _Mes meilleurs projets réalisés._
-
-2. _Quel style visuel représenterait le mieux mon identité professionnelle ?_
-   - _Un style aux couleurs sombres, mais lumineuses, harmonieux et animé._
-
-3. _Quelle impression je veux laisser après la visite du site ?_
-   - _Que la personne retienne ce que je fais le mieux et voie de beaux projets._
-
-### Réponse
-
-**Réponse :** Il a créé le site sur figma make
+- Les meilleurs projets doivent être visibles en premier.
+- Le style choisi est sombre, lumineux, harmonieux et animé.
+- Le design a été créé sur Figma Make.
 
 ---
 
-## **2026-09-03**
+## Date: 2026-09-03
 
-### Prompt
+### Outil: Copilot
 
-_Salut, je veux afficher ma grille en quadrillage derrière ma page, mais elle n'apparaît pas._
+### <u>Prompt</u>: Afficher une grille en quadrillage derrière la page.
 
-### Outil
+### Réponse:
 
-Copilot
-
-### Réponse
-
-Pas de souci, change ton radial gradient pour un linear radiant.
+- Correction du fond en utilisant un dégradé linéaire pour rendre la grille visible.
 
 ---
 
-## **2026-09-09**
+## Date: 2026-09-09
 
-### Question 01 : Qu'est-ce que j'ai accompli depuis le dernier bloc ?
+### Outil: Non précisé
 
-### Réponse
+### <u>Prompt</u>: Répondre aux cinq questions de suivi du projet.
+
+#### Question 01: Qu'est-ce que j'ai accompli depuis le dernier bloc?
+
+### Réponse:
 
 - J'ai ajouté des informations dans le fichier `PLANIFICATION.md` sur les types d'animation à intégrer dans le projet.
 - J'ai aussi créé et fini le design sur Figma.
 
-### Question 02 : Quelle a été ma principale difficulté et comment je l'ai surmontée ?
+#### Question 02: Quelle a été ma principale difficulté et comment je l'ai surmontée?
 
-### Réponse
+### Réponse:
 
 - Ma principale difficulté a été de déplacer le scroll text dans le design Figma.
 - Je l'ai surmontée en regardant comment le bouger sans détruire mon design.
 
-### Question 03 : Qu'est-ce que j'ai appris que je ne savais pas avant ?
+#### Question 03: Qu'est-ce que j'ai appris que je ne savais pas avant?
 
-### Réponse
+### Réponse:
 
-- J'ai appris que je pouvais copier le Figma make dans le Figma design.
+- J'ai appris que je pouvais copier le Figma Make dans le Figma Design.
 
-### Question 04 : Quelle est ma prochaine étape concrète ?
+#### Question 04: Quelle est ma prochaine étape concrète?
 
-### Réponse
+### Réponse:
 
-- Ma prochaine étape serait de commencer à lire et à comprendre le code, après la création du prototype du portfolio.
+- Ma prochaine étape est de commencer à lire et à comprendre le code après la création du prototype du portfolio.
 
-### Question 05 : Est-ce que j'ai utilisé l'IA ? Si oui, pour quoi et qu'est-ce que ça m'a appris ?
+#### Question 05: Est-ce que j'ai utilisé l'IA? Si oui, pour quoi et qu'est-ce que ça m'a appris?
 
-### Réponse
+### Réponse:
 
-- Non, je ne l'ai pas utulisée.
+- Non, je ne l'ai pas utilisée.
 
 ---
 
-## **2026-09-11**
+## Date: 2026-09-11
 
-### Question 01 : Qu'est-ce que j'ai accompli depuis le dernier bloc ?
+### Outil: Non précisé
 
-### Réponse
+### <u>Prompt</u>: Répondre aux cinq questions de suivi du projet.
+
+#### Question 01: Qu'est-ce que j'ai accompli depuis le dernier bloc?
+
+### Réponse:
 
 - J'ai ajouté mes choix technologiques dans `PLANIFICATION.md`.
 - J'ai corrigé des erreurs.
 
-### Question 02 : Quelle a été ma principale difficulté et comment je l'ai surmontée ?
-
-### Réponse
-
-- J'ai eu du mal à faire en sorte que les H et le Markdown soient bien lisibles et clairs.
-- J'ai réglé cela en ajustant les H.
-
-### Question 03 : Qu'est-ce que j'ai appris que je ne savais pas avant ?
-
-### Réponse
-
-- Rien.
-
-### Question 04 : Quelle est ma prochaine étape concrète ?
-
-### Réponse
-
-- Ma prochaine étape serait de commencer à lire et à comprendre le code, après la création du prototype du portfolio.
-
-### Question 05 : Est-ce que j'ai utilisé l'IA ? Si oui, pour quoi et qu'est-ce que ça m'a appris ?
-
-### Réponse
-
-- Non, je ne l'ai pas utulisée.
-
----
-
-## **2026-09-16**
-
-### Prompt
-
-_Crée-moi un JavaScript qui affichera les orb comme sur le script précédent. Les animations doivent rester en CSS ou HTML. Je veux que tu crées les orb, leur couleur et les lignes entre eux. De plus, ajoute la lumière au survol de la page avec la souris._
-
-### Réponse
-
-Salut, voici ton script (`splash.js`) corrigée.
-
----
-
-## 2026-09-16
-
-### Prompt
-
-_Salut, peux-tu ajouter des commentaires clairs et compréhensibles dans mon fichier `style.css` ? Merci._
-
-### Outil
-
-Gemini dans VS Code
-
-### Réponse
-
-## Oui bien sûr, voici le code de `style.css` avec des commentaires clairs et compréhensibles.
-
----
-
-## 2026-09-20
-
-### Prompt: Salut mon logo svg ne fonctionne pas dans mon headernavbar.css peut tu me corriger ca et le descendre un peu?
-
-### Outil
-
-Gemini dans VS Code
+#### Question 02: Quelle a été ma principale difficulté et comment je l'ai surmontée?
 
 ### Réponse:
 
-Oui avec plaisir voici le code headernav.css corriger pour que ton logo sois descendu et fonctionnel a 100%.
+- J'ai eu du mal à faire en sorte que les titres et le Markdown soient bien lisibles et clairs.
+- J'ai réglé cela en ajustant les titres.
+
+#### Question 03: Qu'est-ce que j'ai appris que je ne savais pas avant?
+
+### Réponse:
+
+- Rien.
+
+#### Question 04: Quelle est ma prochaine étape concrète?
+
+### Réponse:
+
+- Ma prochaine étape est de commencer à lire et à comprendre le code après la création du prototype du portfolio.
+
+#### Question 05: Est-ce que j'ai utilisé l'IA? Si oui, pour quoi et qu'est-ce que ça m'a appris?
+
+### Réponse:
+
+- Non, je ne l'ai pas utilisée.
 
 ---
 
-## 2026-09-20
+## Date: 2026-09-16
 
-### Salut jessaye de faire fonctionner ma nav bar pour que lorsque on est sur la page acceuil le nav bar avec le mots acceuil sois zoomer de 0.15x plus et a une autre couleur dessus: lorsque on hover sur dautre bouton les autre boutons font pareil sauf que il redeviene normal lorsque le contact est fini. Fais moi la meme chose pour tout les pages (Code la page headernav.css integrer)
+### Outil: Copilot et Gemini dans VS Code
 
-### Outil
+### <u>Prompt</u>: Créer un JavaScript qui affiche les orb comme dans le script précédent, avec leurs couleurs, les lignes entre eux et une lumière au survol de la page.
 
-Gemini dans VS Code
+### Réponse:
 
-### Reponse
+- Création et correction de `splash.js`.
+- Les animations sont conservées dans le CSS et le HTML.
 
-Oui bien sur voici le css modifier de headernav.css
+### Outil: Copilot et Gemini dans VS Code
 
----
+### <u>Prompt</u>: Corriger complètement le splash screen en HTML et CSS.
 
-## 2026-09-21
+### Réponse:
 
-### Prompt: Corrige le doublon du HERO et des projets vedettes dans accueil.html afin de rétablir une structure HTML correcte.
+- Correction de la structure HTML.
+- Optimisation du CSS.
+- Ajustement du logo, du titre et du sous-titre.
+- Restructuration des styles pour un rendu plus cohérent.
 
-### Outil
+### Outil: Copilot et Gemini dans VS Code
 
-Copilot
+### <u>Prompt</u>: Augmenter la taille du logo et du titre, puis réduire la taille du sous-titre.
 
-### Réponse
+### Réponse:
 
-Le HERO dupliqué a été supprimé, la fermeture de la balise main a été ajoutée et la structure HTML a été vérifiée.
+- Logo agrandi à `90x90px`.
+- Titre augmenté à `2.6rem`.
+- Sous-titre réduit à `0.8rem`.
 
-## 2026-09-21
+### Outil: Copilot et Gemini dans VS Code
 
-### Prompt
+### <u>Prompt</u>: Ajouter des commentaires clairs dans `style.css` et générer `font.css`.
 
-Améliorer les projets featured et toute la section d'accueil, puis documenter les changements réalisés.
+### Réponse:
 
-### Outil
+- Ajout de commentaires explicatifs dans `style.css`.
+- Création de `font.css` avec Inter, Space Grotesk, Syne et Speedy.
+- Application des familles de polices aux différents niveaux de titres et aux textes.
 
-Gemini dans VS Code
+### Outil: Copilot et Gemini dans VS Code
 
-### Réponse
+### <u>Prompt</u>: Formaliser la refactorisation des styles, la mise à jour de la structure HTML et l'amélioration du hero.
 
-La conversation du jour a permis de :
+### Réponse:
 
-- Ajouter les images `projet_02.png` et `Projet_03.jpg` aux cartes featured.
-- Modifier les catégories des projets en `2D`, `3D`, `Illustrator`, `Vectoriel` et `Animation & 3D`.
-- Ajouter un flou renforcé sur l'image de Stitch et améliorer le contraste des textes avec Inter et des ombres lisibles.
-- Supprimer les statistiques sous les cartes featured et conserver un seul bouton `Voir tout`.
-- Adapter l'accueil aux écrans mobiles avec une navbar responsive et un menu hamburger en HTML/CSS.
-- Masquer les cartes statistiques sur mobile et placer le bouton `Engagez-moi` dans le menu mobile.
-- Ajouter des commentaires en français dans les fichiers CSS et JavaScript.
-- Remplacer le chargement dynamique des cartes featured par du contenu statique en HTML/CSS.
-- Transformer le scroll reveal et l'animation de la flèche en animations CSS natives.
-- Centrer le bloc de scroll, lui réserver un espace de 300px et faire descendre progressivement la flèche avec le défilement.
-
----
-
-## 2026-09-21
-
-### Prompt: Ajoute les couleurs, les bordures et les effets de survol aux cartes des projets vedettes.
-
-### Outil
-
-Copilot
-
-### Réponse
-
-Les cartes cyan, rose et indigo ont reçu leurs couleurs, leurs bordures lumineuses, leurs halos au survol et un état focus accessible. Le bloc CSS dupliqué des glass cards a aussi été nettoyé.
+- Documentation de la refactorisation des styles.
+- Documentation de la mise à jour de la structure HTML.
+- Suppression des fichiers obsolètes et ajout de `splash.css`.
+- Amélioration du hero et des projets vedettes.
+- Intégration d'un système de révélation au défilement.
 
 ---
 
-## 2026-09-21
+## Date: 2026-09-20
 
-### Prompt: Affiche les catégories sur les trois cartes vedettes et rends les quatre statistiques du HERO plus petites et colorées.
+### Outil: Gemini dans VS Code
 
-### Outil
+### <u>Prompt</u>: Corriger le logo SVG dans `header_nav.css` et le descendre légèrement.
 
-Copilot
+### Réponse:
 
-### Réponse
+- Correction du logo SVG dans `header_nav.css`.
+- Ajustement de sa position verticale.
 
-Les catégories Data Visualization, Fintech et Creative Tool sont devenues des badges visibles. Les statistiques ont été réduites, regroupées et colorées selon leur carte indigo ou rose.
+### Outil: Gemini dans VS Code
 
----
+### <u>Prompt</u>: Faire fonctionner la navbar pour que le lien Accueil soit agrandi et coloré, puis appliquer le même comportement à toutes les pages.
 
-## 2026-09-21
+### Réponse:
 
-### Prompt: Remets les catégories directement sur les trois glass cards des meilleurs projets.
-
-### Outil
-
-Copilot
-
-### Réponse
-
-Les catégories ont été converties en éléments span dédiés pour rester visibles directement en haut des trois cartes.
-
----
-
-## 2026-09-21
-
-### Prompt: Remets la carte d'accueil comme la référence avec Xavier Martineau, le sous-titre développeur full-stack et les catégories techniques.
-
-### Outil
-
-Copilot
-
-### Réponse
-
-La carte de Index.html affiche maintenant Xavier Martineau en grand, Développeur full-stack & architecte logiciel, ainsi que React / Next.js, Architecture Cloud, Intégration IA et UI Haute Perf.
+- Ajout d'un état actif sur le lien de la page courante.
+- Ajout d'un effet de zoom de `0.15x`.
+- Ajout d'un changement de couleur au survol.
+- Retour à l'état normal lorsque le survol est terminé.
+- Harmonisation du comportement dans `header_nav.css` sur toutes les pages.
+- Ajout d'un état actif et d'un effet de zoom sur le lien de la page courante.
+- Harmonisation du comportement hover sur toutes les pages.
 
 ---
 
-## 2026-09-21
+## Date: 2026-09-21
 
-### Prompt: Ajoute des catégories technologiques sur les trois glass cards vedettes comme sur l'image.
+### Outil: Gemini dans VS Code et Copilot
 
-### Outil
+### <u>Prompt</u>: Améliorer la structure de l'accueil, les cartes featured, les statistiques, les images, les catégories, les technologies et les animations.
 
-Copilot
+### Réponse:
 
-### Réponse
+- Suppression du doublon du HERO et des projets vedettes dans `accueil.html`.
+- Correction de la structure HTML et fermeture correcte de la balise `main`.
+- Ajout des images `projet_02.png` et `Projet_03.jpg`.
+- Ajout et correction des catégories `2D`, `3D`, `Site web`, `Jeu vidéo`, `Illustration`, `Vectoriel` et `Animation & 3D`.
+- Ajout des bordures, couleurs, halos et effets de survol aux cartes featured.
+- Ajout des catégories et technologies directement sur les cartes.
+- Ajout des technologies propres aux projets, dont MAYA pour Animation & 3D.
+- Ajout des images en arrière-plan avec flou et opacité contrôlée.
+- Renforcement du flou de l'image de Stitch et amélioration du contraste des textes.
+- Création ou mise à jour de `data/projects.json` et du chargement des données featured.
+- Uniformisation et réduction des statistiques du HERO.
+- Amélioration de la taille et des effets des boutons « Voir mes projets » et « Me contacter ».
+- Ajout d'un espace entre le HERO et les projets.
+- Ajout d'un indicateur de scroll avec flèche animée.
+- Transformation du scroll reveal en animation CSS native.
+- Amélioration du splash screen, du logo, du titre et du sous-titre.
 
-Quatre technologies ont été ajoutées à chaque carte : React, Python, TensorFlow et D3.js pour NeuralDash; Next.js, Node.js, PostgreSQL et WebSocket pour CryptoFlow; React, Web Audio, WebRTC et TypeScript pour Synthwave Studio.
+### Outil: Copilot
+
+### <u>Prompt</u>: Ajouter les couleurs, les bordures et les effets de survol aux cartes des projets vedettes.
+
+### Réponse:
+
+- Ajout des cartes cyan, rose et indigo.
+- Ajout de bordures lumineuses, de halos au survol et d'un état focus accessible.
+- Nettoyage du bloc CSS dupliqué des glass cards.
+
+### Outil: Copilot
+
+### <u>Prompt</u>: Afficher les catégories sur les trois cartes vedettes et rendre les statistiques du HERO plus petites et colorées.
+
+### Réponse:
+
+- Ajout de badges de catégorie visibles.
+- Réduction et regroupement des statistiques.
+- Application des couleurs indigo et rose selon les cartes.
+
+### Outil: Copilot
+
+### <u>Prompt</u>: Remettre les catégories directement sur les trois glass cards des meilleurs projets.
+
+### Réponse:
+
+- Conversion des catégories en éléments `span` dédiés.
+- Placement des catégories directement en haut des cartes.
+
+### Outil: Copilot
+
+### <u>Prompt</u>: Remettre la carte d'accueil comme référence avec Xavier Martineau, le sous-titre développeur full-stack et les catégories techniques.
+
+### Réponse:
+
+- Ajout du nom Xavier Martineau.
+- Ajout du sous-titre « Développeur full-stack & architecte logiciel ».
+- Ajout des catégories React / Next.js, Architecture Cloud, Intégration IA et UI Haute Perf.
+
+### Outil: Copilot
+
+### <u>Prompt</u>: Ajouter des catégories technologiques sur les trois glass cards vedettes comme sur l'image.
+
+### Réponse:
+
+- Ajout des technologies React, Python, TensorFlow et D3.js pour NeuralDash.
+- Ajout de Next.js, Node.js, PostgreSQL et WebSocket pour CryptoFlow.
+- Ajout de React, Web Audio, WebRTC et TypeScript pour Synthwave Studio.
+
+### Outil: Copilot
+
+### <u>Prompt</u>: Corriger la taille des boutons « Voir mes projets » et « Me contacter ».
+
+### Réponse:
+
+- Uniformisation de la taille des boutons.
+- Amélioration du padding.
+- Ajout d'un effet de soulèvement et de halos indigo et cyan au survol.
+- Correction de leur affichage mobile.
+
+### Outil: Copilot
+
+### <u>Prompt</u>: Ajouter un espace entre le HERO et les projets, rendre le scroll plus petit et bleu foncé, puis ajouter une flèche animée et un fondu.
+
+### Réponse:
+
+- Transformation du scroll en lien vers la section projets.
+- Ajout d'une flèche descendante animée.
+- Ajout d'un espace supplémentaire entre les sections.
+- Apparition de la section projets en fondu avec `IntersectionObserver`.
+
+### Outil: Copilot
+
+### <u>Prompt</u>: Améliorer les deux cartes statistiques du HERO avec un effet visuel plus attrayant.
+
+### Réponse:
+
+- Uniformisation et meilleur centrage des cartes.
+- Ajout d'un effet de survol selon leur couleur indigo ou rose.
+- Renforcement du glow sur les chiffres et les libellés.
+
+### Outil: Copilot
+
+### <u>Prompt</u>: Ajouter l'image `assets/images/projet01.webp` en arrière-plan flouté de la première carte vedette.
+
+### Réponse:
+
+- Ajout de l'image à la carte Animation & 3D.
+- Ajout d'un flou et d'une opacité contrôlée.
+- Conservation du contenu de la carte au premier plan.
+
+### Outil: Copilot
+
+### <u>Prompt</u>: Configurer l'opacité de l'image à 80% au départ et 60% au survol.
+
+### Réponse:
+
+- Configuration de l'opacité de départ et de survol.
+- Ajout d'une transition douce entre les deux états.
+
+### Outil: Copilot
+
+### <u>Prompt</u>: Gérer toutes les catégories des projets vedettes avec un fichier JSON.
+
+### Réponse:
+
+- Création ou mise à jour de `data/projects.json`.
+- Création ou mise à jour du chargement des données featured.
+- Gestion des noms, catégories et technologies depuis les données structurées.
+
+### Outil: Copilot
+
+### <u>Prompt</u>: Changer l'ordre des couleurs des cartes pour obtenir rose, indigo puis bleu.
+
+### Réponse:
+
+- Réorganisation visuelle des cartes : rose, indigo puis cyan.
+
+### Outil: Copilot
+
+### <u>Prompt</u>: Ajouter Animation & 3D comme nom de la première carte vedette.
+
+### Réponse:
+
+- Ajout du nom Animation & 3D au projet et à sa carte vedette.
+
+### Outil: Copilot
+
+### <u>Prompt</u>: Remplacer Data Visualization par le même nom que le projet.
+
+### Réponse:
+
+- La catégorie de la première carte est devenue Animation & 3D.
+
+### Outil: Copilot
+
+### <u>Prompt</u>: Ajouter des catégories au projet Animation & 3D, notamment MAYA.
+
+### Réponse:
+
+- Ajout des tags 3D, Animation, MAYA et Rendu.
+- Gestion des tags dans les données du projet et affichage automatique sur la carte.
+
+### Outil: Copilot
+
+### <u>Prompt</u>: Changer la statistique de la première carte pour afficher 85% précision.
+
+### Réponse:
+
+- La statistique de la première carte affiche maintenant 85% précision.
 
 ---
 
-## 2026-09-21
+## Date: 2026-09-22
 
-### Prompt: Corrige la taille des boutons Voir mes projets et Me contacter, puis rends-les plus grands et plus attrayants.
+### Outil: VS Code AI
 
-### Outil
+### <u>Prompt</u>: Déplacer le bouton Agrandir pour qu'il ne recouvre pas le contenu YouTube et le placer à gauche sur les projets.
 
-Copilot
+### Réponse:
 
-### Réponse
-
-Les deux boutons du HERO ont reçu une taille uniforme, un padding amélioré, un effet de soulèvement et des halos indigo et cyan au survol. Leur affichage mobile a aussi été corrigé.
-
----
-
-## 2026-09-21
-
-### Prompt: Ajoute un espace entre le HERO et les projets, rends le scroll plus petit et bleu foncé, puis ajoute une flèche animée et un fondu lors du défilement.
-
-### Outil
-
-Copilot
-
-### Réponse
-
-Le scroll est devenu un lien vers la section projets avec une flèche descendante animée. Un espace supplémentaire a été ajouté entre les sections et la section des projets apparaît en fondu avec IntersectionObserver.
+- Déplacement du bouton Agrandir dans `page_de_projets.html`.
+- Positionnement du bouton à gauche dans `style.css`.
+- Conservation du bouton audio à droite pour le projet 6.
+- Mise à jour des règles d'affichage des boutons des projets.
 
 ---
 
-## 2026-09-21
+## Date: 2026-09-23
 
-### Prompt: Améliore les deux cartes statistiques du HERO avec un effet visuel plus attrayant.
+### Outil: GitHub Copilot
 
-### Outil
+### <u>Prompt</u>: Améliorer le responsive de la page d'accueil et organiser les statistiques et les boutons du hero.
 
-Copilot
+### Réponse:
 
-### Réponse
+- Ajout de media queries pour desktop, tablette et mobile.
+- Répartition des statistiques du hero à gauche et à droite avec un espace régulier.
+- Conservation des boutons « Voir mes projets » et « Me contacter » côte à côte sur mobile et tablette.
+- Adaptation de la largeur, du padding et de la taille des textes pour éviter les débordements.
 
-Les deux cartes statistiques ont été uniformisées, mieux centrées et dotées d'un effet de survol reprenant leur couleur indigo ou rose, avec un glow renforcé sur les chiffres et les libellés.
+### Outil: GitHub Copilot
 
----
+### <u>Prompt</u>: Créer un carousel responsive pour les projets vedettes.
 
-## 2026-09-21
+### Réponse:
 
-### Prompt: Ajoute l'image assets/images/projet01.webp en arrière-plan flouté de la première carte vedette.
+- Affichage des trois projets en colonnes fixes sur PC.
+- Affichage d'une seule carte avec les autres empilées sur mobile et tablette.
+- Affichage des flèches uniquement sous `900px`.
+- Navigation circulaire précédente/suivante.
+- Correction de l'animation de la flèche gauche.
+- Placement des flèches à l'extérieur des cartes pour ne pas recouvrir le texte.
 
-### Outil
+### Outil: GitHub Copilot
 
-Copilot
+### <u>Prompt</u>: Ajouter un bouton mobile pour activer ou désactiver le texte et le blur.
 
-### Réponse
+### Réponse:
 
-L'image a été ajoutée à la carte Animation & 3D avec un flou et une opacité contrôlée, tout en gardant le contenu de la carte au premier plan.
+- Ajout d'un toggle visible sur mobile et tablette.
+- Le bouton utilise un libellé `h3` en gras.
+- Le libellé devient vert lorsqu'il peut être activé et rouge lorsque l'effet est actif.
+- Le clic reproduit le rendu du hover desktop : image nette et texte masqué.
+- Le même fonctionnement a été ajouté à la page qui contient tous les projets.
 
----
+### Outil: GitHub Copilot
 
-## 2026-09-21
+### <u>Prompt</u>: Améliorer la page détail d'un projet, son responsive, son chargement et réduire le lag.
 
-### Prompt: Configure l'opacité de l'image à 80% au départ et 60% au survol.
+### Réponse:
 
-### Outil
+- Centrage du projet intégré en haut de la page.
+- Centrage de la grille d'informations sous le projet intégré.
+- Passage de la grille en une colonne sur mobile et tablette.
+- Ajout d'un overlay « Chargement du projet... » pour les iframes.
+- Arrêt des iframes lorsque la page devient invisible et reprise lorsqu'elle redevient visible.
+- Désactivation des `backdrop-filter` coûteux sur mobile.
+- Regroupement de la catégorie, de l'année, du résultat clé et des technologies dans un panneau unique.
+- Placement de l'année au centre d'un encart plus sombre.
 
-Copilot
+### Outil: GitHub Copilot
 
-### Réponse
+### <u>Prompt</u>: Ajouter un message lorsque le contact avec le jeu vidéo est perdu et permettre de reprendre le jeu.
 
-L'image de la première carte affiche maintenant une opacité de 80% au repos et de 60% au survol, avec une transition douce.
+### Réponse:
 
----
+- Activation de la classe `is-game-project` pour le projet 6.
+- Détection de la perte de contact avec `IntersectionObserver`.
+- Remplacement temporaire de l'iframe par `about:blank` pour réduire la consommation de ressources.
+- Affichage du message « Le contact avec le jeu a été perdu ».
+- Ajout du bouton « Reprendre ».
+- Rechargement du jeu avec affichage de l'état de chargement.
 
-## 2026-09-21
+### Outil: GitHub Copilot
 
-### Prompt: Gère toutes les catégories des projets vedettes avec un fichier JSON.
+### <u>Prompt</u>: Ajouter des niveaux de titres h3, h4 et h5 et harmoniser les polices.
 
-### Outil
+### Réponse:
 
-Copilot
+- Utilisation de `h3` pour les textes principaux de la page projet.
+- Utilisation de `h4` pour les libellés des panneaux et les catégories de cartes.
+- Utilisation de `h5` pour les années des cartes.
+- Utilisation de Syne pour les petits libellés et les métadonnées.
+- Conservation de Speedy pour les grands titres, Space Grotesk pour les titres secondaires et Inter pour les textes courants.
+- La police Syne est déjà disponible dans `assets/fonts/syne/Syne-VariableFont_wght.ttf`.
 
-### Réponse
+### Outil: GitHub Copilot
 
-Le fichier data/projects.json et le script featured-projects.js ont été créés. Les noms, catégories et technologies des trois cartes sont maintenant chargés depuis le JSON.
+### <u>Prompt</u>: Ajouter des effets de bordure néon selon la catégorie du projet.
 
----
+### Réponse:
 
-## 2026-09-21
-
-### Prompt: Change l'ordre des couleurs des cartes pour obtenir rose, indigo puis bleu.
-
-### Outil
-
-Copilot
-
-### Réponse
-
-Les classes des cartes ont été réordonnées visuellement : première carte rose, deuxième carte indigo et troisième carte cyan.
-
----
-
-## 2026-09-21
-
-### Prompt: Ajoute Animation & 3D comme nom de la première carte vedette.
-
-### Outil
-
-Copilot
-
-### Réponse
-
-Le nom Animation & 3D a été ajouté au JSON et injecté automatiquement comme titre de la première carte.
-
----
-
-## 2026-09-21
-
-### Prompt: Remplace Data Visualization par le même nom que le projet.
-
-### Outil
-
-Copilot
-
-### Réponse
-
-La catégorie de la première carte est maintenant Animation & 3D, comme son titre.
-
----
-
-## 2026-09-21
-
-### Prompt: Ajoute des catégories au projet Animation & 3D, notamment MAYA.
-
-### Outil
-
-Copilot
-
-### Réponse
-
-Les tags 3D, Animation, MAYA et Rendu sont maintenant gérés dans le fichier JSON et affichés automatiquement sur la carte.
-
----
-
-## 2026-09-21
-
-### Prompt: Change la statistique de la première carte pour afficher 85% précision.
-
-### Outil
-
-Copilot
-
-### Réponse
-
-La statistique de la première carte vedette affiche maintenant 85% précision.
-
----
-
-## 2026-09-21
-
-### Prompt
-
-Correction complète du splash screen (HTML + CSS).
-
-### Outil
-
-Copilot
-
-### Réponse
-
-Refactorisation complète du splash screen : correction du HTML, optimisation du CSS, ajustement du logo, du titre et du sous‑titre, et restructuration des styles pour un rendu plus cohérent.
-
----
-
-### Prompt
-
-Augmenter la taille du logo, du titre, et réduire celle du sous‑titre.
-
-### Outil
-
-Copilot
-
-### Réponse
-
-Le logo a été agrandi à 90×90px, le titre augmenté à 2.6rem, et le sous‑titre réduit à 0.8rem pour améliorer l’équilibre visuel de la carte.
-
----
-
-### Prompt
-
-Générer le fichier `font.css` complet.
-
-### Outil
-
-Copilot
-
-### Réponse
-
-Création d’un fichier `font.css` complet incluant les déclarations des polices Inter, Space Grotesk, Syne et Speedy, avec organisation par poids et application aux éléments typographiques du site.
-
----
-
-### Prompt
-
-Refactor styles and update HTML structure (traduction formelle).
-
-### Outil
-
-Copilot
-
-### Réponse
-
-Rédaction d’une version formelle en français décrivant la refactorisation des styles, la mise à jour de la structure HTML, la suppression de fichiers obsolètes et l’ajout du fichier `splash.css`.
-
----
-
-### Prompt
-
-Enhance hero section and featured projects… (traduction formelle).
-
-### Outil
-
-Copilot
-
-### Réponse
-
-Production d’une version formelle en français décrivant l’amélioration de la section héro et des projets en vedette, ainsi que l’intégration d’un système de révélation au défilement pour renforcer la dynamique visuelle.
-
----
-
-## 2026-09-22
-
-### Prompt: change de place le bouton agrandir car il est sur le truc ytb, mets les boutons agrandir a gauche sur tout les projets et
-
-### Outil
-
-VS Code AI
-
-### Réponse
-
-Le bouton Agrandir est maintenant positionné à gauche, et le bouton audio à droite pour le projet 6.
-Fichiers touchés : `page_de_projets.html`, `style.css`
-Modifications :
-
-- Dans `page_de_projets.html`, déplacement de l'emplacement des boutons d'agrandissement et de contrôle audio.
-- Dans `style.css`, mise à jour des règles d'affichage pour les boutons des projets.
-
----
-
-## 2026-09-22
-
-### Prompt: J'ai cette erreur
-
-### Outil
-
-VS Code AI
-
-### Réponse
-
-L'erreur venait de l'URL d'intégration YouTube avec ses paramètres. URL simplifiée, lecteur testé sur localhost et bouton Play fonctionnel.
-Fichiers touchés : `page_de_projets.html`
-Modifications :
-
-- Dans `page_de_projets.html`, simplification de l'URL d'intégration YouTube et correction des paramètres de lecture.
-
----
-
-## 2026-09-22
-
-### Prompt: Sur youtube la video embed ne joue pas
-
-### Outil
-
-VS Code AI
-
-### Réponse
-
-Correction fiable en servant le portfolio en http://localhost pour fournir un vrai référent à YouTube.
-Fichiers touchés : `page_de_projets.html`
-Modifications :
-
-- Dans `page_de_projets.html`, configuration de l'environnement d'exécution local (`http://localhost`) pour permettre le chargement correct des vidéos intégrées.
-
----
-
-## 2026-09-22
-
-### Prompt: rajoute un message qui dis: en mute le jeu ne joue pas
-
-### Outil
-
-VS Code AI
-
-### Réponse
-
-Message ajouté : En mode mute, le jeu ne joue pas. Il apparaît lorsque le son est activé et disparaît quand le son est réactivé.
-Fichiers touchés : `page_de_projets.html`
-Modifications :
-
-- Dans `page_de_projets.html`, ajout conditionnel du texte d'avertissement dynamique lié à l'état du son du jeu.
-
----
-
-## 2026-09-22
-
-### Prompt: nop regarde prends une capture
-
-### Outil
-
-VS Code AI
-
-### Réponse
-
-L'iframe noire ne recouvre plus l'image. En mode muet, l'image du jeu s'affiche correctement, l'iframe est masquée et le bouton reste visible.
-Fichiers touchés : `page_de_projets.html`, `style.css`
-Modifications :
-
-- Dans `page_de_projets.html`, masquage dynamique de l'iframe lorsque le mode muet est activé.
-- Dans `style.css`, ajustement des calques et de la visibilité des boutons par-dessus l'élément multimédia.
-
----
-
-## 2026-09-22
-
-### Prompt: jai couper le son et le jeu est devenue noir
-
-### Outil
-
-VS Code AI
-
-### Réponse
-
-C'est corrigé. Quand tu coupes le son, le jeu est arrêté et l'image du projet 6 s'affiche à la place de l'iframe.
-Fichiers touchés : `page_de_projets.html`
-Modifications :
-
-- Dans `page_de_projets.html`, gestion du basculement d'affichage entre l'image statique du projet et l'iframe interactive lors de la coupure du son.
-
----
-
-## 2026-09-22
-
-### Prompt: integre un bouton dans le integrated pour le jeu video pour mute le son
-
-### Outil
-
-VS Code AI
-
-### Réponse
-
-Bouton de son ajouté au projet jeu vidéo : Son pour couper, Son coupé pour arrêter. L'audio est réellement stoppé avec about:blank.
-Fichiers touchés : `page_de_projets.html`
-Modifications :
-
-- Dans `page_de_projets.html`, ajout du bouton de sourdine interactif et redirection de l'iframe vers `about:blank` pour stopper l'audio en arrière-plan.
-
----
-
-## 2026-09-22
-
-### Prompt: Ok non fais que pour le projet jeu video et site web ca sois genre une page interactive ,...
-
-### Outil
-
-VS Code AI
-
-### Réponse
-
-Fait sur page_de_projets.html avec interface interactive pour le jeu vidéo et les onglets pour le site web.
-Fichiers touchés : `page_de_projets.html`
-Modifications :
-
-- Dans `page_de_projets.html`, restructuration du rendu pour intégrer des composants interactifs spécifiques aux types de projets (jeux et sites web).
-
----
-
-## 2026-09-22
-
-### Prompt: Cree moi une page dun projet pour que lorsque on clique sur un projet, lorsque on...
-
-### Outil
-
-VS Code AI
-
-### Réponse
-
-Une seule page détail gère les 7 projets via page_de_projets.html?project=1 à ?project=7.
-Fichiers touchés : `page_de_projets.html`, `projects.json`, `style.css`
-Modifications :
-
-- Dans `page_de_projets.html`, création du script de routage dynamique basé sur les paramètres d'URL (`?project=...`).
-- Dans `projects.json`, mise à jour des structures de données pour référencer les 7 projets.
-- Dans `style.css`, ajout des styles de mise en page unifiée pour la page de détail.
-
----
-
-## 2026-09-22
-
-### Prompt: suprime le tag de maison pour site web , styler colorer
-
-### Outil
-
-VS Code AI
-
-### Réponse
-
-Tous les petits tags sont maintenant colorés (cyan, indigo, rose, vert) avec un style cohérent sur toutes les glasscards.
-Fichiers touchés : `projets.js`, `style.css`
-Modifications :
-
-- Dans `projets.js`, mise à jour du filtrage et de la logique d'affichage des tags.
-- Dans `style.css`, application des couleurs néon distinctes pour chaque type de tag.
-
----
-
-## 2026-09-22
-
-### Prompt: fais que lorsque on clique sur un boutons le projet qui corespont se sais montrer
-
-### Outil
-
-VS Code AI
-
-### Réponse
-
-Fonctionnel : cliquer sur 3D affiche uniquement les animations et éléments 3D.
-Fichiers touchés : `projets.js`, `style.css`
-Modifications :
-
-- Dans `projets.js`, mise en place des écouteurs d'événements de clic sur les filtres de catégories.
-- Dans `style.css`, gestion de la visibilité conditionnelle des cartes selon le filtre actif.
-
----
-
-## 2026-09-22
-
-### Prompt: ont peut peser sur plusieurs bouton et change les couleurs des boutons pour que ils sois to...
-
-### Outil
-
-VS Code AI
-
-### Réponse
-
-Plusieurs catégories peuvent être sélectionnées en même temps avec des couleurs néon distinctes par bouton.
-Fichiers touchés : `projets.js`, `style.css`
-Modifications :
-
-- Dans `projets.js`, adaptation de la logique de sélection multiple pour les filtres.
-- Dans `style.css`, application des styles actifs et des couleurs néon pour chaque bouton de filtre.
-
----
-
-## 2026-09-22
-
-### Prompt: ajoute les categorie dans JSON
-
-### Outil
-
-VS Code AI
-
-### Réponse
-
-Catégories principales ajoutées en haut des cartes (3D, Jeu vidéo, 2D, Site web) tout en gardant les tags détaillés en bas.
-Fichiers touchés : `projects.json`, `projets.html`
-Modifications :
-
-- Dans `projects.json`, ajout des attributs de catégorie principale pour chaque projet.
-- Dans `projets.html`, intégration des balises d'affichage des catégories en haut de chaque carte.
-
----
-
-## 2026-09-22
-
-### Prompt: mets des petite categorie en dessous de mes projets que ils devienne foncer si le user clique dessus
-
-### Outil
-
-VS Code AI
-
-### Réponse
-
-Petites catégories ajoutées sous « Mes projets » (Tous, 3D, Jeu vidéo, 2D, Site web).
-Fichiers touchés : `projets.html`
-Modifications :
-
-- Dans `projets.html`, ajout de la barre de navigation par filtres de catégories sous le titre principal.
-
----
-
-## 2026-09-22
-
-### Prompt: Change la couleur de projets
-
-### Outil
-
-VS Code AI
-
-### Réponse
-
-La couleur de « PROJETS » est passée au rose néon avec un effet lumineux sur la page projets.
-Fichiers touchés : `projets.html`, `header_nav.css`
-Modifications :
-
-- Dans `projets.html`, application de la classe ou du style ciblé sur le titre.
-- Dans `header_nav.css`, ajout de l'effet lumineux et de la couleur rose néon pour l'en-tête de la page.
-
----
-
-## 2026-09-22
-
-### Prompt: Rajoute des categoire sur les cartes
-
-### Outil
-
-VS Code AI
-
-### Réponse
-
-Catégories clairement visibles sur chaque glasscard sous forme de badges néon (2D, 3D, Illustrator, Vectoriel).
-Fichiers touchés : `projets.html`
-Modifications :
-
-- Dans `projets.html`, insertion des badges de catégories textuels dans la structure HTML des cartes.
-
----
-
-## 2026-09-22
-
-### Prompt: change la date de projet 04 par 2026, projet 5 par 2024, le 6 en 2025 et 7 2025-2026
-
-### Outil
-
-VS Code AI
-
-### Réponse
-
-Les dates ont été mises à jour avec succès dans projets.html.
-Fichiers touchés : `projets.html`
-Modifications :
-
-- Dans `projets.html`, mise à jour des valeurs textuelles des dates pour les projets concernés.
-
----
-
-## 2026-09-22
-
-### Prompt: Augmente la taille des glasscard
-
-### Outil
-
-VS Code AI
-
-### Réponse
-
-Les glasscards ont été agrandies (hauteur desktop 360px, mobile 300px) avec un padding augmenté.
-Fichiers touchés : `glasscard.css`
-Modifications :
-
-- Dans `glasscard.css`, modification des propriétés de hauteur (`min-height` / `height`) pour les versions desktop et mobile, ainsi que l'ajustement du remplissage (`padding`).
-
----
-
-## 2026-09-22
-
-### Prompt: Prends les meme style des glasscard que acceuil.html et rajoute le sur les glasscard ici. Rajoute en arriere plan de animation 3d limage projet_01, et ansinsi de suite pour les autre glasscard
-
-### Outil
-
-VS Code AI
-
-### Réponse
-
-Les glasscards de projets.html reprennent désormais le style visuel et l'image d'arrière-plan de l'accueil.
-Fichiers touchés : `projets.html`, `glasscard.css`
-Modifications :
-
-- Dans `projets.html`, application de la structure de classe des cartes d'accueil.
-- Dans `glasscard.css`, ajout des images d'arrière-plan dynamiques pour chaque carte de projet.
-
----
-
-## 2026-09-22
-
-### Prompt: Fais que le backround sois la meme couleur que les cartes
-
-### Outil
-
-VS Code AI
-
-### Réponse
-
-Le fond des cartes correspond désormais à leur couleur respective (indigo, rose, cyan) avec un effet renforcé au survol.
-Fichiers touchés : `glasscard.css`, `style.css`
-Modifications :
-
-- Dans `glasscard.css` et `style.css`, configuration des teintes de fond synchronisées avec les couleurs des cartes et des effets de survol renforcés.
-
----
-
-## 2026-09-22
-
-### Prompt: Ajoute moi 6 glasscard del meme type que acceuil. 3 cartes en haut 3 bas
-
-### Outil
-
-VS Code AI
-
-### Réponse
-
-Six glasscards ajoutées dans projets.html (3 en haut, 3 en bas) avec des variantes indigo, rose et cyan, responsives sur mobile.
-Fichiers touchés : `projets.html`
-Modifications :
-
-- Dans `projets.html`, duplication et structuration de la grille pour insérer les 6 nouvelles cartes au design vitré réparties sur deux lignes.
+- Les projets 3D utilisent le cyan/bleu.
+- Les projets 2D utilisent le magenta.
+- Les sites web utilisent l'indigo.
+- Les jeux vidéo utilisent le vert.
+- Les couleurs sont appliquées aux bordures, halos, panneaux, libellés, boutons et au mode plein écran.
+- Les variables CSS `--project-accent` et `--project-rgb` centralisent les couleurs.
