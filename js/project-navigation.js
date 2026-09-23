@@ -1,8 +1,10 @@
+// Rend les cartes de projets accessibles depuis la grille et la page d'accueil.
 const navigableProjectCards = document.querySelectorAll(
   ".project-card[data-project-id], .featured-card[data-project-id]",
 );
 
 navigableProjectCards.forEach((card) => {
+  // Conserve le comportement de lien si une carte est cliquée directement.
   card.addEventListener("click", (event) => {
     if (event.target.closest("a, button")) {
       return;
@@ -13,9 +15,11 @@ navigableProjectCards.forEach((card) => {
   });
 
   if (card.tagName !== "A") {
+    // Ajoute une navigation clavier aux cartes qui ne sont pas déjà des liens.
     card.setAttribute("role", "link");
     card.setAttribute("tabindex", "0");
     card.addEventListener("keydown", (event) => {
+      // Entrée et espace déclenchent la même navigation qu'un clic.
       if (event.key === "Enter" || event.key === " ") {
         event.preventDefault();
         window.location.href = `page_de_projets.html?project=${card.dataset.projectId}`;
@@ -24,22 +28,17 @@ navigableProjectCards.forEach((card) => {
   }
 });
 
-document.querySelectorAll(".carousel-btn").forEach((button) => {
-  button.addEventListener("click", () => {
-    const container = button.closest(".carousel-container");
-    const grid = container.querySelector(".featured-grid");
-    const cards = [...grid.querySelectorAll(".featured-card")];
+// Anime la pile uniquement lorsque les flèches mobile/tablette sont utilisées.
+document.querySelectorAll(".featured-grid").forEach((grid) => {
+  const cards = [...grid.querySelectorAll(".featured-card")];
+  let currentIndex = 0;
 
-    if (!cards.length) {
-      return;
-    }
+  if (!cards.length) {
+    return;
+  }
 
-    const activeIndex = cards.findIndex((card) =>
-      card.classList.contains("is-active"),
-    );
-    const currentIndex = activeIndex === -1 ? 0 : activeIndex;
-    const direction = button.classList.contains("carousel-prev") ? -1 : 1;
-    const nextIndex = (currentIndex + direction + cards.length) % cards.length;
+  const updateCarousel = (nextIndex, direction) => {
+    grid.dataset.direction = direction;
 
     cards.forEach((card, index) => {
       card.classList.remove("is-active", "is-stack-one", "is-stack-two");
@@ -52,13 +51,24 @@ document.querySelectorAll(".carousel-btn").forEach((button) => {
         card.classList.add("is-stack-two");
       }
     });
-  });
-});
 
-document.querySelectorAll(".featured-grid").forEach((grid) => {
-  const firstCard = grid.querySelector(".featured-card");
+    currentIndex = nextIndex;
+  };
 
-  if (firstCard) {
-    firstCard.classList.add("is-active");
-  }
+  // La première carte est active au chargement du carousel.
+  updateCarousel(0, "next");
+
+  grid
+    .closest(".featured-grid-container")
+    .querySelectorAll(".carousel-btn")
+    .forEach((button) => {
+      button.addEventListener("click", () => {
+        const isPrevious = button.classList.contains("carousel-prev");
+        const direction = isPrevious ? "previous" : "next";
+        const offset = isPrevious ? -1 : 1;
+        const nextIndex = (currentIndex + offset + cards.length) % cards.length;
+
+        updateCarousel(nextIndex, direction);
+      });
+    });
 });

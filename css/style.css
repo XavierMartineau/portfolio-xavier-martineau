@@ -183,11 +183,36 @@ html {
 }
 
 @media (min-width: 900px) {
+  /* Sur PC, les trois projets sont visibles côte à côte. */
   .hero-grid {
     grid-template-columns: 1fr 1fr;
   }
+
+  .featured-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 2rem;
+    align-items: stretch;
+    min-height: 0;
+    overflow: visible;
+  }
+
+  .featured-grid .featured-card,
+  .featured-grid .featured-card.is-active,
+  .featured-grid .featured-card.is-stack-one,
+  .featured-grid .featured-card.is-stack-two {
+    position: relative;
+    inset: auto;
+    width: auto;
+    height: 100%;
+    min-height: 360px;
+    opacity: 1;
+    pointer-events: auto;
+    transform: none;
+  }
 }
 
+/* Aligne les statistiques du hero sur desktop et tablette. */
 .hero-stats {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 170px));
@@ -196,6 +221,7 @@ html {
   gap: 1rem;
 }
 
+/* Uniformise la hauteur et le contenu de chaque statistique. */
 .hero-stats .gc {
   min-height: 116px;
   display: flex;
@@ -414,18 +440,20 @@ html {
   font-weight: 700;
 }
 
-.carousel-container {
+/* Conteneur de la grille des projets en vedette. */
+.featured-grid-container {
   position: relative;
   display: flex;
   align-items: center;
   width: 100%;
 }
 
+/* Les flèches sont réservées au carousel mobile et tablette. */
 .carousel-btn {
   position: absolute;
-  z-index: 3;
+  z-index: 4;
   top: 50%;
-  display: grid;
+  display: none;
   place-items: center;
   width: 2.75rem;
   height: 2.75rem;
@@ -441,7 +469,6 @@ html {
   transition:
     background-color 0.25s ease,
     border-color 0.25s ease,
-    color 0.25s ease,
     transform 0.25s ease;
 }
 
@@ -449,7 +476,6 @@ html {
 .carousel-btn:focus-visible {
   background: rgba(123, 128, 255, 0.92);
   border-color: #7b80ff;
-  color: #ffffff;
   transform: translateY(-50%) scale(1.08);
 }
 
@@ -478,45 +504,25 @@ html {
   width: 100%;
 }
 
+/* Par défaut, les projets sont présentés en grille fixe. */
 .featured-grid {
-  position: relative;
-  display: block;
-  min-height: 360px;
-  overflow: hidden;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2rem;
+  min-height: 0;
+  overflow: visible;
 }
 
+/* Chaque carte occupe une colonne entière et garde une hauteur égale. */
 .featured-grid .featured-card {
-  position: absolute;
-  inset: 0;
+  position: relative;
   width: 100%;
-  min-height: 100%;
+  height: 100%;
+  min-height: 360px;
   margin: 0;
-  opacity: 0;
-  pointer-events: none;
-  transform: translateY(1.5rem) scale(0.94);
-  transition:
-    opacity 0.45s ease,
-    transform 0.45s ease,
-    box-shadow 0.45s ease;
-}
-
-.featured-grid .featured-card.is-active {
-  z-index: 3;
   opacity: 1;
   pointer-events: auto;
-  transform: translateY(0) scale(1);
-}
-
-.featured-grid .featured-card.is-stack-one {
-  z-index: 2;
-  opacity: 0.45;
-  transform: translateY(0.75rem) scale(0.97);
-}
-
-.featured-grid .featured-card.is-stack-two {
-  z-index: 1;
-  opacity: 0.2;
-  transform: translateY(1.5rem) scale(0.94);
+  transform: none;
 }
 
 .featured-card {
@@ -1689,7 +1695,7 @@ html {
    14. MÉDIAS QUERIES GLOBAUX & RESPONSIVE (POUR ÉCRANS < PC)
    ========================================================================== */
 
-/* Gestion spécifique pour tablettes ou résolutions intermédiaires (max-width: 1024px) -> Passage à 2 colonnes */
+/* Réduit les grilles classiques sur les écrans intermédiaires. */
 @media (max-width: 1024px) {
   .featured-grid,
   .projects-grid {
@@ -1697,7 +1703,7 @@ html {
   }
 }
 
-/* Version mobile adaptée pour 402px de large */
+/* Ajustements spécifiques aux très petits écrans. */
 @media (max-width: 402px) {
   .home-hero {
     min-height: auto;
@@ -1758,7 +1764,7 @@ html {
     padding: 0 1rem;
   }
 
-  /* La pile reste une seule carte visible sur les petits écrans. */
+  /* La pile garde une seule carte visible sans défilement horizontal. */
   .featured-grid {
     display: block !important;
     grid-template-columns: none !important;
@@ -1889,14 +1895,6 @@ html {
     width: 100%;
   }
 
-  .carousel-prev {
-    left: 0.5rem;
-  }
-
-  .carousel-next {
-    right: 0.5rem;
-  }
-
   .projects-grid {
     grid-template-columns: 1fr !important;
     gap: 1.5rem !important;
@@ -1952,7 +1950,119 @@ html {
   }
 }
 
+@media (max-width: 899px) {
+  /* Les deux actions restent sur des côtés opposés jusqu'au mobile étroit. */
+  .hero-buttons {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+    width: 100%;
+  }
+
+  .hero-buttons h2,
+  .hero-buttons a {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+
+  /* Sur mobile et tablette, une seule carte est visible à la fois. */
+  .featured-grid-container {
+    display: flex;
+    box-sizing: border-box;
+    padding-right: 3.25rem;
+    padding-left: 3.25rem;
+  }
+
+  .featured-grid {
+    position: relative;
+    display: block;
+    width: 100%;
+    min-height: 360px;
+    overflow: hidden;
+  }
+
+  .featured-grid .featured-card {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    min-height: 360px;
+    margin: 0;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(1.5rem) scale(0.94);
+    transition:
+      opacity 0.45s ease,
+      transform 0.45s ease;
+  }
+
+  .featured-grid .featured-card.is-active {
+    z-index: 3;
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0) scale(1);
+  }
+
+  .featured-grid[data-direction="previous"] .featured-card.is-active {
+    animation: featured-card-enter-previous 0.45s ease both;
+  }
+
+  .featured-grid[data-direction="next"] .featured-card.is-active {
+    animation: featured-card-enter-next 0.45s ease both;
+  }
+
+  .featured-grid .featured-card.is-stack-one {
+    z-index: 2;
+    opacity: 0.45;
+    transform: translateY(0.75rem) scale(0.97);
+  }
+
+  .featured-grid .featured-card.is-stack-two {
+    z-index: 1;
+    opacity: 0.2;
+    transform: translateY(1.5rem) scale(0.94);
+  }
+
+  .carousel-btn {
+    display: grid;
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .carousel-prev {
+    left: 0;
+  }
+
+  .carousel-next {
+    right: 0;
+  }
+}
+
+@keyframes featured-card-enter-previous {
+  from {
+    opacity: 0;
+    transform: translateX(-2rem) scale(0.94);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes featured-card-enter-next {
+  from {
+    opacity: 0;
+    transform: translateX(2rem) scale(0.94);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
 @media (min-width: 601px) and (max-width: 899px) {
+  /* Sur tablette, le hero reste vertical mais les stats s'étirent. */
   .home-hero {
     min-height: auto;
     padding-top: 8rem;
@@ -1965,18 +2075,25 @@ html {
 
   .hero-stats {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    justify-content: stretch;
     gap: 1.5rem;
     width: 100%;
-  }
-
-  .featured-section {
-    padding-top: 4rem;
-    padding-bottom: 4rem;
   }
 }
 
 @media (max-width: 600px) {
+  .hero-buttons .btn-primary,
+  .hero-buttons .btn-outline {
+    box-sizing: border-box;
+    width: 100%;
+    min-width: 0;
+    padding-right: 0.7rem;
+    padding-left: 0.7rem;
+    font-size: 0.7rem;
+    letter-spacing: 0.06em;
+  }
+
+  /* Les deux statistiques occupent chacune une colonne sur mobile. */
+  /* Sur téléphone, les espacements et la typographie deviennent plus compacts. */
   .hero-stats {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -2038,14 +2155,5 @@ html {
   .featured-grid .featured-card {
     min-height: 330px;
     padding: 1.5rem;
-  }
-
-  .carousel-btn {
-    width: 2.5rem;
-    height: 2.5rem;
-  }
-
-  .carousel-prev {
-    left: 0.35rem;
   }
 }
