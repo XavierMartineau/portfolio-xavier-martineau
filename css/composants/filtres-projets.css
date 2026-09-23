@@ -55,6 +55,29 @@
   display: none;
 }
 @media (max-width: 899px) {
+  .project-categories {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    width: 100%;
+    overflow-x: auto;
+    padding: 0.25rem 0.15rem 0.5rem;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .project-categories::-webkit-scrollbar {
+    display: none;
+  }
+
+  .project-category-btn {
+    flex: 0 0 auto;
+    min-height: 34px;
+    padding: 0.45rem 0.75rem;
+    font-size: 0.72rem;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+  }
+
   .projects-effects-toggle {
     display: inline-flex;
     align-items: center;

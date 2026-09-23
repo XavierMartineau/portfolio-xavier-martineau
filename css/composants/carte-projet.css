@@ -12,8 +12,14 @@
   border: 1px solid rgba(var(--card-rgb), 0.28);
   color: #e8e8f0;
   text-decoration: none;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.07);
-  transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease, background-color 0.4s ease;
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.07);
+  transition:
+    transform 0.4s ease,
+    border-color 0.4s ease,
+    box-shadow 0.4s ease,
+    background-color 0.4s ease;
   position: relative;
   isolation: isolate;
   overflow: hidden;
@@ -36,7 +42,9 @@
   filter: blur(8px);
   transform: scale(1.04);
   pointer-events: none;
-  transition: opacity 0.4s ease, filter 0.4s ease;
+  transition:
+    opacity 0.4s ease,
+    filter 0.4s ease;
 }
 
 .featured-card.project-stitch .featured-background {
@@ -61,7 +69,9 @@
   transform: translateY(-4px);
   border-color: rgba(var(--card-rgb), 0.85);
   background: rgba(var(--card-rgb), 0.08);
-  box-shadow: 0 0 36px rgba(var(--card-rgb), 0.22), 0 18px 42px rgba(0, 0, 0, 0.45);
+  box-shadow:
+    0 0 36px rgba(var(--card-rgb), 0.22),
+    0 18px 42px rgba(0, 0, 0, 0.45);
 }
 
 .featured-card > :not(.featured-top):not(.featured-background) {
@@ -98,7 +108,13 @@
   contain-intrinsic-size: 360px;
   opacity: 0;
   transform: translateY(1.5rem);
-  transition: opacity 0.7s ease, transform 0.7s ease, background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease,
+    background-color 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+  cursor: pointer;
 }
 
 .projects-grid .gc.is-visible {
@@ -117,4 +133,3 @@
     transition: none;
   }
 }
-

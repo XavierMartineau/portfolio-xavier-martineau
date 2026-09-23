@@ -164,10 +164,12 @@
     padding-top: 1.25rem;
   }
   .project-detail-header {
-    justify-content: flex-start;
+    justify-content: center;
     flex-wrap: wrap;
     gap: 0.6rem 1rem;
     margin-top: 2rem;
+    width: 100%;
+    text-align: center;
   }
   .project-content-grid {
     grid-template-columns: 1fr;
