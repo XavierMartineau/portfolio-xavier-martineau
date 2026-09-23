@@ -1071,8 +1071,17 @@ html {
   margin: 0 auto 2.5rem;
   color: #a7a7b8;
   font-size: 1rem;
+  font-weight: 400;
   line-height: 1.7;
   text-align: center;
+}
+
+.detail-copy {
+  margin: 0.5rem 0 0;
+  color: #c5cbd3;
+  font-size: 1rem;
+  line-height: 1.7;
+  font-weight: 400;
 }
 
 .project-content-grid {
@@ -1081,12 +1090,60 @@ html {
   gap: 24px;
   margin-top: 32px;
   align-items: start;
+  width: min(100%, 1000px);
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .project-sidebar {
   display: flex;
   flex-direction: column;
   gap: 16px;
+}
+
+/* Regroupe les informations courtes dans une seule carte de synthèse. */
+.project-overview-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+  padding: 1.5rem;
+}
+
+.project-overview-item {
+  min-width: 0;
+}
+
+.project-overview-item strong,
+.project-overview-item p {
+  margin-bottom: 0;
+}
+
+.project-overview-category strong {
+  display: block;
+  margin-top: 0.8rem;
+}
+
+/* L'année est centrée dans un encart discret plus sombre. */
+.project-overview-year {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.45rem;
+  padding: 0.8rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 8px;
+  background: rgba(0, 0, 0, 0.22);
+}
+
+.project-overview-year p {
+  color: #e1e2ee;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.project-overview-technologies .detail-tags {
+  margin-top: 0.8rem;
 }
 
 .project-main-text {
@@ -1103,7 +1160,8 @@ html {
   backdrop-filter: blur(10px);
 }
 
-.detail-panel-large p {
+.detail-panel-large p,
+.detail-panel-large .detail-copy {
   color: #c5cbd3;
   line-height: 1.6;
   font-size: 0.95rem;
@@ -1124,7 +1182,7 @@ html {
 .project-visual {
   position: relative;
   width: 100%;
-  max-width: 850px;
+  max-width: 1000px;
   min-height: 600px;
   margin: 3rem auto;
   overflow: hidden;
@@ -1144,6 +1202,13 @@ html {
 
 .project-visual-media {
   min-height: 700px;
+}
+
+/* Le projet intégré reste la pièce principale, centrée au-dessus des détails. */
+.project-visual-interactive,
+.project-visual-media {
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .project-visual::after {
