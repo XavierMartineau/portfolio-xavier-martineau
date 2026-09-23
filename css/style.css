@@ -1604,7 +1604,8 @@ html {
   }
 }
 
-@media (max-width: 768px) {
+/* Version mobile adaptée pour 402px de large */
+@media (max-width: 402px) {
   .home-hero {
     min-height: auto;
     padding: 8rem 1rem 4rem;
@@ -1652,27 +1653,62 @@ html {
   }
 
   .featured-section {
-    padding: 4rem 1rem;
+    padding: 3rem 0;
+    overflow: hidden;
   }
 
   .featured-header {
     align-items: flex-start;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 1.1rem;
     margin-bottom: 2rem;
+    padding: 0 1rem;
   }
 
+  /* Transformation de la grille en carrousel horizontal (Ciblé 402px) */
   .featured-grid {
-    gap: 1.25rem;
+    display: flex !important;
+    flex-direction: row !important;
+    grid-template-columns: none !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory !important;
+    gap: 1rem !important;
+    padding: 0.5rem 1rem 1.5rem 1rem !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    -webkit-overflow-scrolling: touch;
   }
 
+  /* Masquer la barre de défilement tout en gardant le scroll fluide */
+  .featured-grid::-webkit-scrollbar {
+    display: none;
+  }
+  .featured-grid {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  /* Adaptation des cartes pour le carrousel sur 402px */
   .featured-card {
-    min-width: 0;
-    padding: 1.5rem;
+    flex: 0 0 82vw !important;
+    max-width: 320px !important;
+    min-width: 240px !important;
+    padding: 1.25rem !important;
+    scroll-snap-align: center !important;
+    box-sizing: border-box !important;
+    min-height: 290px !important;
   }
 
-  .featured-card.has-featured-image {
-    min-height: 320px;
+  .featured-card .featured-title {
+    font-size: 1.15rem;
+  }
+
+  .featured-desc {
+    font-size: 0.82rem;
+  }
+
+  .featured-technologies span {
+    font-size: 0.68rem;
   }
 
   .featured-mobile {
@@ -1802,52 +1838,5 @@ html {
     justify-self: stretch;
     width: 100% !important;
     text-align: center;
-  }
-}
-
-@media (max-width: 430px) {
-  .featured-section {
-    margin-top: 2rem;
-    padding: 3rem 0.85rem;
-  }
-
-  .featured-header {
-    gap: 1.1rem;
-  }
-
-  .featured-header > div {
-    width: 100%;
-  }
-
-  .featured-title {
-    font-size: 1.55rem;
-    line-height: 1.15;
-  }
-
-  .featured-link {
-    width: 100%;
-    box-sizing: border-box;
-  }
-
-  .featured-card {
-    min-height: 0;
-    padding: 1.25rem;
-    border-radius: 12px;
-  }
-
-  .featured-card.has-featured-image {
-    min-height: 290px;
-  }
-
-  .featured-card .featured-title {
-    font-size: 1.15rem;
-  }
-
-  .featured-desc {
-    font-size: 0.82rem;
-  }
-
-  .featured-technologies span {
-    font-size: 0.68rem;
   }
 }
