@@ -1758,36 +1758,21 @@ html {
     padding: 0 1rem;
   }
 
-  /* Transformation de la grille en carrousel horizontal (Ciblé 402px) */
+  /* La pile reste une seule carte visible sur les petits écrans. */
   .featured-grid {
-    display: flex !important;
-    flex-direction: row !important;
+    display: block !important;
     grid-template-columns: none !important;
-    overflow-x: auto !important;
-    scroll-snap-type: x mandatory !important;
-    gap: 1rem !important;
-    padding: 0.5rem 1rem 1.5rem 1rem !important;
+    gap: 0 !important;
+    padding: 0 !important;
     width: 100% !important;
     box-sizing: border-box !important;
-    -webkit-overflow-scrolling: touch;
   }
 
-  /* Masquer la barre de défilement tout en gardant le scroll fluide */
-  .featured-grid::-webkit-scrollbar {
-    display: none;
-  }
-  .featured-grid {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
-
-  /* Adaptation des cartes pour le carrousel sur 402px */
-  .featured-card {
-    flex: 0 0 82vw !important;
-    max-width: 320px !important;
-    min-width: 240px !important;
+  .featured-grid .featured-card {
+    width: 100% !important;
+    max-width: none !important;
+    min-width: 0 !important;
     padding: 1.25rem !important;
-    scroll-snap-align: center !important;
     box-sizing: border-box !important;
     min-height: 290px !important;
   }
@@ -1948,5 +1933,119 @@ html {
     justify-self: stretch;
     width: 100% !important;
     text-align: center;
+  }
+}
+
+@media (max-width: 1200px) {
+  .home-hero,
+  .featured-section {
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+  }
+
+  .hero-title {
+    font-size: clamp(2.6rem, 5.5vw, 4.5rem);
+  }
+
+  .featured-header {
+    gap: 1.5rem;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 899px) {
+  .home-hero {
+    min-height: auto;
+    padding-top: 8rem;
+    padding-bottom: 5rem;
+  }
+
+  .hero-grid {
+    gap: 3rem;
+  }
+
+  .hero-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    justify-content: stretch;
+    gap: 1.5rem;
+    width: 100%;
+  }
+
+  .featured-section {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-stats {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+
+  .hero-stats .gc {
+    min-width: 0;
+    padding: 1rem;
+  }
+
+  .home-hero {
+    min-height: auto;
+    padding: 7rem 1rem 4rem;
+  }
+
+  .hero-label {
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .hero-title {
+    font-size: clamp(2.25rem, 10vw, 3.5rem);
+    line-height: 1.08;
+  }
+
+  .hero-desc {
+    max-width: 42rem;
+    font-size: 1rem;
+  }
+
+  .hero-buttons {
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .hero-buttons h2,
+  .hero-buttons a {
+    margin: 0;
+  }
+
+  .featured-header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .featured-header .featured-link {
+    max-width: 100%;
+  }
+
+  .featured-grid {
+    min-height: 330px;
+  }
+
+  .featured-grid .featured-card {
+    min-height: 330px;
+    padding: 1.5rem;
+  }
+
+  .carousel-btn {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .carousel-prev {
+    left: 0.35rem;
   }
 }
