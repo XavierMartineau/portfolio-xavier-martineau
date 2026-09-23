@@ -139,6 +139,22 @@ const interactive = document.querySelector("#project-interactive");
 const youtubeLink = document.querySelector("#project-youtube");
 const expandButton = document.querySelector("#project-expand");
 const projectEmbed = document.querySelector("#project-embed");
+const projectLoading = document.querySelector("#project-loading");
+
+// Affiche un état lisible uniquement pendant le chargement d'un embed externe.
+const setEmbedLoading = (isLoading) => {
+  if (projectLoading) {
+    projectLoading.hidden = !isLoading;
+  }
+
+  if (projectEmbed) {
+    projectEmbed.setAttribute("aria-busy", String(isLoading));
+  }
+};
+
+if (projectEmbed) {
+  projectEmbed.addEventListener("load", () => setEmbedLoading(false));
+}
 
 // =========================================================================
 // 6. GESTION DE L'AFFICHAGE DES IMAGES
@@ -278,6 +294,7 @@ if (projectId === 6 && isMobileScreen) {
         activeEmbedSource = embeddedProjects[6].src;
         interactive.hidden = true;
 
+        setEmbedLoading(true);
         projectEmbed.hidden = false;
         projectEmbed.src = embeddedProjects[6].src;
         projectEmbed.title = embeddedProjects[6].title;
@@ -289,6 +306,7 @@ if (projectId === 6 && isMobileScreen) {
   const embeddedProject = embeddedProjects[projectId];
   activeEmbedSource = embeddedProject.src;
 
+  setEmbedLoading(true);
   projectEmbed.hidden = false;
   projectEmbed.src = embeddedProject.src;
   projectEmbed.title = embeddedProject.title;
@@ -334,6 +352,7 @@ const stopEmbeddedProject = () => {
     return;
   }
   projectEmbed.src = "about:blank";
+  setEmbedLoading(false);
 };
 
 const resumeEmbeddedProject = () => {
@@ -342,6 +361,7 @@ const resumeEmbeddedProject = () => {
   }
 
   if (activeEmbedSource && projectEmbed.getAttribute("src") === "about:blank") {
+    setEmbedLoading(true);
     projectEmbed.src = activeEmbedSource;
     projectEmbed.hidden = false;
     if (projectImage) projectImage.hidden = true;

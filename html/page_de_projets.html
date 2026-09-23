@@ -40,6 +40,17 @@
         <!-- AJOUTE CETTE LIGNE ICI : -->
         <div id="project-interactive" class="project-interactive" hidden></div>
 
+        <div
+          id="project-loading"
+          class="project-loading"
+          role="status"
+          aria-live="polite"
+          hidden
+        >
+          <span class="project-loading-spinner" aria-hidden="true"></span>
+          <span>Chargement du projet...</span>
+        </div>
+
         <iframe
           id="project-embed"
           class="project-embed"

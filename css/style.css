@@ -1077,7 +1077,7 @@ html {
 
 .project-content-grid {
   display: grid;
-  grid-template-columns: 300px 1fr;
+  grid-template-columns: minmax(250px, 300px) minmax(0, 1fr);
   gap: 24px;
   margin-top: 32px;
   align-items: start;
@@ -1188,9 +1188,41 @@ html {
 
 .project-embed[hidden],
 .project-interactive[hidden],
+.project-loading[hidden],
 .project-youtube[hidden],
 .project-mute[hidden] {
   display: none !important;
+}
+
+.project-loading {
+  position: absolute;
+  inset: 0;
+  z-index: 8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  color: #d8d8e6;
+  background: rgba(8, 9, 18, 0.9);
+  font-family: monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.project-loading-spinner {
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid rgba(0, 243, 255, 0.25);
+  border-top-color: #00f3ff;
+  border-radius: 50%;
+  animation: project-loading-spin 0.8s linear infinite;
+}
+
+@keyframes project-loading-spin {
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .project-embed-active {
@@ -1586,6 +1618,61 @@ html {
   background: rgba(123, 128, 255, 0.1);
   font-family: "Space-Grotesk", sans-serif;
   font-size: 0.78rem;
+}
+
+@media (max-width: 899px) {
+  .project-detail {
+    width: min(100% - 2rem, 700px);
+    padding-top: 1.25rem;
+    padding-bottom: 3rem;
+  }
+
+  .project-detail-header {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 0.6rem 1rem;
+    margin-top: 2rem;
+  }
+
+  .project-detail-title {
+    font-size: clamp(2.2rem, 10vw, 4.5rem);
+    overflow-wrap: anywhere;
+  }
+
+  .project-detail-intro {
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+    text-align: left;
+  }
+
+  .project-visual,
+  .project-visual-media,
+  .project-visual-interactive {
+    min-height: clamp(300px, 68vw, 560px);
+    margin: 1.5rem auto;
+  }
+
+  .project-visual-media .project-embed,
+  .project-embed {
+    min-height: 0;
+  }
+
+  .project-content-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-top: 1.5rem;
+  }
+
+  .project-sidebar,
+  .project-main-text {
+    gap: 1rem;
+  }
+
+  .detail-panel,
+  .detail-panel-large {
+    padding: 1.15rem;
+    backdrop-filter: none;
+  }
 }
 
 /* ==========================================================================
