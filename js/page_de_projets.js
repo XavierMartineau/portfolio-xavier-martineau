@@ -263,6 +263,13 @@ const setEmbedLoading = (isLoading) => {
   }
 };
 
+// Retire le loader dès que l'image principale est réellement disponible.
+const markImageAsLoaded = () => {
+  if (!activeEmbedSource) {
+    setEmbedLoading(false);
+  }
+};
+
 // Termine immédiatement l'état de chargement pour les projets qui utilisent une image.
 const finishStaticMediaLoading = () => {
   if (!activeEmbedSource) {
@@ -293,6 +300,7 @@ if (project.secondaryImage) {
   }
 
   if (projectImage) {
+    projectImage.addEventListener("load", markImageAsLoaded, { once: true });
     projectImage.src = `../assets/images/${project.image}`;
     projectImage.alt = project.name;
     projectImage.hidden = false;
@@ -310,6 +318,7 @@ if (project.secondaryImage) {
   imagesContainer.appendChild(secondaryImage);
 } else {
   if (projectImage) {
+    projectImage.addEventListener("load", markImageAsLoaded, { once: true });
     projectImage.src = `../assets/images/${project.image}`;
     projectImage.alt = project.name;
     projectImage.hidden = false;
@@ -472,10 +481,30 @@ if (projectId === 6 && isMobileScreen) {
     projectImage.src = `../assets/images/${project.image}`;
     projectImage.alt = project.name;
     projectImage.classList.add("project-image-full");
-    projectImage.addEventListener("load", finishStaticMediaLoading, {
-      once: true,
-    });
+    if (projectImage.complete) {
+      finishStaticMediaLoading();
+    }
   }
+}
+
+// Révèle les panneaux au fur et à mesure qu'ils approchent de la fenêtre.
+const detailPanels = document.querySelectorAll(
+  ".project-content-grid > *, .project-navigation-footer",
+);
+
+if ("IntersectionObserver" in window) {
+  const detailObserver = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        entry.target.classList.toggle("is-content-ready", entry.isIntersecting);
+      });
+    },
+    { rootMargin: "0px 0px -10% 0px", threshold: 0.05 },
+  );
+
+  detailPanels.forEach((panel) => detailObserver.observe(panel));
+} else {
+  detailPanels.forEach((panel) => panel.classList.add("is-content-ready"));
 }
 
 // =========================================================================

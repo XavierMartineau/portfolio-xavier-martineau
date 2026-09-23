@@ -28,6 +28,23 @@ navigableProjectCards.forEach((card) => {
   }
 });
 
+// Révèle et masque la section featured selon sa présence dans la fenêtre.
+document.querySelectorAll(".reveal-on-scroll").forEach((section) => {
+  if (!("IntersectionObserver" in window)) {
+    section.classList.add("is-revealed");
+    return;
+  }
+
+  const revealObserver = new IntersectionObserver(
+    ([entry]) => {
+      entry.target.classList.toggle("is-revealed", entry.isIntersecting);
+    },
+    { threshold: 0.12 },
+  );
+
+  revealObserver.observe(section);
+});
+
 // Anime la pile uniquement lorsque les flèches mobile/tablette sont utilisées.
 document.querySelectorAll(".featured-grid").forEach((grid) => {
   const cards = [...grid.querySelectorAll(".featured-card")];
