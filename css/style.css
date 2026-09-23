@@ -1068,12 +1068,13 @@ body {
 }
 
 /* ===========================
-   GRID (Version propre et corrigée)
-=========================== */
+   GRILLE PRINCIPALE DE LA PAGE PROJET
+   =========================== */
 
 .projects-grid {
   margin-top: 3rem;
   display: grid;
+  grid-template-columns: 1fr; /* Par défaut sur mobile : 1 élément par ligne */
   gap: 2rem;
   max-width: 1400px;
   margin-left: auto;
@@ -1094,22 +1095,35 @@ body {
 .projects-grid .project-card.is-hidden {
   display: none !important;
 }
-@media (max-width: 600px) {
-  .projects-grid {
-    grid-template-columns: 1fr !important; /* Force une seule colonne */
-    gap: 1.5rem !important;
-    width: 100% !important;
-    margin: 0 auto !important;
-  }
 
-  .projects-grid .gc,
-  .projects-grid .featured-card {
-    min-height: auto !important; /* Laisse la carte s'adapter au contenu au lieu de forcer une hauteur fixe */
-    height: auto !important;
-    padding: 1.5rem !important;
-    box-sizing: border-box !important;
+/* Sur tablette (optionnel, par exemple 2 colonnes à partir de 768px) */
+@media (min-width: 768px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
+
+/* Sur PC (à partir de 1024px) : 3 colonnes côte à côte */
+@media (min-width: 1024px) {
+  .projects-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .projects-grid {
+    grid-template-columns: 1fr !important; /* Force strictement 1 par ligne sur mobile */
+    gap: 1.5rem !important;
+    width: 100% !important;
+  }
+
+  .projects-grid .gc {
+    min-height: auto !important;
+    height: auto !important;
+    padding: 1.5rem !important;
+  }
+}
+
 /* PAGE DETAIL D'UN PROJET */
 .project-detail-page {
   min-height: 100vh;
