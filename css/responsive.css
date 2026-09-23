@@ -52,6 +52,28 @@
 }
 
 @media (max-width: 600px) {
+  .scroll-indicator {
+    min-height: 190px;
+    margin-top: 1.5rem;
+    padding: 0.6rem 0.7rem 0;
+  }
+
+  .scroll-arrow {
+    animation: scroll-arrow-bob 1.8s ease-in-out infinite !important;
+    animation-timeline: auto !important;
+    animation-range: normal !important;
+  }
+
+  .scroll-line {
+    height: 150px;
+  }
+
+  .scroll-line::after {
+    animation: scroll-dot-pulse 1.5s ease-in-out infinite !important;
+    animation-timeline: auto !important;
+    animation-range: normal !important;
+  }
+
   .home-hero {
     min-height: auto;
     padding: 7rem 1rem 4rem;
@@ -104,4 +126,3 @@
     transition-duration: 0.01ms !important;
   }
 }
-
