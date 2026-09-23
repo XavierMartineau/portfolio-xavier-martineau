@@ -433,11 +433,14 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // =========================================================================
-// 15. PAUSE AUTOMATIQUE AU SCROLL (OOPS! CONTACT PERDU)
-// Coupe l'iframe et affiche l'écran de pause si l'utilisateur s'éloigne du visuel.
+// 15. PAUSE AUTOMATIQUE AU SCROLL (OOPS! CONTACT PERDU) - UNIQUEMENT PROJET [06]
+// Coupe l'iframe et affiche l'écran de pause si l'utilisateur s'éloigne du projet 06.
 // =========================================================================
 document.addEventListener("DOMContentLoaded", () => {
-  const visualContainer = document.querySelector(".project-visual");
+  // Cible uniquement le conteneur visuel du projet [06] (ajustez le sélecteur si besoin, ex: #projet-06 .project-visual)
+  const visualContainer = document.querySelector(
+    "#projet-06 .project-visual, .project-visual.is-game-project",
+  );
   if (!visualContainer) return;
 
   // Création dynamique de l'overlay d'avertissement "OOPS!"
@@ -466,11 +469,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let manualPause = false;
 
-  // Observer de visibilité de l'écran lors du scroll
+  // Observer de visibilité de l'écran lors du scroll pour le projet [06]
   const scrollObserver = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
-        // Si le composant sort de l'écran et qu'une source active de jeu/vidéo tourne
+        // Si le projet [06] sort de l'écran et qu'une source active tourne
         if (
           !entry.isIntersecting &&
           activeEmbedSource &&
@@ -478,13 +481,13 @@ document.addEventListener("DOMContentLoaded", () => {
           projectEmbed.src !== "about:blank" &&
           !manualPause
         ) {
-          projectEmbed.src = "about:blank"; // Stoppe net le jeu, l'iframe et le son
+          projectEmbed.src = "about:blank"; // Stoppe net le jeu et le son du projet 06
           oopsOverlay.style.display = "flex"; // Affiche l'écran OOPS
         }
       });
     },
     { threshold: 0.2 },
-  ); // Se déclenche dès qu'il reste moins de 20% visible à l'écran
+  );
 
   scrollObserver.observe(visualContainer);
 
@@ -496,13 +499,13 @@ document.addEventListener("DOMContentLoaded", () => {
       manualPause = true;
 
       if (projectEmbed && activeEmbedSource) {
-        projectEmbed.src = activeEmbedSource; // Relance le jeu/vidéo et le son
+        projectEmbed.src = activeEmbedSource; // Relance le jeu et le son
       }
 
-      // Ramène doucement le visuel bien en vue
+      // Ramène doucement le projet [06] en vue
       visualContainer.scrollIntoView({ behavior: "smooth", block: "center" });
 
-      // Réinitialise le verrou après un court moment pour réactiver la détection de scroll
+      // Réinitialise le verrou après un court moment
       setTimeout(() => {
         manualPause = false;
       }, 1500);
