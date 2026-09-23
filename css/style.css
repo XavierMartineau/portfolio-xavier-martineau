@@ -1024,9 +1024,10 @@ html {
    ========================================================================== */
 .project-visual {
   position: relative;
-  width: min(450px, 100%);
+  width: 100%;
+  max-width: 850px;
   min-height: 600px;
-  margin: 5rem auto;
+  margin: 3rem auto;
   overflow: hidden;
   border: 1px solid rgba(0, 243, 255, 0.38);
   border-radius: 12px;
@@ -1056,6 +1057,7 @@ html {
     rgba(5, 5, 12, 0.45)
   );
   pointer-events: none;
+  z-index: 2; /* S'assure que le filtre reste sous le bouton */
 }
 
 .project-visual .images-container {
@@ -1115,7 +1117,7 @@ html {
   position: absolute;
   top: 1.25rem;
   right: 1.25rem;
-  z-index: 4;
+  z-index: 10; /* Z-index très élevé pour garantir qu'il est cliquable par-dessus tout */
   min-width: 132px;
   min-height: 46px;
   padding: 0.75rem 1rem;
@@ -1165,13 +1167,14 @@ html {
 }
 
 .project-visual.is-expanded {
-  position: fixed;
-  inset: 1rem;
-  z-index: 1000;
-  width: auto;
-  min-height: 0;
-  height: calc(100vh - 2rem);
-  margin: 0;
+  position: fixed !important;
+  inset: 1rem !important;
+  z-index: 9999 !important;
+  width: auto !important;
+  max-width: none !important;
+  height: calc(100vh - 2rem) !important;
+  min-height: 0 !important;
+  margin: 0 !important;
   border-color: #00f3ff;
   background: rgba(4, 5, 12, 0.98);
   box-shadow:
@@ -1205,16 +1208,19 @@ html {
   justify-content: center;
   align-items: center;
   height: auto !important;
-  min-height: auto !important;
+  min-height: 500px !important;
   padding: 1rem;
 }
 
 .project-visual.stitch-mode img {
   width: auto;
-  max-width: 70%;
+  max-width: 85%;
   height: auto;
+  max-height: 75vh;
   object-fit: contain;
   margin: auto;
+  position: relative;
+  z-index: 3;
 }
 
 .project-visual.stitch-mode.project-visual-media {
@@ -1229,14 +1235,14 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: auto !important;
+  height: calc(100vh - 2rem) !important;
   padding: 1rem;
 }
 
 .project-visual.is-expanded.stitch-mode img {
   width: auto;
-  max-width: 85%;
-  max-height: 85vh;
+  max-width: 90%;
+  max-height: 90vh;
   object-fit: contain;
   margin: auto;
 }
@@ -1245,7 +1251,7 @@ html {
   position: absolute;
   left: 50%;
   bottom: 1.5rem;
-  z-index: 2;
+  z-index: 5;
   padding: 0.9rem 1.2rem;
   border: 1px solid #ff00ea;
   border-radius: 6px;
