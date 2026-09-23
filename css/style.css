@@ -694,35 +694,54 @@ html {
 .scroll-indicator {
   position: relative;
   width: fit-content;
-  min-height: 300px;
-  margin: 2rem auto 0;
-  opacity: 0.75;
+  min-height: 260px;
+  margin: 2.5rem auto 0;
+  padding: 0.7rem 0.8rem 0;
+  opacity: 0.8;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.4rem;
-  color: #31558a;
+  gap: 0.55rem;
+  color: #6f82b5;
   text-decoration: none;
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  border-radius: 999px;
+  background: rgba(13, 13, 18, 0.38);
+  box-shadow: 0 0 24px rgba(99, 102, 241, 0.08);
+  backdrop-filter: blur(8px);
   transition:
     opacity 0.3s ease,
-    color 0.3s ease;
+    color 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .scroll-indicator:hover,
 .scroll-indicator:focus-visible {
   opacity: 1;
-  color: #4d82c4;
+  color: #aebdff;
+  border-color: rgba(0, 243, 255, 0.55);
+  box-shadow: 0 0 28px rgba(0, 243, 255, 0.18);
 }
 
 .scroll-label {
-  font-size: 0.8rem;
-  letter-spacing: 0.3em;
+  font-family: monospace;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.28em;
   color: currentColor;
 }
 
 .scroll-arrow {
-  font-size: 2rem;
+  display: grid;
+  place-items: center;
+  width: 1.8rem;
+  height: 1.8rem;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  font-size: 1.2rem;
   line-height: 1;
+  animation: scroll-arrow-bob 1.8s ease-in-out infinite;
 }
 
 @supports (animation-timeline: scroll()) {
@@ -734,9 +753,38 @@ html {
 }
 
 .scroll-line {
+  position: relative;
   width: 1px;
-  height: 240px;
-  background: linear-gradient(to bottom, currentColor, transparent);
+  height: 205px;
+  background: linear-gradient(
+    to bottom,
+    currentColor,
+    rgba(99, 102, 241, 0.04)
+  );
+  box-shadow: 0 0 8px rgba(99, 102, 241, 0.25);
+}
+
+.scroll-line::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #00f3ff;
+  box-shadow: 0 0 10px #00f3ff;
+  transform: translateX(-50%);
+}
+
+@keyframes scroll-arrow-bob {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(5px);
+  }
 }
 
 .reveal-on-scroll {
@@ -781,6 +829,10 @@ html {
     transition: none;
     opacity: 1;
     transform: none;
+  }
+
+  .scroll-indicator {
+    backdrop-filter: none;
   }
 }
 
