@@ -8,7 +8,9 @@
     <link rel="stylesheet" href="../css/font.css" />
     <link rel="stylesheet" href="../css/footer.css" />
     <link rel="stylesheet" href="../css/style.css" />
-    <link rel="stylesheet" href="../css/couleur-categorie.css" />
+    <link rel="stylesheet" href="../css/responsive.css" />
+    <link rel="stylesheet" href="../css/composants/couleur-categorie.css" />
+    <link rel="stylesheet" href="../css/composants/page-projet.css" />
   </head>
 
   <body class="root project-detail-page">
@@ -49,6 +51,15 @@
         >
           <span class="project-loading-spinner" aria-hidden="true"></span>
           <span>Chargement du projet...</span>
+        </div>
+
+        <div id="project-media-fallback" class="project-media-fallback" hidden>
+          <strong id="project-media-fallback-message"
+            >Oups, la vidéo 3D n'a pas pu être lue.</strong
+          >
+          <a id="project-youtube" href="#" target="_blank" rel="noreferrer">
+            Voir la vidéo sur YouTube
+          </a>
         </div>
 
         <iframe
@@ -113,14 +124,12 @@
             </div>
           </article>
 
-          <!-- POINTS FORTS (avec les puces colorées) -->
-          <article class="detail-panel" id="project-highlights-panel">
-            <h4 class="detail-label">// POINTS FORTS</h4>
-            <ul class="project-highlights-list" id="project-highlights">
-              <li>Ambiance visuelle sombre et immersive</li>
-              <li>Gestion avancée des éclairages volumétriques</li>
-              <li>Synchronisation audio-visuelle précise</li>
-            </ul>
+          <article class="detail-panel project-category-skills-panel">
+            <h4 class="detail-label">// COMPÉTENCES DU PROJET</h4>
+            <div
+              id="project-category-skills"
+              class="project-category-skills"
+            ></div>
           </article>
         </div>
 

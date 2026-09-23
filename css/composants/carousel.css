@@ -1,0 +1,121 @@
+﻿/* ==========================================================================
+   COMPOSANT CAROUSEL FEATURED
+   ========================================================================== */
+.featured-grid-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.carousel-btn {
+  position: absolute;
+  z-index: 4;
+  top: 50%;
+  display: none;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.62);
+  color: #ffffff;
+  font-size: 1.35rem;
+  line-height: 1;
+  cursor: pointer;
+  transform: translateY(-50%);
+  transition: background-color 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+}
+
+.carousel-btn:hover,
+.carousel-btn:focus-visible {
+  background: rgba(123, 128, 255, 0.92);
+  border-color: #7b80ff;
+  transform: translateY(-50%) scale(1.08);
+}
+
+.carousel-btn:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 3px;
+}
+
+.carousel-prev {
+  left: 0.75rem;
+}
+
+.carousel-next {
+  right: 0.75rem;
+}
+
+.carousel-effects-toggle {
+  display: none;
+}
+
+.featured-grid-container.is-effects-forced .featured-card.has-featured-image .featured-background {
+  opacity: 1 !important;
+  filter: blur(0) !important;
+}
+
+.featured-grid-container.is-effects-forced .featured-card.has-featured-image > :not(.featured-background) {
+  opacity: 0 !important;
+  transition: opacity 0.25s ease;
+}
+
+@media (max-width: 899px) {
+  .featured-grid-container {
+    box-sizing: border-box;
+    padding: 0 3.25rem 4rem;
+  }
+
+  .featured-grid-container .carousel-btn {
+    display: grid;
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .carousel-prev {
+    left: 0;
+  }
+
+  .carousel-next {
+    right: 0;
+  }
+
+  .carousel-effects-toggle {
+    position: absolute;
+    right: 50%;
+    bottom: -2.75rem;
+    z-index: 5;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 2.25rem;
+    max-width: calc(100% - 1rem);
+    padding: 0.55rem 0.8rem;
+    border: 1px solid rgba(0, 243, 255, 0.45);
+    border-radius: 6px;
+    color: #00f3ff;
+    background: rgba(0, 0, 0, 0.72);
+    cursor: pointer;
+    font-family: monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    transform: translateX(50%);
+  }
+
+  .carousel-effects-toggle-label {
+    margin: 0;
+    color: #63ff9b;
+    font-size: 0.72rem;
+    font-weight: 700;
+    line-height: 1.2;
+    text-align: center;
+  }
+
+  .carousel-effects-toggle[aria-pressed="true"] .carousel-effects-toggle-label {
+    color: #ff5c8a;
+  }
+}
+

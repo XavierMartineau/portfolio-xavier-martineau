@@ -297,10 +297,6 @@
     margin: 0;
   }
 
-  .navbar-links h3:nth-child(3) {
-    display: none;
-  }
-
   .mobile-menu-cta {
     display: block;
     margin-top: 0.35rem !important;

@@ -1,0 +1,76 @@
+/* Composant filtres de la page projets. */
+.project-categories {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.45rem;
+}
+.project-category-btn {
+  --category-color: #a5a5b5;
+  --category-rgb: 165, 165, 181;
+  min-height: 40px;
+  padding: 0.6rem 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.06);
+  color: #a5a5b5;
+  cursor: pointer;
+  font-family: monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+.project-category-btn.active,
+.project-category-btn:hover {
+  background: rgba(20, 20, 32, 0.9);
+  border-color: var(--category-color);
+  color: var(--category-color);
+  box-shadow: 0 0 16px rgba(var(--category-rgb), 0.28);
+}
+.project-category-btn:hover {
+  transform: scale(1.08);
+}
+.project-category-btn:nth-child(2) {
+  --category-color: #7b80ff;
+  --category-rgb: 123, 128, 255;
+}
+.project-category-btn:nth-child(3) {
+  --category-color: #00f3ff;
+  --category-rgb: 0, 243, 255;
+}
+.project-category-btn:nth-child(4) {
+  --category-color: #ff00ea;
+  --category-rgb: 255, 0, 234;
+}
+.project-category-btn:nth-child(5) {
+  --category-color: #c084fc;
+  --category-rgb: 192, 132, 252;
+}
+.projects-effects-toggle {
+  display: none;
+}
+@media (max-width: 899px) {
+  .projects-effects-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 2.25rem;
+    margin-left: auto;
+    padding: 0.55rem 0.8rem;
+    border: 1px solid rgba(0, 243, 255, 0.45);
+    border-radius: 6px;
+    color: #63ff9b;
+    background: rgba(0, 0, 0, 0.72);
+    cursor: pointer;
+  }
+  .projects-effects-toggle-label {
+    margin: 0;
+    font-size: 0.72rem;
+    font-weight: 700;
+  }
+}

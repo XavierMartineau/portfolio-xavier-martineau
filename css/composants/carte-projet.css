@@ -1,0 +1,120 @@
+﻿/* ==========================================================================
+   COMPOSANT CARTES PROJET
+   ========================================================================== */
+.featured-card {
+  --card-color: #6366f1;
+  --card-rgb: 99, 102, 241;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(var(--card-rgb), 0.28);
+  color: #e8e8f0;
+  text-decoration: none;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35), inset 0 1px 0 rgba(255, 255, 255, 0.07);
+  transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease, background-color 0.4s ease;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.featured-card.has-featured-image {
+  min-height: 360px;
+}
+
+.featured-background {
+  position: absolute;
+  inset: -12px;
+  z-index: 0;
+  width: calc(100% + 24px);
+  height: calc(100% + 24px);
+  object-fit: cover;
+  object-position: center;
+  opacity: 0.8;
+  filter: blur(8px);
+  transform: scale(1.04);
+  pointer-events: none;
+  transition: opacity 0.4s ease, filter 0.4s ease;
+}
+
+.featured-card.project-stitch .featured-background {
+  filter: blur(14px);
+}
+
+.featured-card.has-featured-image:hover .featured-background,
+.featured-card.has-featured-image:active .featured-background,
+.featured-card.has-featured-image:focus-visible .featured-background {
+  opacity: 1;
+  filter: blur(0);
+}
+
+.featured-card.has-featured-image:hover > :not(.featured-background),
+.featured-card.has-featured-image:active > :not(.featured-background),
+.featured-card.has-featured-image:focus-visible > :not(.featured-background) {
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.featured-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(var(--card-rgb), 0.85);
+  background: rgba(var(--card-rgb), 0.08);
+  box-shadow: 0 0 36px rgba(var(--card-rgb), 0.22), 0 18px 42px rgba(0, 0, 0, 0.45);
+}
+
+.featured-card > :not(.featured-top):not(.featured-background) {
+  position: relative;
+  z-index: 1;
+}
+
+.featured-card.indigo {
+  --card-color: #7b80ff;
+  --card-rgb: 123, 128, 255;
+}
+
+.featured-card.cyan {
+  --card-color: #00f3ff;
+  --card-rgb: 0, 243, 255;
+}
+
+.featured-card.rose {
+  --card-color: #ff00ea;
+  --card-rgb: 255, 0, 234;
+}
+
+/* Grille des cartes de la page projets. */
+.projects-grid .gc {
+  min-height: 360px;
+  padding: 2.25rem;
+  box-sizing: border-box;
+  background: rgba(var(--gc-rgb), 0.1);
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  content-visibility: auto;
+  contain-intrinsic-size: 360px;
+  opacity: 0;
+  transform: translateY(1.5rem);
+  transition: opacity 0.7s ease, transform 0.7s ease, background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.projects-grid .gc.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.projects-grid .project-card.is-hidden {
+  display: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .projects-grid .gc {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+

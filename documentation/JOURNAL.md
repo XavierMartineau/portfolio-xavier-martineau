@@ -473,3 +473,84 @@
 - Les jeux vidéo utilisent le vert.
 - Les couleurs sont appliquées aux bordures, halos, panneaux, libellés, boutons et au mode plein écran.
 - Les variables CSS `--project-accent` et `--project-rgb` centralisent les couleurs.
+
+### Outil: GitHub Copilot
+
+### <u>Prompt</u>: Ajouter les niveaux h4 et h5 aux autres pages qui n'en avaient pas.
+
+### Réponse:
+
+- Ajout de `h4` pour les catégories des cartes.
+- Ajout de `h5` pour les années des projets.
+- Ajustement des marges et de la typographie pour conserver le rendu visuel.
+
+### Outil: GitHub Copilot
+
+### <u>Prompt</u>: Créer une page compétences responsive pour PC, tablette et mobile.
+
+### Réponse:
+
+- Création de la page compétences avec une carte principale, des catégories et des barres de progression.
+- Ajout d'un affichage responsive pour desktop, tablette et mobile.
+- Ajout de l'animation des niveaux avec `IntersectionObserver`.
+- Correction des chemins relatifs vers les fichiers CSS, JavaScript, images et pages HTML.
+- Activation du lien Compétences dans la navbar.
+
+### Outil: GitHub Copilot
+
+### <u>Prompt</u>: Utiliser uniquement `style.css` pour la page compétences.
+
+### Réponse:
+
+- Déplacement des styles de compétences dans `style.css`.
+- Suppression du fichier CSS dédié aux compétences.
+- Conservation du JavaScript de génération des barres et des tags.
+
+### Outil: GitHub Copilot
+
+### <u>Prompt</u>: Remplacer les catégories et les textes de la page compétences par des contenus plus personnels en français.
+
+### Réponse:
+
+- Remplacement des catégories Front-end, Back-end, DevOps et IA / ML par Animation 3D, Jeu vidéo, Illustration 2D et Site web.
+- Ajout de couleurs différentes pour chaque catégorie.
+- Ajout d'Illustrator et Photoshop à la catégorie Illustration 2D.
+- Remplacement des textes anglais par des formulations françaises.
+- Simplification du texte de présentation pour utiliser un ton plus naturel.
+
+### Outil: GitHub Copilot
+
+### <u>Prompt</u>: Supprimer la page compétences et afficher les compétences directement sur chaque page de projet.
+
+### Réponse:
+
+- Suppression de la page compétences et de son script dédié.
+- Retrait du lien Compétences de la navbar.
+- Ajout d'un bloc « Compétences du projet » dans la page détail.
+- Association des compétences à la catégorie du projet : 3D, 2D, site web ou jeu vidéo.
+- Animation des barres de progression au chargement de la page projet.
+
+### Outil: GitHub Copilot
+
+### <u>Prompt</u>: Faire apparaître les cartes de la page projets uniquement pendant le défilement.
+
+### Réponse:
+
+- Ajout du chargement différé des images avec `loading="lazy"`.
+- Ajout d'une révélation progressive des cartes avec `IntersectionObserver`.
+- Apparition des cartes avec un fondu et un léger déplacement vertical.
+- Réduction du travail de rendu pour les cartes qui sont encore hors écran.
+- Conservation du fonctionnement des filtres de catégories.
+
+### Outil: GitHub Copilot
+
+### <u>Prompt</u>: Afficher un message si la vidéo du projet 3D ne peut pas être lue et proposer un lien YouTube.
+
+### Réponse:
+
+- Ajout d'une boîte de secours sur la page détail du projet 3D.
+- Affichage du message « Oups, la vidéo 3D n'a pas pu être lue. ».
+- Ajout du bouton « Voir la vidéo sur YouTube ».
+- Utilisation du lien YouTube `https://www.youtube.com/watch?v=Bkvwrvg_bws`.
+- Affichage du message après une erreur ou lorsque la vidéo reste bloquée trop longtemps.
+- Adaptation de la boîte de secours aux écrans mobiles.

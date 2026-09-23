@@ -104,6 +104,56 @@ setText("#project-description", project.description);
 setText("#project-summary", project.description);
 setText("#project-category-panel", project.category);
 
+// Compétences affichées selon la catégorie du projet consulté.
+const categorySkills = {
+  "3D": [
+    ["Modélisation 3D", 75],
+    ["Animation", 70],
+    ["MAYA et rendu", 65],
+  ],
+  "2D": [
+    ["Illustration", 85],
+    ["Composition", 80],
+    ["Couleur et image", 85],
+  ],
+  "Site web": [
+    ["HTML, CSS et JavaScript", 90],
+    ["Interface adaptative", 85],
+    ["Conception visuelle", 80],
+  ],
+  "Jeu vidéo": [
+    ["Interface", 75],
+    ["Interaction", 70],
+    ["Expérience utilisateur", 65],
+  ],
+};
+
+const categorySkillsContainer = document.querySelector(
+  "#project-category-skills",
+);
+const selectedCategorySkills = categorySkills[project.category] || [];
+
+if (categorySkillsContainer) {
+  categorySkillsContainer.innerHTML = selectedCategorySkills
+    .map(
+      ([label, level]) => `
+        <div class="project-skill" style="--skill-level: ${level}%">
+          <div class="project-skill-header">
+            <span>${label}</span>
+            <strong>${level}%</strong>
+          </div>
+          <div class="project-skill-bar" aria-label="${label}: ${level}%">
+            <span></span>
+          </div>
+        </div>`,
+    )
+    .join("");
+
+  requestAnimationFrame(() => {
+    categorySkillsContainer.classList.add("is-loaded");
+  });
+}
+
 // =========================================================================
 // 4. ATTRIBUTION DES COULEURS DE CATÉGORIE
 // =========================================================================
@@ -126,8 +176,8 @@ const categoryThemes = {
   },
   "Jeu vidéo": {
     className: "category-game",
-    color: "#63ff9b",
-    rgb: "99, 255, 155",
+    color: "#c084fc",
+    rgb: "192, 132, 252",
   },
 };
 
@@ -168,6 +218,39 @@ const youtubeLink = document.querySelector("#project-youtube");
 const expandButton = document.querySelector("#project-expand");
 const projectEmbed = document.querySelector("#project-embed");
 const projectLoading = document.querySelector("#project-loading");
+const projectMediaFallback = document.querySelector("#project-media-fallback");
+const projectMediaFallbackMessage = document.querySelector(
+  "#project-media-fallback-message",
+);
+let mediaFallbackTimer = null;
+
+const showMediaFallback = () => {
+  if (projectMediaFallback && project.youtubeUrl) {
+    projectMediaFallback.hidden = false;
+  }
+};
+
+const resetMediaFallbackTimer = () => {
+  if (mediaFallbackTimer) {
+    window.clearTimeout(mediaFallbackTimer);
+  }
+
+  if (projectId === 1 && project.youtubeUrl) {
+    mediaFallbackTimer = window.setTimeout(showMediaFallback, 8000);
+  }
+};
+
+if (projectMediaFallback && project.youtubeUrl) {
+  const fallbackLink = projectMediaFallback.querySelector("#project-youtube");
+  if (fallbackLink) {
+    fallbackLink.href = project.youtubeUrl;
+  }
+
+  if (projectMediaFallbackMessage && projectId !== 1) {
+    projectMediaFallbackMessage.textContent =
+      "Oups, le contenu du projet n'a pas pu être chargé.";
+  }
+}
 
 // Affiche un état lisible uniquement pendant le chargement d'un embed externe.
 const setEmbedLoading = (isLoading) => {
@@ -181,7 +264,14 @@ const setEmbedLoading = (isLoading) => {
 };
 
 if (projectEmbed) {
-  projectEmbed.addEventListener("load", () => setEmbedLoading(false));
+  projectEmbed.addEventListener("load", () => {
+    setEmbedLoading(false);
+    if (mediaFallbackTimer) {
+      window.clearTimeout(mediaFallbackTimer);
+      mediaFallbackTimer = null;
+    }
+  });
+  projectEmbed.addEventListener("error", showMediaFallback);
 }
 
 // =========================================================================
@@ -317,6 +407,7 @@ if (projectId === 6 && isMobileScreen) {
         <span class="interactive-kicker" style="margin-bottom: 1rem;">// JOUER AU JEU VIDÉO</span>
         <strong style="font-size: 1.3rem; margin-bottom: 0.5rem; color: #ffffff;">${project.name}</strong>
         <p style="color: #b7b7c9; margin-bottom: 1.5rem; max-width: 400px;">Clique sur le bouton ci-dessous pour charger et lancer le jeu interactif directement dans le navigateur.</p>
+        <p class="game-warning" role="alert">Bug majeur présent : après la mort, il n'est pas possible de revenir dans le jeu.</p>
         <button id="load-game-btn" class="interactive-action" type="button" style="padding: 12px 28px; font-size: 0.9rem; cursor: pointer;">Lancer la partie</button>
       </div>`;
 
@@ -339,6 +430,7 @@ if (projectId === 6 && isMobileScreen) {
   activeEmbedSource = embeddedProject.src;
 
   setEmbedLoading(true);
+  resetMediaFallbackTimer();
   projectEmbed.hidden = false;
   projectEmbed.src = embeddedProject.src;
   projectEmbed.title = embeddedProject.title;

@@ -1,6 +1,25 @@
 const categoryButtons = document.querySelectorAll(".project-category-btn");
 const projectCards = document.querySelectorAll(".project-card");
 
+// Révèle chaque carte uniquement lorsqu'elle entre dans la fenêtre.
+if ("IntersectionObserver" in window) {
+  const projectRevealObserver = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { rootMargin: "0px 0px -8% 0px", threshold: 0.08 },
+  );
+
+  projectCards.forEach((card) => projectRevealObserver.observe(card));
+} else {
+  projectCards.forEach((card) => card.classList.add("is-visible"));
+}
+
 // Force ou rétablit le rendu hover des cartes sur mobile et tablette.
 const effectsToggle = document.querySelector(".projects-effects-toggle");
 if (effectsToggle) {
