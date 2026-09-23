@@ -775,6 +775,44 @@ html {
   background: #00f3ff;
   box-shadow: 0 0 10px #00f3ff;
   transform: translateX(-50%);
+  animation: scroll-dot-pulse 1.5s ease-in-out infinite;
+}
+
+@supports (animation-timeline: scroll()) {
+  .scroll-line::after {
+    animation: scroll-dot-follow linear both;
+    animation-timeline: scroll(root block);
+    animation-range: 0 300px;
+  }
+}
+
+@keyframes scroll-dot-follow {
+  from {
+    opacity: 0.55;
+    transform: translate(-50%, 0);
+    box-shadow: 0 0 8px rgba(0, 243, 255, 0.55);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 195px);
+    box-shadow:
+      0 0 12px #00f3ff,
+      0 0 26px rgba(0, 243, 255, 0.8);
+  }
+}
+
+@keyframes scroll-dot-pulse {
+  0%,
+  100% {
+    opacity: 0.65;
+    box-shadow: 0 0 8px rgba(0, 243, 255, 0.55);
+  }
+  50% {
+    opacity: 1;
+    box-shadow:
+      0 0 12px #00f3ff,
+      0 0 24px rgba(0, 243, 255, 0.75);
+  }
 }
 
 @keyframes scroll-arrow-bob {
@@ -811,6 +849,7 @@ html {
 
 @media (prefers-reduced-motion: reduce) {
   .scroll-arrow,
+  .scroll-line::after,
   .reveal-on-scroll {
     animation: none;
     transition: none;

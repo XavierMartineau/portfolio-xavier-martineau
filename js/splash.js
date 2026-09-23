@@ -33,7 +33,7 @@ particles = Array.from({ length: 80 }, () => ({
   vy: (Math.random() - 0.5) * 0.4, // Vitesse verticale
   r: Math.random() * 1.5 + 0.3, // Rayon (taille) du point
   color: colors[Math.floor(Math.random() * colors.length)], // Couleur aléatoire dans la palette
-  alpha: Math.random() * 0.6 + 0.2, // Opacité aléatoire
+  alpha: Math.random() * 0.75 + 0.25, // Opacité aléatoire renforcée
 }));
 
 // ==============================
@@ -50,9 +50,10 @@ function draw() {
     0,
     mouse.x,
     mouse.y,
-    220,
+    320,
   );
-  grd.addColorStop(0, "rgba(99,102,241,0.06)");
+  grd.addColorStop(0, "rgba(99,102,241,0.18)");
+  grd.addColorStop(0.35, "rgba(0,243,255,0.08)");
   grd.addColorStop(1, "transparent");
   ctx.fillStyle = grd;
   ctx.fillRect(0, 0, canvas.width, canvas.height);
@@ -85,7 +86,7 @@ function draw() {
         ctx.moveTo(particles[i].x, particles[i].y);
         ctx.lineTo(particles[j].x, particles[j].y);
         ctx.strokeStyle = "#6366f1";
-        ctx.globalAlpha = (1 - d / 100) * 0.12; // Plus ils sont proches, plus la ligne est visible
+        ctx.globalAlpha = (1 - d / 100) * 0.2; // Plus ils sont proches, plus la ligne est visible
         ctx.lineWidth = 0.5;
         ctx.stroke();
         ctx.globalAlpha = 1;
