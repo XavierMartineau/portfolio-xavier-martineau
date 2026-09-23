@@ -130,27 +130,58 @@ if (categoryElement) {
 document.title = `${project.name} – Xavier Martineau`;
 
 // ===============================
-// IMAGES PRINCIPALES
+// IMAGES PRINCIPales & ÉLÉMENTS VISUELS
 // ===============================
+const visual = document.querySelector(".project-visual");
 const projectImage = document.querySelector("#project-image");
-const secondaryImage = document.querySelector("#project-secondary-image");
+let secondaryImage = document.querySelector("#project-secondary-image");
+const interactive = document.querySelector("#project-interactive");
+const youtubeLink = document.querySelector("#project-youtube");
+const expandButton = document.querySelector("#project-expand");
+const projectEmbed = document.querySelector("#project-embed");
 
-// Image secondaire si définie
-if (project.secondaryImage && secondaryImage) {
+// Gestion de l'affichage des images
+if (project.secondaryImage) {
+  // S'il y a une image secondaire, on utilise un conteneur flex pour gérer la disposition
+  let imagesContainer = visual.querySelector(".images-container");
+  if (!imagesContainer) {
+    imagesContainer = document.createElement("div");
+    imagesContainer.className = "images-container";
+    visual.prepend(imagesContainer); // Place le conteneur dans .project-visual
+  }
+
+  // Déplace ou configure l'image principale
+  if (projectImage) {
+    projectImage.src = `../assets/images/${project.image}`;
+    projectImage.alt = project.name;
+    projectImage.hidden = false;
+    imagesContainer.appendChild(projectImage);
+  }
+
+  // Configure l'image secondaire
+  if (!secondaryImage) {
+    secondaryImage = document.createElement("img");
+    secondaryImage.id = "project-secondary-image";
+  }
   secondaryImage.src = `../assets/images/${project.secondaryImage}`;
   secondaryImage.alt = `${project.name}, vue secondaire`;
-} else if (secondaryImage) {
-  secondaryImage.remove();
+  secondaryImage.hidden = false;
+  secondaryImage.classList.remove("is-secondary");
+  imagesContainer.appendChild(secondaryImage);
+} else {
+  // S'il n'y a qu'une seule image (comportement normal)
+  if (projectImage) {
+    projectImage.src = `../assets/images/${project.image}`;
+    projectImage.alt = project.name;
+    projectImage.hidden = false;
+  }
+  if (secondaryImage) {
+    secondaryImage.remove();
+  }
 }
-
 // ===============================
 // ÉLÉMENTS INTERACTIFS / IFRAME
 // ===============================
-const interactive = document.querySelector("#project-interactive");
-const youtubeLink = document.querySelector("#project-youtube");
-const visual = document.querySelector(".project-visual");
-const expandButton = document.querySelector("#project-expand");
-const projectEmbed = document.querySelector("#project-embed");
 
 // ===============================
 // PROJETS AVEC IFRAME EMBED

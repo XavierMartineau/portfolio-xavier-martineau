@@ -918,13 +918,16 @@ body {
    PAGE PROJETS
 =========================== */
 
+/* 1. Ajuste les marges globales de la page projets pour mobile */
 .projects-page {
   display: flex !important;
   flex-direction: column !important;
   align-items: stretch !important;
   width: 100% !important;
-  padding: 120px 2rem 60px;
+  padding: 100px 1rem 40px !important; /* Réduit les marges sur les côtés pour éviter la coupure */
+  box-sizing: border-box;
 }
+
 .projects-wrapper {
   max-width: 1400px;
   margin: auto;
@@ -945,10 +948,11 @@ body {
 }
 
 .projects-title {
-  font-size: clamp(2.2rem, 5vw, 3.5rem);
+  font-size: clamp(2rem, 7vw, 3.5rem);
   font-weight: 700;
+  margin: 0;
+  word-break: break-word;
 }
-
 .neon-rose {
   background: linear-gradient(90deg, #ff00ea, #6366f1);
   -webkit-background-clip: text;
@@ -969,7 +973,8 @@ body {
   align-items: center;
   width: 100%;
   gap: 1rem;
-  flex-wrap: nowrap; /* Empêche les éléments de passer à la ligne */
+  flex-wrap: wrap !important; /* 🔥 Changé de nowrap à wrap pour éviter les coupures */
+  box-sizing: border-box;
 }
 /* FILTER BUTTONS */
 .filter-buttons {
@@ -1174,7 +1179,7 @@ body {
   position: relative;
   width: min(850px, 100%);
   min-height: 280px;
-  margin: 0 auto;
+  margin: 5rem auto;
   overflow: hidden;
   border: 1px solid rgba(0, 243, 255, 0.38);
   border-radius: 12px;
@@ -1183,7 +1188,26 @@ body {
     0 0 38px rgba(0, 243, 255, 0.14),
     0 24px 70px rgba(0, 0, 0, 0.45);
 }
+.project-visual img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
 
+/* Sur ordinateur (écrans de 768px et plus) : elles passent côte à côte */
+@media (min-width: 768px) {
+  .project-visual {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .project-visual img {
+    width: calc(
+      50% - 8px
+    ); /* Chaque image prend la moitié de la largeur moins l'espace du gap */
+  }
+}
 .project-visual-media {
   min-height: 520px;
 }
@@ -1199,18 +1223,32 @@ body {
   );
   pointer-events: none;
 }
-
 .project-visual .images-container {
   display: flex;
+  flex-direction: column; /* L'une sous l'autre sur mobile */
   justify-content: center;
   align-items: center;
-  gap: 20px;
+  gap: 15px;
+  width: 100%;
+  height: 100%;
 }
 
 .project-visual .images-container img {
-  width: 45%;
+  width: 100%;
   height: auto;
   object-fit: contain;
+}
+
+/* Sur ordinateur : elles basculent côte à côte selon ton media query */
+@media (min-width: 768px) {
+  .project-visual .images-container {
+    flex-direction: row; /* Côte à côte sur PC */
+    justify-content: space-between;
+  }
+
+  .project-visual .images-container img {
+    width: calc(50% - 8px);
+  }
 }
 
 .project-embed {
@@ -1750,19 +1788,8 @@ body {
   margin-top: 0.4rem;
 }
 /* ===========================
-   BOUTONS DE NAVIGATION - COULEURS DISTINCTES
+   BOUTONS DE NAVIGATION - COULEURS DISTINCTES & RESPONSIVE
 =========================== */
-
-.project-navigation-footer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 60px;
-  padding-top: 24px;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  gap: 20px;
-  flex-wrap: wrap;
-}
 
 /* Base commune pour les boutons */
 .project-navigation-footer .nav-btn {
@@ -1780,6 +1807,7 @@ body {
   will-change: transform, background, box-shadow, border-color;
   cursor: pointer;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  box-sizing: border-box;
 }
 
 /* 1. Bouton Précédent (Cyan / Bleu électrique) */
@@ -1787,6 +1815,9 @@ body {
   color: #00f3ff;
   background: rgba(0, 243, 255, 0.05);
   border: 1px solid rgba(0, 243, 255, 0.4);
+  grid-column: 1;
+  grid-row: 1;
+  width: 100%;
 }
 .project-navigation-footer .nav-btn-prev:hover {
   background: rgba(0, 243, 255, 0.18);
@@ -1798,28 +1829,14 @@ body {
   transform: translateY(-3px);
 }
 
-/* 2. Bouton Retour aux projets (Magenta / Rose néon - Transparent en gras) */
-.project-navigation-footer .nav-btn-return {
-  font-weight: 700;
-  color: #ff007f;
-  background: transparent !important;
-  border: 1px solid rgba(255, 0, 127, 0.5);
-}
-.project-navigation-footer .nav-btn-return:hover {
-  background: rgba(255, 0, 127, 0.12) !important;
-  border-color: #ff007f;
-  color: #ffffff;
-  box-shadow:
-    0 0 25px rgba(255, 0, 127, 0.45),
-    0 6px 20px rgba(0, 0, 0, 0.4);
-  transform: translateY(-3px);
-}
-
-/* 3. Bouton Suivant (Vert Matrix / Émeraude) */
+/* 2. Bouton Suivant (Vert Matrix / Émeraude) */
 .project-navigation-footer .nav-btn-next {
   color: #00ff66;
   background: rgba(0, 255, 102, 0.05);
   border: 1px solid rgba(0, 255, 102, 0.4);
+  grid-column: 2;
+  grid-row: 1;
+  width: 100%;
 }
 .project-navigation-footer .nav-btn-next:hover {
   background: rgba(0, 255, 102, 0.18);
@@ -1831,7 +1848,68 @@ body {
   transform: translateY(-3px);
 }
 
+/* 3. Bouton Retour aux projets (Magenta / Rose néon) */
+.project-navigation-footer .nav-btn-return {
+  font-weight: 700;
+  color: #ff007f;
+  background: transparent !important;
+  border: 1px solid rgba(255, 0, 127, 0.5);
+  grid-column: 1 / -1;
+  grid-row: 2;
+  justify-self: center;
+  width: fit-content;
+  max-width: 100%;
+}
+.project-navigation-footer .nav-btn-return:hover {
+  background: rgba(255, 0, 127, 0.12) !important;
+  border-color: #ff007f;
+  color: #ffffff;
+  box-shadow:
+    0 0 25px rgba(255, 0, 127, 0.45),
+    0 6px 20px rgba(0, 0, 0, 0.4);
+  transform: translateY(-3px);
+}
+
 /* Masquer proprement un bouton si nécessaire */
 .nav-btn.is-hidden {
   display: none !important;
+}
+
+/* Grille de base pour Ordinateur */
+.project-navigation-footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-top: 3rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* ===========================
+   ADAPTATION MOBILE (100% Responsive)
+=========================== */
+@media (max-width: 600px) {
+  .project-navigation-footer {
+    grid-template-columns: 1fr; /* Passe à une seule colonne sur mobile */
+  }
+
+  .nav-btn-prev {
+    grid-column: 1;
+    grid-row: 1;
+    width: 100%;
+  }
+
+  .nav-btn-next {
+    grid-column: 1;
+    grid-row: 2;
+    width: 100%;
+  }
+
+  .nav-btn-return {
+    grid-column: 1;
+    grid-row: 3;
+    justify-self: stretch;
+    width: 100% !important;
+    text-align: center;
+  }
 }
