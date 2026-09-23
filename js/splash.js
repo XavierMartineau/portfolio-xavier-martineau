@@ -26,14 +26,14 @@ const colors = ["#6366f1", "#ff00ea", "#00f3ff", "#8b5cf6"];
 // ==============================
 // INITIALISATION DES PARTICULES
 // ==============================
-particles = Array.from({ length: 80 }, () => ({
+particles = Array.from({ length: 120 }, () => ({
   x: Math.random() * canvas.width,
   y: Math.random() * canvas.height,
   vx: (Math.random() - 0.5) * 0.4, // Vitesse horizontale
   vy: (Math.random() - 0.5) * 0.4, // Vitesse verticale
-  r: Math.random() * 1.5 + 0.3, // Rayon (taille) du point
+  r: Math.random() * 1.7 + 0.4, // Rayon légèrement renforcé
   color: colors[Math.floor(Math.random() * colors.length)], // Couleur aléatoire dans la palette
-  alpha: Math.random() * 0.75 + 0.25, // Opacité aléatoire renforcée
+  alpha: Math.random() * 0.38 + 0.14, // Contraste légèrement renforcé
 }));
 
 // ==============================
@@ -50,10 +50,10 @@ function draw() {
     0,
     mouse.x,
     mouse.y,
-    320,
+    260,
   );
-  grd.addColorStop(0, "rgba(99,102,241,0.18)");
-  grd.addColorStop(0.35, "rgba(0,243,255,0.08)");
+  grd.addColorStop(0, "rgba(255,255,255,0.018)");
+  grd.addColorStop(0.35, "rgba(255,255,255,0.006)");
   grd.addColorStop(1, "transparent");
   ctx.fillStyle = grd;
   ctx.fillRect(0, 0, canvas.width, canvas.height);
@@ -85,8 +85,8 @@ function draw() {
         ctx.beginPath();
         ctx.moveTo(particles[i].x, particles[i].y);
         ctx.lineTo(particles[j].x, particles[j].y);
-        ctx.strokeStyle = "#6366f1";
-        ctx.globalAlpha = (1 - d / 100) * 0.2; // Plus ils sont proches, plus la ligne est visible
+        ctx.strokeStyle = "#ffffff";
+        ctx.globalAlpha = (1 - d / 100) * 0.08; // Lignes blanches très discrètes
         ctx.lineWidth = 0.5;
         ctx.stroke();
         ctx.globalAlpha = 1;

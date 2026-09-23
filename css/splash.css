@@ -1,4 +1,4 @@
-/* ====== RÉINITIALISATION GLOBALE ====== */
+﻿/* ====== RÉINITIALISATION GLOBALE ====== */
 * {
   margin: 0;
   padding: 0;
@@ -66,14 +66,14 @@ body {
   border-radius: 50%;
   pointer-events: none;
   filter: blur(85px);
-  opacity: 1.35;
+  opacity: 0.75;
   will-change: transform;
 }
 
 .orb-1 {
   width: 700px;
   height: 700px;
-  background: rgba(99, 102, 241, 0.16);
+  background: rgba(99, 102, 241, 0.08);
   top: -20%;
   left: -15%;
 }
@@ -81,7 +81,7 @@ body {
 .orb-2 {
   width: 500px;
   height: 500px;
-  background: rgba(255, 0, 234, 0.12);
+  background: rgba(255, 0, 234, 0.055);
   bottom: -10%;
   right: -10%;
 }
@@ -89,7 +89,7 @@ body {
 .orb-3 {
   width: 400px;
   height: 400px;
-  background: rgba(0, 243, 255, 0.1);
+  background: rgba(0, 243, 255, 0.05);
   top: 30%;
   right: 5%;
 }
@@ -108,7 +108,7 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.08);
   box-shadow:
     0 20px 50px rgba(0, 0, 0, 0.5),
-    0 0 70px rgba(99, 102, 241, 0.16),
+    0 0 50px rgba(255, 255, 255, 0.03),
     inset 0 1px 0 rgba(255, 255, 255, 0.1),
     inset 0 -1px 0 rgba(0, 0, 0, 0.2);
 }
@@ -256,15 +256,6 @@ body {
   animation: load 2.4s ease forwards;
 }
 
-@keyframes load {
-  from {
-    width: 0%;
-  }
-  to {
-    width: 100%;
-  }
-}
-
 /* ====== BOUTON D'ENTRÉE ====== */
 .enter-btn {
   width: 100%;
@@ -303,28 +294,6 @@ body {
   box-shadow: 0 0 40px rgba(99, 102, 241, 0.4);
   border-color: rgba(99, 102, 241, 0.8);
   transform: translateY(-2px);
-}
-
-@keyframes enter-button-pulse {
-  0%,
-  100% {
-    box-shadow: 0 0 0 rgba(99, 102, 241, 0);
-  }
-  50% {
-    box-shadow:
-      0 0 22px rgba(99, 102, 241, 0.28),
-      0 0 42px rgba(255, 0, 234, 0.12);
-  }
-}
-
-@keyframes enter-arrow-slide {
-  0%,
-  100% {
-    transform: translateX(0);
-  }
-  50% {
-    transform: translateX(5px);
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -369,17 +338,5 @@ body {
   background: #00f3ff;
   border-radius: 50%;
   box-shadow: 0 0 6px #00f3ff;
-  animation: pulse 1.4s infinite;
-}
-
-@keyframes pulse {
-  0% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.3;
-  }
-  100% {
-    opacity: 1;
-  }
+  animation: splash-pulse 1.4s infinite;
 }

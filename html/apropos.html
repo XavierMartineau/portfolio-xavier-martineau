@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>À propos – Xavier Martineau</title>
+    <link rel="stylesheet" href="../css/body.css" />
+    <link rel="stylesheet" href="../css/font.css" />
+    <link rel="stylesheet" href="../css/footer.css" />
+    <link rel="stylesheet" href="../css/animation.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/responsive.css" />
+    <link rel="stylesheet" href="../css/composants/navigations.css" />
+  </head>
+
+  <body class="root about-page">
+    <!-- Arrière-plan commun du portfolio. -->
+    <div class="grid-bg"></div>
+
+    <!-- Navigation principale avec la page À propos active. -->
+    <header class="navbar">
+      <a href="../index.html" class="navbar-left">
+        <div class="logo">
+          <div class="logo-glow"></div>
+          <div class="logo-inner">
+            <img src="../assets/svg/Logo_svg.svg" alt="Logo XM" />
+          </div>
+        </div>
+        <h3 class="brand">
+          Xavier <span class="brand-accent">Martineau</span>
+        </h3>
+      </a>
+
+      <input class="menu-checkbox" type="checkbox" id="menu-toggle" />
+
+      <nav class="navbar-links">
+        <h3><a href="accueil.html">ACCUEIL</a></h3>
+        <h3><a href="projets.html">PROJETS</a></h3>
+        <h3><a href="apropos.html" class="active">À PROPOS</a></h3>
+        <h3><a href="contact.html">CONTACT</a></h3>
+        <h3 class="mobile-menu-cta">
+          <a href="contact.html">ENGAGEZ-MOI</a>
+        </h3>
+      </nav>
+
+      <label class="menu-toggle" for="menu-toggle" aria-label="Ouvrir le menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+
+      <div class="navbar-right">
+        <h3><a href="contact.html" class="btn-engage">Engagez-moi</a></h3>
+      </div>
+    </header>
+
+    <main class="about-page-container">
+      <div class="about-max-width">
+        <!-- En-tête de la page. -->
+        <header class="about-header">
+          <div class="about-header-line">
+            <span class="about-line"></span>
+            <h4 class="about-label">// À propos</h4>
+          </div>
+          <h1 class="about-title">Xavier <span>Martineau</span></h1>
+        </header>
+
+        <!-- Présentation et informations personnelles. -->
+        <section class="about-card" aria-labelledby="about-introduction">
+          <div class="about-orb about-orb-indigo"></div>
+          <div class="about-orb about-orb-rose"></div>
+
+          <div class="about-grid">
+            <div class="about-copy" id="about-introduction">
+              <h2>Je crée, j'apprends et je construis.</h2>
+              <p class="bio-primary">
+                Je travaille dans le multimédia depuis quatre ans. J'aime créer
+                des sites, des visuels et des projets numériques qui mélangent
+                la technique et la créativité.
+              </p>
+              <p class="bio-secondary">
+                Je prends le temps de comprendre chaque projet pour construire
+                une expérience claire, agréable et adaptée à son public.
+              </p>
+              <p class="bio-secondary">
+                Quand je ne code pas, je travaille sur mes idées visuelles, mes
+                animations 3D et mes prochains projets.
+              </p>
+            </div>
+
+            <div
+              class="about-info-grid"
+              id="info-container"
+              aria-label="Informations personnelles"
+            ></div>
+          </div>
+        </section>
+
+        <!-- Parcours généré depuis les données du script. -->
+        <section
+          class="about-timeline-section"
+          aria-labelledby="about-path-title"
+        >
+          <div class="about-header-line about-timeline-heading">
+            <span class="about-line about-line-rose"></span>
+            <h2 id="about-path-title" class="about-label about-label-rose">
+              // Parcours
+            </h2>
+          </div>
+
+          <div class="about-timeline-wrapper">
+            <div class="about-timeline-line" aria-hidden="true"></div>
+            <div class="about-timeline-list" id="timeline-container"></div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- Pied de page commun. -->
+    <footer class="footer">
+      <span>© 2026 Xavier Martineau — Tous droits réservés</span>
+      <div class="footer-right">
+        <div class="pulse-dot"></div>
+        <span>CRÉÉ AVEC PASSION</span>
+      </div>
+    </footer>
+
+    <script src="../js/apropos.js"></script>
+  </body>
+</html>
