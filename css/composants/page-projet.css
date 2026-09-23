@@ -121,6 +121,25 @@
   position: absolute;
   z-index: 8;
 }
+
+.project-loading {
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  min-height: 12rem;
+  color: #d8d8e6;
+  background: rgba(8, 9, 18, 0.9);
+  font-family: monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.project-loading[hidden] {
+  display: none !important;
+}
 @media (max-width: 899px) {
   .project-detail {
     width: min(100% - 2rem, 700px);

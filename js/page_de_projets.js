@@ -263,6 +263,13 @@ const setEmbedLoading = (isLoading) => {
   }
 };
 
+// Termine immédiatement l'état de chargement pour les projets qui utilisent une image.
+const finishStaticMediaLoading = () => {
+  if (!activeEmbedSource) {
+    setEmbedLoading(false);
+  }
+};
+
 if (projectEmbed) {
   projectEmbed.addEventListener("load", () => {
     setEmbedLoading(false);
@@ -465,6 +472,9 @@ if (projectId === 6 && isMobileScreen) {
     projectImage.src = `../assets/images/${project.image}`;
     projectImage.alt = project.name;
     projectImage.classList.add("project-image-full");
+    projectImage.addEventListener("load", finishStaticMediaLoading, {
+      once: true,
+    });
   }
 }
 

@@ -1,1 +1,107 @@
-/* ==========================================================================\n   RESPONSIVE GLOBAL\n   Les composants gardent leurs styles de base dans leurs propres fichiers.\n   Ce fichier regroupe les adaptations communes aux différentes pages.\n   ========================================================================== */\n\n@media (max-width: 1200px) {\n  .home-hero,\n  .featured-section {\n    padding-right: 1.5rem;\n    padding-left: 1.5rem;\n  }\n}\n\n@media (max-width: 1024px) {\n  .projects-grid {\n    grid-template-columns: repeat(2, minmax(0, 1fr));\n  }\n}\n\n@media (max-width: 899px) {\n  .hero-buttons {\n    display: grid;\n    grid-template-columns: repeat(2, minmax(0, 1fr));\n    gap: 0.75rem;\n    width: 100%;\n  }\n\n  .hero-buttons h2,\n  .hero-buttons a {\n    width: 100%;\n    min-width: 0;\n    box-sizing: border-box;\n  }\n\n  .project-content-grid {\n    grid-template-columns: 1fr;\n    gap: 1rem;\n  }\n\n  .project-detail {\n    width: min(100% - 2rem, 700px);\n    padding-top: 1.25rem;\n  }\n\n  .project-detail-header {\n    justify-content: flex-start;\n    flex-wrap: wrap;\n    gap: 0.6rem 1rem;\n    margin-top: 2rem;\n  }\n}\n\n@media (max-width: 600px) {\n  .home-hero {\n    min-height: auto;\n    padding: 7rem 1rem 4rem;\n  }\n\n  .hero-title {\n    font-size: clamp(2.25rem, 10vw, 3.5rem);\n  }\n\n  .hero-stats {\n    width: 100%;\n    grid-template-columns: repeat(2, minmax(0, 1fr));\n  }\n\n  .featured-section {\n    padding-right: 1rem;\n    padding-left: 1rem;\n  }\n\n  .projects-grid {\n    grid-template-columns: 1fr !important;\n    gap: 1.5rem !important;\n    width: 100% !important;\n  }\n\n  .projects-grid .gc {\n    min-height: auto !important;\n    padding: 1.5rem !important;\n  }\n\n  .project-navigation-footer {\n    grid-template-columns: 1fr;\n  }\n\n  .nav-btn-prev,\n  .nav-btn-next,\n  .nav-btn-return {\n    grid-column: 1;\n    width: 100%;\n  }\n}\n\n@media (prefers-reduced-motion: reduce) {\n  *,\n  *::before,\n  *::after {\n    scroll-behavior: auto !important;\n    animation-duration: 0.01ms !important;\n    animation-iteration-count: 1 !important;\n    transition-duration: 0.01ms !important;\n  }\n}\n
+﻿/* ==========================================================================
+   RESPONSIVE GLOBAL
+   Les composants gardent leurs styles de base dans leurs propres fichiers.
+   Ce fichier regroupe les adaptations communes aux différentes pages.
+   ========================================================================== */
+
+@media (max-width: 1200px) {
+  .home-hero,
+  .featured-section {
+    padding-right: 1.5rem;
+    padding-left: 1.5rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 899px) {
+  .hero-buttons {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+    width: 100%;
+  }
+
+  .hero-buttons h2,
+  .hero-buttons a {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+
+  .project-content-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .project-detail {
+    width: min(100% - 2rem, 700px);
+    padding-top: 1.25rem;
+  }
+
+  .project-detail-header {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 0.6rem 1rem;
+    margin-top: 2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .home-hero {
+    min-height: auto;
+    padding: 7rem 1rem 4rem;
+  }
+
+  .hero-title {
+    font-size: clamp(2.25rem, 10vw, 3.5rem);
+  }
+
+  .hero-stats {
+    width: 100%;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .featured-section {
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+    width: 100% !important;
+  }
+
+  .projects-grid .gc {
+    min-height: auto !important;
+    padding: 1.5rem !important;
+  }
+
+  .project-navigation-footer {
+    grid-template-columns: 1fr;
+  }
+
+  .nav-btn-prev,
+  .nav-btn-next,
+  .nav-btn-return {
+    grid-column: 1;
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
