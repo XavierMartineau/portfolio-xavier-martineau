@@ -209,8 +209,46 @@
   .project-visual,
   .project-visual-media,
   .project-visual-interactive {
-    min-height: clamp(300px, 68vw, 560px);
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    min-height: clamp(360px, 78vw, 600px);
     margin: 1.5rem auto;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  .project-visual img,
+  .project-visual .images-container,
+  .project-visual .project-image-full,
+  .project-visual .project-embed,
+  .project-visual .project-interactive {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  .project-visual .project-image-full,
+  .project-visual.stitch-mode img {
+    width: 92%;
+    max-width: 92%;
+    height: auto;
+    min-height: 0;
+    max-height: none;
+    object-fit: contain;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .project-visual-interactive .interactive-game,
+  .project-visual-interactive .mobile-warning-view {
+    width: 100%;
+    min-width: 0;
+    min-height: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+    overflow-wrap: anywhere;
   }
 
   .project-visual-media .project-embed,
@@ -730,6 +768,48 @@
 }
 
 @media (max-width: 600px) {
+  /* Empêche toutes les cartes de dépasser horizontalement sur mobile. */
+  .featured-card,
+  .projects-grid .gc,
+  .detail-panel,
+  .detail-panel-large,
+  .about-card,
+  .about-info-card,
+  .about-timeline-card {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    overflow-wrap: anywhere;
+  }
+
+  .featured-card .featured-background,
+  .projects-grid .gc .project-background {
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    transform: none;
+    object-fit: cover;
+  }
+
+  .featured-card,
+  .projects-grid .gc,
+  .detail-panel,
+  .detail-panel-large,
+  .about-card {
+    overflow-x: hidden;
+  }
+
+  .featured-card > *,
+  .projects-grid .gc > *,
+  .detail-panel > *,
+  .detail-panel-large > *,
+  .about-card > * {
+    max-width: 100%;
+    min-width: 0;
+  }
+
   .project-detail-header {
     justify-content: center;
     width: 100%;

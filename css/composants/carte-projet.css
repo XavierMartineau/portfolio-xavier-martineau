@@ -24,6 +24,8 @@
   isolation: isolate;
   overflow: hidden;
   box-sizing: border-box;
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 
 .featured-card.has-featured-image {
@@ -115,6 +117,8 @@
     border-color 0.3s ease,
     box-shadow 0.3s ease;
   cursor: pointer;
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 
 .projects-grid .gc.is-visible {

@@ -73,10 +73,14 @@
 }
 .detail-panel {
   padding: 1.5rem;
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 .detail-panel-large {
   padding: 24px;
   backdrop-filter: blur(10px);
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 .project-overview-panel {
   display: flex;
