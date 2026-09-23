@@ -10,6 +10,8 @@
   align-items: center;
   color: #e8e8f0;
   margin-top: 4rem;
+  box-sizing: border-box;
+  width: 100%;
 }
 
 .footer-right {
@@ -40,5 +42,22 @@
   100% {
     opacity: 1;
     transform: scale(1);
+  }
+}
+
+/* ===========================
+  ADAPTATION MOBILE
+=========================== */
+@media (max-width: 768px) {
+  .footer {
+    flex-direction: column; /* Empile le copyright et "BUILT WITH PASSION" l'un sous l'autre */
+    gap: 1rem;
+    padding: 1.5rem 1rem; /* Réduit les marges intérieures */
+    text-align: center; /* Centre le texte proprement */
+    margin-top: 2rem;
+  }
+
+  .footer-right {
+    justify-content: center;
   }
 }

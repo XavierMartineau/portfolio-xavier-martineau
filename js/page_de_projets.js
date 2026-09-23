@@ -1,6 +1,7 @@
-// ===============================
-// LISTE DES PROJETS
-// ===============================
+// =========================================================================
+// 1. LISTE DES PROJETS
+// Contient toutes les données, descriptions, technologies et médias de chaque projet.
+// =========================================================================
 const projects = {
   1: {
     name: "Animation & 3D",
@@ -74,9 +75,9 @@ const projects = {
   },
 };
 
-// ===============================
-// RÉCUPÉRATION DE L’ID DU PROJET
-// ===============================
+// =========================================================================
+// 2. RÉCUPÉRATION DE L’ID DU PROJET DANS L'URL
+// =========================================================================
 const requestedId = Number.parseInt(
   new URLSearchParams(window.location.search).get("project"),
   10,
@@ -84,19 +85,17 @@ const requestedId = Number.parseInt(
 const projectId = projects[requestedId] ? requestedId : 1;
 const project = projects[projectId];
 
-// Variables globales pour l'état des embeds
 let activeEmbedSource = null;
 let projectMuted = false;
 
-// ===============================
-// FONCTION POUR REMPLIR LE TEXTE
-// ===============================
+// =========================================================================
+// 3. FONCTION UTILITAIRE POUR INSERER LES TEXTES
+// =========================================================================
 const setText = (selector, value) => {
   const el = document.querySelector(selector);
   if (el) el.textContent = value;
 };
 
-// Remplissage des infos du projet dans la page
 setText("#project-index", `[${String(projectId).padStart(2, "0")}] / 07`);
 setText("#project-category", project.category);
 setText("#project-year", project.year);
@@ -105,7 +104,9 @@ setText("#project-description", project.description);
 setText("#project-summary", project.description);
 setText("#project-category-panel", project.category);
 
-// Ajout des classes de couleur pour la catégorie
+// =========================================================================
+// 4. ATTRIBUTION DES COULEURS DE CATÉGORIE
+// =========================================================================
 const categoryElement = document.querySelector("#project-category");
 if (categoryElement) {
   categoryElement.classList.add("couleur-categorie");
@@ -126,12 +127,11 @@ if (categoryElement) {
   }
 }
 
-// Titre de l’onglet
 document.title = `${project.name} – Xavier Martineau`;
 
-// ===============================
-// IMAGES PRINCIPales & ÉLÉMENTS VISUELS
-// ===============================
+// =========================================================================
+// 5. SÉLECTION DES ÉLÉMENTS VISUELS ET DU DOM
+// =========================================================================
 const visual = document.querySelector(".project-visual");
 const projectImage = document.querySelector("#project-image");
 let secondaryImage = document.querySelector("#project-secondary-image");
@@ -140,17 +140,17 @@ const youtubeLink = document.querySelector("#project-youtube");
 const expandButton = document.querySelector("#project-expand");
 const projectEmbed = document.querySelector("#project-embed");
 
-// Gestion de l'affichage des images
+// =========================================================================
+// 6. GESTION DE L'AFFICHAGE DES IMAGES
+// =========================================================================
 if (project.secondaryImage) {
-  // S'il y a une image secondaire, on utilise un conteneur flex pour gérer la disposition
   let imagesContainer = visual.querySelector(".images-container");
   if (!imagesContainer) {
     imagesContainer = document.createElement("div");
     imagesContainer.className = "images-container";
-    visual.prepend(imagesContainer); // Place le conteneur dans .project-visual
+    visual.prepend(imagesContainer);
   }
 
-  // Déplace ou configure l'image principale
   if (projectImage) {
     projectImage.src = `../assets/images/${project.image}`;
     projectImage.alt = project.name;
@@ -158,7 +158,6 @@ if (project.secondaryImage) {
     imagesContainer.appendChild(projectImage);
   }
 
-  // Configure l'image secondaire
   if (!secondaryImage) {
     secondaryImage = document.createElement("img");
     secondaryImage.id = "project-secondary-image";
@@ -169,7 +168,6 @@ if (project.secondaryImage) {
   secondaryImage.classList.remove("is-secondary");
   imagesContainer.appendChild(secondaryImage);
 } else {
-  // S'il n'y a qu'une seule image (comportement normal)
   if (projectImage) {
     projectImage.src = `../assets/images/${project.image}`;
     projectImage.alt = project.name;
@@ -179,13 +177,10 @@ if (project.secondaryImage) {
     secondaryImage.remove();
   }
 }
-// ===============================
-// ÉLÉMENTS INTERACTIFS / IFRAME
-// ===============================
 
-// ===============================
-// PROJETS AVEC IFRAME EMBED
-// ===============================
+// =========================================================================
+// 7. LISTE DES PROJETS AVEC IFRAME EMBED
+// =========================================================================
 const embeddedProjects = {
   1: {
     src: "https://www.youtube.com/embed/Bkvwrvg_bws?si=VICC3QMpiGek1nlQ",
@@ -205,52 +200,14 @@ const embeddedProjects = {
   },
 };
 
-// ===============================
-// MODE INTERACTIF (JEU / SITE)
-// ===============================
+// =========================================================================
+// 8. MODE INTERACTIF POUR LES SITES WEB
+// =========================================================================
 const renderInteractive = () => {
-  if (interactive) interactive.hidden = false;
+  if (!interactive) return;
+  interactive.hidden = false;
   if (projectImage) projectImage.hidden = true;
 
-  if (!interactive) return;
-
-  // Mode mini-jeu pour la catégorie "Jeu vidéo"
-  if (project.category === "Jeu vidéo") {
-    interactive.innerHTML = `
-      <div class="interactive-game">
-        <span class="interactive-kicker">// GAME PREVIEW</span>
-        <strong>${project.name}</strong>
-        <p>Explore le prototype et trouve la cible lumineuse.</p>
-        <button class="interactive-action" type="button">Lancer la partie</button>
-        <div class="game-stage"><button class="game-target" type="button" aria-label="Cible"></button></div>
-        <span class="game-score">Score : <b>0</b></span>
-      </div>`;
-
-    const startButton = interactive.querySelector(".interactive-action");
-    const target = interactive.querySelector(".game-target");
-    const score = interactive.querySelector(".game-score b");
-    let currentScore = 0;
-
-    if (startButton && target && score) {
-      startButton.addEventListener("click", () => {
-        currentScore = 0;
-        score.textContent = currentScore;
-        target.hidden = false;
-        target.style.left = `${20 + Math.random() * 65}%`;
-        target.style.top = `${20 + Math.random() * 55}%`;
-      });
-
-      target.addEventListener("click", () => {
-        currentScore += 1;
-        score.textContent = currentScore;
-        target.style.left = `${10 + Math.random() * 75}%`;
-        target.style.top = `${15 + Math.random() * 60}%`;
-      });
-    }
-    return;
-  }
-
-  // Mode "site web" interactif
   interactive.innerHTML = `
     <div class="interactive-browser">
       <div class="browser-bar"><i></i><i></i><i></i><span>portfolio / ${project.name}</span></div>
@@ -281,10 +238,54 @@ const renderInteractive = () => {
   });
 };
 
-// ===============================
-// LOGIQUE PRINCIPALE D’AFFICHAGE
-// ===============================
-if (embeddedProjects[projectId] && projectEmbed) {
+// =========================================================================
+// 9. LOGIQUE PRINCIPALE D’AFFICHAGE DE LA PAGE
+// =========================================================================
+const isMobileScreen = window.matchMedia("(max-width: 768px)").matches;
+
+if (projectId === 6 && isMobileScreen) {
+  if (visual) visual.classList.add("project-visual-interactive");
+  if (interactive) {
+    interactive.hidden = false;
+    if (projectImage) projectImage.hidden = true;
+    interactive.innerHTML = `
+      <div class="interactive-game mobile-warning-view" style="padding: 1.5rem; text-align: center; overflow-y: auto; max-height: 100%;">
+        <span class="interactive-kicker">// NOTICE MOBILE</span>
+        <strong style="font-size: 1.2rem; margin-bottom: 1rem; display: block;">Ce jeu est conçu pour une utilisation PC uniquement.</strong>
+        <p style="margin-bottom: 1rem; color: #b7b7c9;">Voir la vidéo :</p>
+        <div style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px; border: 1px solid rgba(0, 243, 255, 0.3);">
+          <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" src="https://www.youtube.com/embed/VQ0Fg8uARHI?si=wryya5UrbiuQGy-0" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+      </div>`;
+  }
+} else if (projectId === 6 && !isMobileScreen) {
+  if (visual) visual.classList.add("project-visual-interactive");
+  if (interactive) {
+    interactive.hidden = false;
+    if (projectImage) projectImage.hidden = true;
+
+    interactive.innerHTML = `
+      <div class="interactive-game" style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; text-align: center; padding: 2rem;">
+        <span class="interactive-kicker" style="margin-bottom: 1rem;">// JOUER AU JEU VIDÉO</span>
+        <strong style="font-size: 1.3rem; margin-bottom: 0.5rem; color: #ffffff;">${project.name}</strong>
+        <p style="color: #b7b7c9; margin-bottom: 1.5rem; max-width: 400px;">Clique sur le bouton ci-dessous pour charger et lancer le jeu interactif directement dans le navigateur.</p>
+        <button id="load-game-btn" class="interactive-action" type="button" style="padding: 12px 28px; font-size: 0.9rem; cursor: pointer;">Lancer la partie</button>
+      </div>`;
+
+    const loadBtn = interactive.querySelector("#load-game-btn");
+    if (loadBtn && projectEmbed && embeddedProjects[6]) {
+      loadBtn.addEventListener("click", () => {
+        activeEmbedSource = embeddedProjects[6].src;
+        interactive.hidden = true;
+
+        projectEmbed.hidden = false;
+        projectEmbed.src = embeddedProjects[6].src;
+        projectEmbed.title = embeddedProjects[6].title;
+        projectEmbed.classList.add("project-embed-active");
+      });
+    }
+  }
+} else if (embeddedProjects[projectId] && projectEmbed) {
   const embeddedProject = embeddedProjects[projectId];
   activeEmbedSource = embeddedProject.src;
 
@@ -294,22 +295,14 @@ if (embeddedProjects[projectId] && projectEmbed) {
   projectEmbed.classList.add("project-embed-active");
   if (projectImage) projectImage.hidden = true;
 
-  if (projectId === 6 && projectImage) {
-    projectImage.src = `../assets/images/${project.image}`;
-    projectImage.alt = project.name;
-  }
-
   if (visual) {
-    if (project.category === "Jeu vidéo" || project.category === "Site web") {
+    if (project.category === "Site web") {
       visual.classList.add("project-visual-interactive");
     } else {
       visual.classList.add("project-visual-media");
     }
   }
-} else if (
-  project.category === "Jeu vidéo" ||
-  project.category === "Site web"
-) {
+} else if (project.category === "Site web") {
   if (visual) visual.classList.add("project-visual-interactive");
   renderInteractive();
 } else if (project.category === "3D") {
@@ -333,9 +326,9 @@ if (embeddedProjects[projectId] && projectEmbed) {
   }
 }
 
-// ===============================
-// GESTION DU STOP / RESUME IFRAME
-// ===============================
+// =========================================================================
+// 10. GESTION DES RESSOURCES DES IFRAMES (STOP / REPRENDRE)
+// =========================================================================
 const stopEmbeddedProject = () => {
   if (!activeEmbedSource || !projectEmbed) {
     return;
@@ -365,9 +358,9 @@ document.addEventListener("visibilitychange", () => {
 
 window.addEventListener("pagehide", stopEmbeddedProject);
 
-// ===============================
-// BOUTON AGRANDIR
-// ===============================
+// =========================================================================
+// 11. BOUTON AGRANDIR
+// =========================================================================
 document.addEventListener("DOMContentLoaded", () => {
   const expandBtn = document.querySelector("#project-expand");
   const vis = document.querySelector(".project-visual");
@@ -382,9 +375,9 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-// ===============================
-// TAGS TECHNOLOGIES
-// ===============================
+// =========================================================================
+// 12. GÉNÉRATION DES TAGS DE TECHNOLOGIES
+// =========================================================================
 const technologies = document.querySelector("#project-technologies");
 if (technologies && project.technologies) {
   project.technologies.forEach((technology) => {
@@ -394,17 +387,17 @@ if (technologies && project.technologies) {
   });
 }
 
-// ===============================
-// LIEN RETOUR
-// ===============================
+// =========================================================================
+// 13. LIEN DE RETOUR À LA LISTE DES PROJETS
+// =========================================================================
 const returnProjectBtn = document.querySelector("#return-project");
 if (returnProjectBtn) {
   returnProjectBtn.href = "projets.html";
 }
 
-// ===============================
-// NAVIGATION DYNAMIQUE (PRÉCÉDENT / SUIVANT)
-// ===============================
+// =========================================================================
+// 14. NAVIGATION DYNAMIQUE (PRÉCÉDENT / SUIVANT)
+// =========================================================================
 document.addEventListener("DOMContentLoaded", () => {
   const indexEl = document.getElementById("project-index");
   const nextLinkEl = document.getElementById("next-project-link");
@@ -436,5 +429,83 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       }
     }
+  }
+});
+
+// =========================================================================
+// 15. PAUSE AUTOMATIQUE AU SCROLL (OOPS! CONTACT PERDU)
+// Coupe l'iframe et affiche l'écran de pause si l'utilisateur s'éloigne du visuel.
+// =========================================================================
+document.addEventListener("DOMContentLoaded", () => {
+  const visualContainer = document.querySelector(".project-visual");
+  if (!visualContainer) return;
+
+  // Création dynamique de l'overlay d'avertissement "OOPS!"
+  const oopsOverlay = document.createElement("div");
+  oopsOverlay.id = "oops-overlay";
+  oopsOverlay.style.cssText = `
+    position: absolute;
+    inset: 0;
+    background: rgba(10, 10, 15, 0.95);
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    text-align: center;
+    padding: 2rem;
+    font-family: monospace;
+  `;
+  oopsOverlay.innerHTML = `
+    <span style="color: #ff007f; font-size: 1.2rem; margin-bottom: 0.5rem; font-weight: bold;">// OOPS!</span>
+    <strong style="color: #ffffff; font-size: 1.1rem; margin-bottom: 1.5rem;">Contact perdu</strong>
+    <button id="resume-btn" class="interactive-action" type="button" style="padding: 10px 24px; cursor: pointer;">Reprendre</button>
+  `;
+  visualContainer.style.position = "relative";
+  visualContainer.appendChild(oopsOverlay);
+
+  let manualPause = false;
+
+  // Observer de visibilité de l'écran lors du scroll
+  const scrollObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        // Si le composant sort de l'écran et qu'une source active de jeu/vidéo tourne
+        if (
+          !entry.isIntersecting &&
+          activeEmbedSource &&
+          projectEmbed &&
+          projectEmbed.src !== "about:blank" &&
+          !manualPause
+        ) {
+          projectEmbed.src = "about:blank"; // Stoppe net le jeu, l'iframe et le son
+          oopsOverlay.style.display = "flex"; // Affiche l'écran OOPS
+        }
+      });
+    },
+    { threshold: 0.2 },
+  ); // Se déclenche dès qu'il reste moins de 20% visible à l'écran
+
+  scrollObserver.observe(visualContainer);
+
+  // Gestion du clic sur le bouton "Reprendre"
+  const resumeBtn = oopsOverlay.querySelector("#resume-btn");
+  if (resumeBtn) {
+    resumeBtn.addEventListener("click", () => {
+      oopsOverlay.style.display = "none";
+      manualPause = true;
+
+      if (projectEmbed && activeEmbedSource) {
+        projectEmbed.src = activeEmbedSource; // Relance le jeu/vidéo et le son
+      }
+
+      // Ramène doucement le visuel bien en vue
+      visualContainer.scrollIntoView({ behavior: "smooth", block: "center" });
+
+      // Réinitialise le verrou après un court moment pour réactiver la détection de scroll
+      setTimeout(() => {
+        manualPause = false;
+      }, 1500);
+    });
   }
 });
