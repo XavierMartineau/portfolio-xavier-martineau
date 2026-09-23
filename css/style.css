@@ -414,6 +414,58 @@ html {
   font-weight: 700;
 }
 
+.carousel-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.carousel-btn {
+  position: absolute;
+  z-index: 3;
+  top: 50%;
+  display: grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.62);
+  color: #ffffff;
+  font-size: 1.35rem;
+  line-height: 1;
+  cursor: pointer;
+  transform: translateY(-50%);
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.carousel-btn:hover,
+.carousel-btn:focus-visible {
+  background: rgba(123, 128, 255, 0.92);
+  border-color: #7b80ff;
+  color: #ffffff;
+  transform: translateY(-50%) scale(1.08);
+}
+
+.carousel-btn:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 3px;
+}
+
+.carousel-prev {
+  left: 0.75rem;
+}
+
+.carousel-next {
+  right: 0.75rem;
+}
+
 /* Grille par défaut sur Bureau (> 1024x600px) : 3 Colonnes */
 .featured-grid,
 .projects-grid {
@@ -424,6 +476,47 @@ html {
   margin-left: auto;
   margin-right: auto;
   width: 100%;
+}
+
+.featured-grid {
+  position: relative;
+  display: block;
+  min-height: 360px;
+  overflow: hidden;
+}
+
+.featured-grid .featured-card {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(1.5rem) scale(0.94);
+  transition:
+    opacity 0.45s ease,
+    transform 0.45s ease,
+    box-shadow 0.45s ease;
+}
+
+.featured-grid .featured-card.is-active {
+  z-index: 3;
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0) scale(1);
+}
+
+.featured-grid .featured-card.is-stack-one {
+  z-index: 2;
+  opacity: 0.45;
+  transform: translateY(0.75rem) scale(0.97);
+}
+
+.featured-grid .featured-card.is-stack-two {
+  z-index: 1;
+  opacity: 0.2;
+  transform: translateY(1.5rem) scale(0.94);
 }
 
 .featured-card {
@@ -1802,6 +1895,23 @@ html {
 }
 
 @media (max-width: 600px) {
+  .featured-section {
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+
+  .featured-grid .featured-card {
+    width: 100%;
+  }
+
+  .carousel-prev {
+    left: 0.5rem;
+  }
+
+  .carousel-next {
+    right: 0.5rem;
+  }
+
   .projects-grid {
     grid-template-columns: 1fr !important;
     gap: 1.5rem !important;

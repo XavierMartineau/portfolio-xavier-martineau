@@ -26,19 +26,39 @@ navigableProjectCards.forEach((card) => {
 
 document.querySelectorAll(".carousel-btn").forEach((button) => {
   button.addEventListener("click", () => {
-    // Récupère le conteneur principal du carrousel et la grille de cartes associée
     const container = button.closest(".carousel-container");
     const grid = container.querySelector(".featured-grid");
+    const cards = [...grid.querySelectorAll(".featured-card")];
 
-    // Définit la distance de défilement (85% de la largeur visible du carrousel)
-    const scrollAmount = grid.clientWidth * 0.85;
+    if (!cards.length) {
+      return;
+    }
 
-    // Effectue un défilement horizontal fluide vers la gauche ou la droite
-    grid.scrollBy({
-      left: button.classList.contains("carousel-prev")
-        ? -scrollAmount
-        : scrollAmount,
-      behavior: "smooth",
+    const activeIndex = cards.findIndex((card) =>
+      card.classList.contains("is-active"),
+    );
+    const currentIndex = activeIndex === -1 ? 0 : activeIndex;
+    const direction = button.classList.contains("carousel-prev") ? -1 : 1;
+    const nextIndex = (currentIndex + direction + cards.length) % cards.length;
+
+    cards.forEach((card, index) => {
+      card.classList.remove("is-active", "is-stack-one", "is-stack-two");
+
+      if (index === nextIndex) {
+        card.classList.add("is-active");
+      } else if (index === (nextIndex + 1) % cards.length) {
+        card.classList.add("is-stack-one");
+      } else if (index === (nextIndex + 2) % cards.length) {
+        card.classList.add("is-stack-two");
+      }
     });
   });
+});
+
+document.querySelectorAll(".featured-grid").forEach((grid) => {
+  const firstCard = grid.querySelector(".featured-card");
+
+  if (firstCard) {
+    firstCard.classList.add("is-active");
+  }
 });
