@@ -1,4 +1,4 @@
-# **Journal de projet - Portfolio**
+﻿# **Journal de projet - Portfolio**
 
 ## Date: 2026-09-02
 
@@ -117,6 +117,8 @@
 - Création et correction de `splash.js`.
 - Les animations sont conservées dans le CSS et le HTML.
 
+---
+
 ### Outil: Copilot et Gemini dans VS Code
 
 ### <u>Prompt</u>: Corriger complètement le splash screen en HTML et CSS.
@@ -128,6 +130,8 @@
 - Ajustement du logo, du titre et du sous-titre.
 - Restructuration des styles pour un rendu plus cohérent.
 
+---
+
 ### Outil: Copilot et Gemini dans VS Code
 
 ### <u>Prompt</u>: Augmenter la taille du logo et du titre, puis réduire la taille du sous-titre.
@@ -138,6 +142,8 @@
 - Titre augmenté à `2.6rem`.
 - Sous-titre réduit à `0.8rem`.
 
+---
+
 ### Outil: Copilot et Gemini dans VS Code
 
 ### <u>Prompt</u>: Ajouter des commentaires clairs dans `style.css` et générer `font.css`.
@@ -147,6 +153,8 @@
 - Ajout de commentaires explicatifs dans `style.css`.
 - Création de `font.css` avec Inter, Space Grotesk, Syne et Speedy.
 - Application des familles de polices aux différents niveaux de titres et aux textes.
+
+---
 
 ### Outil: Copilot et Gemini dans VS Code
 
@@ -172,6 +180,8 @@
 
 - Correction du logo SVG dans `header_nav.css`.
 - Ajustement de sa position verticale.
+
+---
 
 ### Outil: Gemini dans VS Code
 
@@ -214,6 +224,8 @@
 - Transformation du scroll reveal en animation CSS native.
 - Amélioration du splash screen, du logo, du titre et du sous-titre.
 
+---
+
 ### Outil: Copilot
 
 ### <u>Prompt</u>: Ajouter les couleurs, les bordures et les effets de survol aux cartes des projets vedettes.
@@ -223,6 +235,8 @@
 - Ajout des cartes cyan, rose et indigo.
 - Ajout de bordures lumineuses, de halos au survol et d'un état focus accessible.
 - Nettoyage du bloc CSS dupliqué des glass cards.
+
+---
 
 ### Outil: Copilot
 
@@ -234,6 +248,8 @@
 - Réduction et regroupement des statistiques.
 - Application des couleurs indigo et rose selon les cartes.
 
+---
+
 ### Outil: Copilot
 
 ### <u>Prompt</u>: Remettre les catégories directement sur les trois glass cards des meilleurs projets.
@@ -242,6 +258,8 @@
 
 - Conversion des catégories en éléments `span` dédiés.
 - Placement des catégories directement en haut des cartes.
+
+---
 
 ### Outil: Copilot
 
@@ -253,6 +271,8 @@
 - Ajout du sous-titre « Développeur full-stack & architecte logiciel ».
 - Ajout des catégories React / Next.js, Architecture Cloud, Intégration IA et UI Haute Perf.
 
+---
+
 ### Outil: Copilot
 
 ### <u>Prompt</u>: Ajouter des catégories technologiques sur les trois glass cards vedettes comme sur l'image.
@@ -262,6 +282,8 @@
 - Ajout des technologies React, Python, TensorFlow et D3.js pour NeuralDash.
 - Ajout de Next.js, Node.js, PostgreSQL et WebSocket pour CryptoFlow.
 - Ajout de React, Web Audio, WebRTC et TypeScript pour Synthwave Studio.
+
+---
 
 ### Outil: Copilot
 
@@ -274,6 +296,8 @@
 - Ajout d'un effet de soulèvement et de halos indigo et cyan au survol.
 - Correction de leur affichage mobile.
 
+---
+
 ### Outil: Copilot
 
 ### <u>Prompt</u>: Ajouter un espace entre le HERO et les projets, rendre le scroll plus petit et bleu foncé, puis ajouter une flèche animée et un fondu.
@@ -285,6 +309,8 @@
 - Ajout d'un espace supplémentaire entre les sections.
 - Apparition de la section projets en fondu avec `IntersectionObserver`.
 
+---
+
 ### Outil: Copilot
 
 ### <u>Prompt</u>: Améliorer les deux cartes statistiques du HERO avec un effet visuel plus attrayant.
@@ -294,6 +320,8 @@
 - Uniformisation et meilleur centrage des cartes.
 - Ajout d'un effet de survol selon leur couleur indigo ou rose.
 - Renforcement du glow sur les chiffres et les libellés.
+
+---
 
 ### Outil: Copilot
 
@@ -305,6 +333,8 @@
 - Ajout d'un flou et d'une opacité contrôlée.
 - Conservation du contenu de la carte au premier plan.
 
+---
+
 ### Outil: Copilot
 
 ### <u>Prompt</u>: Configurer l'opacité de l'image à 80% au départ et 60% au survol.
@@ -313,6 +343,8 @@
 
 - Configuration de l'opacité de départ et de survol.
 - Ajout d'une transition douce entre les deux états.
+
+---
 
 ### Outil: Copilot
 
@@ -324,6 +356,8 @@
 - Création ou mise à jour du chargement des données featured.
 - Gestion des noms, catégories et technologies depuis les données structurées.
 
+---
+
 ### Outil: Copilot
 
 ### <u>Prompt</u>: Changer l'ordre des couleurs des cartes pour obtenir rose, indigo puis bleu.
@@ -331,6 +365,8 @@
 ### Réponse:
 
 - Réorganisation visuelle des cartes : rose, indigo puis cyan.
+
+---
 
 ### Outil: Copilot
 
@@ -340,6 +376,8 @@
 
 - Ajout du nom Animation & 3D au projet et à sa carte vedette.
 
+---
+
 ### Outil: Copilot
 
 ### <u>Prompt</u>: Remplacer Data Visualization par le même nom que le projet.
@@ -347,6 +385,8 @@
 ### Réponse:
 
 - La catégorie de la première carte est devenue Animation & 3D.
+
+---
 
 ### Outil: Copilot
 
@@ -356,6 +396,8 @@
 
 - Ajout des tags 3D, Animation, MAYA et Rendu.
 - Gestion des tags dans les données du projet et affichage automatique sur la carte.
+
+---
 
 ### Outil: Copilot
 
@@ -395,6 +437,8 @@
 - Conservation des boutons « Voir mes projets » et « Me contacter » côte à côte sur mobile et tablette.
 - Adaptation de la largeur, du padding et de la taille des textes pour éviter les débordements.
 
+---
+
 ### Outil: GitHub Copilot
 
 ### <u>Prompt</u>: Créer un carousel responsive pour les projets vedettes.
@@ -408,6 +452,8 @@
 - Correction de l'animation de la flèche gauche.
 - Placement des flèches à l'extérieur des cartes pour ne pas recouvrir le texte.
 
+---
+
 ### Outil: GitHub Copilot
 
 ### <u>Prompt</u>: Ajouter un bouton mobile pour activer ou désactiver le texte et le blur.
@@ -419,6 +465,8 @@
 - Le libellé devient vert lorsqu'il peut être activé et rouge lorsque l'effet est actif.
 - Le clic reproduit le rendu du hover desktop : image nette et texte masqué.
 - Le même fonctionnement a été ajouté à la page qui contient tous les projets.
+
+---
 
 ### Outil: GitHub Copilot
 
@@ -435,6 +483,8 @@
 - Regroupement de la catégorie, de l'année, du résultat clé et des technologies dans un panneau unique.
 - Placement de l'année au centre d'un encart plus sombre.
 
+---
+
 ### Outil: GitHub Copilot
 
 ### <u>Prompt</u>: Ajouter un message lorsque le contact avec le jeu vidéo est perdu et permettre de reprendre le jeu.
@@ -447,6 +497,8 @@
 - Affichage du message « Le contact avec le jeu a été perdu ».
 - Ajout du bouton « Reprendre ».
 - Rechargement du jeu avec affichage de l'état de chargement.
+
+---
 
 ### Outil: GitHub Copilot
 
@@ -461,6 +513,8 @@
 - Conservation de Speedy pour les grands titres, Space Grotesk pour les titres secondaires et Inter pour les textes courants.
 - La police Syne est déjà disponible dans `assets/fonts/syne/Syne-VariableFont_wght.ttf`.
 
+---
+
 ### Outil: GitHub Copilot
 
 ### <u>Prompt</u>: Ajouter des effets de bordure néon selon la catégorie du projet.
@@ -474,6 +528,8 @@
 - Les couleurs sont appliquées aux bordures, halos, panneaux, libellés, boutons et au mode plein écran.
 - Les variables CSS `--project-accent` et `--project-rgb` centralisent les couleurs.
 
+---
+
 ### Outil: GitHub Copilot
 
 ### <u>Prompt</u>: Ajouter les niveaux h4 et h5 aux autres pages qui n'en avaient pas.
@@ -483,6 +539,8 @@
 - Ajout de `h4` pour les catégories des cartes.
 - Ajout de `h5` pour les années des projets.
 - Ajustement des marges et de la typographie pour conserver le rendu visuel.
+
+---
 
 ### Outil: GitHub Copilot
 
@@ -496,6 +554,8 @@
 - Correction des chemins relatifs vers les fichiers CSS, JavaScript, images et pages HTML.
 - Activation du lien Compétences dans la navbar.
 
+---
+
 ### Outil: GitHub Copilot
 
 ### <u>Prompt</u>: Utiliser uniquement `style.css` pour la page compétences.
@@ -505,6 +565,8 @@
 - Déplacement des styles de compétences dans `style.css`.
 - Suppression du fichier CSS dédié aux compétences.
 - Conservation du JavaScript de génération des barres et des tags.
+
+---
 
 ### Outil: GitHub Copilot
 
@@ -518,6 +580,8 @@
 - Remplacement des textes anglais par des formulations françaises.
 - Simplification du texte de présentation pour utiliser un ton plus naturel.
 
+---
+
 ### Outil: GitHub Copilot
 
 ### <u>Prompt</u>: Supprimer la page compétences et afficher les compétences directement sur chaque page de projet.
@@ -529,6 +593,8 @@
 - Ajout d'un bloc « Compétences du projet » dans la page détail.
 - Association des compétences à la catégorie du projet : 3D, 2D, site web ou jeu vidéo.
 - Animation des barres de progression au chargement de la page projet.
+
+---
 
 ### Outil: GitHub Copilot
 
@@ -542,6 +608,8 @@
 - Réduction du travail de rendu pour les cartes qui sont encore hors écran.
 - Conservation du fonctionnement des filtres de catégories.
 
+---
+
 ### Outil: GitHub Copilot
 
 ### <u>Prompt</u>: Afficher un message si la vidéo du projet 3D ne peut pas être lue et proposer un lien YouTube.
@@ -554,3 +622,145 @@
 - Utilisation du lien YouTube `https://www.youtube.com/watch?v=Bkvwrvg_bws`.
 - Affichage du message après une erreur ou lorsque la vidéo reste bloquée trop longtemps.
 - Adaptation de la boîte de secours aux écrans mobiles.
+
+---
+
+### Outil: GitHub Copilot
+
+### <u>Prompt</u>: Organiser les styles CSS par composants sans utiliser un seul gros fichier de composants.
+
+### Réponse:
+
+- Création de `carousel.css` pour les flèches, la pile mobile et le toggle texte + blur.
+- Création de `carte-projet.css` pour les cartes featured et les cartes de la page projets.
+- Création de `filtres-projets.css` pour les boutons de catégories.
+- Création de `hero.css` pour le hero de l'accueil.
+- Création de `page-projet.css` pour les composants de la page détail projet.
+- Création du dossier `css/composants/`.
+
+---
+
+### Outil: GitHub Copilot
+
+### <u>Prompt</u>: Déplacer les media queries dans un fichier `responsive.css`.
+
+### Réponse:
+
+- Création de `css/responsive.css`.
+- Déplacement des adaptations communes mobile, tablette et desktop compact.
+- Centralisation des règles responsive de l'accueil, de la page projets et de la page détail.
+- Ajout du fichier responsive aux pages HTML principales.
+
+---
+
+### Outil: GitHub Copilot
+
+### <u>Prompt</u>: Déplacer les animations dans un fichier `animation.css`.
+
+### Réponse:
+
+- Création de `css/animation.css`.
+- Déplacement des animations `@keyframes` du splash, du footer, du hero, du carousel et de la page projet.
+- Renommage des animations `pulse` pour éviter les conflits entre composants.
+- Chargement de la feuille d'animations sur les pages concernées.
+
+---
+
+### Outil: GitHub Copilot
+
+### <u>Prompt</u>: Renommer `header_nav.css` en `navigations.css` et organiser les fichiers CSS.
+
+### Réponse:
+
+- Renommage de `header_nav.css` en `navigations.css`.
+- Déplacement des feuilles de composants dans `css/composants/`.
+- Conservation de `font.css`, `body.css`, `footer.css`, `splash.css` et `style.css` dans `css/` selon leur rôle global.
+- Correction des imports CSS dans les pages HTML.
+- Suppression des références vers des fichiers inexistants comme `logo.css`.
+
+---
+
+### Outil: GitHub Copilot
+
+### <u>Prompt</u>: Nettoyer les doublons et les fichiers inutilisés.
+
+### Réponse:
+
+- Suppression de l'ancienne feuille `competences.css` devenue inutile.
+- Suppression de l'ancien fichier `data/projects.json` avant sa restauration à la demande du projet.
+- Suppression des anciens styles de filtres dupliqués dans `style.css`.
+- Suppression des blocs de page compétences qui n'étaient plus utilisés.
+- Réparation des fichiers CSS qui contenaient des séquences `\n` littérales au lieu de retours à la ligne.
+- Validation des fichiers CSS après le nettoyage.
+
+---
+
+### Outil: GitHub Copilot
+
+### <u>Prompt</u>: Créer une page À propos et une page Contact fonctionnelles.
+
+### Réponse:
+
+- Création de `html/apropos.html` avec une présentation, des informations personnelles et une timeline.
+- Création de `js/apropos.js` pour générer les cartes d'informations et le parcours.
+- Création de `html/contact.html` avec un accès direct au courriel et un lien vers les projets.
+- Adaptation des pages aux composants de navigation et de footer existants.
+- Correction des liens de navbar vers les pages réelles.
+
+---
+
+### Outil: GitHub Copilot
+
+### <u>Prompt</u>: Améliorer le bouton Engagez-moi.
+
+### Réponse:
+
+- Bouton réduit pour prendre moins de place.
+- Fond transparent au repos.
+- Couleur et halo néon uniquement au survol ou au focus clavier.
+- Amélioration de l'accessibilité avec un contour visible au clavier.
+
+---
+
+### Outil: GitHub Copilot
+
+### <u>Prompt</u>: Améliorer le splash screen, sa lumière, son bouton et son indicateur de défilement.
+
+### Réponse:
+
+- Ajout d'un pulse doux sur le bouton d'entrée.
+- Animation fluide de la flèche du bouton.
+- Réduction de la lumière qui suit la souris pour éviter un effet trop violent.
+- Renforcement puis ajustement des couleurs indigo, rose et cyan en arrière-plan.
+- Amélioration de l'indicateur `DÉFILER` avec capsule, flèche circulaire et point lumineux.
+- Synchronisation du point lumineux avec le défilement.
+- Allongement de la trajectoire du point et décalage de son départ de `20px`.
+- Ajout puis suppression du motif de circuit imprimé généré en JavaScript après changement de direction visuelle.
+- Augmentation légère du nombre et du contraste des particules animées.
+
+---
+
+### Outil: GitHub Copilot
+
+### <u>Prompt</u>: Corriger les débordements et améliorer le responsive mobile.
+
+### Réponse:
+
+- Réduction et centrage des images de projets sur mobile.
+- Limitation des images à la largeur de leur carte avec `object-fit: cover` ou `contain` selon le contexte.
+- Suppression des débordements horizontaux des cartes et panneaux.
+- Catégories de la page projets affichées sur une seule ligne avec défilement tactile.
+- Taille des textes des catégories ajustée pour mobile.
+- Métadonnées de la page détail recentrées sur toute la largeur de l'écran mobile.
+
+---
+
+### Outil: GitHub Copilot
+
+### <u>Prompt</u>: Restaurer et enrichir `data/projects.json`.
+
+### Réponse:
+
+- Restauration des projets featured et des sept projets complets.
+- Conservation des noms, catégories, années, images, descriptions, technologies et liens YouTube.
+- Validation de la syntaxe JSON avec PowerShell.
