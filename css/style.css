@@ -1734,3 +1734,92 @@ body {
   object-fit: contain;
   margin: auto;
 }
+/* ===============================
+   GRILLE PRINCIPALE DE LA PAGE PROJET
+   =============================== */
+.project-content-grid {
+  display: grid;
+  grid-template-columns: 300px 1fr; /* Colonne gauche de 300px, la droite prend le reste */
+  gap: 24px;
+  margin-top: 32px;
+  align-items: start;
+}
+
+.project-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.project-main-text {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Style des grands blocs de texte de droite */
+.detail-panel-large {
+  background: rgba(18, 20, 28, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 24px;
+  backdrop-filter: blur(10px);
+}
+
+.detail-panel-large p {
+  color: #c5cbd3;
+  line-height: 1.6;
+  font-size: 0.95rem;
+  margin-top: 8px;
+  margin-bottom: 0;
+}
+
+/* Responsive pour mobile */
+@media (max-width: 900px) {
+  .project-content-grid {
+    grid-template-columns: 1fr;
+  }
+}
+/* Style du bloc "Résultat clé" */
+.detail-panel-key-result .key-result-text {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--accent-color, #00f3ff);
+  margin-top: 0.4rem;
+}
+
+/* Navigation bas de page (Tous les projets / Projet suivant) */
+.project-navigation-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2rem;
+  gap: 1rem;
+}
+
+.nav-btn {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #fff;
+  padding: 0.75rem 1.25rem;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+
+.nav-btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: var(--accent-color, #00f3ff);
+}
+
+.nav-btn-next {
+  background: rgba(0, 243, 255, 0.05);
+  border-color: rgba(0, 243, 255, 0.3);
+  color: var(--accent-color, #00f3ff);
+}
+.nav-btn-next:hover {
+  background: rgba(0, 243, 255, 0.12);
+  border-color: rgba(0, 243, 255, 0.55);
+  color: var(--accent-color, #00f3ff);
+}

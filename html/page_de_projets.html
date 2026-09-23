@@ -92,20 +92,92 @@
         </button>
       </section>
 
-      <section class="project-detail-grid">
-        <article class="detail-panel">
-          <span class="detail-label">// Projet</span>
-          <p id="project-summary"></p>
-        </article>
-        <article class="detail-panel detail-panel-accent">
-          <span class="detail-label">// Catégorie</span>
-          <strong id="project-category-panel"></strong>
-        </article>
-      </section>
+      <!-- Grille principale divisée en deux colonnes -->
+      <section class="project-content-grid">
+        <!-- COLONNE DE GAUCHE -->
+        <div class="project-sidebar">
+          <article class="detail-panel detail-panel-accent">
+            <span class="detail-label">// CATÉGORIE</span>
+            <strong id="project-category-panel">3D</strong>
+          </article>
 
-      <section class="detail-tags-panel">
-        <span class="detail-label">// Technologies</span>
-        <div id="project-technologies" class="detail-tags"></div>
+          <article class="detail-panel">
+            <span class="detail-label">// STATUT / ANNÉE</span>
+            <p id="project-year-panel">2025</p>
+          </article>
+
+          <!-- AJOUT : Résultat clé (comme sur l'image 1) -->
+          <article class="detail-panel detail-panel-key-result">
+            <span class="detail-label">// RÉSULTAT CLÉ</span>
+            <p id="project-key-result" class="key-result-text">98% précision</p>
+          </article>
+
+          <article class="detail-tags-panel detail-panel">
+            <span class="detail-label">// TECHNOLOGIES</span>
+            <div id="project-technologies" class="detail-tags">
+              <span class="tag">3D</span>
+              <span class="tag">Animation</span>
+              <span class="tag">MAYA</span>
+              <span class="tag">Rendu</span>
+            </div>
+          </article>
+
+          <!-- POINTS FORTS (avec les puces colorées) -->
+          <article class="detail-panel" id="project-highlights-panel">
+            <span class="detail-label">// POINTS FORTS</span>
+            <ul class="project-highlights-list" id="project-highlights">
+              <li>Ambiance visuelle sombre et immersive</li>
+              <li>Gestion avancée des éclairages volumétriques</li>
+              <li>Synchronisation audio-visuelle précise</li>
+            </ul>
+          </article>
+        </div>
+
+        <!-- COLONNE DE DROITE -->
+        <div class="project-main-text">
+          <article class="detail-panel-large">
+            <span class="detail-label">// DESCRIPTION</span>
+            <p id="project-summary">
+              Un générique de fin sombre où chaque élément renforce la tension
+              et la dernière note dramatique de l'histoire.
+            </p>
+          </article>
+
+          <article class="detail-panel-large">
+            <span class="detail-label">// DÉFI TECHNIQUE</span>
+            <p id="project-challenge">
+              Le principal défi était d'assurer une fluidité optimale et une
+              cohérence visuelle parfaite pour chaque interaction utilisateur.
+            </p>
+          </article>
+
+          <article class="detail-panel-large">
+            <span class="detail-label">// RÉSULTAT</span>
+            <p id="project-result">
+              Un projet abouti, performant et prêt pour l'intégration en
+              production au sein du portfolio.
+            </p>
+          </article>
+
+          <!-- AJOUT : Bloc Stack Complet en bas de la colonne de droite -->
+          <article class="detail-panel-large">
+            <span class="detail-label">// STACK COMPLET</span>
+            <div class="detail-tags" id="project-full-stack">
+              <span class="tag">3D</span>
+              <span class="tag">Animation</span>
+              <span class="tag">MAYA</span>
+              <span class="tag">Rendu</span>
+            </div>
+          </article>
+
+          <!-- AJOUT : Boutons de navigation bas de page -->
+          <div class="project-navigation-footer">
+            <a href="projets.html" class="nav-btn">← Tous les projets</a>
+            <a href="#" class="nav-btn nav-btn-next" id="next-project-link"
+              >Projet suivant: CryptoFlow →</a
+            >
+          </div>
+        </div>
       </section>
 
       <nav class="project-pager" aria-label="Retour aux projets">
