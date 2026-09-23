@@ -1,24 +1,31 @@
 /* Donnees de competences affichees dans la carte principale. */
 const SKILLS = [
   {
-    label: "Front-end",
-    level: 95,
-    items: ["React", "Next.js", "Tailwind", "Framer Motion", "TypeScript"],
+    label: "Animation 3D",
+    level: 75,
+    items: ["3D", "Animation", "MAYA", "Rendu"],
   },
   {
-    label: "Back-end",
-    level: 90,
-    items: ["Node.js", "Express", "PostgreSQL", "Redis", "Prisma"],
+    label: "Jeu vidéo",
+    level: 70,
+    items: ["Interface", "Interaction", "Web", "Expérience"],
   },
   {
-    label: "DevOps",
+    label: "Illustration 2D",
     level: 85,
-    items: ["Docker", "Kubernetes", "CI/CD", "NGINX", "Cloudflare"],
+    items: [
+      "Vectoriel",
+      "Illustration",
+      "Illustrator",
+      "Photoshop",
+      "Couleur",
+      "Composition",
+    ],
   },
   {
-    label: "IA / ML",
-    level: 80,
-    items: ["Python", "TensorFlow", "RAG", "Ajustement LLM"],
+    label: "Site web",
+    level: 90,
+    items: ["Web", "UX/UI", "Conception", "Adaptatif"],
   },
 ];
 

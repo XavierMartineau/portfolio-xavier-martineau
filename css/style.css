@@ -2260,11 +2260,13 @@ html {
 .page-container .header-line {
   display: flex;
   align-items: center;
+  flex-wrap: nowrap;
   gap: 0.75rem;
   margin-bottom: 0.75rem;
 }
 
 .cyan-line {
+  flex: 0 0 2rem;
   width: 2rem;
   height: 1px;
   background: var(--skills-cyan);
@@ -2275,9 +2277,10 @@ html {
   margin: 0;
   color: var(--skills-cyan);
   font-family: "Space-Grotesk", sans-serif;
-  font-size: 0.78rem;
+  font-size: clamp(0.62rem, 1.8vw, 0.78rem);
   font-weight: 600;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.1em;
+  white-space: nowrap;
   text-transform: uppercase;
 }
 
@@ -2339,6 +2342,10 @@ html {
   align-items: start;
 }
 
+.skills-grid > * {
+  min-width: 0;
+}
+
 .desc {
   max-width: 38rem;
   margin: 0 0 1.5rem;
@@ -2378,6 +2385,27 @@ html {
   margin-bottom: 0;
 }
 
+/* Accentue chaque catégorie avec la même palette que la page projets. */
+.skill-block:nth-child(1) {
+  --skill-accent: #00f3ff;
+  --skill-rgb: 0, 243, 255;
+}
+
+.skill-block:nth-child(2) {
+  --skill-accent: #63ff9b;
+  --skill-rgb: 99, 255, 155;
+}
+
+.skill-block:nth-child(3) {
+  --skill-accent: #ff00ea;
+  --skill-rgb: 255, 0, 234;
+}
+
+.skill-block:nth-child(4) {
+  --skill-accent: #6366f1;
+  --skill-rgb: 99, 102, 241;
+}
+
 .skill-header {
   display: flex;
   justify-content: space-between;
@@ -2386,13 +2414,13 @@ html {
 }
 
 .skill-label {
-  color: #f0f0f7;
+  color: var(--skill-accent, #f0f0f7);
   font-size: 0.95rem;
   font-weight: 600;
 }
 
 .skill-level {
-  color: var(--skills-indigo);
+  color: var(--skill-accent, var(--skills-indigo));
   font-family: monospace;
   font-size: 0.75rem;
 }
@@ -2409,8 +2437,12 @@ html {
   width: 0;
   height: 100%;
   border-radius: inherit;
-  background: linear-gradient(90deg, var(--skills-indigo), var(--skills-cyan));
-  box-shadow: 0 0 12px rgba(0, 243, 255, 0.45);
+  background: linear-gradient(
+    90deg,
+    var(--skill-accent),
+    rgba(var(--skill-rgb), 0.55)
+  );
+  box-shadow: 0 0 12px rgba(var(--skill-rgb), 0.45);
   transition: width 1s ease-out;
 }
 
@@ -2418,15 +2450,20 @@ html {
   display: flex;
   flex-wrap: wrap;
   gap: 0.4rem;
+  min-width: 0;
+  max-width: 100%;
 }
 
 .skill-tag {
   display: inline-block;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow-wrap: anywhere;
   padding: 0.3rem 0.6rem;
-  border: 1px solid rgba(123, 128, 255, 0.35);
+  border: 1px solid rgba(var(--skill-rgb, 123, 128, 255), 0.35);
   border-radius: 5px;
   color: #c0c0d8;
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(var(--skill-rgb, 123, 128, 255), 0.08);
   font-size: 0.72rem;
 }
 
@@ -2524,8 +2561,19 @@ html {
     font-size: clamp(2.25rem, 12vw, 3.4rem);
   }
 
+  .page-container .section-label {
+    font-size: 0.62rem;
+    letter-spacing: 0.06em;
+  }
+
   .main-card {
     padding: 1.15rem;
+  }
+
+  .skills-grid,
+  #skills-container {
+    width: 100%;
+    min-width: 0;
   }
 
   .desc {
