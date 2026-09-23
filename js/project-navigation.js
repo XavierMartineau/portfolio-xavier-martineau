@@ -23,3 +23,22 @@ navigableProjectCards.forEach((card) => {
     });
   }
 });
+
+document.querySelectorAll(".carousel-btn").forEach((button) => {
+  button.addEventListener("click", () => {
+    // Récupère le conteneur principal du carrousel et la grille de cartes associée
+    const container = button.closest(".carousel-container");
+    const grid = container.querySelector(".featured-grid");
+
+    // Définit la distance de défilement (85% de la largeur visible du carrousel)
+    const scrollAmount = grid.clientWidth * 0.85;
+
+    // Effectue un défilement horizontal fluide vers la gauche ou la droite
+    grid.scrollBy({
+      left: button.classList.contains("carousel-prev")
+        ? -scrollAmount
+        : scrollAmount,
+      behavior: "smooth",
+    });
+  });
+});
