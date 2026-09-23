@@ -13,9 +13,7 @@
   </head>
 
   <body class="root project-detail-page">
-    <div class="orb orb-indigo"></div>
-    <div class="orb orb-rose"></div>
-    <div class="orb orb-cyan"></div>
+    <!-- GRILLE DE FOND -->
     <div class="grid-bg"></div>
 
     <main class="project-detail" id="project-detail">
@@ -57,30 +55,7 @@
           allowfullscreen
           hidden
         ></iframe>
-        <button
-          id="project-mute"
-          class="project-mute"
-          type="button"
-          aria-label="Couper le son du jeu"
-          aria-pressed="false"
-          hidden
-        >
-          🔊
-        </button>
-        <span id="project-mute-message" class="project-mute-message" hidden>
-          En mode mute, le jeu ne joue pas.
-        </span>
-        <div id="project-interactive" class="project-interactive" hidden></div>
-        <a
-          id="project-youtube"
-          class="project-youtube"
-          href="#"
-          target="_blank"
-          rel="noreferrer"
-          hidden
-        >
-          Voir la vidéo sur YouTube →
-        </a>
+
         <button
           id="project-expand"
           class="project-expand"
@@ -169,20 +144,33 @@
               <span class="tag">Rendu</span>
             </div>
           </article>
-
-          <!-- AJOUT : Boutons de navigation bas de page -->
-          <div class="project-navigation-footer">
-            <a href="projets.html" class="nav-btn">← Tous les projets</a>
-            <a href="#" class="nav-btn nav-btn-next" id="next-project-link"
-              >Projet suivant: CryptoFlow →</a
-            >
-          </div>
         </div>
       </section>
+      <!-- Boutons de navigation bas de page -->
+      <div class="project-navigation-footer">
+        <!-- Bouton Projet Précédent (masqué par défaut sur le premier projet) -->
+        <a
+          href="#"
+          class="nav-btn nav-btn-prev is-hidden"
+          id="prev-project-link"
+        >
+          ← Projet précédent
+        </a>
 
-      <nav class="project-pager" aria-label="Retour aux projets">
-        <a id="return-project" href="projets.html">← Retour aux projets</a>
-      </nav>
+        <!-- Bouton de retour global -->
+        <a
+          href="projets.html"
+          class="nav-btn nav-btn-return"
+          id="return-project"
+        >
+          ← Retour aux projets
+        </a>
+
+        <!-- Bouton Projet Suivant -->
+        <a href="#" class="nav-btn nav-btn-next" id="next-project-link">
+          Projet suivant →
+        </a>
+      </div>
     </main>
 
     <footer class="footer">

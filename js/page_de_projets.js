@@ -7,7 +7,6 @@ const projects = {
     category: "3D",
     year: "2025",
     image: "projet_01.webp",
-    // Lien YouTube normal pour le bouton "Voir la vidéo sur YouTube"
     youtubeUrl: "https://www.youtube.com/watch?v=Bkvwrvg_bws",
     description:
       "Un générique de fin sombre où chaque élément renforce la tension et la dernière note dramatique de l'histoire.",
@@ -78,7 +77,6 @@ const projects = {
 // ===============================
 // RÉCUPÉRATION DE L’ID DU PROJET
 // ===============================
-// On lit ?project= dans l’URL, sinon on tombe sur le projet 1
 const requestedId = Number.parseInt(
   new URLSearchParams(window.location.search).get("project"),
   10,
@@ -86,11 +84,16 @@ const requestedId = Number.parseInt(
 const projectId = projects[requestedId] ? requestedId : 1;
 const project = projects[projectId];
 
+// Variables globales pour l'état des embeds
+let activeEmbedSource = null;
+let projectMuted = false;
+
 // ===============================
 // FONCTION POUR REMPLIR LE TEXTE
 // ===============================
 const setText = (selector, value) => {
-  document.querySelector(selector).textContent = value;
+  const el = document.querySelector(selector);
+  if (el) el.textContent = value;
 };
 
 // Remplissage des infos du projet dans la page
@@ -104,21 +107,23 @@ setText("#project-category-panel", project.category);
 
 // Ajout des classes de couleur pour la catégorie
 const categoryElement = document.querySelector("#project-category");
-categoryElement.classList.add("couleur-categorie");
+if (categoryElement) {
+  categoryElement.classList.add("couleur-categorie");
 
-switch (project.category) {
-  case "3D":
-    categoryElement.classList.add("couleur-categorie--3d");
-    break;
-  case "2D":
-    categoryElement.classList.add("couleur-categorie--2d");
-    break;
-  case "Site web":
-    categoryElement.classList.add("couleur-categorie--site");
-    break;
-  case "Jeu vidéo":
-    categoryElement.classList.add("couleur-categorie--jeu");
-    break;
+  switch (project.category) {
+    case "3D":
+      categoryElement.classList.add("couleur-categorie--3d");
+      break;
+    case "2D":
+      categoryElement.classList.add("couleur-categorie--2d");
+      break;
+    case "Site web":
+      categoryElement.classList.add("couleur-categorie--site");
+      break;
+    case "Jeu vidéo":
+      categoryElement.classList.add("couleur-categorie--jeu");
+      break;
+  }
 }
 
 // Titre de l’onglet
@@ -131,10 +136,10 @@ const projectImage = document.querySelector("#project-image");
 const secondaryImage = document.querySelector("#project-secondary-image");
 
 // Image secondaire si définie
-if (project.secondaryImage) {
+if (project.secondaryImage && secondaryImage) {
   secondaryImage.src = `../assets/images/${project.secondaryImage}`;
   secondaryImage.alt = `${project.name}, vue secondaire`;
-} else {
+} else if (secondaryImage) {
   secondaryImage.remove();
 }
 
@@ -146,18 +151,12 @@ const youtubeLink = document.querySelector("#project-youtube");
 const visual = document.querySelector(".project-visual");
 const expandButton = document.querySelector("#project-expand");
 const projectEmbed = document.querySelector("#project-embed");
-const muteButton = document.querySelector("#project-mute");
-const muteMessage = document.querySelector("#project-mute-message");
-let activeEmbedSource = "";
-let projectMuted = false;
 
 // ===============================
 // PROJETS AVEC IFRAME EMBED
 // ===============================
-// Ici, on liste les projets qui utilisent un <iframe> (YouTube ou sites)
 const embeddedProjects = {
   1: {
-    // 🔥 Lien embed YouTube compatible iframe
     src: "https://www.youtube.com/embed/Bkvwrvg_bws?si=VICC3QMpiGek1nlQ",
     title: "Vidéo Animation 3D",
   },
@@ -179,8 +178,10 @@ const embeddedProjects = {
 // MODE INTERACTIF (JEU / SITE)
 // ===============================
 const renderInteractive = () => {
-  interactive.hidden = false;
-  projectImage.hidden = true;
+  if (interactive) interactive.hidden = false;
+  if (projectImage) projectImage.hidden = true;
+
+  if (!interactive) return;
 
   // Mode mini-jeu pour la catégorie "Jeu vidéo"
   if (project.category === "Jeu vidéo") {
@@ -199,23 +200,22 @@ const renderInteractive = () => {
     const score = interactive.querySelector(".game-score b");
     let currentScore = 0;
 
-    // Lancer la partie
-    startButton.addEventListener("click", () => {
-      currentScore = 0;
-      score.textContent = currentScore;
-      target.hidden = false;
-      target.style.left = `${20 + Math.random() * 65}%`;
-      target.style.top = `${20 + Math.random() * 55}%`;
-    });
+    if (startButton && target && score) {
+      startButton.addEventListener("click", () => {
+        currentScore = 0;
+        score.textContent = currentScore;
+        target.hidden = false;
+        target.style.left = `${20 + Math.random() * 65}%`;
+        target.style.top = `${20 + Math.random() * 55}%`;
+      });
 
-    // Clic sur la cible → +1 point et déplacement
-    target.addEventListener("click", () => {
-      currentScore += 1;
-      score.textContent = currentScore;
-      target.style.left = `${10 + Math.random() * 75}%`;
-      target.style.top = `${15 + Math.random() * 60}%`;
-    });
-
+      target.addEventListener("click", () => {
+        currentScore += 1;
+        score.textContent = currentScore;
+        target.style.left = `${10 + Math.random() * 75}%`;
+        target.style.top = `${15 + Math.random() * 60}%`;
+      });
+    }
     return;
   }
 
@@ -243,7 +243,9 @@ const renderInteractive = () => {
         item.classList.remove("active");
       });
       tab.classList.add("active");
-      message.textContent = `${tab.textContent} : contenu interactif chargé.`;
+      if (message) {
+        message.textContent = `${tab.textContent} : contenu interactif chargé.`;
+      }
     });
   });
 };
@@ -251,8 +253,7 @@ const renderInteractive = () => {
 // ===============================
 // LOGIQUE PRINCIPALE D’AFFICHAGE
 // ===============================
-if (embeddedProjects[projectId]) {
-  // Si le projet a un iframe → on l’affiche
+if (embeddedProjects[projectId] && projectEmbed) {
   const embeddedProject = embeddedProjects[projectId];
   activeEmbedSource = embeddedProject.src;
 
@@ -260,91 +261,69 @@ if (embeddedProjects[projectId]) {
   projectEmbed.src = embeddedProject.src;
   projectEmbed.title = embeddedProject.title;
   projectEmbed.classList.add("project-embed-active");
-  projectImage.hidden = true;
+  if (projectImage) projectImage.hidden = true;
 
-  // Cas spécial : projet 6 (jeu vidéo) → affiche aussi une image
-  if (projectId === 6) {
+  if (projectId === 6 && projectImage) {
     projectImage.src = `../assets/images/${project.image}`;
     projectImage.alt = project.name;
   }
 
-  // Style visuel selon la catégorie
-  if (project.category === "Jeu vidéo" || project.category === "Site web") {
-    visual.classList.add("project-visual-interactive");
-  } else {
-    visual.classList.add("project-visual-media");
-  }
-
-  // On retire le bloc interactif si on a un iframe
-  interactive.remove();
-
-  // Bouton "Voir la vidéo sur YouTube" pour le projet 1
-  if (projectId === 1) {
-    youtubeLink.hidden = false;
-    youtubeLink.href = "https://www.youtube.com/watch?v=Bkvwrvg_bws";
-    youtubeLink.textContent = "Ouvrir la vidéo sur YouTube →";
-  }
-
-  // Bouton mute pour le jeu vidéo
-  if (projectId === 6) {
-    muteButton.hidden = false;
+  if (visual) {
+    if (project.category === "Jeu vidéo" || project.category === "Site web") {
+      visual.classList.add("project-visual-interactive");
+    } else {
+      visual.classList.add("project-visual-media");
+    }
   }
 } else if (
   project.category === "Jeu vidéo" ||
   project.category === "Site web"
 ) {
-  // Projets interactifs sans iframe → on utilise renderInteractive()
-  visual.classList.add("project-visual-interactive");
+  if (visual) visual.classList.add("project-visual-interactive");
   renderInteractive();
 } else if (project.category === "3D") {
-  // Projets 3D → lien YouTube simple
-  visual.classList.add("project-visual-media");
-  youtubeLink.hidden = false;
-  youtubeLink.href = project.youtubeUrl;
+  if (visual) visual.classList.add("project-visual-media");
+  if (youtubeLink) {
+    youtubeLink.hidden = false;
+    youtubeLink.href = project.youtubeUrl;
+  }
 } else {
-  // Projets 2D → image pleine
-  visual.classList.add("stitch-mode");
-  visual.classList.add("project-visual-media", "project-visual-2d");
-  projectImage.src = `../assets/images/${project.image}`;
-  projectImage.alt = project.name;
-  projectImage.classList.add("project-image-full");
+  if (visual) {
+    visual.classList.add(
+      "stitch-mode",
+      "project-visual-media",
+      "project-visual-2d",
+    );
+  }
+  if (projectImage) {
+    projectImage.src = `../assets/images/${project.image}`;
+    projectImage.alt = project.name;
+    projectImage.classList.add("project-image-full");
+  }
 }
 
 // ===============================
 // GESTION DU STOP / RESUME IFRAME
 // ===============================
 const stopEmbeddedProject = () => {
-  if (!activeEmbedSource) {
+  if (!activeEmbedSource || !projectEmbed) {
     return;
   }
-  // On vide la src pour stopper le contenu
   projectEmbed.src = "about:blank";
 };
 
-const sendAudioCommand = (muted) => {
-  // Envoi d’un message au contenu de l’iframe (si le site le gère)
-  if (projectEmbed.contentWindow && activeEmbedSource) {
-    projectEmbed.contentWindow.postMessage(
-      { type: muted ? "mute" : "unmute" },
-      new URL(activeEmbedSource).origin,
-    );
-  }
-};
-
 const resumeEmbeddedProject = () => {
-  if (projectMuted) {
+  if (projectMuted || !projectEmbed) {
     return;
   }
 
-  // Si l’iframe est stoppée, on remet la src
   if (activeEmbedSource && projectEmbed.getAttribute("src") === "about:blank") {
     projectEmbed.src = activeEmbedSource;
     projectEmbed.hidden = false;
-    projectImage.hidden = true;
+    if (projectImage) projectImage.hidden = true;
   }
 };
 
-// Pause automatique quand l’onglet perd le focus
 document.addEventListener("visibilitychange", () => {
   if (document.hidden) {
     stopEmbeddedProject();
@@ -356,51 +335,75 @@ document.addEventListener("visibilitychange", () => {
 window.addEventListener("pagehide", stopEmbeddedProject);
 
 // ===============================
-// BOUTON MUTE
-// ===============================
-muteButton.addEventListener("click", () => {
-  if (!activeEmbedSource) {
-    return;
-  }
-
-  projectMuted = !projectMuted;
-
-  if (projectMuted) {
-    sendAudioCommand(true);
-    muteButton.textContent = "🔇";
-    muteMessage.hidden = false;
-    muteButton.setAttribute("aria-label", "Réactiver le son du jeu");
-  } else {
-    sendAudioCommand(false);
-    muteButton.textContent = "🔊";
-    muteMessage.hidden = true;
-    muteButton.setAttribute("aria-label", "Couper le son du jeu");
-  }
-
-  muteButton.setAttribute("aria-pressed", String(projectMuted));
-});
-
-// ===============================
 // BOUTON AGRANDIR
 // ===============================
-expandButton.addEventListener("click", () => {
-  const isExpanded = visual.classList.toggle("is-expanded");
-  expandButton.setAttribute("aria-pressed", String(isExpanded));
-  expandButton.textContent = isExpanded ? "× Fermer" : "⛶ Agrandir";
-  document.body.classList.toggle("project-view-expanded", isExpanded);
+document.addEventListener("DOMContentLoaded", () => {
+  const expandBtn = document.querySelector("#project-expand");
+  const vis = document.querySelector(".project-visual");
+
+  if (expandBtn && vis) {
+    expandBtn.addEventListener("click", () => {
+      const isExpanded = vis.classList.toggle("is-expanded");
+      expandBtn.setAttribute("aria-pressed", String(isExpanded));
+      expandBtn.textContent = isExpanded ? "× Fermer" : "⛶ Agrandir";
+      document.body.classList.toggle("project-view-expanded", isExpanded);
+    });
+  }
 });
 
 // ===============================
 // TAGS TECHNOLOGIES
 // ===============================
 const technologies = document.querySelector("#project-technologies");
-project.technologies.forEach((technology) => {
-  const tag = document.createElement("span");
-  tag.textContent = technology;
-  technologies.append(tag);
-});
+if (technologies && project.technologies) {
+  project.technologies.forEach((technology) => {
+    const tag = document.createElement("span");
+    tag.textContent = technology;
+    technologies.append(tag);
+  });
+}
 
 // ===============================
 // LIEN RETOUR
 // ===============================
-document.querySelector("#return-project").href = "projets.html";
+const returnProjectBtn = document.querySelector("#return-project");
+if (returnProjectBtn) {
+  returnProjectBtn.href = "projets.html";
+}
+
+// ===============================
+// NAVIGATION DYNAMIQUE (PRÉCÉDENT / SUIVANT)
+// ===============================
+document.addEventListener("DOMContentLoaded", () => {
+  const indexEl = document.getElementById("project-index");
+  const nextLinkEl = document.getElementById("next-project-link");
+  const prevLinkEl = document.getElementById("prev-project-link");
+
+  if (indexEl) {
+    const match = indexEl.textContent.match(/\d+/);
+    if (match) {
+      let currentNum = parseInt(match[0], 10);
+      const totalProjects = 7;
+
+      if (nextLinkEl) {
+        if (currentNum < totalProjects) {
+          let nextNum = currentNum + 1;
+          nextLinkEl.href = `page_de_projets.html?project=${nextNum}`;
+          nextLinkEl.classList.remove("is-hidden");
+        } else {
+          nextLinkEl.classList.add("is-hidden");
+        }
+      }
+
+      if (prevLinkEl) {
+        if (currentNum > 1) {
+          let prevNum = currentNum - 1;
+          prevLinkEl.href = `page_de_projets.html?project=${prevNum}`;
+          prevLinkEl.classList.remove("is-hidden");
+        } else {
+          prevLinkEl.classList.add("is-hidden");
+        }
+      }
+    }
+  }
+});

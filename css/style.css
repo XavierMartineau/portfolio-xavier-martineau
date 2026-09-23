@@ -1291,44 +1291,6 @@ body {
   transform: scale(1.1);
 }
 
-.project-mute {
-  position: absolute;
-  right: 1.25rem;
-  bottom: 1.25rem;
-  z-index: 4;
-  min-height: 46px;
-  padding: 0.7rem 0.9rem;
-  border: 1px solid rgba(255, 174, 66, 0.8);
-  border-radius: 6px;
-  color: #ffcf85;
-  background: rgba(38, 24, 8, 0.9);
-  box-shadow: 0 0 18px rgba(255, 174, 66, 0.3);
-  cursor: pointer;
-  font-family: monospace;
-  font-size: 0.75rem;
-  font-weight: 700;
-}
-
-.project-mute:hover {
-  border-color: #ffcf85;
-  background: rgba(255, 174, 66, 0.22);
-  box-shadow: 0 0 28px rgba(255, 174, 66, 0.55);
-}
-
-.project-mute-message {
-  position: absolute;
-  right: 1.25rem;
-  bottom: 5.25rem;
-  z-index: 4;
-  padding: 0.55rem 0.75rem;
-  border: 1px solid rgba(255, 174, 66, 0.55);
-  border-radius: 5px;
-  color: #ffcf85;
-  background: rgba(38, 24, 8, 0.92);
-  font-family: monospace;
-  font-size: 0.7rem;
-}
-
 @keyframes project-expand-pulse {
   0%,
   100% {
@@ -1787,39 +1749,89 @@ body {
   color: var(--accent-color, #00f3ff);
   margin-top: 0.4rem;
 }
+/* ===========================
+   BOUTONS DE NAVIGATION - COULEURS DISTINCTES
+=========================== */
 
-/* Navigation bas de page (Tous les projets / Projet suivant) */
 .project-navigation-footer {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  margin-top: 2rem;
-  gap: 1rem;
+  margin-top: 60px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
-.nav-btn {
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: #fff;
-  padding: 0.75rem 1.25rem;
+/* Base commune pour les boutons */
+.project-navigation-footer .nav-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  font-family: monospace;
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
   text-decoration: none;
+  text-transform: uppercase;
   border-radius: 8px;
-  font-size: 0.9rem;
-  transition: all 0.2s ease;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  will-change: transform, background, box-shadow, border-color;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
-.nav-btn:hover {
-  background: rgba(255, 255, 255, 0.08);
-  border-color: var(--accent-color, #00f3ff);
-}
-
-.nav-btn-next {
+/* 1. Bouton Précédent (Cyan / Bleu électrique) */
+.project-navigation-footer .nav-btn-prev {
+  color: #00f3ff;
   background: rgba(0, 243, 255, 0.05);
-  border-color: rgba(0, 243, 255, 0.3);
-  color: var(--accent-color, #00f3ff);
+  border: 1px solid rgba(0, 243, 255, 0.4);
 }
-.nav-btn-next:hover {
-  background: rgba(0, 243, 255, 0.12);
-  border-color: rgba(0, 243, 255, 0.55);
-  color: var(--accent-color, #00f3ff);
+.project-navigation-footer .nav-btn-prev:hover {
+  background: rgba(0, 243, 255, 0.18);
+  border-color: #00f3ff;
+  color: #ffffff;
+  box-shadow:
+    0 0 25px rgba(0, 243, 255, 0.45),
+    0 6px 20px rgba(0, 0, 0, 0.4);
+  transform: translateY(-3px);
+}
+
+/* 2. Bouton Retour aux projets (Magenta / Rose néon - Transparent en gras) */
+.project-navigation-footer .nav-btn-return {
+  font-weight: 700;
+  color: #ff007f;
+  background: transparent !important;
+  border: 1px solid rgba(255, 0, 127, 0.5);
+}
+.project-navigation-footer .nav-btn-return:hover {
+  background: rgba(255, 0, 127, 0.12) !important;
+  border-color: #ff007f;
+  color: #ffffff;
+  box-shadow:
+    0 0 25px rgba(255, 0, 127, 0.45),
+    0 6px 20px rgba(0, 0, 0, 0.4);
+  transform: translateY(-3px);
+}
+
+/* 3. Bouton Suivant (Vert Matrix / Émeraude) */
+.project-navigation-footer .nav-btn-next {
+  color: #00ff66;
+  background: rgba(0, 255, 102, 0.05);
+  border: 1px solid rgba(0, 255, 102, 0.4);
+}
+.project-navigation-footer .nav-btn-next:hover {
+  background: rgba(0, 255, 102, 0.18);
+  border-color: #00ff66;
+  color: #ffffff;
+  box-shadow:
+    0 0 25px rgba(0, 255, 102, 0.45),
+    0 6px 20px rgba(0, 0, 0, 0.4);
+  transform: translateY(-3px);
+}
+
+/* Masquer proprement un bouton si nécessaire */
+.nav-btn.is-hidden {
+  display: none !important;
 }
