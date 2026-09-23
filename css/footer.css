@@ -51,13 +51,22 @@
 @media (max-width: 768px) {
   .footer {
     flex-direction: column; /* Empile le copyright et "BUILT WITH PASSION" l'un sous l'autre */
-    gap: 1rem;
-    padding: 1.5rem 1rem; /* Réduit les marges intérieures */
+    gap: 0.6rem;
+    padding: 1.1rem 0.75rem; /* Réduit les marges intérieures */
     text-align: center; /* Centre le texte proprement */
     margin-top: 2rem;
+    font-size: 0.68rem;
+    line-height: 1.4;
+  }
+
+  .footer > span,
+  .footer-right span {
+    max-width: 100%;
+    font-size: 0.68rem;
   }
 
   .footer-right {
     justify-content: center;
+    gap: 0.35rem;
   }
 }

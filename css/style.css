@@ -694,7 +694,7 @@ html {
 .scroll-indicator {
   position: relative;
   width: fit-content;
-  min-height: 260px;
+  min-height: 350px;
   margin: 2.5rem auto 0;
   padding: 0.7rem 0.8rem 0;
   opacity: 0.8;
@@ -748,14 +748,14 @@ html {
   .scroll-arrow {
     animation: scroll-arrow-follow linear both;
     animation-timeline: scroll(root block);
-    animation-range: 0 300px;
+    animation-range: 20px 400px;
   }
 }
 
 .scroll-line {
   position: relative;
   width: 1px;
-  height: 205px;
+  height: 285px;
   background: linear-gradient(
     to bottom,
     currentColor,
@@ -769,11 +769,13 @@ html {
   position: absolute;
   top: 0;
   left: 50%;
-  width: 5px;
-  height: 5px;
+  width: 7px;
+  height: 7px;
   border-radius: 50%;
-  background: #00f3ff;
-  box-shadow: 0 0 10px #00f3ff;
+  background: #7df9ff;
+  box-shadow:
+    0 0 10px #00f3ff,
+    0 0 24px rgba(0, 243, 255, 0.95);
   transform: translateX(-50%);
   animation: scroll-dot-pulse 1.5s ease-in-out infinite;
 }
@@ -782,7 +784,7 @@ html {
   .scroll-line::after {
     animation: scroll-dot-follow linear both;
     animation-timeline: scroll(root block);
-    animation-range: 0 300px;
+    animation-range: 20px 400px;
   }
 }
 
@@ -790,14 +792,14 @@ html {
   from {
     opacity: 0.55;
     transform: translate(-50%, 0);
-    box-shadow: 0 0 8px rgba(0, 243, 255, 0.55);
+    box-shadow: 0 0 12px rgba(0, 243, 255, 0.75);
   }
   to {
     opacity: 1;
-    transform: translate(-50%, 195px);
+    transform: translate(-50%, 275px);
     box-shadow:
-      0 0 12px #00f3ff,
-      0 0 26px rgba(0, 243, 255, 0.8);
+      0 0 14px #00f3ff,
+      0 0 32px rgba(0, 243, 255, 1);
   }
 }
 
@@ -843,7 +845,7 @@ html {
     transform: translateY(0);
   }
   to {
-    transform: translateY(300px);
+    transform: translateY(380px);
   }
 }
 
@@ -2144,7 +2146,7 @@ html {
   }
 
   .scroll-line {
-    height: 92px;
+    height: 150px;
   }
 
   .featured-section {
