@@ -41,7 +41,7 @@ const projects = {
     technologies: ["Identité", "Direction artistique", "Print", "Digital"],
   },
   5: {
-    name: "Noel vectoriel",
+    name: "Noël vectoriel",
     category: "2D",
     year: "2024",
     image: "Projet_05.png",
@@ -56,7 +56,7 @@ const projects = {
     ],
   },
   6: {
-    name: "Jeu video",
+    name: "Jeu vidéo",
     category: "Jeu vidéo",
     year: "2025",
     image: "Projet_06.png",
@@ -65,7 +65,7 @@ const projects = {
     technologies: ["Interface", "Interaction", "Web", "Expérience"],
   },
   7: {
-    name: "Color palet",
+    name: "Palette de couleurs",
     category: "Site web",
     year: "2025-2026",
     image: "Projet_07.png",
@@ -347,7 +347,7 @@ const embeddedProjects = {
   },
   7: {
     src: "https://mycolorpalet.netlify.app/",
-    title: "Color Palet interactif",
+    title: "Palette de couleurs interactive",
   },
 };
 
