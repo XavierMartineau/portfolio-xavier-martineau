@@ -75,6 +75,7 @@
   flex-direction: column;
   isolation: isolate;
   overflow: hidden;
+  cursor: pointer;
   box-shadow:
     0 0 24px rgba(var(--gc-rgb), 0.16),
     0 20px 60px rgba(0, 0, 0, 0.5),

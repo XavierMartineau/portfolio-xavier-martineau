@@ -106,6 +106,8 @@
 
   .project-navigation-footer {
     grid-template-columns: 1fr;
+    justify-items: stretch;
+    gap: 0.85rem;
   }
 
   .nav-btn-prev,
@@ -550,6 +552,15 @@
     justify-self: stretch;
     width: 100% !important;
     text-align: center;
+  }
+
+  .project-navigation-footer .nav-btn {
+    justify-self: stretch;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    text-align: center;
+    overflow-wrap: anywhere;
   }
 }
 

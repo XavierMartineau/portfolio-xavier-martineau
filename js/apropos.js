@@ -14,7 +14,7 @@ if (infoContainer) {
     card.className = "about-info-card";
     card.innerHTML = `
       <div class="about-info-icon" aria-hidden="true">${item.icon}</div>
-      <div class="about-info-label">${item.label}</div>
+      <h3 class="about-info-label">${item.label}</h3>
       <div class="about-info-value">${item.value}</div>
     `;
     infoContainer.appendChild(card);
@@ -62,7 +62,7 @@ if (timelineContainer) {
       <div class="about-timeline-year">${item.year}</div>
       <div class="about-timeline-dot" aria-hidden="true"></div>
       <div class="about-timeline-card">
-        <div class="about-timeline-role">${item.role}</div>
+        <h3 class="about-timeline-role">${item.role}</h3>
         <span class="about-timeline-company">@ ${item.company}</span>
         <p class="about-timeline-description">${item.description}</p>
       </div>

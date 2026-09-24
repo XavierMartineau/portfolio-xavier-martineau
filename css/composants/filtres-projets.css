@@ -57,7 +57,7 @@
 @media (max-width: 899px) {
   .project-categories {
     flex-wrap: nowrap;
-    justify-content: flex-start;
+    justify-content: center;
     width: 100%;
     overflow-x: auto;
     padding: 0.25rem 0.15rem 0.5rem;
@@ -83,7 +83,7 @@
     align-items: center;
     justify-content: center;
     min-height: 2.25rem;
-    margin-left: auto;
+    margin: 0 auto;
     padding: 0.55rem 0.8rem;
     border: 1px solid rgba(0, 243, 255, 0.45);
     border-radius: 6px;

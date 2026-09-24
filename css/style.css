@@ -2023,6 +2023,7 @@ html {
   transform: translateY(-2px) scale(1.15) rotate(-6deg);
 }
 .about-info-label {
+  margin-top: 0;
   margin-bottom: 0.25rem;
   color: #777895;
   font-family: monospace;
@@ -2122,6 +2123,7 @@ html {
   transform: translateX(4px);
 }
 .about-timeline-role {
+  margin: 0;
   color: #e8e8f0;
   font-size: 0.95rem;
   font-weight: 700;
@@ -2160,6 +2162,16 @@ html {
   color: #e8e8f0;
   font-family: "Space-Grotesk", sans-serif;
   font-size: clamp(1.4rem, 3vw, 2rem);
+}
+
+.creation-process-copy h4 {
+  margin: 0 0 0.7rem;
+  color: #00f3ff;
+  font-family: monospace;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
 }
 
 .creation-process-copy p {

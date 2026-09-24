@@ -17,7 +17,7 @@ const projects = {
     name: "La Maison",
     category: "Site web",
     year: "2024",
-    image: "projet_02.png",
+    image: "Projet_02.png",
     description:
       "Une maison mystérieuse à explorer, où chaque chemin mène à un choix qui change la suite de l'histoire.",
     technologies: ["Web", "UX/UI", "Design", "Responsive"],
