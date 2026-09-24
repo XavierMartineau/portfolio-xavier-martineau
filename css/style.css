@@ -2070,11 +2070,21 @@ html {
 }
 
 .about-timeline-year {
+  opacity: 0;
+  transform: scale(0.45);
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
   padding-top: 1rem;
   color: #7b80ff;
   font-family: monospace;
   font-size: 0.8rem;
   text-align: right;
+}
+
+.about-timeline-item:hover .about-timeline-dot {
+  opacity: 1;
+  transform: scale(1);
 }
 .about-timeline-dot {
   width: 10px;

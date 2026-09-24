@@ -907,3 +907,91 @@
     text-align: center;
   }
 }
+
+/* Téléphones compacts, notamment l'iPhone SE. */
+@media (max-width: 375px) {
+  .navbar {
+    height: 68px;
+    min-height: 68px;
+    padding: 0 0.65rem;
+  }
+
+  .brand {
+    font-size: 0.82rem;
+  }
+
+  .logo-inner {
+    width: 34px;
+    height: 34px;
+  }
+
+  .menu-toggle {
+    width: 42px;
+    height: 42px;
+  }
+
+  .home-hero {
+    padding-top: 6.5rem;
+    padding-right: 0.75rem;
+    padding-left: 0.75rem;
+  }
+
+  .hero-title {
+    font-size: clamp(2rem, 10vw, 2.35rem);
+  }
+
+  .hero-buttons .btn-primary,
+  .hero-buttons .btn-outline {
+    font-size: 0.66rem;
+    letter-spacing: 0.04em;
+  }
+
+  .scroll-indicator {
+    min-height: 140px;
+  }
+
+  .scroll-line {
+    height: 105px;
+  }
+
+  .featured-section {
+    padding-right: 0.75rem;
+    padding-left: 0.75rem;
+  }
+
+  .featured-grid {
+    min-height: 290px;
+  }
+
+  .featured-grid .featured-card {
+    min-height: 290px;
+    padding: 1rem !important;
+  }
+}
+
+@media (max-width: 320px) {
+  .brand {
+    font-size: 0.76rem;
+  }
+
+  .hero-title {
+    font-size: 1.95rem;
+  }
+
+  .hero-desc {
+    font-size: 0.92rem;
+  }
+
+  .hero-stats {
+    gap: 0.6rem;
+  }
+
+  .hero-stats .gc {
+    padding: 0.8rem;
+  }
+
+  .featured-header {
+    padding-right: 0;
+    padding-left: 0;
+  }
+}

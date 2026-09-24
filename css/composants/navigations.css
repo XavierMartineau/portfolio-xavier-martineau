@@ -273,6 +273,7 @@
 /* Mise en page compacte et menu déroulant sur mobile */
 @media (max-width: 1100px) {
   .navbar {
+    position: absolute;
     box-sizing: border-box;
     height: 76px;
     min-height: 76px;
