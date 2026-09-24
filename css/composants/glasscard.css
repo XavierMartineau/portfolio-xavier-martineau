@@ -317,9 +317,9 @@
   border-radius: 999px;
   background: rgba(var(--gc-rgb), 0.12);
   color: var(--gc-color);
-  font-size: 0.72rem;
+  font-size: 0.6rem;
   font-weight: 700;
-  letter-spacing: 0.14em;
+  letter-spacing: 0.1em;
   line-height: 1.2;
   text-shadow: 0 0 10px rgba(var(--gc-rgb), 0.65);
 }

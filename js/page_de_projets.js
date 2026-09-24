@@ -177,8 +177,8 @@ const categoryThemes = {
   },
   "Jeu vidéo": {
     className: "category-game",
-    color: "#c084fc",
-    rgb: "192, 132, 252",
+    color: "#63ff9b",
+    rgb: "99, 255, 155",
   },
 };
 
@@ -562,14 +562,30 @@ document.addEventListener("DOMContentLoaded", () => {
 // =========================================================================
 // 12. GÉNÉRATION DES TAGS DE TECHNOLOGIES
 // =========================================================================
-const technologies = document.querySelector("#project-technologies");
-if (technologies && project.technologies) {
+const technologyCategoryClasses = {
+  "3D": "couleur-categorie--3d",
+  "2D": "couleur-categorie--2d",
+  "Site web": "couleur-categorie--site",
+  "Jeu vidéo": "couleur-categorie--jeu",
+};
+
+const renderTechnologyTags = (selector) => {
+  const technologies = document.querySelector(selector);
+  if (!technologies || !project.technologies) return;
+
+  technologies.replaceChildren();
+  const categoryClass = technologyCategoryClasses[project.category] || "";
+
   project.technologies.forEach((technology) => {
     const tag = document.createElement("span");
+    tag.className = `tag couleur-categorie ${categoryClass}`.trim();
     tag.textContent = technology;
     technologies.append(tag);
   });
-}
+};
+
+renderTechnologyTags("#project-technologies");
+renderTechnologyTags("#project-full-stack");
 
 // =========================================================================
 // 13. LIEN DE RETOUR À LA LISTE DES PROJETS

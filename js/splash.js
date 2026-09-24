@@ -21,7 +21,7 @@ resize();
 window.addEventListener("resize", resize);
 
 // Palette utilisée par les particules lumineuses
-const colors = ["#6366f1", "#ff00ea", "#00f3ff", "#8b5cf6"];
+const colors = ["#6366f1", "#ff00ea", "#00f3ff", "#63ff9b"];
 
 // ==============================
 // INITIALISATION DES PARTICULES

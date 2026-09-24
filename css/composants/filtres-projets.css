@@ -48,8 +48,8 @@
   --category-rgb: 255, 0, 234;
 }
 .project-category-btn:nth-child(5) {
-  --category-color: #c084fc;
-  --category-rgb: 192, 132, 252;
+  --category-color: #63ff9b;
+  --category-rgb: 99, 255, 155;
 }
 .projects-effects-toggle {
   display: none;

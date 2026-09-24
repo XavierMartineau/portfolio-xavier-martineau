@@ -122,10 +122,10 @@
 =========================== */
 
 .navbar-links a.active {
-  color: #b197ff; /* 🔥 violet clair spécial */
+  color: #63ff9b;
   transform: scale(1.25); /* +25% */
   font-weight: 700;
-  text-shadow: 0 0 12px #8b5cf6; /* glow néon */
+  text-shadow: 0 0 12px #63ff9b;
 }
 
 /* Survol du lien actif */
@@ -175,7 +175,7 @@
   width: 48px;
   height: 48px;
   padding: 0;
-  border: 1px solid rgba(139, 92, 246, 0.45);
+  border: 1px solid rgba(99, 255, 155, 0.45);
   border-radius: 9px;
   background: rgba(99, 102, 241, 0.16);
   cursor: pointer;
@@ -329,7 +329,7 @@
     display: block;
     margin-top: 0.35rem !important;
     padding-top: 0.35rem;
-    border-top: 1px solid rgba(139, 92, 246, 0.28);
+    border-top: 1px solid rgba(99, 255, 155, 0.28);
   }
 
   .navbar-links a {

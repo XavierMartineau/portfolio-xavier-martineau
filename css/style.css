@@ -1049,7 +1049,7 @@ html {
 .project-detail {
   width: min(1120px, calc(100% - 3rem));
   margin: 0 auto;
-  padding: 2rem 0 6rem;
+  padding: 2rem 0 2rem;
 }
 
 .project-back,
@@ -1613,7 +1613,7 @@ html {
 }
 
 .browser-bar i:nth-child(2) {
-  background: #c084fc;
+  background: #63ff9b;
 }
 .browser-bar i:nth-child(3) {
   background: #ff72f2;
@@ -1679,7 +1679,7 @@ html {
 
 .browser-message {
   margin-top: 1.5rem;
-  color: #c084fc;
+  color: #63ff9b;
   font-family: monospace;
   font-size: 0.8rem;
 }
@@ -1849,6 +1849,12 @@ html {
   font-size: 0.78rem;
 }
 
+.project-detail-page.category-game .detail-tags span {
+  border-color: rgba(99, 255, 155, 0.5);
+  color: #63ff9b;
+  background: rgba(99, 255, 155, 0.1);
+}
+
 /* ==========================================================================
    13. BOUTONS DE NAVIGATION DU FOOTER (PROJETS)
    ========================================================================== */
@@ -1864,7 +1870,7 @@ html {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 15px;
-  margin-top: 3rem;
+  margin-top: 8rem;
   width: 100%;
   max-width: 100%;
   box-sizing: border-box;
@@ -1908,20 +1914,20 @@ html {
 }
 
 .project-navigation-footer .nav-btn-next {
-  color: #c084fc;
-  background: rgba(192, 132, 252, 0.05);
-  border: 1px solid rgba(192, 132, 252, 0.4);
+  color: #00f3ff;
+  background: rgba(0, 243, 255, 0.05);
+  border: 1px solid rgba(0, 243, 255, 0.4);
   grid-column: 2;
   grid-row: 1;
   width: 100%;
 }
 
 .project-navigation-footer .nav-btn-next:hover {
-  background: rgba(192, 132, 252, 0.18);
-  border-color: #c084fc;
+  background: rgba(0, 243, 255, 0.18);
+  border-color: #00f3ff;
   color: #ffffff;
   box-shadow:
-    0 0 25px rgba(192, 132, 252, 0.45),
+    0 0 25px rgba(0, 243, 255, 0.45),
     0 6px 20px rgba(0, 0, 0, 0.4);
   transform: translateY(-3px);
 }
@@ -1945,6 +1951,11 @@ html {
   box-shadow:
     0 0 25px rgba(255, 0, 127, 0.45),
     0 6px 20px rgba(0, 0, 0, 0.4);
+  transform: translateY(-3px);
+}
+
+.project-navigation-footer .nav-btn-prev:hover,
+.project-navigation-footer .nav-btn-next:hover {
   transform: translateY(-3px);
 }
 

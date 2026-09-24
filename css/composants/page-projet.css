@@ -4,10 +4,15 @@
   --project-rgb: 0, 243, 255;
   min-height: 100vh;
 }
+
+.project-detail-page.category-game {
+  --project-accent: #63ff9b !important;
+  --project-rgb: 99, 255, 155 !important;
+}
 .project-detail {
   width: min(1120px, calc(100% - 3rem));
   margin: 0 auto;
-  padding: 2rem 0 6rem;
+  padding: 2rem 0 2rem;
 }
 .project-detail-header {
   display: flex;
@@ -72,12 +77,12 @@
     inset 0 1px 0 rgba(255, 255, 255, 0.06);
 }
 .detail-panel {
-  padding: 1.5rem;
+  padding: 1rem;
   min-width: 0;
   overflow-wrap: anywhere;
 }
 .detail-panel-large {
-  padding: 24px;
+  padding: 1rem;
   backdrop-filter: blur(10px);
   min-width: 0;
   overflow-wrap: anywhere;
@@ -182,7 +187,7 @@
   }
   .detail-panel,
   .detail-panel-large {
-    padding: 1.15rem;
+    padding: 0.9rem;
     backdrop-filter: none;
   }
 }
