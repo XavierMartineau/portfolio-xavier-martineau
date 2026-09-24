@@ -99,6 +99,7 @@ const setText = (selector, value) => {
 setText("#project-index", `[${String(projectId).padStart(2, "0")}] / 07`);
 setText("#project-category", project.category);
 setText("#project-year", project.year);
+setText("#project-year-panel", project.year);
 setText("#project-title", project.name);
 setText("#project-description", project.description);
 setText("#project-summary", project.description);

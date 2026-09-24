@@ -530,6 +530,20 @@
     padding: 1.5rem !important;
   }
 
+  .projects-grid .gc-technologies {
+    min-width: 0;
+    gap: 0.3rem;
+    margin-bottom: 0.85rem;
+  }
+
+  .projects-grid .gc-technologies span {
+    max-width: 100%;
+    padding: 0.25rem 0.45rem;
+    font-size: 0.62rem;
+    letter-spacing: 0.04em;
+    overflow-wrap: anywhere;
+  }
+
   .project-navigation-footer {
     grid-template-columns: 1fr;
   }
