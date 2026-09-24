@@ -404,11 +404,7 @@ if (projectId === 6 && isMobileScreen) {
     interactive.innerHTML = `
       <div class="interactive-game mobile-warning-view" style="padding: 1.5rem; text-align: center; overflow-y: auto; max-height: 100%;">
         <span class="interactive-kicker">// NOTICE MOBILE</span>
-        <strong style="font-size: 1.2rem; margin-bottom: 1rem; display: block;">Ce jeu est conçu pour une utilisation PC uniquement.</strong>
-        <p style="margin-bottom: 1rem; color: #b7b7c9;">Voir la vidéo :</p>
-        <div style="position: relative; width: 100%; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px; border: 1px solid rgba(0, 243, 255, 0.3);">
-          <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" src="https://www.youtube.com/embed/VQ0Fg8uARHI?si=wryya5UrbiuQGy-0" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </div>
+        <strong style="font-size: 1.2rem; margin-bottom: 1rem; display: block;">CECI EST EN CONSTRUCTION</strong>
       </div>`;
   }
 } else if (projectId === 6 && !isMobileScreen) {
