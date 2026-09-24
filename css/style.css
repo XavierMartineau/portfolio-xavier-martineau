@@ -1996,16 +1996,31 @@ html {
   background: rgba(255, 255, 255, 0.045);
   transition:
     transform 0.3s ease,
-    border-color 0.3s ease;
+    border-color 0.3s ease,
+    box-shadow 0.3s ease,
+    background-color 0.3s ease;
 }
 
 .about-info-card:hover {
   border-color: #7b80ff;
-  transform: translateY(-3px);
+  background: rgba(123, 128, 255, 0.1);
+  box-shadow:
+    0 10px 24px rgba(0, 0, 0, 0.28),
+    0 0 22px rgba(123, 128, 255, 0.2),
+    inset 0 0 18px rgba(123, 128, 255, 0.06);
+  transform: translateY(-7px) scale(1.025);
 }
 .about-info-icon {
   margin-bottom: 0.35rem;
   font-size: 1.3rem;
+  transition:
+    transform 0.3s ease,
+    filter 0.3s ease;
+}
+
+.about-info-card:hover .about-info-icon {
+  filter: drop-shadow(0 0 7px rgba(123, 128, 255, 0.75));
+  transform: translateY(-2px) scale(1.15) rotate(-6deg);
 }
 .about-info-label {
   margin-bottom: 0.25rem;
@@ -2070,11 +2085,6 @@ html {
 }
 
 .about-timeline-year {
-  opacity: 0;
-  transform: scale(0.45);
-  transition:
-    opacity 0.25s ease,
-    transform 0.25s ease;
   padding-top: 1rem;
   color: #7b80ff;
   font-family: monospace;
@@ -2082,18 +2092,19 @@ html {
   text-align: right;
 }
 
-.about-timeline-item:hover .about-timeline-dot {
-  opacity: 1;
-  transform: scale(1);
-}
 .about-timeline-dot {
   width: 10px;
   height: 10px;
   margin-top: 1.1rem;
   border: 2px solid #7b80ff;
   border-radius: 50%;
-  background: #0d0d12;
+  background: transparent;
   box-shadow: 0 0 10px rgba(123, 128, 255, 0.7);
+  transition: background 0.3s ease;
+}
+
+.about-timeline-item:hover .about-timeline-dot {
+  background: #7b80ff;
 }
 
 .about-timeline-card {
@@ -2125,4 +2136,344 @@ html {
   color: #888899;
   font-size: 0.85rem;
   line-height: 1.5;
+}
+
+/* Galerie empilée des maquettes du processus de création. */
+.creation-process-section {
+  margin-top: 4rem;
+  padding: 0 0 5rem;
+}
+
+.creation-process-heading {
+  margin-bottom: 1.5rem;
+}
+
+.creation-process-layout {
+  display: grid;
+  grid-template-columns: minmax(240px, 0.55fr) minmax(0, 1.45fr);
+  gap: 4rem;
+  align-items: center;
+}
+
+.creation-process-copy h3 {
+  margin: 0 0 0.85rem;
+  color: #e8e8f0;
+  font-family: "Space-Grotesk", sans-serif;
+  font-size: clamp(1.4rem, 3vw, 2rem);
+}
+
+.creation-process-copy p {
+  max-width: 27rem;
+  margin: 0 0 0.8rem;
+  color: #888899;
+  line-height: 1.6;
+}
+
+.creation-process-counter {
+  color: #7b80ff !important;
+  font-family: monospace;
+  font-size: 0.8rem;
+  letter-spacing: 0.12em;
+}
+
+.creation-process-gallery {
+  min-width: 0;
+}
+
+.creation-process-stack {
+  position: relative;
+  width: 100%;
+  min-height: 470px;
+}
+
+.creation-process-card {
+  position: absolute;
+  inset: 0;
+  min-height: 0;
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid rgba(123, 128, 255, 0.3);
+  border-radius: 12px;
+  background: rgba(13, 13, 18, 0.9);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.28);
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(0, 0) scale(0.88);
+  transition:
+    opacity 0.4s ease,
+    transform 0.4s ease,
+    border-color 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+.creation-process-card img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  min-height: 420px;
+  object-fit: contain;
+  background: #0d0d12;
+}
+
+.creation-process-image-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.85rem;
+  height: 100%;
+  padding: 0.85rem;
+}
+
+.creation-process-frame {
+  position: relative;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid rgba(123, 128, 255, 0.3);
+  border-radius: 9px;
+  background: rgba(13, 13, 18, 0.88);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.03);
+}
+
+.creation-process-frame img {
+  min-height: 0;
+  height: 100%;
+  max-height: 100%;
+}
+
+.creation-process-expand {
+  position: absolute;
+  right: 0.85rem;
+  bottom: 0.85rem;
+  z-index: 5;
+  display: grid;
+  width: 2.5rem;
+  height: 2.5rem;
+  place-items: center;
+  border: 1px solid rgba(0, 243, 255, 0.65);
+  border-radius: 7px;
+  background: rgba(7, 8, 16, 0.82);
+  color: #e8e8f0;
+  cursor: pointer;
+  font-size: 1.15rem;
+  opacity: 0;
+  transform: translateY(0.4rem);
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease,
+    background-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.creation-process-card.is-active:hover .creation-process-expand,
+.creation-process-expand:focus-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.creation-process-expand:hover,
+.creation-process-expand:focus-visible {
+  background: rgba(0, 243, 255, 0.2);
+  box-shadow: 0 0 18px rgba(0, 243, 255, 0.35);
+}
+
+.creation-process-expand:focus-visible {
+  outline: 2px solid #7b80ff;
+  outline-offset: 3px;
+}
+
+.creation-process-card.is-active {
+  z-index: 4;
+  opacity: 1;
+  pointer-events: auto;
+  border-color: rgba(0, 243, 255, 0.55);
+  box-shadow:
+    0 24px 45px rgba(0, 0, 0, 0.38),
+    0 0 28px rgba(0, 243, 255, 0.12);
+  transform: translate(0, 0) scale(1);
+}
+
+.creation-process-card.is-active .creation-process-frame {
+  border-color: rgba(0, 243, 255, 0.28);
+}
+
+.creation-process-card.is-next,
+.creation-process-card.is-next-two,
+.creation-process-card.is-previous {
+  opacity: 0.72;
+}
+
+.creation-process-card.is-next {
+  z-index: 3;
+  transform: translate(0.7rem, 0.7rem) scale(0.96);
+}
+
+.creation-process-card.is-next-two {
+  z-index: 2;
+  opacity: 0.38;
+  transform: translate(1.4rem, 1.4rem) scale(0.92);
+}
+
+.creation-process-card.is-previous {
+  z-index: 1;
+  opacity: 0.2;
+  transform: translate(-0.7rem, 0.5rem) scale(0.94);
+}
+
+.creation-process-card.is-hidden {
+  visibility: hidden;
+}
+
+.creation-process-controls {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.65rem;
+  margin-top: 1rem;
+}
+
+.creation-process-button {
+  display: grid;
+  width: 2.75rem;
+  height: 2.75rem;
+  place-items: center;
+  border: 1px solid rgba(0, 243, 255, 0.5);
+  border-radius: 7px;
+  background: rgba(0, 243, 255, 0.06);
+  color: #e8e8f0;
+  cursor: pointer;
+  font-size: 1.25rem;
+  transition:
+    transform 0.25s ease,
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.creation-process-button:hover,
+.creation-process-button:focus-visible {
+  border-color: #00f3ff;
+  background: rgba(0, 243, 255, 0.16);
+  box-shadow: 0 0 18px rgba(0, 243, 255, 0.25);
+  transform: translateY(-2px);
+}
+
+.creation-process-button:focus-visible {
+  outline: 2px solid #7b80ff;
+  outline-offset: 3px;
+}
+
+.creation-lightbox {
+  width: min(92vw, 1180px);
+  max-width: none;
+  padding: 0;
+  border: 1px solid rgba(0, 243, 255, 0.45);
+  border-radius: 14px;
+  background: rgba(7, 8, 16, 0.96);
+  box-shadow:
+    0 30px 100px rgba(0, 0, 0, 0.7),
+    0 0 45px rgba(0, 243, 255, 0.16);
+  color: #e8e8f0;
+}
+
+.creation-lightbox::backdrop {
+  background: rgba(3, 4, 10, 0.82);
+  backdrop-filter: blur(10px);
+}
+
+.creation-lightbox-content {
+  position: relative;
+  display: grid;
+  min-height: min(78vh, 760px);
+  place-items: center;
+  padding: 2.5rem 2.5rem 1rem;
+}
+
+.creation-lightbox img {
+  display: block;
+  width: 100%;
+  max-height: 72vh;
+  object-fit: contain;
+}
+
+.creation-lightbox-navigation {
+  position: absolute;
+  top: 50%;
+  z-index: 2;
+  display: grid;
+  width: 2.75rem;
+  height: 2.75rem;
+  place-items: center;
+  border: 1px solid rgba(0, 243, 255, 0.6);
+  border-radius: 7px;
+  background: rgba(7, 8, 16, 0.82);
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 1.25rem;
+  transform: translateY(-50%);
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
+}
+
+.creation-lightbox-previous {
+  left: 0.75rem;
+}
+
+.creation-lightbox-next {
+  right: 0.75rem;
+}
+
+.creation-lightbox-navigation:hover,
+.creation-lightbox-navigation:focus-visible {
+  border-color: #00f3ff;
+  background: rgba(0, 243, 255, 0.2);
+  box-shadow: 0 0 20px rgba(0, 243, 255, 0.3);
+  transform: translateY(-50%) scale(1.06);
+}
+
+.creation-lightbox-navigation:focus-visible {
+  outline: 2px solid #7b80ff;
+  outline-offset: 3px;
+}
+
+.creation-lightbox-close {
+  position: absolute;
+  top: 0.8rem;
+  right: 0.8rem;
+  z-index: 2;
+  display: grid;
+  width: 2.5rem;
+  height: 2.5rem;
+  place-items: center;
+  border: 1px solid rgba(255, 0, 234, 0.6);
+  border-radius: 7px;
+  background: rgba(255, 0, 234, 0.1);
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 1.6rem;
+  line-height: 1;
+  transition:
+    background-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.creation-lightbox-close:hover,
+.creation-lightbox-close:focus-visible {
+  background: rgba(255, 0, 234, 0.25);
+  box-shadow: 0 0 18px rgba(255, 0, 234, 0.3);
+}
+
+.creation-lightbox-close:focus-visible {
+  outline: 2px solid #00f3ff;
+  outline-offset: 3px;
+}
+
+.creation-lightbox p {
+  margin: 0.75rem 0 0;
+  color: #7b80ff;
+  font-family: monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
 }

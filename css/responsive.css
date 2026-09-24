@@ -555,15 +555,50 @@
 
 @media (max-width: 800px) {
   .about-page-container {
-    padding: 7rem 1rem 3rem;
+    width: 100%;
+    padding: 6.75rem 1rem 3rem;
+    box-sizing: border-box;
   }
+
+  .about-max-width {
+    width: 100%;
+  }
+
+  .about-header {
+    margin-bottom: 2rem;
+  }
+
+  .about-title {
+    font-size: clamp(2.35rem, 11vw, 3.5rem);
+    overflow-wrap: anywhere;
+  }
+
+  .about-card {
+    margin-bottom: 2.5rem;
+    padding: 1.25rem;
+    border-radius: 12px;
+  }
+
   .about-grid {
     grid-template-columns: 1fr;
-    gap: 2rem;
+    gap: 1.5rem;
   }
+
+  .about-copy h2 {
+    font-size: clamp(1.35rem, 6vw, 1.8rem);
+  }
+
+  .about-info-grid {
+    gap: 0.75rem;
+  }
+
+  .about-info-card {
+    padding: 0.85rem;
+  }
+
   .about-timeline-item {
     grid-template-columns: 1fr;
-    gap: 0.35rem;
+    gap: 0.5rem;
   }
   .about-timeline-year {
     padding: 0;
@@ -572,14 +607,144 @@
   .about-timeline-dot {
     display: none;
   }
+
+  .about-timeline-card {
+    padding: 1rem;
+  }
+
+  .creation-process-section {
+    margin-top: 3rem;
+  }
+
+  .creation-process-layout {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .creation-process-copy p {
+    max-width: none;
+  }
+
+  .creation-process-stack {
+    width: 100%;
+    min-height: min(82vw, 340px);
+  }
+
+  .creation-process-card img {
+    min-height: 0;
+    object-fit: contain;
+  }
+
+  .creation-process-image-grid {
+    gap: 0.5rem;
+    padding: 0.5rem;
+  }
+
+  .creation-process-section {
+    padding-bottom: 4rem;
+  }
+
+  .creation-process-expand {
+    opacity: 1;
+    transform: none;
+  }
+
+  .creation-lightbox {
+    width: calc(100vw - 1.5rem);
+    border-radius: 10px;
+  }
+
+  .creation-lightbox-content {
+    min-height: 60vh;
+    box-sizing: border-box;
+    padding: 2.75rem 0.75rem 1rem;
+  }
+
+  .creation-lightbox img {
+    max-height: 68vh;
+  }
+
+  .creation-lightbox-navigation {
+    width: 2.4rem;
+    height: 2.4rem;
+  }
+
+  .creation-lightbox-previous {
+    left: 0.35rem;
+  }
+
+  .creation-lightbox-next {
+    right: 0.35rem;
+  }
 }
 
 @media (max-width: 480px) {
   .about-info-grid {
     grid-template-columns: 1fr;
   }
+
   .about-card {
-    padding: 1.15rem;
+    padding: 1rem;
+  }
+
+  .creation-process-copy h3 {
+    font-size: 1.35rem;
+  }
+
+  .creation-process-stack {
+    min-height: 280px;
+  }
+
+  .creation-process-controls {
+    justify-content: center;
+  }
+
+  .creation-process-button {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+}
+
+@media (max-width: 375px) {
+  .about-page-container {
+    padding-right: 0.75rem;
+    padding-left: 0.75rem;
+  }
+
+  .about-title {
+    font-size: 2.25rem;
+  }
+
+  .about-card {
+    padding: 0.85rem;
+  }
+
+  .about-info-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .about-info-card {
+    padding: 0.7rem;
+  }
+
+  .about-info-value {
+    font-size: 0.78rem;
+    overflow-wrap: anywhere;
+  }
+
+  .creation-process-stack {
+    min-height: 250px;
+  }
+
+  .creation-process-image-grid {
+    padding: 0.35rem;
+  }
+
+  .creation-process-expand {
+    right: 0.55rem;
+    bottom: 0.55rem;
+    width: 2.25rem;
+    height: 2.25rem;
   }
 }
 

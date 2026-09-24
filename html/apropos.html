@@ -113,8 +113,93 @@
             <div class="about-timeline-list" id="timeline-container"></div>
           </div>
         </section>
+
+        <!-- Galerie des étapes de création. -->
+        <section
+          class="creation-process-section"
+          aria-labelledby="creation-process-title"
+        >
+          <div class="about-header-line creation-process-heading">
+            <span class="about-line"></span>
+            <h2 id="creation-process-title" class="about-label">
+              // Processus de création
+            </h2>
+          </div>
+
+          <div class="creation-process-layout">
+            <div class="creation-process-copy">
+              <h3>Des idées aux maquettes.</h3>
+              <p>
+                Chaque projet commence par une intention, puis évolue à travers
+                des recherches, des essais visuels et des ajustements précis.
+              </p>
+              <p class="creation-process-counter" aria-live="polite">
+                <span id="creation-process-current">01</span>
+                <span aria-hidden="true"> / </span>
+                <span id="creation-process-total">20</span>
+              </p>
+            </div>
+
+            <div class="creation-process-gallery">
+              <div
+                class="creation-process-stack"
+                id="creation-process-stack"
+                aria-live="polite"
+              ></div>
+              <div class="creation-process-controls">
+                <button
+                  class="creation-process-button"
+                  id="creation-process-previous"
+                  type="button"
+                  aria-label="Image précédente"
+                >
+                  <span aria-hidden="true">←</span>
+                </button>
+                <button
+                  class="creation-process-button"
+                  id="creation-process-next"
+                  type="button"
+                  aria-label="Image suivante"
+                >
+                  <span aria-hidden="true">→</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
       </div>
     </main>
+
+    <dialog class="creation-lightbox" id="creation-lightbox">
+      <div class="creation-lightbox-content">
+        <button
+          class="creation-lightbox-close"
+          id="creation-lightbox-close"
+          type="button"
+          aria-label="Fermer l'image agrandie"
+        >
+          <span aria-hidden="true">×</span>
+        </button>
+        <button
+          class="creation-lightbox-navigation creation-lightbox-previous"
+          id="creation-lightbox-previous"
+          type="button"
+          aria-label="Image précédente en plein écran"
+        >
+          <span aria-hidden="true">←</span>
+        </button>
+        <img id="creation-lightbox-image" alt="" />
+        <button
+          class="creation-lightbox-navigation creation-lightbox-next"
+          id="creation-lightbox-next"
+          type="button"
+          aria-label="Image suivante en plein écran"
+        >
+          <span aria-hidden="true">→</span>
+        </button>
+        <p id="creation-lightbox-caption"></p>
+      </div>
+    </dialog>
 
     <!-- Pied de page commun. -->
     <footer class="footer">
