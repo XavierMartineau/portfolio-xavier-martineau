@@ -55,15 +55,6 @@ const projects = {
       "Image",
     ],
   },
-  6: {
-    name: "Jeu vidéo",
-    category: "Jeu vidéo",
-    year: "2025",
-    image: "Projet_06.png",
-    description:
-      "Une expérience interactive fluide qui met l'utilisateur au cœur du parcours et donne du relief à chaque interaction.",
-    technologies: ["Interface", "Interaction", "Web", "Expérience"],
-  },
   7: {
     name: "Atelier chromatique",
     category: "Site web",
@@ -96,7 +87,15 @@ const setText = (selector, value) => {
   if (el) el.textContent = value;
 };
 
-setText("#project-index", `[${String(projectId).padStart(2, "0")}] / 07`);
+const projectOrder = Object.keys(projects)
+  .map(Number)
+  .sort((a, b) => a - b);
+const projectPosition = projectOrder.indexOf(projectId) + 1;
+
+setText(
+  "#project-index",
+  `[${String(projectPosition).padStart(2, "0")}] / ${String(projectOrder.length).padStart(2, "0")}`,
+);
 setText("#project-category", project.category);
 setText("#project-year", project.year);
 setText("#project-year-panel", project.year);
@@ -121,11 +120,6 @@ const categorySkills = {
     ["HTML, CSS et JavaScript", 90],
     ["Interface adaptative", 85],
     ["Conception visuelle", 80],
-  ],
-  "Jeu vidéo": [
-    ["Interface", 75],
-    ["Interaction", 70],
-    ["Expérience utilisateur", 65],
   ],
 };
 
@@ -175,11 +169,6 @@ const categoryThemes = {
     color: "#6366f1",
     rgb: "99, 102, 241",
   },
-  "Jeu vidéo": {
-    className: "category-game",
-    color: "#63ff9b",
-    rgb: "99, 255, 155",
-  },
 };
 
 const categoryTheme = categoryThemes[project.category] || categoryThemes["3D"];
@@ -199,9 +188,6 @@ if (categoryElement) {
       break;
     case "Site web":
       categoryElement.classList.add("couleur-categorie--site");
-      break;
-    case "Jeu vidéo":
-      categoryElement.classList.add("couleur-categorie--jeu");
       break;
   }
 }
@@ -341,10 +327,6 @@ const embeddedProjects = {
     src: "https://xaviermartineau.github.io/La_Maison_xavier/",
     title: "La Maison interactive",
   },
-  6: {
-    src: "https://xaviermartineau.github.io/martineau_xavier_Tp4/",
-    title: "Jeu vidéo interactif",
-  },
   7: {
     src: "https://xaviermartineau.github.io/Atelier-chromatique-XM/",
     title: "Atelier chromatique",
@@ -394,51 +376,7 @@ const renderInteractive = () => {
 // =========================================================================
 const isMobileScreen = window.matchMedia("(max-width: 768px)").matches;
 
-if (projectId === 6 && isMobileScreen) {
-  if (visual) {
-    visual.classList.add("project-visual-interactive", "is-game-project");
-  }
-  if (interactive) {
-    interactive.hidden = false;
-    if (projectImage) projectImage.hidden = true;
-    interactive.innerHTML = `
-      <div class="interactive-game mobile-warning-view" style="padding: 1.5rem; text-align: center; overflow-y: auto; max-height: 100%;">
-        <span class="interactive-kicker">// NOTICE MOBILE</span>
-        <strong style="font-size: 1.2rem; margin-bottom: 1rem; display: block;">CECI EST EN CONSTRUCTION</strong>
-      </div>`;
-  }
-} else if (projectId === 6 && !isMobileScreen) {
-  if (visual) {
-    visual.classList.add("project-visual-interactive", "is-game-project");
-  }
-  if (interactive) {
-    interactive.hidden = false;
-    if (projectImage) projectImage.hidden = true;
-
-    interactive.innerHTML = `
-      <div class="interactive-game" style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; text-align: center; padding: 2rem;">
-        <span class="interactive-kicker" style="margin-bottom: 1rem;">// JOUER AU JEU VIDÉO</span>
-        <strong style="font-size: 1.3rem; margin-bottom: 0.5rem; color: #ffffff;">${project.name}</strong>
-        <p style="color: #b7b7c9; margin-bottom: 1.5rem; max-width: 400px;">Clique sur le bouton ci-dessous pour charger et lancer le jeu interactif directement dans le navigateur.</p>
-        <p class="game-warning" role="alert">Bug majeur présent : après la mort, il n'est pas possible de revenir dans le jeu.</p>
-        <button id="load-game-btn" class="interactive-action" type="button" style="padding: 12px 28px; font-size: 0.9rem; cursor: pointer;">Lancer la partie</button>
-      </div>`;
-
-    const loadBtn = interactive.querySelector("#load-game-btn");
-    if (loadBtn && projectEmbed && embeddedProjects[6]) {
-      loadBtn.addEventListener("click", () => {
-        activeEmbedSource = embeddedProjects[6].src;
-        interactive.hidden = true;
-
-        setEmbedLoading(true);
-        projectEmbed.hidden = false;
-        projectEmbed.src = embeddedProjects[6].src;
-        projectEmbed.title = embeddedProjects[6].title;
-        projectEmbed.classList.add("project-embed-active");
-      });
-    }
-  }
-} else if (embeddedProjects[projectId] && projectEmbed) {
+if (embeddedProjects[projectId] && projectEmbed) {
   const embeddedProject = embeddedProjects[projectId];
   activeEmbedSource = embeddedProject.src;
 
@@ -562,7 +500,6 @@ const technologyCategoryClasses = {
   "3D": "couleur-categorie--3d",
   "2D": "couleur-categorie--2d",
   "Site web": "couleur-categorie--site",
-  "Jeu vidéo": "couleur-categorie--jeu",
 };
 
 const renderTechnologyTags = (selector) => {
@@ -600,14 +537,17 @@ document.addEventListener("DOMContentLoaded", () => {
   const prevLinkEl = document.getElementById("prev-project-link");
 
   if (indexEl) {
-    const match = indexEl.textContent.match(/\d+/);
-    if (match) {
-      let currentNum = parseInt(match[0], 10);
-      const totalProjects = 7;
+    const activeProjectIds = Object.keys(projects)
+      .map(Number)
+      .sort((a, b) => a - b);
+    const currentIndex = activeProjectIds.indexOf(projectId);
+
+    if (currentIndex !== -1) {
+      const nextNum = activeProjectIds[currentIndex + 1];
+      const prevNum = activeProjectIds[currentIndex - 1];
 
       if (nextLinkEl) {
-        if (currentNum < totalProjects) {
-          let nextNum = currentNum + 1;
+        if (nextNum) {
           nextLinkEl.href = `page_de_projets.html?project=${nextNum}`;
           nextLinkEl.classList.remove("is-hidden");
         } else {
@@ -616,8 +556,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
 
       if (prevLinkEl) {
-        if (currentNum > 1) {
-          let prevNum = currentNum - 1;
+        if (prevNum) {
           prevLinkEl.href = `page_de_projets.html?project=${prevNum}`;
           prevLinkEl.classList.remove("is-hidden");
         } else {
@@ -629,73 +568,3 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 window.translatePortfolio?.();
-
-// =========================================================================
-// 15. PAUSE AUTOMATIQUE AU SCROLL (OOPS! CONTACT PERDU) - UNIQUEMENT PROJET [06]
-// Coupe l'iframe et affiche l'écran de pause si l'utilisateur s'éloigne du projet 06.
-// =========================================================================
-document.addEventListener("DOMContentLoaded", () => {
-  // Cible uniquement le conteneur visuel du projet [06] (ajustez le sélecteur si besoin, ex: #projet-06 .project-visual)
-  const visualContainer = document.querySelector(
-    "#projet-06 .project-visual, .project-visual.is-game-project",
-  );
-  if (!visualContainer) return;
-
-  // Création dynamique de l'overlay d'avertissement "OOPS!"
-  const oopsOverlay = document.createElement("div");
-  oopsOverlay.id = "oops-overlay";
-  oopsOverlay.className = "game-contact-lost";
-  oopsOverlay.innerHTML = `
-    <span class="game-contact-kicker">// CONNEXION INTERROMPUE</span>
-    <strong>Le contact avec le jeu a été perdu</strong>
-    <p>Le jeu a été mis en pause pour réduire le chargement.</p>
-    <button id="resume-btn" class="interactive-action" type="button">Reprendre</button>
-  `;
-  visualContainer.appendChild(oopsOverlay);
-
-  let manualPause = false;
-
-  // Observer de visibilité de l'écran lors du scroll pour le projet [06]
-  const scrollObserver = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        // Si le projet [06] sort de l'écran et qu'une source active tourne
-        if (
-          !entry.isIntersecting &&
-          activeEmbedSource &&
-          projectEmbed &&
-          projectEmbed.getAttribute("src") !== "about:blank" &&
-          !manualPause
-        ) {
-          projectEmbed.src = "about:blank"; // Stoppe net le jeu et le son du projet 06
-          oopsOverlay.classList.add("is-visible"); // Affiche l'écran de perte de contact
-        }
-      });
-    },
-    { threshold: 0.2 },
-  );
-
-  scrollObserver.observe(visualContainer);
-
-  // Gestion du clic sur le bouton "Reprendre"
-  const resumeBtn = oopsOverlay.querySelector("#resume-btn");
-  if (resumeBtn) {
-    resumeBtn.addEventListener("click", () => {
-      oopsOverlay.classList.remove("is-visible");
-      manualPause = true;
-
-      if (projectEmbed && activeEmbedSource) {
-        setEmbedLoading(true);
-        projectEmbed.src = activeEmbedSource; // Relance le jeu et le son
-      }
-
-      // Ramène doucement le projet [06] en vue
-      visualContainer.scrollIntoView({ behavior: "smooth", block: "center" });
-
-      // Réinitialise le verrou après un court moment
-      setTimeout(() => {
-        manualPause = false;
-      }, 1500);
-    });
-  }
-});

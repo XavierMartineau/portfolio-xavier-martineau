@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact – Xavier Martineau</title>
+    <link rel="stylesheet" href="../css/body.css" />
+    <link rel="stylesheet" href="../css/font.css" />
+    <link rel="stylesheet" href="../css/footer.css" />
+    <link rel="stylesheet" href="../css/animation.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/responsive.css" />
+    <link rel="stylesheet" href="../css/composants/navigations.css" />
+  </head>
+
+  <body class="root">
+    <div class="grid-bg"></div>
+
+    <header class="navbar">
+      <a href="../index.html" class="navbar-left">
+        <div class="logo">
+          <div class="logo-glow"></div>
+          <div class="logo-inner">
+            <img src="../assets/svg/Logo_svg.svg" alt="Logo XM" />
+          </div>
+        </div>
+
+        <h3 class="brand">
+          Xavier <span class="brand-accent">Martineau</span>
+        </h3>
+      </a>
+
+      <input class="menu-checkbox" type="checkbox" id="menu-toggle" />
+
+      <nav class="navbar-links">
+        <h3><a href="accueil.html" data-i18n="ACCUEIL">ACCUEIL</a></h3>
+        <h3><a href="projets.html" data-i18n="PROJETS">PROJETS</a></h3>
+        <h3><a href="apropos.html" data-i18n="À PROPOS">À PROPOS</a></h3>
+        <h3>
+          <a href="contact.html" class="active" data-i18n="CONTACT">CONTACT</a>
+        </h3>
+        <h3 class="mobile-menu-cta">
+          <a href="contact.html" data-i18n="ENGAGEZ-MOI">ENGAGEZ-MOI</a>
+        </h3>
+      </nav>
+
+      <div class="language-switcher" aria-label="Language selector">
+        <button type="button" data-language="fr" aria-pressed="true">FR</button>
+      </div>
+
+      <label class="menu-toggle" for="menu-toggle" aria-label="Ouvrir le menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
+
+      <div class="navbar-right">
+        <h3>
+          <a href="contact.html" class="btn-engage" data-i18n="Engagez‑moi"
+            >Engagez‑moi</a
+          >
+        </h3>
+      </div>
+    </header>
+
+    <main class="contact-page-container">
+      <div class="contact-max-width">
+        <header class="contact-header">
+          <div class="contact-header-line">
+            <span></span>
+            <h4 class="contact-label">// Contact</h4>
+          </div>
+          <h1>Vous avez un projet <span>ambitieux</span> ?</h1>
+          <p>
+            Je suis là pour transformer vos idées en réalité numérique.
+            Discutons ensemble de ce que nous pouvons accomplir.
+          </p>
+        </header>
+
+        <div class="contact-grid">
+          <section
+            class="contact-cta-card"
+            aria-labelledby="contact-hire-title"
+          >
+            <div class="contact-kicker">// Disponible pour embauche</div>
+            <h2 id="contact-hire-title">
+              Je crée des expériences numériques qui donnent envie d’entrer dans
+              le projet.
+            </h2>
+            <p>
+              Vous cherchez quelqu’un pour un site, une interface, une identité
+              visuelle ou une présence digitale plus forte ? Je peux aider à la
+              conception, au développement et à la mise en valeur de votre idée.
+            </p>
+
+            <div class="contact-cta-actions">
+              <a
+                href="mailto:xavier.martineau@gmail.com"
+                class="contact-primary-action"
+              >
+                M’écrire
+              </a>
+              <a href="projets.html" class="contact-secondary-action">
+                Voir mes projets
+              </a>
+            </div>
+
+            <ul class="contact-capabilities">
+              <li>Sites web</li>
+              <li>UI / UX</li>
+              <li>Identité visuelle</li>
+              <li>Expériences interactives</li>
+            </ul>
+          </section>
+
+          <aside class="contact-sidebar">
+            <div class="contact-side-card">
+              <div class="contact-status">
+                <span class="contact-status-dot" aria-hidden="true"></span>
+                <h2 class="contact-side-title">Disponible</h2>
+              </div>
+              <p>
+                Ouvert aux nouvelles missions freelance et collaborations long
+                terme.
+              </p>
+            </div>
+
+            <div class="contact-side-card">
+              <span class="contact-side-label">Email direct</span>
+              <a href="mailto:xavier.martineau@gmail.com" class="contact-email"
+                >xavier.martineau@gmail.com</a
+              >
+            </div>
+
+            <div class="contact-side-card">
+              <span class="contact-side-label">Réseaux</span>
+              <div class="contact-links">
+                <a href="#">↗ GitHub</a>
+                <a href="#">↗ LinkedIn</a>
+                <a href="#">↗ Dribbble</a>
+              </div>
+            </div>
+
+            <div class="contact-side-card">
+              <span class="contact-side-label">Réponse moyenne</span>
+              <div class="contact-response">&lt; 24h</div>
+              <p>En jours ouvrables</p>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <span data-i18n="© 2026 Xavier Martineau — Tous droits réservés"
+        >© 2026 Xavier Martineau — Tous droits réservés</span
+      >
+      <div class="footer-right">
+        <div class="pulse-dot"></div>
+        <span data-i18n="CRÉÉ AVEC PASSION">CRÉÉ AVEC PASSION</span>
+      </div>
+    </footer>
+
+    <script src="../js/traduction.js"></script>
+    <script src="../js/contact.js"></script>
+  </body>
+</html>

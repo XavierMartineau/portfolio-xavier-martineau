@@ -29,8 +29,6 @@ const translations = {
     "Site web": "Website",
     Web: "Web",
     "Design graphique": "Graphic design",
-    "Jeux vidéo": "Video games",
-    "Jeu vidéo": "Video game",
     Animation: "Animation",
     Rendu: "Rendering",
     Vectoriel: "Vector",
@@ -103,7 +101,6 @@ const translations = {
     "Voir le projet →": "View project →",
     "Technologies utilisées": "Technologies used",
     "Animation 3D": "3D animation",
-    "Jeu vidéo": "Video game",
     "Illustration 2D": "2D illustration",
     "Activer texte + blur": "Enable text + blur",
     "Désactiver texte + blur": "Disable text + blur",
@@ -159,12 +156,6 @@ const translations = {
     "Oups, le contenu du projet n'a pas pu être chargé.":
       "Sorry, the project content could not be loaded.",
     "98% précision": "98% accuracy",
-    "JOUER AU JEU VIDÉO": "PLAY THE VIDEO GAME",
-    "Bug majeur présent : après la mort, il n'est pas possible de revenir dans le jeu.":
-      "Known major bug: after dying, it is not possible to return to the game.",
-    "Le contact avec le jeu a été perdu": "Connection to the game was lost",
-    "Le jeu a été mis en pause pour réduire le chargement.":
-      "The game was paused to reduce loading.",
     "Création de projets web, 2D, 3D et interactifs.":
       "Creation of web, 2D, 3D and interactive projects.",
     "Création de projets numériques": "Digital project creation",

@@ -82,15 +82,6 @@
         "Image"
       ]
     },
-    "project06": {
-      "id": 6,
-      "name": "Jeu vidéo",
-      "category": "Jeu vidéo",
-      "year": "2025",
-      "image": "Projet_06.png",
-      "description": "Une expérience interactive fluide qui met l'utilisateur au cœur du parcours et donne du relief à chaque interaction.",
-      "technologies": ["Interface", "Interaction", "Web", "Expérience"]
-    },
     "project07": {
       "id": 7,
       "name": "Atelier chromatique",
