@@ -250,3 +250,5 @@ creationLightboxClose?.addEventListener("click", closeCreationLightbox);
 creationLightbox?.addEventListener("click", (event) => {
   if (event.target === creationLightbox) closeCreationLightbox();
 });
+
+window.translatePortfolio?.();

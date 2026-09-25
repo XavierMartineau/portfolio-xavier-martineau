@@ -65,7 +65,7 @@ const projects = {
     technologies: ["Interface", "Interaction", "Web", "Expérience"],
   },
   7: {
-    name: "Palette de couleurs",
+    name: "Atelier chromatique",
     category: "Site web",
     year: "2025-2026",
     image: "Projet_07.png",
@@ -346,8 +346,8 @@ const embeddedProjects = {
     title: "Jeu vidéo interactif",
   },
   7: {
-    src: "https://mycolorpalet.netlify.app/",
-    title: "Palette de couleurs interactive",
+    src: "https://xaviermartineau.github.io/Atelier-chromatique-XM/",
+    title: "Atelier chromatique",
   },
 };
 
@@ -627,6 +627,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 });
+
+window.translatePortfolio?.();
 
 // =========================================================================
 // 15. PAUSE AUTOMATIQUE AU SCROLL (OOPS! CONTACT PERDU) - UNIQUEMENT PROJET [06]

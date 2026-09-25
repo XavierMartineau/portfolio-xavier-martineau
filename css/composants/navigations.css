@@ -122,10 +122,10 @@
 =========================== */
 
 .navbar-links a.active {
-  color: #63ff9b;
-  transform: scale(1.25); /* +25% */
+  color: #00f3ff;
+  transform: scale(1.08);
   font-weight: 700;
-  text-shadow: 0 0 12px #63ff9b;
+  text-shadow: 0 0 12px rgba(0, 243, 255, 0.8);
 }
 
 /* Survol du lien actif */
@@ -166,6 +166,42 @@
   width: 100%;
 }
 
+.language-switcher {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  margin: 0;
+  padding: 0;
+  color: #777791;
+  list-style: none;
+  font-size: 0.68rem;
+  letter-spacing: 0.04em;
+}
+
+.language-switcher button {
+  min-width: 1.35rem;
+  padding: 0.12rem 0.08rem;
+  border: 0;
+  background: transparent;
+  color: #777791;
+  font: inherit;
+  font-weight: 700;
+  letter-spacing: inherit;
+  cursor: pointer;
+  transition:
+    color 0.2s ease,
+    opacity 0.2s ease;
+}
+
+.language-switcher button:hover,
+.language-switcher button.active {
+  color: #00f3ff;
+}
+
+.language-switcher span {
+  color: rgba(0, 243, 255, 0.5);
+}
+
 /* Bouton hamburger mobile et ses trois barres */
 .menu-toggle {
   display: none;
@@ -175,7 +211,7 @@
   width: 48px;
   height: 48px;
   padding: 0;
-  border: 1px solid rgba(99, 255, 155, 0.45);
+  border: 1px solid rgba(0, 243, 255, 0.45);
   border-radius: 9px;
   background: rgba(99, 102, 241, 0.16);
   cursor: pointer;
@@ -329,7 +365,7 @@
     display: block;
     margin-top: 0.35rem !important;
     padding-top: 0.35rem;
-    border-top: 1px solid rgba(99, 255, 155, 0.28);
+    border-top: 1px solid rgba(0, 243, 255, 0.28);
   }
 
   .navbar-links a {
@@ -342,6 +378,12 @@
   .navbar-links a.active,
   .navbar-links a:hover {
     transform: none;
+  }
+
+  .language-switcher {
+    justify-content: flex-start;
+    width: fit-content;
+    margin: 0.35rem 0.75rem 0.5rem;
   }
 
   .menu-toggle {
