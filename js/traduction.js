@@ -62,6 +62,28 @@ const translations = {
     "Activer le texte et le blur": "Enable text and blur",
     "Désactiver texte + blur": "Disable text + blur",
     "Activer texte + blur": "Enable text + blur",
+    "Écris-moi": "Write me",
+    "// Contact": "// Contact",
+    "Vous avez un projet": "Do you have a project",
+    ambitieux: "ambitious",
+    "Je suis là pour transformer vos idées en réalité numérique. Discutons ensemble de ce que nous pouvons accomplir.":
+      "I am here to turn your ideas into digital reality. Let's talk about what we can accomplish together.",
+    "// Disponible pour embauche": "// Available for hire",
+    "Je crée des expériences numériques qui donnent envie d’entrer dans le projet.":
+      "I create digital experiences that make people want to join the project.",
+    "Vous cherchez quelqu’un pour un site, une interface, une identité visuelle ou une présence digitale plus forte ? Je peux aider à la conception, au développement et à la mise en valeur de votre idée.":
+      "Looking for someone for a website, interface, visual identity or stronger digital presence? I can help with the design, development and presentation of your idea.",
+    "Sites web": "Websites",
+    "Identité visuelle": "Visual identity",
+    "Expériences interactives": "Interactive experiences",
+    Disponible: "Available",
+    "Ouvert aux nouvelles missions freelance et collaborations long terme.":
+      "Open to new freelance missions and long-term collaborations.",
+    "Email direct": "Direct email",
+    Réseaux: "Networks",
+    "Réponse moyenne": "Average response",
+    "1 semaine ou moins": "1 week or less",
+    "En jours ouvrables": "Within business days",
     "M'écrire par courriel": "Email me",
     "Parlons de votre projet": "Let's talk about your project",
     "Une idée, une question ou un projet à construire ? Écris-moi.":

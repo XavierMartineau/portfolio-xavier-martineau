@@ -764,3 +764,153 @@
 - Restauration des projets featured et des sept projets complets.
 - Conservation des noms, catégories, années, images, descriptions, technologies et liens YouTube.
 - Validation de la syntaxe JSON avec PowerShell.
+
+---
+
+## Date: 2026-09-24
+
+### Outil: GitHub Copilot
+
+### <u>Prompt</u>: Corriger le défilement mobile et ajouter des media queries pour les petits téléphones.
+
+### Réponse:
+
+- Correction du défilement sur les petits écrans.
+- Ajout de media queries adaptées aux téléphones de petite taille.
+- Ajustement des espacements et des dimensions pour éviter les débordements.
+
+---
+
+### Outil: GitHub Copilot
+
+### <u>Prompt</u>: Améliorer la page À propos avec une timeline, des points visibles et des cartes interactives.
+
+### Réponse:
+
+- Ajustement de la timeline de 2023 à 2026.
+- Affichage des points et du cercle de progression selon le survol.
+- Amélioration des effets de survol des petites cartes.
+- Ajout d'une option pour agrandir les cartes et changer d'image en mode plein écran.
+
+---
+
+### Outil: GitHub Copilot
+
+### <u>Prompt</u>: Organiser les images de la page À propos dans les données du projet et améliorer leur affichage responsive.
+
+### Réponse:
+
+- Déplacement des données d'images vers les fichiers JSON du projet.
+- Intégration des données de création dans `data/projects.json`.
+- Conservation d'une seule image par carte.
+- Amélioration du responsive mobile et des bordures des cartes.
+
+---
+
+### Outil: GitHub Copilot
+
+### <u>Prompt</u>: Corriger les catégories, les technologies, les liens et les boutons des cartes de projets.
+
+### Réponse:
+
+- Correction du lien vers `Projet_02.png`.
+- Restauration des catégories et des technologies sur les petites cartes.
+- Correction des effets de survol afin que le texte reste visible.
+- Ajustement des boutons précédent et suivant de la page détail.
+- Réduction du padding et remplacement des couleurs mauves par des couleurs néon.
+- Correction de plusieurs fautes dans les textes du projet.
+
+---
+
+### Outil: GitHub Copilot
+
+### <u>Prompt</u>: Sur mobile, remplacer la vidéo du jeu vidéo par un message et supprimer la vidéo.
+
+### Réponse:
+
+- Remplacement de la vidéo par un message indiquant que le projet est en construction.
+- Suppression du chargement de la vidéo sur mobile.
+- Conservation d'un affichage léger et adapté aux petits écrans.
+
+---
+
+## Date: 2026-09-25
+
+### Outil: GitHub Copilot
+
+### <u>Prompt</u>: Ajouter une fonction français/anglais à tout le portfolio avec un fichier JavaScript nommé `traduction.js`.
+
+### Réponse:
+
+- Création du système de traduction français/anglais.
+- Ajout du fichier `js/traduction.js`.
+- Ajout du bouton de changement de langue dans la navigation.
+- Traduction progressive des pages, de la navigation et du footer.
+- Correction du fonctionnement du bouton sur mobile.
+
+---
+
+### Outil: GitHub Copilot
+
+### <u>Prompt</u>: Intégrer une page contact provenant d'un exemple sans garder le CSS séparé.
+
+### Réponse:
+
+- Création de `html/contact.html` dans le portfolio.
+- Intégration des styles directement dans `css/style.css`.
+- Adaptation de la navigation et des chemins relatifs aux composants existants.
+- Conservation du style visuel général du portfolio.
+
+---
+
+### Outil: GitHub Copilot
+
+### <u>Prompt</u>: Supprimer complètement le projet Jeu vidéo, sa carte et ses références.
+
+### Réponse:
+
+- Suppression de la carte du projet dans `html/projets.html`.
+- Suppression du projet dans `js/page_de_projets.js` et `data/projects.json`.
+- Suppression du filtre et des traductions associés.
+- Vérification qu'il ne reste plus de référence au projet supprimé.
+
+---
+
+### Outil: GitHub Copilot
+
+### <u>Prompt</u>: Remplacer le formulaire classique de contact par une section pour être embauché.
+
+### Réponse:
+
+- Remplacement du formulaire par un appel à l'embauche.
+- Ajout d'un bouton pour écrire directement par courriel.
+- Ajout d'un bouton vers les projets.
+- Ajout des compétences et des informations de disponibilité.
+- Conservation d'un rendu cohérent avec le portfolio.
+
+---
+
+### Outil: GitHub Copilot
+
+### <u>Prompt</u>: Rétablir la page contact après une régression, puis la rendre disponible en français et en anglais.
+
+### Réponse:
+
+- Restauration de la structure stable de la page contact.
+- Ajout des traductions du titre, de la présentation, des services et des cartes latérales.
+- Ajout d'une formulation naturelle du titre dans les deux langues.
+- Conservation de l'accent visuel du titre.
+
+---
+
+### Outil: GitHub Copilot
+
+### <u>Prompt</u>: Afficher une réponse moyenne de 1 semaine ou moins et traduire le bouton d'écriture.
+
+### Réponse:
+
+- Remplacement de « < 24h » par « 1 semaine ou moins ».
+- Traduction anglaise : « 1 week or less ».
+- Affichage de « Écris-moi » en français.
+- Affichage de « Write me » en anglais.
+- Vérification du changement dans `html/contact.html` et `js/traduction.js`.

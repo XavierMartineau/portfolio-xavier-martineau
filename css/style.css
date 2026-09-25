@@ -226,9 +226,21 @@ html {
   line-height: 1.05;
 }
 
-.contact-header h1 span {
+.contact-header h1 .contact-heading-accent {
   color: #ff00ea;
   text-shadow: 0 0 18px rgba(255, 0, 234, 0.5);
+}
+
+.contact-title-en {
+  display: none;
+}
+
+html[lang="en"] .contact-title-fr {
+  display: none;
+}
+
+html[lang="en"] .contact-title-en {
+  display: inline;
 }
 
 .contact-header p {
