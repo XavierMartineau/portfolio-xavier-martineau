@@ -233,6 +233,49 @@ const initializeCreationProcess = (images) => {
     updateCreationStack("next");
   });
 
+  let creationProcessTimer = null;
+  const stopCreationProcessAutoplay = () => {
+    if (creationProcessTimer) {
+      window.clearInterval(creationProcessTimer);
+      creationProcessTimer = null;
+    }
+  };
+
+  const startCreationProcessAutoplay = () => {
+    if (
+      creationProcessTimer ||
+      creationProcessBoxes.length < 2 ||
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    ) {
+      return;
+    }
+
+    creationProcessTimer = window.setInterval(() => {
+      activeCreationBox = (activeCreationBox + 1) % creationProcessBoxes.length;
+      activeLightboxImage = activeCreationBox;
+      updateCreationStack("next");
+    }, 3200);
+  };
+
+  const creationProcessSection = document.querySelector(
+    ".creation-process-section",
+  );
+
+  if (creationProcessSection && "IntersectionObserver" in window) {
+    const creationProcessObserver = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          startCreationProcessAutoplay();
+        } else {
+          stopCreationProcessAutoplay();
+        }
+      },
+      { threshold: 0.35 },
+    );
+
+    creationProcessObserver.observe(creationProcessSection);
+  }
+
   updateCreationStack();
 };
 

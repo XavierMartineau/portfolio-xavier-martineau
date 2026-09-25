@@ -167,20 +167,31 @@
 }
 
 .language-switcher {
+  position: relative;
   display: flex;
   align-items: center;
-  gap: 0.25rem;
+  justify-content: center;
+  box-sizing: border-box;
+  flex: 0 0 2.2rem;
+  width: 2.2rem;
+  height: 1.65rem;
+  border: 1px solid rgba(0, 243, 255, 0.24);
+  border-radius: 0.45rem;
+  background: rgba(0, 243, 255, 0.035);
   margin: 0;
   padding: 0;
   color: #777791;
   list-style: none;
   font-size: 0.68rem;
   letter-spacing: 0.04em;
+  margin-left: 0.35rem;
 }
 
 .language-switcher button {
-  min-width: 1.35rem;
-  padding: 0.12rem 0.08rem;
+  position: relative;
+  z-index: 1;
+  min-width: 0;
+  padding: 0;
   border: 0;
   background: transparent;
   color: #777791;
@@ -188,9 +199,9 @@
   font-weight: 700;
   letter-spacing: inherit;
   cursor: pointer;
-  transition:
-    color 0.2s ease,
-    opacity 0.2s ease;
+  font-size: 0.62rem;
+  line-height: 1;
+  transition: color 0.2s ease;
 }
 
 .language-switcher button:hover,
@@ -381,9 +392,12 @@
   }
 
   .language-switcher {
-    justify-content: flex-start;
-    width: fit-content;
-    margin: 0.35rem 0.75rem 0.5rem;
+    justify-content: center;
+    flex-basis: 2.2rem;
+    width: 2.2rem;
+    height: 1.65rem;
+    padding: 0;
+    margin: 0;
   }
 
   .menu-toggle {
