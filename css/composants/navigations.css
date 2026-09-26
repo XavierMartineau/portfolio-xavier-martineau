@@ -170,47 +170,56 @@
   position: relative;
   display: flex;
   align-items: center;
-  justify-content: center;
+  gap: 0.15rem;
   box-sizing: border-box;
-  flex: 0 0 2.2rem;
-  width: 2.2rem;
-  height: 1.65rem;
-  border: 1px solid rgba(0, 243, 255, 0.24);
-  border-radius: 0.45rem;
-  background: rgba(0, 243, 255, 0.035);
+  flex: 0 0 4.8rem;
+  width: 4.8rem;
+  height: 2rem;
+  padding: 0.16rem;
+  border: 1px solid rgba(0, 243, 255, 0.3);
+  border-radius: 999px;
+  background: rgba(10, 10, 15, 0.72);
   margin: 0;
-  padding: 0;
-  color: #777791;
   list-style: none;
-  font-size: 0.68rem;
-  letter-spacing: 0.04em;
   margin-left: 0.35rem;
+  box-shadow: inset 0 0 12px rgba(0, 243, 255, 0.05);
 }
 
 .language-switcher button {
-  position: relative;
-  z-index: 1;
+  flex: 1 1 50%;
+  height: 100%;
   min-width: 0;
-  padding: 0;
+  padding: 0 0.35rem;
   border: 0;
+  border-radius: 999px;
   background: transparent;
   color: #777791;
   font: inherit;
   font-weight: 700;
-  letter-spacing: inherit;
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
   cursor: pointer;
-  font-size: 0.62rem;
   line-height: 1;
-  transition: color 0.2s ease;
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
-.language-switcher button:hover,
+.language-switcher button:hover {
+  color: #e8e8f0;
+}
+
 .language-switcher button.active {
+  background: #00f3ff;
   color: #00f3ff;
+  color: #07070d;
+  box-shadow: 0 0 12px rgba(0, 243, 255, 0.35);
 }
 
-.language-switcher span {
-  color: rgba(0, 243, 255, 0.5);
+.language-switcher button:focus-visible {
+  outline: 2px solid #ff00ea;
+  outline-offset: 2px;
 }
 
 /* Bouton hamburger mobile et ses trois barres */
@@ -392,11 +401,9 @@
   }
 
   .language-switcher {
-    justify-content: center;
-    flex-basis: 2.2rem;
-    width: 2.2rem;
-    height: 1.65rem;
-    padding: 0;
+    flex-basis: 4.8rem;
+    width: 4.8rem;
+    height: 2rem;
     margin: 0;
   }
 

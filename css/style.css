@@ -1516,13 +1516,6 @@ html[lang="en"] .contact-title-en {
   margin-bottom: 0;
 }
 
-.detail-panel-key-result .key-result-text {
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: var(--accent-color, #00f3ff);
-  margin-top: 0.4rem;
-}
-
 /* ==========================================================================
    11. VISUELS DE PROJET, MÉDIAS & MODES EXPANSION / STITCH
    ========================================================================== */
@@ -2132,7 +2125,8 @@ html[lang="en"] .contact-title-en {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 15px;
-  margin-top: 8rem;
+  margin-top: 2rem;
+  padding-bottom: 1rem;
   width: 100%;
   max-width: 100%;
   box-sizing: border-box;
@@ -2172,7 +2166,7 @@ html[lang="en"] .contact-title-en {
   box-shadow:
     0 0 25px rgba(0, 243, 255, 0.45),
     0 6px 20px rgba(0, 0, 0, 0.4);
-  transform: translateY(-3px);
+  transform: none;
 }
 
 .project-navigation-footer .nav-btn-next {
@@ -2191,7 +2185,7 @@ html[lang="en"] .contact-title-en {
   box-shadow:
     0 0 25px rgba(0, 243, 255, 0.45),
     0 6px 20px rgba(0, 0, 0, 0.4);
-  transform: translateY(-3px);
+  transform: none;
 }
 
 .project-navigation-footer .nav-btn-return {
@@ -2213,12 +2207,12 @@ html[lang="en"] .contact-title-en {
   box-shadow:
     0 0 25px rgba(255, 0, 127, 0.45),
     0 6px 20px rgba(0, 0, 0, 0.4);
-  transform: translateY(-3px);
+  transform: none;
 }
 
 .project-navigation-footer .nav-btn-prev:hover,
 .project-navigation-footer .nav-btn-next:hover {
-  transform: translateY(-3px);
+  transform: none;
 }
 
 .nav-btn.is-hidden {

@@ -29,6 +29,13 @@
       </div>
       <h2 class="project-detail-title" id="project-title">Chargement...</h2>
       <h3 class="project-detail-intro" id="project-description"></h3>
+      <div
+        class="project-scroll-hint"
+        aria-label="Faire défiler pour voir la suite"
+      >
+        <span data-i18n="DÉFILER">DÉFILER</span>
+        <span class="project-scroll-arrow" aria-hidden="true">↓</span>
+      </div>
 
       <section class="project-visual" aria-label="Aperçu du projet">
         <img
@@ -109,13 +116,6 @@
               <p id="project-year-panel">2025</p>
             </div>
 
-            <div class="project-overview-item detail-panel-key-result">
-              <h4 class="detail-label">// RÉSULTAT CLÉ</h4>
-              <p id="project-key-result" class="key-result-text">
-                98% précision
-              </p>
-            </div>
-
             <div class="project-overview-item project-overview-technologies">
               <h4 class="detail-label">// TECHNOLOGIES</h4>
               <div id="project-technologies" class="detail-tags"></div>
@@ -162,27 +162,28 @@
             <h4 class="detail-label">// STACK COMPLET</h4>
             <div class="detail-tags" id="project-full-stack"></div>
           </article>
+
+          <div class="project-navigation-footer">
+            <a
+              href="#"
+              class="nav-btn nav-btn-prev is-hidden"
+              id="prev-project-link"
+            >
+              ← Projet précédent
+            </a>
+            <a href="#" class="nav-btn nav-btn-next" id="next-project-link">
+              Projet suivant →
+            </a>
+            <a
+              href="projets.html"
+              class="nav-btn nav-btn-return"
+              id="return-project"
+            >
+              Retour aux projets
+            </a>
+          </div>
         </div>
       </section>
-      <div class="project-navigation-footer">
-        <a
-          href="#"
-          class="nav-btn nav-btn-prev is-hidden"
-          id="prev-project-link"
-        >
-          ← Projet précédent
-        </a>
-        <a href="#" class="nav-btn nav-btn-next" id="next-project-link">
-          Projet suivant →
-        </a>
-        <a
-          href="projets.html"
-          class="nav-btn nav-btn-return"
-          id="return-project"
-        >
-          Retour aux projets
-        </a>
-      </div>
     </main>
 
     <footer class="footer">

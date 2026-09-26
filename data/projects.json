@@ -5,7 +5,7 @@
       "name": "Animation & 3D",
       "category": "3D",
       "year": "2025",
-      "image": "projet_01.webp",
+      "image": "projet_01_anim_3d.webp",
       "youtubeUrl": "https://www.youtube.com/watch?v=Bkvwrvg_bws",
       "description": "Un générique de fin sombre où chaque élément renforce la tension et la dernière note dramatique de l'histoire.",
       "technologies": ["3D", "Animation", "MAYA", "Rendu"]
@@ -15,8 +15,8 @@
       "name": "La Maison",
       "category": "Site web",
       "year": "2024",
-      "image": "Projet_02.png",
-      "description": "Une maison mystérieuse à explorer, où chaque chemin mène à un choix qui change la suite de l'histoire.",
+      "image": "projet_02_La_Maison.png",
+      "description": "Un site web narratif qui plonge l'utilisateur dans une maison mystérieuse, où l'exploration et les choix déterminent le chemin à suivre.",
       "technologies": ["Web", "UX/UI", "Design", "Responsive"]
     },
     "synthwave": {
@@ -24,8 +24,8 @@
       "name": "Stitch",
       "category": "2D",
       "year": "2025",
-      "image": "Projet_03.jpg",
-      "description": "Une direction artistique colorée construite autour de formes vectorielles, de textures et d'une énergie pop assumée.",
+      "image": "projet_03_stich.jpg",
+      "description": "Une illustration vectorielle de Stitch aux couleurs vives, construite avec des formes simples, des lignes nettes et une composition expressive.",
       "technologies": ["Vectoriel", "Illustration", "Couleur", "Composition"]
     }
   },
@@ -35,7 +35,7 @@
       "name": "Animation & 3D",
       "category": "3D",
       "year": "2025",
-      "image": "projet_01.webp",
+      "image": "projet_01_anim_3d.webp",
       "youtubeUrl": "https://www.youtube.com/watch?v=Bkvwrvg_bws",
       "description": "Un générique de fin sombre où chaque élément renforce la tension et la dernière note dramatique de l'histoire.",
       "technologies": ["3D", "Animation", "MAYA", "Rendu"]
@@ -45,8 +45,8 @@
       "name": "La Maison",
       "category": "Site web",
       "year": "2024",
-      "image": "Projet_02.png",
-      "description": "Une maison mystérieuse à explorer, où chaque chemin mène à un choix qui change la suite de l'histoire.",
+      "image": "projet_02_La_Maison.png",
+      "description": "Un site web narratif qui plonge l'utilisateur dans une maison mystérieuse, où l'exploration et les choix déterminent le chemin à suivre.",
       "technologies": ["Web", "UX/UI", "Design", "Responsive"]
     },
     "project03": {
@@ -54,8 +54,8 @@
       "name": "Stitch",
       "category": "2D",
       "year": "2025",
-      "image": "Projet_03.jpg",
-      "description": "Une direction artistique colorée construite autour de formes vectorielles, de textures et d'une énergie pop assumée.",
+      "image": "projet_03_stich.jpg",
+      "description": "Une illustration vectorielle de Stitch aux couleurs vives, construite avec des formes simples, des lignes nettes et une composition expressive.",
       "technologies": ["Vectoriel", "Illustration", "Couleur", "Composition"]
     },
     "project04": {
@@ -63,8 +63,8 @@
       "name": "Logo-bouclier",
       "category": "2D",
       "year": "2026",
-      "image": "Projet_04.png",
-      "description": "Une identité graphique précise qui rassemble rythme, contraste et supports numériques dans un univers cohérent.",
+      "image": "Projet_04_bouclier.png",
+      "description": "Un logo en forme de bouclier conçu pour créer une identité visuelle forte, reconnaissable et adaptable sur des supports imprimés et numériques.",
       "technologies": ["Identité", "Direction artistique", "Print", "Digital"]
     },
     "project05": {
@@ -72,9 +72,9 @@
       "name": "Noël vectoriel",
       "category": "2D",
       "year": "2024",
-      "image": "Projet_05.png",
-      "secondaryImage": "Projet_05_2.png",
-      "description": "Une composition pensée pour raconter une histoire forte avec une image, une typographie et des détails soigneusement hiérarchisés.",
+      "image": "Projet_05_noel.png",
+      "secondaryImage": "Projet_05_2_noel.png",
+      "description": "Une illustration vectorielle festive qui met en scène un sapin de Noël dans une composition colorée, structurée par des formes, des contrastes et une typographie chaleureuse.",
       "technologies": [
         "Direction artistique",
         "Composition",
@@ -87,8 +87,8 @@
       "name": "Atelier chromatique",
       "category": "Site web",
       "year": "2025-2026",
-      "image": "Projet_07.png",
-      "description": "Un projet digital immersif où la lumière, le mouvement et la composition créent une expérience mémorable.",
+      "image": "projet_07_atelier_chromatique.png",
+      "description": "Un site web expérimental consacré à l’exploration des couleurs, des formes et des compositions, pensé comme un atelier interactif où chaque écran devient une nouvelle expérience visuelle.",
       "technologies": ["Web", "UX/UI", "Design", "Responsive"]
     }
   },

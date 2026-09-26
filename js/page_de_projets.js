@@ -7,7 +7,7 @@ const projects = {
     name: "Animation & 3D",
     category: "3D",
     year: "2025",
-    image: "projet_01.webp",
+    image: "projet_01_anim_3d.webp",
     youtubeUrl: "https://www.youtube.com/watch?v=Bkvwrvg_bws",
     description:
       "Un générique de fin sombre où chaque élément renforce la tension et la dernière note dramatique de l'histoire.",
@@ -17,37 +17,37 @@ const projects = {
     name: "La Maison",
     category: "Site web",
     year: "2024",
-    image: "Projet_02.png",
+    image: "projet_02_La_Maison.png",
     description:
-      "Une maison mystérieuse à explorer, où chaque chemin mène à un choix qui change la suite de l'histoire.",
+      "Un site web narratif qui plonge l'utilisateur dans une maison mystérieuse, où l'exploration et les choix déterminent le chemin à suivre.",
     technologies: ["Web", "UX/UI", "Design", "Responsive"],
   },
   3: {
     name: "Stitch",
     category: "2D",
     year: "2025",
-    image: "Projet_03.jpg",
+    image: "projet_03_stich.jpg",
     description:
-      "Une direction artistique colorée construite autour de formes vectorielles, de textures et d'une énergie pop assumée.",
+      "Une illustration vectorielle de Stitch aux couleurs vives, construite avec des formes simples, des lignes nettes et une composition expressive.",
     technologies: ["Vectoriel", "Illustration", "Couleur", "Composition"],
   },
   4: {
     name: "Logo-bouclier",
     category: "2D",
     year: "2026",
-    image: "Projet_04.png",
+    image: "Projet_04_bouclier.png",
     description:
-      "Une identité graphique précise qui rassemble rythme, contraste et supports numériques dans un univers cohérent.",
+      "Un logo en forme de bouclier conçu pour créer une identité visuelle forte, reconnaissable et adaptable sur des supports imprimés et numériques.",
     technologies: ["Identité", "Direction artistique", "Print", "Digital"],
   },
   5: {
     name: "Noël vectoriel",
     category: "2D",
     year: "2024",
-    image: "Projet_05.png",
-    secondaryImage: "Projet_05_2.png",
+    image: "Projet_05_noel.png",
+    secondaryImage: "Projet_05_2_noel.png",
     description:
-      "Une composition pensée pour raconter une histoire forte avec une image, une typographie et des détails soigneusement hiérarchisés.",
+      "Une illustration vectorielle festive qui met en scène un sapin de Noël dans une composition colorée, structurée par des formes, des contrastes et une typographie chaleureuse.",
     technologies: [
       "Direction artistique",
       "Composition",
@@ -59,9 +59,9 @@ const projects = {
     name: "Atelier chromatique",
     category: "Site web",
     year: "2025-2026",
-    image: "Projet_07.png",
+    image: "projet_07_atelier_chromatique.png",
     description:
-      "Un projet digital immersif où la lumière, le mouvement et la composition créent une expérience mémorable.",
+      "Un site web expérimental consacré à l’exploration des couleurs, des formes et des compositions, pensé comme un atelier interactif où chaque écran devient une nouvelle expérience visuelle.",
     technologies: ["Web", "UX/UI", "Design", "Responsive"],
   },
 };
@@ -108,8 +108,8 @@ setText("#project-category-panel", project.category);
 const categorySkills = {
   "3D": [
     ["Modélisation 3D", 75],
-    ["Animation", 70],
-    ["MAYA et rendu", 65],
+    ["Animation", 65],
+    ["MAYA et rendu", 60],
   ],
   "2D": [
     ["Illustration", 85],
@@ -117,9 +117,9 @@ const categorySkills = {
     ["Couleur et image", 85],
   ],
   "Site web": [
-    ["HTML, CSS et JavaScript", 90],
-    ["Interface adaptative", 85],
-    ["Conception visuelle", 80],
+    ["HTML, CSS et JavaScript", 95],
+    ["Interface adaptative", 95],
+    ["Conception visuelle", 85],
   ],
 };
 

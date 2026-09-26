@@ -91,26 +91,22 @@ const translations = {
     "Me contacter directement": "Contact me directly",
     "Je réponds aux messages concernant les projets web, multimédias, 2D et 3D.":
       "I answer messages about web, multimedia, 2D and 3D projects.",
-    "Une direction artistique colorée construite autour de formes vectorielles, de textures et d'une énergie pop assumée.":
-      "A colorful art direction built around vector shapes, textures and unapologetic pop energy.",
-    "Une maison mystérieuse à explorer, où chaque chemin mène à un choix qui change la suite de l'histoire.":
-      "A mysterious house to explore, where every path leads to a choice that changes what happens next.",
+    "Un site web narratif qui plonge l'utilisateur dans une maison mystérieuse, où l'exploration et les choix déterminent le chemin à suivre.":
+      "A narrative website that takes users into a mysterious house, where exploration and choices determine the path ahead.",
     "Un générique de fin sombre où chaque élément renforce la tension et la dernière note dramatique de l'histoire.":
       "A dark end credits sequence where every element heightens the tension and the story's final dramatic note.",
     "Un générique de fin plongé dans une ambiance sombre, teintée de rouge, où chaque élément renforce la tension et la dernière note dramatique de l’histoire.":
       "End credits immersed in a dark, red-tinted atmosphere where every element heightens the tension and the story's final dramatic note.",
-    "On est enfermé dans une maison mystérieuse, et pour réussir à en sortir, il faut explorer les différents chemins qui s’offrent à nous et faire les bons choix.":
-      "We are trapped in a mysterious house, and to get out we must explore the different paths available and make the right choices.",
-    "Un dessin vectoriel de Stitch, aux couleurs vives et aux lignes nettes, tenant un grand cœur rouge avec un regard doux et expressif.":
-      "A vector drawing of Stitch, with vivid colors and clean lines, holding a large red heart with a soft, expressive gaze.",
-    "Une identité graphique précise qui rassemble rythme, contraste et supports numériques dans un univers cohérent.":
-      "A precise visual identity bringing rhythm, contrast and digital media together in a cohesive world.",
-    "Une composition pensée pour raconter une histoire forte avec une image, une typographie et des détails soigneusement hiérarchisés.":
-      "A composition designed to tell a strong story through imagery, typography and carefully structured details.",
+    "Une illustration vectorielle de Stitch aux couleurs vives, construite avec des formes simples, des lignes nettes et une composition expressive.":
+      "A colorful vector illustration of Stitch built with simple shapes, clean lines and an expressive composition.",
+    "Un logo en forme de bouclier conçu pour créer une identité visuelle forte, reconnaissable et adaptable sur des supports imprimés et numériques.":
+      "A shield-shaped logo designed to create a strong, recognizable visual identity adaptable to print and digital media.",
+    "Une illustration vectorielle festive qui met en scène un sapin de Noël dans une composition colorée, structurée par des formes, des contrastes et une typographie chaleureuse.":
+      "A festive vector illustration featuring a Christmas tree in a colorful composition shaped by forms, contrasts and warm typography.",
     "Une expérience interactive fluide qui met l'utilisateur au cœur du parcours et donne du relief à chaque interaction.":
       "A smooth interactive experience that puts the user at the center and gives depth to every interaction.",
-    "Un projet digital immersif où la lumière, le mouvement et la composition créent une expérience mémorable.":
-      "An immersive digital project where light, movement and composition create a memorable experience.",
+    "Un site web expérimental consacré à l’exploration des couleurs, des formes et des compositions, pensé comme un atelier interactif où chaque écran devient une nouvelle expérience visuelle.":
+      "An experimental website exploring colors, shapes and compositions, designed as an interactive workshop where every screen becomes a new visual experience.",
     "Créé avec passion": "Made with passion",
     DÉFILER: "SCROLL",
     "Voir les projets en vedette": "View featured projects",
@@ -155,7 +151,6 @@ const translations = {
     Agrandir: "Enlarge",
     CATÉGORIE: "CATEGORY",
     "STATUT / ANNÉE": "STATUS / YEAR",
-    "RÉSULTAT CLÉ": "KEY RESULT",
     TECHNOLOGIES: "TECHNOLOGIES",
     "COMPÉTENCES DU PROJET": "PROJECT SKILLS",
     DESCRIPTION: "DESCRIPTION",
@@ -246,12 +241,19 @@ const translateTextNodes = (language) => {
       const hasSectionPrefix = currentText.startsWith("// ");
       const englishKey = hasSectionPrefix ? currentText.slice(3) : currentText;
       const frenchText = englishToFrench.get(englishKey);
+      const originalText = originalTextByNode.get(node);
+      const originalKey = originalText
+        ? normalizeText(originalText).replace(/^\/\/ /, "")
+        : "";
+      const restoredFrenchText = frenchText || englishToFrench.get(originalKey);
 
-      if (frenchText) {
-        const restoredText = hasSectionPrefix ? `// ${frenchText}` : frenchText;
+      if (restoredFrenchText) {
+        const restoredText = hasSectionPrefix
+          ? `// ${restoredFrenchText}`
+          : restoredFrenchText;
         node.nodeValue = preserveWhitespace(node.nodeValue, restoredText);
       } else if (originalTextByNode.has(node)) {
-        node.nodeValue = originalTextByNode.get(node);
+        node.nodeValue = originalText;
       }
     });
     return;
@@ -316,13 +318,14 @@ const translateTextNodes = (language) => {
 const updateLanguageControls = (language) => {
   document.documentElement.lang = language;
   document.querySelectorAll(".language-switcher button").forEach((button) => {
-    button.textContent = language.toUpperCase();
-    button.dataset.language = language;
-    button.classList.add("active");
-    button.setAttribute("aria-pressed", "true");
+    const isActive = button.dataset.language === language;
+    button.classList.toggle("active", isActive);
+    button.setAttribute("aria-pressed", String(isActive));
     button.setAttribute(
       "aria-label",
-      language === "fr" ? "Passer en anglais" : "Switch to French",
+      button.dataset.language === "fr"
+        ? "Afficher le français"
+        : "Show English",
     );
   });
 };
@@ -333,6 +336,7 @@ const setLanguage = (language) => {
   }
 
   localStorage.setItem(languageStorageKey, language);
+  document.documentElement.lang = language;
   translateTextNodes(language);
   updateLanguageControls(language);
 };
@@ -346,15 +350,7 @@ window.translatePortfolio = (language = document.documentElement.lang) => {
 
 document.querySelectorAll(".language-switcher button").forEach((button) => {
   button.addEventListener("click", () => {
-    const nextLanguage = button.dataset.language === "fr" ? "en" : "fr";
-
-    if (nextLanguage === "fr") {
-      localStorage.setItem(languageStorageKey, "fr");
-      window.location.reload();
-      return;
-    }
-
-    setLanguage(nextLanguage);
+    setLanguage(button.dataset.language);
   });
 });
 
@@ -368,7 +364,9 @@ const translationObserver = new MutationObserver(() => {
 
   window.clearTimeout(translationObserverTimer);
   translationObserverTimer = window.setTimeout(() => {
-    translateTextNodes("en");
+    if (document.documentElement.lang === "en") {
+      translateTextNodes("en");
+    }
   }, 0);
 });
 
