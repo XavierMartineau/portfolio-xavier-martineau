@@ -36,7 +36,6 @@
         <span data-i18n="DÉFILER">DÉFILER</span>
         <span class="project-scroll-arrow" aria-hidden="true">↓</span>
       </div>
-
       <section class="project-visual" aria-label="Aperçu du projet">
         <img
           id="project-image"
@@ -89,17 +88,56 @@
           allowfullscreen
           hidden
         ></iframe>
-
-        <button
-          id="project-expand"
-          class="project-expand"
-          type="button"
-          aria-label="Agrandir le projet"
-          aria-pressed="false"
-        >
-          ⛶ Agrandir
-        </button>
       </section>
+
+      <a
+        id="external-project-link"
+        class="external-project-link"
+        href="#"
+        target="_blank"
+        rel="noopener noreferrer"
+        data-i18n="Voir le projet dans un nouvel onglet"
+        hidden
+        >Voir le projet dans un nouvel onglet ↗</a
+      >
+
+      <div id="external-project-modal" class="external-project-modal" hidden>
+        <div
+          class="external-project-dialog"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="external-project-modal-title"
+        >
+          <p class="external-project-dialog-kicker">// PORTFOLIO</p>
+          <h2
+            id="external-project-modal-title"
+            data-i18n="Quitter le portfolio ?"
+          >
+            Quitter le portfolio ?
+          </h2>
+          <p
+            data-i18n="Vous allez ouvrir le projet complet dans un nouvel onglet."
+          >
+            Vous allez ouvrir le projet complet dans un nouvel onglet.
+          </p>
+          <div class="external-project-dialog-actions">
+            <button
+              id="external-project-cancel"
+              type="button"
+              data-i18n="Annuler"
+            >
+              Annuler
+            </button>
+            <button
+              id="external-project-continue"
+              type="button"
+              data-i18n="Continuer"
+            >
+              Continuer
+            </button>
+          </div>
+        </div>
+      </div>
 
       <!-- Grille principale divisée en deux colonnes -->
       <section class="project-content-grid">

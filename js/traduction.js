@@ -101,6 +101,30 @@ const translations = {
       "A colorful vector illustration of Stitch built with simple shapes, clean lines and an expressive composition.",
     "Un logo en forme de bouclier conçu pour créer une identité visuelle forte, reconnaissable et adaptable sur des supports imprimés et numériques.":
       "A shield-shaped logo designed to create a strong, recognizable visual identity adaptable to print and digital media.",
+    "Le principal défi était de créer les dégradés vectoriels dans les yeux de Stitch, tout en conservant un rendu naturel et expressif.":
+      "The main challenge was creating the vector gradients in Stitch's eyes while preserving a natural and expressive look.",
+    "Le principal défi était de créer une animation 3D fluide en maîtrisant la modélisation, l'éclairage et le rendu de chaque plan.":
+      "The main challenge was creating a smooth 3D animation while mastering modeling, lighting and rendering for each shot.",
+    "Le principal défi était de concevoir une navigation interactive où chaque choix modifie le parcours tout en restant claire et intuitive.":
+      "The main challenge was designing interactive navigation where each choice changes the journey while remaining clear and intuitive.",
+    "Le principal défi était de construire un symbole de bouclier simple et reconnaissable, adaptable aux supports imprimés et numériques.":
+      "The main challenge was building a simple, recognizable shield symbol adaptable to print and digital media.",
+    "Le principal défi était d'équilibrer les formes, les couleurs et la typographie pour créer une composition festive et lisible.":
+      "The main challenge was balancing shapes, colors and typography to create a festive and readable composition.",
+    "Le principal défi était de créer une interface interactive où les couleurs et les formes restent lisibles et harmonieuses sur chaque écran.":
+      "The main challenge was creating an interactive interface where colors and shapes remain clear and harmonious on every screen.",
+    "Une illustration vectorielle expressive de Stitch, finalisée avec des couleurs vives et des dégradés précis dans les yeux.":
+      "An expressive vector illustration of Stitch, finished with vivid colors and precise gradients in the eyes.",
+    "Un générique de fin sombre et cohérent, où le mouvement, la lumière et le rythme renforcent la tension.":
+      "A dark and cohesive end credits sequence where movement, light and rhythm heighten the tension.",
+    "Une expérience web narrative qui transforme l'exploration en une suite de choix engageants.":
+      "A narrative web experience that turns exploration into a series of engaging choices.",
+    "Une identité visuelle forte, reconnaissable et suffisamment flexible pour accompagner différents supports.":
+      "A strong, recognizable visual identity flexible enough to work across different media.",
+    "Une illustration vectorielle festive où le sapin, les couleurs et la typographie forment un ensemble chaleureux.":
+      "A festive vector illustration where the tree, colors and typography create a warm and cohesive whole.",
+    "Un site web expérimental qui transforme l'exploration des couleurs en une expérience visuelle interactive.":
+      "An experimental website that turns color exploration into an interactive visual experience.",
     "Une illustration vectorielle festive qui met en scène un sapin de Noël dans une composition colorée, structurée par des formes, des contrastes et une typographie chaleureuse.":
       "A festive vector illustration featuring a Christmas tree in a colorful composition shaped by forms, contrasts and warm typography.",
     "Une expérience interactive fluide qui met l'utilisateur au cœur du parcours et donne du relief à chaque interaction.":
@@ -117,6 +141,12 @@ const translations = {
     "Projet précédent": "Previous project",
     "Projet suivant →": "Next project →",
     "Voir le projet →": "View project →",
+    "Voir le projet dans un nouvel onglet": "View the project in a new tab",
+    "Quitter le portfolio ?": "Leave the portfolio?",
+    "Vous allez ouvrir le projet complet dans un nouvel onglet.":
+      "The complete project will open in a new tab.",
+    Annuler: "Cancel",
+    Continuer: "Continue",
     "Technologies utilisées": "Technologies used",
     "Animation 3D": "3D animation",
     "Illustration 2D": "2D illustration",

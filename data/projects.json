@@ -65,7 +65,7 @@
       "year": "2026",
       "image": "Projet_04_bouclier.png",
       "description": "Un logo en forme de bouclier conçu pour créer une identité visuelle forte, reconnaissable et adaptable sur des supports imprimés et numériques.",
-      "technologies": ["Identité", "Direction artistique", "Print", "Digital"]
+      "technologies": ["Vectoriel", "Illustration", "Couleur", "Composition"]
     },
     "project05": {
       "id": 5,
@@ -75,12 +75,7 @@
       "image": "Projet_05_noel.png",
       "secondaryImage": "Projet_05_2_noel.png",
       "description": "Une illustration vectorielle festive qui met en scène un sapin de Noël dans une composition colorée, structurée par des formes, des contrastes et une typographie chaleureuse.",
-      "technologies": [
-        "Direction artistique",
-        "Composition",
-        "Typographie",
-        "Image"
-      ]
+      "technologies": ["Vectoriel", "Illustration", "Couleur", "Composition"]
     },
     "project07": {
       "id": 7,

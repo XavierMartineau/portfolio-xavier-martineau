@@ -38,7 +38,7 @@ const projects = {
     image: "Projet_04_bouclier.png",
     description:
       "Un logo en forme de bouclier conçu pour créer une identité visuelle forte, reconnaissable et adaptable sur des supports imprimés et numériques.",
-    technologies: ["Identité", "Direction artistique", "Print", "Digital"],
+    technologies: ["Vectoriel", "Illustration", "Couleur", "Composition"],
   },
   5: {
     name: "Noël vectoriel",
@@ -48,12 +48,7 @@ const projects = {
     secondaryImage: "Projet_05_2_noel.png",
     description:
       "Une illustration vectorielle festive qui met en scène un sapin de Noël dans une composition colorée, structurée par des formes, des contrastes et une typographie chaleureuse.",
-    technologies: [
-      "Direction artistique",
-      "Composition",
-      "Typographie",
-      "Image",
-    ],
+    technologies: ["Vectoriel", "Illustration", "Couleur", "Composition"],
   },
   7: {
     name: "Atelier chromatique",
@@ -103,6 +98,78 @@ setText("#project-title", project.name);
 setText("#project-description", project.description);
 setText("#project-summary", project.description);
 setText("#project-category-panel", project.category);
+
+const projectChallenges = {
+  1: "Le principal défi était de créer une animation 3D fluide en maîtrisant la modélisation, l'éclairage et le rendu de chaque plan.",
+  2: "Le principal défi était de concevoir une navigation interactive où chaque choix modifie le parcours tout en restant claire et intuitive.",
+  3: "Le principal défi était de créer les dégradés vectoriels dans les yeux de Stitch, tout en conservant un rendu naturel et expressif.",
+  4: "Le principal défi était de construire un symbole de bouclier simple et reconnaissable, adaptable aux supports imprimés et numériques.",
+  5: "Le principal défi était d'équilibrer les formes, les couleurs et la typographie pour créer une composition festive et lisible.",
+  7: "Le principal défi était de créer une interface interactive où les couleurs et les formes restent lisibles et harmonieuses sur chaque écran.",
+};
+setText(
+  "#project-challenge",
+  projectChallenges[projectId] ||
+    "Le principal défi était d'assurer une fluidité optimale et une cohérence visuelle parfaite pour chaque interaction utilisateur.",
+);
+
+const externalProjectLinks = {
+  2: "https://xaviermartineau.github.io/La_Maison_xavier/",
+  7: "https://xaviermartineau.github.io/Atelier-chromatique-XM/",
+};
+const externalProjectLink = document.querySelector("#external-project-link");
+const externalProjectModal = document.querySelector("#external-project-modal");
+const externalProjectCancel = document.querySelector(
+  "#external-project-cancel",
+);
+const externalProjectContinue = document.querySelector(
+  "#external-project-continue",
+);
+if (externalProjectLink && externalProjectLinks[projectId]) {
+  externalProjectLink.href = externalProjectLinks[projectId];
+  externalProjectLink.hidden = false;
+  externalProjectLink.addEventListener("click", (event) => {
+    event.preventDefault();
+    externalProjectModal?.removeAttribute("hidden");
+    externalProjectContinue?.focus();
+  });
+
+  externalProjectCancel?.addEventListener("click", () => {
+    externalProjectModal?.setAttribute("hidden", "");
+    externalProjectLink.focus();
+  });
+
+  externalProjectContinue?.addEventListener("click", () => {
+    externalProjectModal?.setAttribute("hidden", "");
+    window.open(externalProjectLink.href, "_blank", "noopener,noreferrer");
+  });
+
+  externalProjectModal?.addEventListener("click", (event) => {
+    if (event.target === externalProjectModal) {
+      externalProjectCancel?.click();
+    }
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && externalProjectModal?.hidden === false) {
+      externalProjectCancel?.click();
+    }
+  });
+}
+
+const projectResults = {
+  1: "Un générique de fin sombre et cohérent, où le mouvement, la lumière et le rythme renforcent la tension.",
+  2: "Une expérience web narrative qui transforme l'exploration en une suite de choix engageants.",
+  3: "Une illustration vectorielle expressive de Stitch, finalisée avec des couleurs vives et des dégradés précis dans les yeux.",
+  4: "Une identité visuelle forte, reconnaissable et suffisamment flexible pour accompagner différents supports.",
+  5: "Une illustration vectorielle festive où le sapin, les couleurs et la typographie forment un ensemble chaleureux.",
+  7: "Un site web expérimental qui transforme l'exploration des couleurs en une expérience visuelle interactive.",
+};
+setText(
+  "#project-result",
+  projectResults[projectId] ||
+    "Un projet abouti, performant et prêt pour l'intégration en production au sein du portfolio.",
+);
 
 // Compétences affichées selon la catégorie du projet consulté.
 const categorySkills = {
