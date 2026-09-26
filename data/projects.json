@@ -1,114 +1,26 @@
 {
-  "featured": {
-    "neuraldash": {
-      "id": 1,
-      "name": "Animation & 3D",
-      "category": "3D",
-      "year": "2025",
-      "image": "projet_01_anim_3d.webp",
-      "youtubeUrl": "https://www.youtube.com/watch?v=Bkvwrvg_bws",
-      "description": "Un générique de fin sombre où chaque élément renforce la tension et la dernière note dramatique de l'histoire.",
-      "technologies": ["3D", "Animation", "MAYA", "Rendu"]
-    },
-    "generique": {
-      "id": 2,
-      "name": "La Maison",
-      "category": "Site web",
-      "year": "2024",
-      "image": "projet_02_La_Maison.png",
-      "description": "Un site web narratif qui plonge l'utilisateur dans une maison mystérieuse, où l'exploration et les choix déterminent le chemin à suivre.",
-      "technologies": ["Web", "UX/UI", "Design", "Responsive"]
-    },
-    "synthwave": {
-      "id": 3,
-      "name": "Stitch",
-      "category": "2D",
-      "year": "2025",
-      "image": "projet_03_stich.jpg",
-      "description": "Une illustration vectorielle de Stitch aux couleurs vives, construite avec des formes simples, des lignes nettes et une composition expressive.",
-      "technologies": ["Vectoriel", "Illustration", "Couleur", "Composition"]
-    }
-  },
-  "projects": {
-    "project01": {
-      "id": 1,
-      "name": "Animation & 3D",
-      "category": "3D",
-      "year": "2025",
-      "image": "projet_01_anim_3d.webp",
-      "youtubeUrl": "https://www.youtube.com/watch?v=Bkvwrvg_bws",
-      "description": "Un générique de fin sombre où chaque élément renforce la tension et la dernière note dramatique de l'histoire.",
-      "technologies": ["3D", "Animation", "MAYA", "Rendu"]
-    },
-    "project02": {
-      "id": 2,
-      "name": "La Maison",
-      "category": "Site web",
-      "year": "2024",
-      "image": "projet_02_La_Maison.png",
-      "description": "Un site web narratif qui plonge l'utilisateur dans une maison mystérieuse, où l'exploration et les choix déterminent le chemin à suivre.",
-      "technologies": ["Web", "UX/UI", "Design", "Responsive"]
-    },
-    "project03": {
-      "id": 3,
-      "name": "Stitch",
-      "category": "2D",
-      "year": "2025",
-      "image": "projet_03_stich.jpg",
-      "description": "Une illustration vectorielle de Stitch aux couleurs vives, construite avec des formes simples, des lignes nettes et une composition expressive.",
-      "technologies": ["Vectoriel", "Illustration", "Couleur", "Composition"]
-    },
-    "project04": {
-      "id": 4,
-      "name": "Logo-bouclier",
-      "category": "2D",
-      "year": "2026",
-      "image": "Projet_04_bouclier.png",
-      "description": "Un logo en forme de bouclier conçu pour créer une identité visuelle forte, reconnaissable et adaptable sur des supports imprimés et numériques.",
-      "technologies": ["Vectoriel", "Illustration", "Couleur", "Composition"]
-    },
-    "project05": {
-      "id": 5,
-      "name": "Noël vectoriel",
-      "category": "2D",
-      "year": "2024",
-      "image": "Projet_05_noel.png",
-      "secondaryImage": "Projet_05_2_noel.png",
-      "description": "Une illustration vectorielle festive qui met en scène un sapin de Noël dans une composition colorée, structurée par des formes, des contrastes et une typographie chaleureuse.",
-      "technologies": ["Vectoriel", "Illustration", "Couleur", "Composition"]
-    },
-    "project07": {
-      "id": 7,
-      "name": "Atelier chromatique",
-      "category": "Site web",
-      "year": "2025-2026",
-      "image": "projet_07_atelier_chromatique.png",
-      "description": "Un site web expérimental consacré à l’exploration des couleurs, des formes et des compositions, pensé comme un atelier interactif où chaque écran devient une nouvelle expérience visuelle.",
-      "technologies": ["Web", "UX/UI", "Design", "Responsive"]
-    }
-  },
   "creationProcess": {
     "images": [
-      "Maquette  PC dun projet-1.png",
-      "Maquette Menu Portable A propos-1.png",
-      "Maquette Menu Portable Acceuil-1.png",
-      "Maquette Menu Portable Compé-1.png",
-      "Maquette Menu Portable CONTACT-1.png",
-      "Maquette Menu Portable Projets-1.png",
-      "Maquette PC A propos-1.png",
-      "Maquette PC Accueil-1.png",
-      "Maquette PC Compé-1.png",
-      "Maquette PC CONTACT-1.png",
-      "Maquette PC dun projet plein ecran-1.png",
-      "Maquette PC Page atérisage-1.png",
-      "Maquette PC Projets-1.png",
-      "Maquette Portable A propos-1.png",
-      "Maquette portable Acceuil-1.png",
-      "Maquette Portable Compé-1.png",
-      "Maquette Portable CONTACT-1.png",
-      "Maquette portable Page Atérisage-1.png",
-      "Maquette Portable Projets-1.png",
-      "Xavier Martineau - Moodboard-1.png"
+      "Maquette  PC dun projet-1.webp",
+      "Maquette Menu Portable A propos-1.webp",
+      "Maquette Menu Portable Acceuil-1.webp",
+      "Maquette Menu Portable Compé-1.webp",
+      "Maquette Menu Portable CONTACT-1.webp",
+      "Maquette Menu Portable Projets-1.webp",
+      "Maquette PC A propos-1.webp",
+      "Maquette PC Accueil-1.webp",
+      "Maquette PC Compé-1.webp",
+      "Maquette PC CONTACT-1.webp",
+      "Maquette PC dun projet plein ecran-1.webp",
+      "Maquette PC Page atérisage-1.webp",
+      "Maquette PC Projets-1.webp",
+      "Maquette Portable A propos-1.webp",
+      "Maquette portable Acceuil-1.webp",
+      "Maquette Portable Compé-1.webp",
+      "Maquette Portable CONTACT-1.webp",
+      "Maquette portable Page Atérisage-1.webp",
+      "Maquette Portable Projets-1.webp",
+      "Xavier Martineau - Moodboard-1.webp"
     ]
   }
 }

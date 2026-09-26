@@ -1,65 +1,5 @@
-// =========================================================================
-// 1. LISTE DES PROJETS
-// Contient toutes les données, descriptions, technologies et médias de chaque projet.
-// =========================================================================
-const projects = {
-  1: {
-    name: "Animation & 3D",
-    category: "3D",
-    year: "2025",
-    image: "projet_01_anim_3d.webp",
-    youtubeUrl: "https://www.youtube.com/watch?v=Bkvwrvg_bws",
-    description:
-      "Un générique de fin sombre où chaque élément renforce la tension et la dernière note dramatique de l'histoire.",
-    technologies: ["3D", "Animation", "MAYA", "Rendu"],
-  },
-  2: {
-    name: "La Maison",
-    category: "Site web",
-    year: "2024",
-    image: "projet_02_La_Maison.png",
-    description:
-      "Un site web narratif qui plonge l'utilisateur dans une maison mystérieuse, où l'exploration et les choix déterminent le chemin à suivre.",
-    technologies: ["Web", "UX/UI", "Design", "Responsive"],
-  },
-  3: {
-    name: "Stitch",
-    category: "2D",
-    year: "2025",
-    image: "projet_03_stich.jpg",
-    description:
-      "Une illustration vectorielle de Stitch aux couleurs vives, construite avec des formes simples, des lignes nettes et une composition expressive.",
-    technologies: ["Vectoriel", "Illustration", "Couleur", "Composition"],
-  },
-  4: {
-    name: "Logo-bouclier",
-    category: "2D",
-    year: "2026",
-    image: "Projet_04_bouclier.png",
-    description:
-      "Un logo en forme de bouclier conçu pour créer une identité visuelle forte, reconnaissable et adaptable sur des supports imprimés et numériques.",
-    technologies: ["Vectoriel", "Illustration", "Couleur", "Composition"],
-  },
-  5: {
-    name: "Noël vectoriel",
-    category: "2D",
-    year: "2024",
-    image: "Projet_05_noel.png",
-    secondaryImage: "Projet_05_2_noel.png",
-    description:
-      "Une illustration vectorielle festive qui met en scène un sapin de Noël dans une composition colorée, structurée par des formes, des contrastes et une typographie chaleureuse.",
-    technologies: ["Vectoriel", "Illustration", "Couleur", "Composition"],
-  },
-  7: {
-    name: "Atelier chromatique",
-    category: "Site web",
-    year: "2025-2026",
-    image: "projet_07_atelier_chromatique.png",
-    description:
-      "Un site web expérimental consacré à l’exploration des couleurs, des formes et des compositions, pensé comme un atelier interactif où chaque écran devient une nouvelle expérience visuelle.",
-    technologies: ["Web", "UX/UI", "Design", "Responsive"],
-  },
-};
+// Les projets sont centralisés dans projects-data.js pour éviter les doublons.
+const projects = window.portfolioProjects;
 
 // =========================================================================
 // 2. RÉCUPÉRATION DE L’ID DU PROJET DANS L'URL
@@ -356,7 +296,7 @@ if (project.secondaryImage) {
   if (projectImage) {
     projectImage.addEventListener("load", markImageAsLoaded, { once: true });
     projectImage.src = `../assets/images/${project.image}`;
-    projectImage.alt = project.name;
+    projectImage.alt = `${project.name} - ${project.description}`;
     projectImage.hidden = false;
     imagesContainer.appendChild(projectImage);
   }
@@ -374,7 +314,7 @@ if (project.secondaryImage) {
   if (projectImage) {
     projectImage.addEventListener("load", markImageAsLoaded, { once: true });
     projectImage.src = `../assets/images/${project.image}`;
-    projectImage.alt = project.name;
+    projectImage.alt = `${project.name} - ${project.description}`;
     projectImage.hidden = false;
   }
   if (secondaryImage) {
@@ -481,7 +421,7 @@ if (embeddedProjects[projectId] && projectEmbed) {
   }
   if (projectImage) {
     projectImage.src = `../assets/images/${project.image}`;
-    projectImage.alt = project.name;
+    projectImage.alt = `${project.name} - ${project.description}`;
     projectImage.classList.add("project-image-full");
     if (projectImage.complete) {
       finishStaticMediaLoading();

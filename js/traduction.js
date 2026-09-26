@@ -153,6 +153,16 @@ const translations = {
     "Activer texte + blur": "Enable text + blur",
     "Désactiver texte + blur": "Disable text + blur",
     "À propos": "About",
+    "Informations personnelles": "Personal information",
+    "Portfolio personnel": "Personal portfolio",
+    "Développement et design": "Development and design",
+    "Apprentissage multimédia": "Multimedia learning",
+    "Projets personnels": "Personal projects",
+    "Retour en haut": "Back to top",
+    "@ Portfolio personnel": "@ Personal portfolio",
+    "@ Développement et design": "@ Development and design",
+    "@ Apprentissage multimédia": "@ Multimedia learning",
+    "@ Projets personnels": "@ Personal projects",
     "Je crée, j'apprends et je construis.": "I create, learn and build.",
     "Je travaille dans le multimédia depuis quatre ans. J'aime créer des sites, des visuels et des projets numériques qui mélangent la technique et la créativité.":
       "I have been working in multimedia for four years. I love creating websites, visuals and digital projects that blend technology and creativity.",
@@ -243,6 +253,14 @@ const preserveWhitespace = (source, replacement) => {
 };
 
 const translateTextNodes = (language) => {
+  document.querySelectorAll("[data-i18n-label]").forEach((element) => {
+    const key = element.dataset.i18nLabel;
+    element.setAttribute(
+      "aria-label",
+      language === "en" ? translations.en[key] || key : key,
+    );
+  });
+
   document.querySelectorAll("[data-i18n]").forEach((element) => {
     const key = element.dataset.i18n;
     element.textContent = language === "en" ? translations.en[key] || key : key;

@@ -508,6 +508,21 @@
 }
 
 @media (max-width: 600px) {
+  .back-to-top {
+    right: 0.75rem;
+    bottom: 0.75rem;
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .external-project-dialog-actions {
+    flex-direction: column-reverse;
+  }
+
+  .external-project-dialog-actions button {
+    width: 100%;
+  }
+
   .featured-section {
     padding-right: 1rem;
     padding-left: 1rem;
@@ -631,6 +646,9 @@
     text-align: left;
   }
   .about-timeline-dot {
+    display: none;
+  }
+  .about-timeline-line {
     display: none;
   }
 
@@ -775,6 +793,12 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .reveal-on-scroll {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
   .about-info-card,
   .about-timeline-card {
     transition: none;

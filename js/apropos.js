@@ -63,7 +63,9 @@ if (timelineContainer) {
       <div class="about-timeline-dot" aria-hidden="true"></div>
       <div class="about-timeline-card">
         <h3 class="about-timeline-role">${item.role}</h3>
-        <span class="about-timeline-company">@ ${item.company}</span>
+        <span class="about-timeline-company" data-i18n="@ ${item.company}">
+          @ ${item.company}
+        </span>
         <p class="about-timeline-description">${item.description}</p>
       </div>
     `;
@@ -111,6 +113,10 @@ const creationLightboxPrevious = document.querySelector(
   "#creation-lightbox-previous",
 );
 const creationLightboxNext = document.querySelector("#creation-lightbox-next");
+const creationStepAlt = (stepNumber) =>
+  document.documentElement.lang === "en"
+    ? `Step ${stepNumber} of the creative process`
+    : `Étape ${stepNumber} du processus de création`;
 
 const closeCreationLightbox = () => {
   if (creationLightbox?.open) creationLightbox.close();
@@ -146,7 +152,7 @@ const initializeCreationProcess = (images) => {
               <div class="creation-process-frame">
                 <img
                   src="${encodeURI(`../processus_creation/${filename}`)}"
-                  alt="Étape ${boxIndex + imageIndex + 1} du processus de création"
+                  alt="${creationStepAlt(boxIndex + imageIndex + 1)}"
                   ${boxIndex === 0 ? "" : 'loading="lazy"'}
                 />
               </div>
@@ -159,6 +165,8 @@ const initializeCreationProcess = (images) => {
         type="button"
         data-image-index="${boxIndex}"
         aria-label="Agrandir ce box"
+        data-i18n="Agrandir ce box"
+        data-i18n-label="Agrandir ce box"
       >
         <span aria-hidden="true">↗</span>
       </button>
