@@ -422,6 +422,35 @@ document.querySelectorAll(".language-switcher button").forEach((button) => {
 
 setLanguage(currentLanguage);
 
+const backToTop = document.createElement("button");
+backToTop.className = "back-to-top";
+backToTop.type = "button";
+backToTop.textContent = "↑";
+document.body.appendChild(backToTop);
+
+const updateBackToTop = () => {
+  backToTop.classList.toggle("is-visible", window.scrollY > 400);
+  backToTop.setAttribute(
+    "aria-label",
+    document.documentElement.lang === "en" ? "Back to top" : "Retour en haut",
+  );
+  const label = document.documentElement.lang === "en" ? "TOP ↑" : "HAUT ↑";
+  backToTop.textContent = label;
+  backToTop.title = label;
+};
+
+backToTop.addEventListener("click", () => {
+  window.scrollTo({
+    top: 0,
+    behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches
+      ? "auto"
+      : "smooth",
+  });
+});
+
+window.addEventListener("scroll", updateBackToTop, { passive: true });
+updateBackToTop();
+
 let translationObserverTimer;
 const translationObserver = new MutationObserver(() => {
   if (document.documentElement.lang !== "en") {

@@ -540,13 +540,6 @@
     animation-range: normal !important;
   }
 
-  .back-to-top {
-    right: 0.75rem;
-    bottom: 0.75rem;
-    min-width: 4.25rem;
-    height: 2.5rem;
-  }
-
   .external-project-dialog-actions {
     flex-direction: column-reverse;
   }

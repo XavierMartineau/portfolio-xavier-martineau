@@ -3,6 +3,28 @@ const navigableProjectCards = document.querySelectorAll(
   ".project-card[data-project-id], .featured-card[data-project-id]",
 );
 
+const scrollIndicator = document.querySelector(".scroll-indicator");
+const featuredProjects = document.querySelector("#featured-projects");
+
+scrollIndicator?.addEventListener("click", (event) => {
+  event.preventDefault();
+  const behavior = window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    ? "auto"
+    : "smooth";
+
+  featuredProjects?.scrollIntoView({ behavior, block: "start" });
+});
+
+document.querySelector(".scroll-arrow")?.addEventListener("click", (event) => {
+  event.stopPropagation();
+  featuredProjects?.scrollIntoView({
+    behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches
+      ? "auto"
+      : "smooth",
+    block: "start",
+  });
+});
+
 navigableProjectCards.forEach((card) => {
   // Conserve le comportement de lien si une carte est cliquée directement.
   card.addEventListener("click", (event) => {
