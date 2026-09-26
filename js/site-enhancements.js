@@ -1,27 +1,3 @@
-const revealTargets = document.querySelectorAll(
-  "main > section:not(.project-content-grid), .about-card, .about-timeline-section, .creation-process-section, .featured-card",
-);
-
-if ("IntersectionObserver" in window) {
-  const revealObserver = new IntersectionObserver(
-    (entries, observer) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
-        entry.target.classList.add("is-revealed");
-        observer.unobserve(entry.target);
-      });
-    },
-    { threshold: 0.12, rootMargin: "0px 0px -8% 0px" },
-  );
-
-  revealTargets.forEach((target) => {
-    target.classList.add("reveal-on-scroll");
-    revealObserver.observe(target);
-  });
-} else {
-  revealTargets.forEach((target) => target.classList.add("is-revealed"));
-}
-
 const backToTop = document.createElement("button");
 backToTop.className = "back-to-top";
 backToTop.type = "button";

@@ -139,6 +139,7 @@ const translations = {
     réalisations: "work",
     "Voir tout →": "View all →",
     "Projet précédent": "Previous project",
+    "Projet suivant": "Next project",
     "Projet suivant →": "Next project →",
     "Voir le projet →": "View project →",
     "Voir le projet dans un nouvel onglet": "View the project in a new tab",
@@ -147,6 +148,11 @@ const translations = {
       "The complete project will open in a new tab.",
     Annuler: "Cancel",
     Continuer: "Continue",
+    "Choisir la langue": "Choose language",
+    "Ouvrir le menu": "Open menu",
+    "Filtrer les projets": "Filter projects",
+    "Faire défiler pour voir la suite": "Scroll to see more",
+    "Aperçu du projet": "Project preview",
     "Technologies utilisées": "Technologies used",
     "Animation 3D": "3D animation",
     "Illustration 2D": "2D illustration",
@@ -253,6 +259,18 @@ const preserveWhitespace = (source, replacement) => {
 };
 
 const translateTextNodes = (language) => {
+  document.querySelectorAll("[aria-label]").forEach((element) => {
+    const originalLabel = element.dataset.i18nLabel || element.ariaLabel;
+    if (!element.dataset.i18nLabel) {
+      element.dataset.i18nLabel = originalLabel;
+    }
+
+    const translatedLabel = translations.en[originalLabel];
+    if (translatedLabel) {
+      element.ariaLabel = language === "en" ? translatedLabel : originalLabel;
+    }
+  });
+
   document.querySelectorAll("[data-i18n-label]").forEach((element) => {
     const key = element.dataset.i18nLabel;
     element.setAttribute(

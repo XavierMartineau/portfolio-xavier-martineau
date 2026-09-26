@@ -1137,14 +1137,6 @@ html[lang="en"] .contact-title-en {
   animation: scroll-arrow-bob 1.8s ease-in-out infinite;
 }
 
-@supports (animation-timeline: scroll()) {
-  .scroll-arrow {
-    animation: scroll-arrow-follow linear both;
-    animation-timeline: scroll(root block);
-    animation-range: 20px 400px;
-  }
-}
-
 .scroll-line {
   position: relative;
   width: 1px;
@@ -1173,25 +1165,24 @@ html[lang="en"] .contact-title-en {
   animation: scroll-dot-pulse 1.5s ease-in-out infinite;
 }
 
-@supports (animation-timeline: scroll()) {
-  .scroll-line::after {
-    animation: scroll-dot-follow linear both;
-    animation-timeline: scroll(root block);
-    animation-range: 20px 400px;
-  }
-}
-
 .reveal-on-scroll {
-  opacity: 0;
-  transform: translateY(24px);
-  transition:
-    opacity 0.7s ease,
-    transform 0.7s ease;
+  animation: section-reveal 0.7s ease both;
 }
 
 .reveal-on-scroll.is-revealed {
   opacity: 1;
   transform: translateY(0);
+}
+
+@keyframes section-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .back-to-top {
