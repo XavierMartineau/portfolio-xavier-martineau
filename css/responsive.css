@@ -58,10 +58,14 @@
     padding: 0.6rem 0.7rem 0;
   }
 
+  .scroll-indicator.is-returning {
+    right: 0.75rem;
+    bottom: 0.75rem;
+    padding: 0.6rem;
+  }
+
   .scroll-arrow {
-    animation: scroll-arrow-bob 1.8s ease-in-out infinite !important;
-    animation-timeline: auto !important;
-    animation-range: normal !important;
+    animation-range: 0 400px;
   }
 
   .scroll-line {
@@ -69,9 +73,7 @@
   }
 
   .scroll-line::after {
-    animation: scroll-dot-pulse 1.5s ease-in-out infinite !important;
-    animation-timeline: auto !important;
-    animation-range: normal !important;
+    animation-range: 0 400px;
   }
 
   .home-hero {
@@ -508,10 +510,40 @@
 }
 
 @media (max-width: 600px) {
+  @keyframes scroll-arrow-follow-mobile {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(135px);
+    }
+  }
+
+  @keyframes scroll-dot-follow-mobile {
+    from {
+      opacity: 0.55;
+      transform: translate(-50%, 0);
+    }
+    to {
+      opacity: 1;
+      transform: translate(-50%, 143px);
+    }
+  }
+
+  .scroll-arrow {
+    animation: none !important;
+  }
+
+  .scroll-line::after {
+    animation: scroll-dot-pulse 1.5s ease-in-out infinite !important;
+    animation-timeline: auto !important;
+    animation-range: normal !important;
+  }
+
   .back-to-top {
     right: 0.75rem;
     bottom: 0.75rem;
-    width: 2.5rem;
+    min-width: 4.25rem;
     height: 2.5rem;
   }
 

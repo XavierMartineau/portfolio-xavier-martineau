@@ -4,21 +4,16 @@ backToTop.type = "button";
 backToTop.textContent = "↑";
 document.body.appendChild(backToTop);
 
-const updateBackToTopLabel = () => {
-  const label =
-    document.documentElement.lang === "en" ? "Back to top" : "Retour en haut";
-  backToTop.setAttribute("aria-label", label);
-  backToTop.title = label;
-};
-
-updateBackToTopLabel();
-new MutationObserver(updateBackToTopLabel).observe(document.documentElement, {
-  attributes: true,
-  attributeFilter: ["lang"],
-});
-
 const updateBackToTop = () => {
-  backToTop.classList.toggle("is-visible", window.scrollY > 500);
+  backToTop.classList.toggle("is-visible", window.scrollY > 400);
+  backToTop.setAttribute(
+    "aria-label",
+    document.documentElement.lang === "en" ? "Back to top" : "Retour en haut",
+  );
+  const backToTopLabel =
+    document.documentElement.lang === "en" ? "TOP ↑" : "HAUT ↑";
+  backToTop.textContent = backToTopLabel;
+  backToTop.title = backToTopLabel;
 };
 
 backToTop.addEventListener("click", () => {
