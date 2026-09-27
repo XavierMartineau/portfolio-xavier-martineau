@@ -1,5 +1,9 @@
 ﻿# **Journal de projet - Portfolio**
 
+## Historique chronologique du projet
+
+> Les entrées sont présentées du plus ancien au plus récent pour suivre l’évolution du portfolio dans l’ordre des étapes de travail.
+
 ## Date: 2026-09-02
 
 ### Outil: Non précisé
@@ -258,6 +262,44 @@
 
 - Conversion des catégories en éléments `span` dédiés.
 - Placement des catégories directement en haut des cartes.
+
+---
+
+## Date: 2026-09-26
+
+### Outil: Copilot dans VS Code
+
+### <u>Prompt</u>: Fais le README pour la conversation d'hier pour les plus important.
+
+### Réponse:
+
+- Rédaction d'un README plus clair et professionnel pour le portfolio.
+- Ajout des informations importantes : présentation du projet, objectif, compétences, liens, technologies et structure.
+- Mise en avant des éléments essentiels pour un premier aperçu rapide du projet.
+
+---
+
+### Outil: Copilot dans VS Code
+
+### <u>Prompt</u>: Améliore le journal avec les prompts IA de hier les plus importants.
+
+### Réponse:
+
+- Reformatage du journal pour qu'il soit lisible et plus utile.
+- Conserver les éléments clés de la progression du projet.
+- Mettre en évidence les idées, ajustements et décisions importantes prises avec l'IA.
+
+---
+
+### Outil: Copilot dans VS Code
+
+### <u>Prompt</u>: Non, ajoute les prompt de hier dans le journal.md.
+
+### Réponse:
+
+- Ajout explicite des prompts de la journée précédente dans le journal.
+- Documentation des demandes importantes liées au README, au journal et à la synthèse du projet.
+- Consolidation de l'historique de travail pour garder une trace claire des décisions et des améliorations effectuées.
 
 ---
 
