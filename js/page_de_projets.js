@@ -65,6 +65,12 @@ const externalProjectCancel = document.querySelector(
 const externalProjectContinue = document.querySelector(
   "#external-project-continue",
 );
+
+if (project.category !== "Site web") {
+  externalProjectLink?.remove();
+  externalProjectModal?.remove();
+}
+
 if (externalProjectLink && externalProjectLinks[projectId]) {
   externalProjectLink.href = externalProjectLinks[projectId];
   externalProjectLink.hidden = false;
@@ -486,19 +492,19 @@ window.addEventListener("pagehide", stopEmbeddedProject);
 // =========================================================================
 // 11. BOUTON AGRANDIR
 // =========================================================================
-document.addEventListener("DOMContentLoaded", () => {
-  const expandBtn = document.querySelector("#project-expand");
-  const vis = document.querySelector(".project-visual");
+const expandBtn = document.querySelector("#project-expand");
+const projectVisual = document.querySelector(".project-visual");
 
-  if (expandBtn && vis) {
-    expandBtn.addEventListener("click", () => {
-      const isExpanded = vis.classList.toggle("is-expanded");
-      expandBtn.setAttribute("aria-pressed", String(isExpanded));
-      expandBtn.textContent = isExpanded ? "× Fermer" : "⛶ Agrandir";
-      document.body.classList.toggle("project-view-expanded", isExpanded);
-    });
-  }
-});
+if (expandBtn && projectVisual) {
+  expandBtn.addEventListener("click", () => {
+    const isExpanded = projectVisual.classList.toggle("is-expanded");
+    expandBtn.setAttribute("aria-pressed", String(isExpanded));
+    expandBtn.querySelector("[data-i18n]").textContent = isExpanded
+      ? "× Fermer"
+      : "⛶ Agrandir";
+    document.body.classList.toggle("project-view-expanded", isExpanded);
+  });
+}
 
 // =========================================================================
 // 12. GÉNÉRATION DES TAGS DE TECHNOLOGIES
