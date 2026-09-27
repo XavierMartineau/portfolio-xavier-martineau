@@ -127,6 +127,71 @@ html {
   box-shadow: 0 0 20px rgba(99, 102, 241, 0.4);
 }
 
+.back-to-top {
+  position: fixed;
+  left: 1.5rem;
+  bottom: 5rem;
+  z-index: 50;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 96px;
+  min-height: 48px;
+  padding: 0.8rem 1.15rem;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  background: rgba(16, 18, 28, 0.42);
+  color: #f3f6ff;
+  font-family: "Space-Grotesk", sans-serif;
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  box-shadow:
+    0 12px 30px rgba(15, 23, 42, 0.38),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12),
+    0 0 25px rgba(99, 102, 241, 0.18);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(18px) scale(0.96);
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease,
+    background-color 0.25s ease,
+    color 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease,
+    visibility 0.25s ease;
+  cursor: pointer;
+}
+
+.back-to-top.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+}
+
+.back-to-top:hover,
+.back-to-top:focus-visible {
+  border-color: rgba(125, 249, 255, 0.7);
+  box-shadow:
+    0 16px 30px rgba(15, 23, 42, 0.48),
+    0 0 22px rgba(0, 243, 255, 0.14),
+    inset 0 1px 0 rgba(255, 255, 255, 0.16);
+}
+
+.back-to-top:active {
+  transform: translateY(2px) scale(0.94);
+  background-color: rgba(0, 243, 255, 0.2);
+  color: #7df9ff;
+  box-shadow:
+    0 6px 16px rgba(15, 23, 42, 0.42),
+    0 0 28px rgba(0, 243, 255, 0.3),
+    inset 0 0 14px rgba(0, 243, 255, 0.12);
+}
+
 /* Layout commun de la page À propos. */
 .about-page-container {
   min-height: 100vh;
@@ -1085,6 +1150,7 @@ html[lang="en"] .contact-title-en {
    8. INDICATEUR DE DÉFILEMENT (SCROLL INDICATOR)
    ========================================================================== */
 .scroll-indicator {
+  --scroll-progress: 0;
   position: relative;
   width: fit-content;
   min-height: 350px;
@@ -1102,19 +1168,29 @@ html[lang="en"] .contact-title-en {
   background: rgba(13, 13, 18, 0.38);
   box-shadow: 0 0 24px rgba(99, 102, 241, 0.08);
   backdrop-filter: blur(8px);
+  pointer-events: auto;
   transition:
     opacity 0.3s ease,
     color 0.3s ease,
     border-color 0.3s ease,
-    box-shadow 0.3s ease;
+    box-shadow 0.3s ease,
+    background 0.3s ease;
 }
 
 .scroll-indicator:hover,
 .scroll-indicator:focus-visible {
   opacity: 1;
   color: #aebdff;
-  border-color: rgba(0, 243, 255, 0.55);
-  box-shadow: 0 0 28px rgba(0, 243, 255, 0.18);
+  background: rgba(13, 23, 34, 0.72);
+  border-color: rgba(0, 243, 255, 0.9);
+  box-shadow:
+    0 0 30px rgba(0, 243, 255, 0.18),
+    inset 0 0 18px rgba(0, 243, 255, 0.08);
+}
+
+.scroll-indicator:focus-visible {
+  outline: 2px solid #00f3ff;
+  outline-offset: 5px;
 }
 
 .scroll-label {
@@ -1126,43 +1202,69 @@ html[lang="en"] .contact-title-en {
 }
 
 .scroll-arrow {
+  --arrow-travel: 210px;
+  position: relative;
   display: grid;
   place-items: center;
-  width: 1.8rem;
-  height: 1.8rem;
-  border: 1px solid currentColor;
+  width: 2.6rem;
+  height: 2.6rem;
+  border: 2px solid #4da3ff;
   border-radius: 50%;
+  color: #4da3ff;
   font-size: 0;
   line-height: 1;
   animation: none;
   cursor: pointer;
-  pointer-events: auto;
+  pointer-events: none;
+  box-shadow:
+    0 0 12px rgba(77, 163, 255, 0.65),
+    inset 0 0 10px rgba(77, 163, 255, 0.2);
+  transform: translateY(calc(var(--scroll-progress) * var(--arrow-travel)));
+  transition:
+    transform 0.12s linear,
+    border-color 0.2s ease,
+    color 0.2s ease;
 }
 
 .scroll-arrow::before {
   content: "↓";
   display: block;
-  font-size: 1.2rem;
+  font-size: 1.8rem;
+  font-weight: 800;
+  line-height: 1;
+  text-shadow: 0 0 10px rgba(77, 163, 255, 1);
   animation: scroll-arrow-bob 1.8s ease-in-out infinite;
 }
 
+.scroll-indicator:hover .scroll-arrow,
+.scroll-indicator:focus-visible .scroll-arrow {
+  color: #ffffff;
+  border-color: #ffffff;
+  box-shadow:
+    0 0 18px rgba(77, 163, 255, 0.95),
+    inset 0 0 14px rgba(77, 163, 255, 0.3);
+}
+
 .scroll-line {
+  --scroll-progress: 0;
   position: relative;
   width: 1px;
   height: 285px;
   background: linear-gradient(
     to bottom,
-    currentColor,
-    rgba(99, 102, 241, 0.04)
+    rgba(125, 249, 255, 0.8) 0%,
+    rgba(125, 249, 255, 0.8) 0%,
+    rgba(99, 102, 241, 0.04) 0%,
+    rgba(99, 102, 241, 0.04) 100%
   );
   box-shadow: 0 0 8px rgba(99, 102, 241, 0.25);
+  overflow: visible;
 }
 
-.scroll-line::after {
-  content: "";
+.scroll-dot {
   position: absolute;
-  top: 0;
   left: 50%;
+  top: 0%;
   width: 7px;
   height: 7px;
   border-radius: 50%;
@@ -1170,7 +1272,11 @@ html[lang="en"] .contact-title-en {
   box-shadow:
     0 0 10px #00f3ff,
     0 0 24px rgba(0, 243, 255, 0.95);
-  transform: translateX(-50%);
+  transform: translate(-50%, -50%);
+  transition:
+    top 0.12s linear,
+    background 0.12s linear,
+    box-shadow 0.12s linear;
   animation: scroll-dot-pulse 1.5s ease-in-out infinite;
 }
 

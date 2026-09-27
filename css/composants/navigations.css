@@ -203,11 +203,13 @@
   transition:
     color 0.2s ease,
     background-color 0.2s ease,
-    box-shadow 0.2s ease;
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
 }
 
 .language-switcher button:hover {
   color: #e8e8f0;
+  transform: translateY(-1px);
 }
 
 .language-switcher button.active {
@@ -215,6 +217,11 @@
   color: #00f3ff;
   color: #07070d;
   box-shadow: 0 0 12px rgba(0, 243, 255, 0.35);
+  transform: translateY(-1px) scale(1.02);
+}
+
+.language-switcher button:active {
+  transform: scale(0.94);
 }
 
 .language-switcher button:focus-visible {

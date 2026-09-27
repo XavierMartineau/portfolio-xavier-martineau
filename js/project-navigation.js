@@ -4,26 +4,59 @@ const navigableProjectCards = document.querySelectorAll(
 );
 
 const scrollIndicator = document.querySelector(".scroll-indicator");
+const scrollArrow = document.querySelector(".scroll-arrow");
+const scrollLine = document.querySelector(".scroll-line");
+const scrollDot = document.querySelector(".scroll-dot");
+
+if (scrollIndicator) {
+  scrollIndicator.style.pointerEvents = "auto";
+  scrollIndicator.setAttribute("aria-hidden", "false");
+}
+
+if (scrollArrow) {
+  scrollArrow.style.pointerEvents = "none";
+}
+
 const featuredProjects = document.querySelector("#featured-projects");
 
-scrollIndicator?.addEventListener("click", (event) => {
-  event.preventDefault();
-  const behavior = window.matchMedia("(prefers-reduced-motion: reduce)").matches
-    ? "auto"
-    : "smooth";
+const scrollToFeaturedProjects = () => {
+  featuredProjects?.scrollIntoView({ behavior: "smooth", block: "start" });
+};
 
-  featuredProjects?.scrollIntoView({ behavior, block: "start" });
-});
-
-document.querySelector(".scroll-arrow")?.addEventListener("click", (event) => {
-  event.stopPropagation();
-  featuredProjects?.scrollIntoView({
-    behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches
-      ? "auto"
-      : "smooth",
-    block: "start",
+if (scrollIndicator) {
+  scrollIndicator.addEventListener("click", scrollToFeaturedProjects);
+  scrollIndicator.addEventListener("keydown", (event) => {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      scrollToFeaturedProjects();
+    }
   });
-});
+}
+
+const updateScrollIndicator = () => {
+  if (!scrollIndicator || !scrollArrow || !scrollLine || !scrollDot) {
+    return;
+  }
+
+  const maxScroll = Math.max(window.innerHeight * 0.9, 1);
+  const progress = Math.min(Math.max(window.scrollY / maxScroll, 0), 1);
+  const startThreshold = progress < 0.04;
+  const travel = startThreshold ? 0 : progress * 210;
+  const dotPosition = startThreshold
+    ? "0%"
+    : `${Math.min(progress * 100, 100)}%`;
+  const cyanStrength = 60 + progress * 35;
+
+  scrollLine.style.background = `linear-gradient(to bottom, rgba(125, 249, 255, 0.85) 0%, rgba(125, 249, 255, 0.85) ${dotPosition}, rgba(99, 102, 241, 0.04) ${dotPosition}, rgba(99, 102, 241, 0.04) 100%)`;
+  scrollDot.style.top = dotPosition;
+  scrollDot.style.background = `hsl(188 100% ${cyanStrength}%)`;
+  scrollDot.style.boxShadow = `0 0 10px hsl(188 100% ${cyanStrength - 5}%), 0 0 24px rgba(0, 243, 255, 0.95)`;
+  scrollArrow.style.transform = `translateY(${travel}px)`;
+};
+
+window.addEventListener("scroll", updateScrollIndicator, { passive: true });
+window.addEventListener("resize", updateScrollIndicator);
+updateScrollIndicator();
 
 navigableProjectCards.forEach((card) => {
   // Conserve le comportement de lien si une carte est cliquée directement.
