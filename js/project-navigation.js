@@ -1,3 +1,4 @@
+// Role : navigation entre projets, defilement et carousel de la page d'accueil.
 // Rend les cartes de projets accessibles depuis la grille et la page d'accueil.
 const navigableProjectCards = document.querySelectorAll(
   ".project-card[data-project-id], .featured-card[data-project-id]",
@@ -19,6 +20,7 @@ if (scrollArrow) {
 
 const featuredProjects = document.querySelector("#featured-projects");
 
+// Navigation vers les projets en vedette et mise a jour de l'indicateur de defilement.
 const scrollToFeaturedProjects = () => {
   featuredProjects?.scrollIntoView({ behavior: "smooth", block: "start" });
 };
@@ -83,6 +85,7 @@ navigableProjectCards.forEach((card) => {
   }
 });
 
+// Rendu et evenements du carousel mobile/tablette.
 // Anime la pile uniquement lorsque les flèches mobile/tablette sont utilisées.
 document.querySelectorAll(".featured-grid").forEach((grid) => {
   const cards = [...grid.querySelectorAll(".featured-card")];

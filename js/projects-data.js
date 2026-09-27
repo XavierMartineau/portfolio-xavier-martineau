@@ -1,3 +1,4 @@
+// Role : source de donnees partagee pour les cartes et pages detaillees.
 window.portfolioProjects = {
   1: {
     name: "Animation & 3D",

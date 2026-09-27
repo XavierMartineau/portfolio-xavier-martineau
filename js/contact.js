@@ -1,3 +1,4 @@
+// Role : gestion de la soumission et de l'etat de succes du formulaire de contact.
 const contactForm = document.getElementById("contact-form");
 const contactSuccess = document.getElementById("contact-success");
 

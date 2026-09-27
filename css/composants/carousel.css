@@ -1,4 +1,5 @@
-﻿/* ==========================================================================
+/* Role : controles et comportements responsives du carousel de projets. */
+/* ==========================================================================
    COMPOSANT CAROUSEL FEATURED
    ========================================================================== */
 .featured-grid-container {
@@ -25,7 +26,10 @@
   line-height: 1;
   cursor: pointer;
   transform: translateY(-50%);
-  transition: background-color 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
 }
 
 .carousel-btn:hover,
@@ -52,12 +56,16 @@
   display: none;
 }
 
-.featured-grid-container.is-effects-forced .featured-card.has-featured-image .featured-background {
+.featured-grid-container.is-effects-forced
+  .featured-card.has-featured-image
+  .featured-background {
   opacity: 1 !important;
   filter: blur(0) !important;
 }
 
-.featured-grid-container.is-effects-forced .featured-card.has-featured-image > :not(.featured-background) {
+.featured-grid-container.is-effects-forced
+  .featured-card.has-featured-image
+  > :not(.featured-background) {
   opacity: 0 !important;
   transition: opacity 0.25s ease;
 }
@@ -118,4 +126,3 @@
     color: #ff5c8a;
   }
 }
-

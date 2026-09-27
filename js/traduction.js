@@ -1,3 +1,5 @@
+// Role : dictionnaire, rendu et controles de traduction du portfolio.
+// Donnees de traduction francais-anglais.
 const translations = {
   en: {
     Accueil: "Home",
@@ -239,6 +241,7 @@ const translations = {
   },
 };
 
+// Etat de langue et index des noeuds textuels traduisibles.
 const languageStorageKey = "portfolio-language";
 const supportedLanguages = ["fr", "en"];
 const savedLanguage = localStorage.getItem(languageStorageKey);
@@ -258,6 +261,7 @@ const preserveWhitespace = (source, replacement) => {
   return `${leadingWhitespace}${replacement}${trailingWhitespace}`;
 };
 
+// Traduction du contenu et mise a jour des controles de langue.
 const translateTextNodes = (language) => {
   document.querySelectorAll("[aria-label]").forEach((element) => {
     const originalLabel = element.dataset.i18nLabel || element.ariaLabel;
@@ -422,6 +426,7 @@ document.querySelectorAll(".language-switcher button").forEach((button) => {
 
 setLanguage(currentLanguage);
 
+// Controle de navigation retour en haut.
 const backToTop = document.createElement("button");
 backToTop.className = "back-to-top";
 backToTop.type = "button";
@@ -451,6 +456,7 @@ backToTop.addEventListener("click", () => {
 window.addEventListener("scroll", updateBackToTop, { passive: true });
 updateBackToTop();
 
+// Observation des ajouts DOM pour maintenir les traductions synchronisees.
 let translationObserverTimer;
 const translationObserver = new MutationObserver(() => {
   if (document.documentElement.lang !== "en") {

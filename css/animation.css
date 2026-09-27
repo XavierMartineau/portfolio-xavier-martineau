@@ -1,4 +1,4 @@
-
+/* Role : animations et transitions partagees entre les composants. */
 
 /* Animations déplacées depuis footer.css. */
 @keyframes footer-pulse {
@@ -15,7 +15,6 @@
     transform: scale(1);
   }
 }
-
 
 /* Animations déplacées depuis splash.css. */
 @keyframes load {
@@ -60,7 +59,6 @@
     opacity: 1;
   }
 }
-
 
 /* Animations déplacées depuis style.css. */
 @keyframes hero-pulse {

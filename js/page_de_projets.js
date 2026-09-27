@@ -1,3 +1,4 @@
+// Role : selection, rendu et interactions de la page detail projet.
 // Les projets sont centralisés dans projects-data.js pour éviter les doublons.
 const projects = window.portfolioProjects;
 
@@ -117,6 +118,7 @@ setText(
     "Un projet abouti, performant et prêt pour l'intégration en production au sein du portfolio.",
 );
 
+// Donnees et rendu des competences selon la categorie du projet consulte.
 // Compétences affichées selon la catégorie du projet consulté.
 const categorySkills = {
   "3D": [

@@ -1,3 +1,4 @@
+// Role : filtrage des cartes et effets d'affichage de la page projets.
 const categoryButtons = document.querySelectorAll(".project-category-btn");
 const projectCards = document.querySelectorAll(".project-card");
 

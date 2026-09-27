@@ -1,3 +1,4 @@
+// Role : donnees et rendu interactif de la page A propos.
 // Génère les cartes d'informations personnelles de la page À propos.
 const ABOUT_INFO = [
   { label: "Localisation", value: "Montréal, QC", icon: "📍" },
@@ -21,6 +22,7 @@ if (infoContainer) {
   });
 }
 
+// Donnees du parcours et rendu de la timeline.
 // Construit le parcours à partir d'une seule source de données.
 const ABOUT_TIMELINE = [
   {
@@ -73,6 +75,7 @@ if (timelineContainer) {
   });
 }
 
+// Initialisation et controles de la galerie du processus de creation.
 // La liste des maquettes est stockée dans data/projects.json.
 let CREATION_PROCESS_IMAGES = [];
 
@@ -287,6 +290,7 @@ const initializeCreationProcess = (images) => {
   updateCreationStack();
 };
 
+// Chargement des donnees externes et branchement des interactions de galerie.
 fetch("../data/projects.json")
   .then((response) => {
     if (!response.ok) throw new Error("Impossible de charger les images");

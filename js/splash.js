@@ -1,3 +1,4 @@
+// Role : initialisation, dessin et transition de l'ecran d'introduction.
 // ==============================
 // RÉFÉRENCES DE L'ÉCRAN D'INTRODUCTION
 // ==============================
@@ -23,6 +24,7 @@ window.addEventListener("resize", resize);
 // Palette utilisée par les particules lumineuses
 const colors = ["#6366f1", "#ff00ea", "#00f3ff", "#63ff9b"];
 
+// Donnees et initialisation des particules.
 // ==============================
 // INITIALISATION DES PARTICULES
 // ==============================
@@ -36,6 +38,7 @@ particles = Array.from({ length: 120 }, () => ({
   alpha: Math.random() * 0.38 + 0.14, // Contraste légèrement renforcé
 }));
 
+// Boucle de rendu et interactions de la souris.
 // ==============================
 // BOUCLE DE DESSIN ET D'ANIMATION
 // ==============================
