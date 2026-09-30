@@ -956,3 +956,67 @@
 - Affichage de « Écris-moi » en français.
 - Affichage de « Write me » en anglais.
 - Vérification du changement dans `html/contact.html` et `js/traduction.js`.
+
+---
+
+## Date: 2026-09-30
+
+### Outil: GitHub Copilot
+
+### <u>Prompt</u>: Réduire la taille du bouton « Haut » sur mobile et afficher « Top » en anglais.
+
+### Réponse:
+
+- Conservation du libellé « HAUT ↑ » en français et « TOP ↑ » en anglais.
+- Réduction progressive de la taille du bouton sur mobile.
+- Ajustement de sa largeur, de sa hauteur, du padding et de la taille du texte dans `css/responsive.css`.
+
+---
+
+### Outil: GitHub Copilot
+
+### <u>Prompt</u>: Corriger le défilement sur mobile car la flèche avait un comportement incorrect.
+
+### Réponse:
+
+- Correction du déplacement de la flèche de l'indicateur de défilement.
+- Calcul de la course de la flèche selon la hauteur réelle de la ligne et sa propre taille.
+- Correction du débordement possible sur les petits écrans dans `js/project-navigation.js`.
+
+---
+
+### Outil: GitHub Copilot
+
+### <u>Prompt</u>: Modifier la description du projet Noël vectoriel pour mentionner le renne en plus du sapin.
+
+### Réponse:
+
+- Ajout du renne dans la description française du projet.
+- Mise à jour de la description du résultat du projet.
+- Ajout de la traduction anglaise correspondante.
+- Synchronisation des textes dans `js/projects-data.js`, `html/projets.html`, `js/page_de_projets.js` et `js/traduction.js`.
+
+---
+
+### Outil: GitHub Copilot
+
+### <u>Prompt</u>: Modifier le défi technique du projet Logo-bouclier pour parler des formes courbes et des dégradés.
+
+### Réponse:
+
+- Remplacement de l'ancien défi technique par une description des multiples formes courbes du bouclier.
+- Ajout de la maîtrise des multiples dégradés comme difficulté principale.
+- Mise à jour de la traduction anglaise dans `js/page_de_projets.js` et `js/traduction.js`.
+
+---
+
+### Outil: GitHub Copilot
+
+### <u>Prompt</u>: Ajouter des commentaires explicatifs dans les fichiers du portfolio.
+
+### Réponse:
+
+- Ajout de commentaires décrivant les rôles des fonctions, composants, animations et sections principales.
+- Documentation de 24 fichiers HTML, CSS et JavaScript.
+- Ajout de 68 commentaires sans modifier le fonctionnement du portfolio.
+- Vérification globale des fichiers après les modifications.
