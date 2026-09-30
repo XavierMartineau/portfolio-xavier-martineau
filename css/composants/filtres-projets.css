@@ -1,6 +1,7 @@
 /* Role : boutons de filtrage et controle des effets de la page projets. */
 /* Composant filtres de la page projets. */
 .project-categories {
+  /* Les filtres s'alignent a droite sur grand ecran. */
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -8,6 +9,7 @@
   gap: 0.45rem;
 }
 .project-category-btn {
+  /* Chaque bouton expose sa couleur de categorie via des variables locales. */
   --category-color: #a5a5b5;
   --category-rgb: 165, 165, 181;
   min-height: 40px;
@@ -56,6 +58,7 @@
   display: none;
 }
 @media (max-width: 899px) {
+  /* La barre devient defilable horizontalement pour eviter les retours a la ligne. */
   .project-categories {
     flex-wrap: nowrap;
     justify-content: center;

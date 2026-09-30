@@ -6,6 +6,7 @@
    ========================================================================== */
 
 @media (max-width: 1200px) {
+  /* Reduit les marges laterales quand la largeur disponible commence a manquer. */
   .home-hero,
   .featured-section {
     padding-right: 1.5rem;
@@ -20,6 +21,7 @@
 }
 
 @media (max-width: 899px) {
+  /* Les colonnes principales passent en empilement et les actions occupent la largeur. */
   .hero-buttons {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -53,6 +55,7 @@
 }
 
 @media (max-width: 600px) {
+  /* Regles dediees aux telephones : indicateurs, grilles et boutons compacts. */
   .scroll-indicator {
     min-height: 190px;
     margin-top: 1.5rem;

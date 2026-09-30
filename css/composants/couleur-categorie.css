@@ -5,6 +5,7 @@
 =========================== */
 
 .couleur-categorie {
+  /* Etiquette compacte partagee par les cartes et les panneaux de detail. */
   display: inline-block;
   padding: 0.35rem 0.7rem;
   border-radius: 999px;
@@ -17,6 +18,7 @@
 }
 
 /* Variantes */
+/* Une couleur differente permet d'identifier rapidement chaque famille de projet. */
 .couleur-categorie--3d {
   color: #00f3ff;
   border-color: rgba(0, 243, 255, 0.45);

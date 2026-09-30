@@ -1,6 +1,7 @@
 /* Role : layout et composants visuels du hero de la page d'accueil. */
 /* Composant HERO de la page d'accueil. */
 .home-hero {
+  /* Le hero occupe la premiere zone de lecture et reste centre dans la largeur globale. */
   min-height: 100vh;
   padding: 6rem 2rem;
   position: relative;
@@ -9,6 +10,7 @@
 }
 
 .hero-grid {
+  /* Une colonne sur mobile, deux colonnes a partir du format bureau. */
   max-width: var(--max-width);
   margin: auto;
   display: grid;
@@ -41,6 +43,7 @@
 }
 
 .hero-buttons {
+  /* Les actions principales se reorganisent en grille sur les petits ecrans. */
   display: flex;
   flex-wrap: wrap;
   align-items: center;

@@ -3,6 +3,7 @@
    COMPOSANT CARTES PROJET
    ========================================================================== */
 .featured-card {
+  /* Carte partagee par les projets mis en avant, avec une couleur locale. */
   --card-color: #6366f1;
   --card-rgb: 99, 102, 241;
   display: flex;
@@ -34,6 +35,7 @@
 }
 
 .featured-background {
+  /* L'image agrandie et floutee sert de fond d'ambiance derriere le contenu. */
   position: absolute;
   inset: -12px;
   z-index: 0;
@@ -69,6 +71,7 @@
 }
 
 .featured-card:hover {
+  /* Le survol met en avant la carte sans changer la place reservee dans la grille. */
   transform: translateY(-4px);
   border-color: rgba(var(--card-rgb), 0.85);
   background: rgba(var(--card-rgb), 0.08);
@@ -99,6 +102,7 @@
 
 /* Grille des cartes de la page projets. */
 .projects-grid .gc {
+  /* Les cartes sont revelees par IntersectionObserver via la classe is-visible. */
   min-height: 360px;
   padding: 2.25rem;
   box-sizing: border-box;

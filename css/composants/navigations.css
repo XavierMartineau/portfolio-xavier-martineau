@@ -4,6 +4,7 @@
 =========================== */
 
 .navbar {
+  /* La barre reste visible au sommet pendant la navigation entre les pages. */
   position: fixed;
   top: 0;
   left: 0;
@@ -36,6 +37,7 @@
 =========================== */
 
 .logo {
+  /* Le logo regroupe l'image et son halo sans influencer les liens voisins. */
   position: relative;
   margin-bottom: 2rem;
   margin-top: 25px;
@@ -95,6 +97,7 @@
 =========================== */
 
 .navbar-links {
+  /* Les liens sont presentes sur une seule ligne sur grand ecran. */
   display: flex;
   gap: 2rem;
 }

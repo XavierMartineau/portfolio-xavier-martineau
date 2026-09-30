@@ -15,6 +15,7 @@ let particles = [];
 // DIMENSIONS DU CANVAS
 // ==============================
 function resize() {
+  // Aligne la surface de dessin sur la fenetre pour eviter un canvas flou ou tronque.
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
 }
@@ -43,6 +44,7 @@ particles = Array.from({ length: 120 }, () => ({
 // BOUCLE DE DESSIN ET D'ANIMATION
 // ==============================
 function draw() {
+  // Une frame complete efface, redessine les particules et programme la suivante.
   // Efface le contenu précédent du canvas à chaque frame
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 

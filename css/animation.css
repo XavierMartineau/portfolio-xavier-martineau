@@ -1,6 +1,7 @@
 /* Role : animations et transitions partagees entre les composants. */
 
 /* Animations déplacées depuis footer.css. */
+/* Fait respirer le point d'etat situe dans le pied de page. */
 @keyframes footer-pulse {
   0% {
     opacity: 1;
@@ -61,6 +62,7 @@
 }
 
 /* Animations déplacées depuis style.css. */
+/* Anime les indicateurs de progression et de defilement du hero. */
 @keyframes hero-pulse {
   0% {
     opacity: 1;
@@ -122,6 +124,7 @@
 }
 
 @keyframes project-loading-spin {
+  /* Rotation continue du marqueur de chargement des medias. */
   to {
     transform: rotate(360deg);
   }
@@ -162,6 +165,7 @@
 }
 
 @keyframes grid-drift {
+  /* Deplacement lent de la grille de fond pour eviter un a-plat statique. */
   from {
     background-position:
       0 0,

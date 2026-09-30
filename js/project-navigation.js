@@ -36,6 +36,7 @@ if (scrollIndicator) {
 }
 
 const updateScrollIndicator = () => {
+  // Calcule la progression globale et synchronise la ligne, le point et la fleche.
   if (!scrollIndicator || !scrollArrow || !scrollLine || !scrollDot) {
     return;
   }
@@ -92,6 +93,7 @@ navigableProjectCards.forEach((card) => {
 // Rendu et evenements du carousel mobile/tablette.
 // Anime la pile uniquement lorsque les flèches mobile/tablette sont utilisées.
 document.querySelectorAll(".featured-grid").forEach((grid) => {
+  // Chaque grille possede son propre index pour fonctionner sans etat global partage.
   const cards = [...grid.querySelectorAll(".featured-card")];
   let currentIndex = 0;
 

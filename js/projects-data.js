@@ -1,4 +1,5 @@
 // Role : source de donnees partagee pour les cartes et pages detaillees.
+// Chaque identifiant est reutilise par la grille, la page detail et les scripts associes.
 window.portfolioProjects = {
   1: {
     name: "Animation & 3D",

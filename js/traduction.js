@@ -256,6 +256,7 @@ const englishToFrench = new Map(
 
 const normalizeText = (text) => text.replace(/\s+/g, " ").trim();
 const preserveWhitespace = (source, replacement) => {
+  // Conserve les espaces autour des textes pour ne pas casser la mise en page HTML.
   const leadingWhitespace = source.match(/^\s*/)?.[0] || "";
   const trailingWhitespace = source.match(/\s*$/)?.[0] || "";
   return `${leadingWhitespace}${replacement}${trailingWhitespace}`;
@@ -263,6 +264,7 @@ const preserveWhitespace = (source, replacement) => {
 
 // Traduction du contenu et mise a jour des controles de langue.
 const translateTextNodes = (language) => {
+  // Traduit d'abord les attributs accessibles, puis les contenus marques et enfin le texte libre.
   document.querySelectorAll("[aria-label]").forEach((element) => {
     const originalLabel = element.dataset.i18nLabel || element.ariaLabel;
     if (!element.dataset.i18nLabel) {
@@ -386,6 +388,7 @@ const translateTextNodes = (language) => {
 };
 
 const updateLanguageControls = (language) => {
+  // Synchronise l'attribut lang, l'etat actif et l'accessibilite des boutons de langue.
   document.documentElement.lang = language;
   document.querySelectorAll(".language-switcher button").forEach((button) => {
     const isActive = button.dataset.language === language;
@@ -401,6 +404,7 @@ const updateLanguageControls = (language) => {
 };
 
 const setLanguage = (language) => {
+  // Persiste une langue valide avant de rafraichir tous les contenus visibles.
   if (!supportedLanguages.includes(language)) {
     return;
   }

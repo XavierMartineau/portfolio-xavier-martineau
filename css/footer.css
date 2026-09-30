@@ -4,6 +4,7 @@
 =========================== */
 
 .footer {
+  /* Le pied de page separe le contenu de la page et aligne ses deux zones. */
   border-top: 1px solid rgba(99, 102, 241, 0.1);
   padding: 2rem;
   display: flex;
@@ -22,6 +23,7 @@
 }
 
 .pulse-dot {
+  /* Point anime indiquant que le portfolio est en ligne. */
   width: 8px;
   height: 8px;
   background: #6366f1;

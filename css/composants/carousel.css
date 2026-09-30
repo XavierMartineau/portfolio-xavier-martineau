@@ -3,6 +3,7 @@
    COMPOSANT CAROUSEL FEATURED
    ========================================================================== */
 .featured-grid-container {
+  /* Le conteneur sert de repere aux fleches positionnees sur les cartes. */
   position: relative;
   display: flex;
   align-items: center;
@@ -10,6 +11,7 @@
 }
 
 .carousel-btn {
+  /* Les controles restent superposes au carousel sans modifier sa largeur. */
   position: absolute;
   z-index: 4;
   top: 50%;
@@ -71,6 +73,7 @@
 }
 
 @media (max-width: 899px) {
+  /* Sur mobile, le carousel devient une pile navigable par fleches. */
   .featured-grid-container {
     box-sizing: border-box;
     padding: 0 3.25rem 4rem;

@@ -34,6 +34,7 @@ body {
 
 /* ====== CONTENEUR DE L'ÉCRAN D'INTRODUCTION ====== */
 .splash {
+  /* Couche d'introduction affichee avant la navigation vers l'accueil. */
   position: fixed;
   inset: 0;
   z-index: 100;
@@ -46,6 +47,7 @@ body {
 
 /* ====== ZONE DE DESSIN ====== */
 .canvas {
+  /* Canvas plein ecran anime par splash.js, sans intercepter les clics. */
   position: absolute;
   inset: 0;
   pointer-events: none;
@@ -53,6 +55,7 @@ body {
 
 /* ====== HALOS LUMINEUX ====== */
 .orb-container {
+  /* Conteneur des halos decoratifs situes derriere la carte centrale. */
   position: absolute;
   inset: 0;
   width: 100%;
@@ -97,6 +100,7 @@ body {
 
 /* ====== CARTE CENTRALE ====== */
 .card {
+  /* Carte lisible au-dessus des effets et des particules de l'introduction. */
   position: relative;
   z-index: 10;
   width: min(520px, 92vw);

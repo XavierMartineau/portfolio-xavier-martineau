@@ -3,6 +3,7 @@
    1. VARIABLES & RESET GLOBAL
    ========================================================================== */
 :root {
+  /* Variables partagees par les pages qui chargent la feuille globale. */
   --bg-primary: #0d0d12;
   --text-primary: #e8e8f0;
   --max-width: 1400px;
@@ -33,6 +34,7 @@ html {
 
 /* Fond grille commun. */
 .grid-bg {
+  /* Grille decorative fixe, independante du contenu qui defile par-dessus. */
   position: fixed;
   inset: 0;
   z-index: -2;
@@ -106,6 +108,7 @@ html {
    4. BOUTONS GLOBAUX
    ========================================================================== */
 .btn-primary {
+  /* Action principale reutilisable dans les sections hero et contact. */
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -157,6 +160,7 @@ html {
 }
 
 .back-to-top {
+  /* Bouton injecte par traduction.js et rendu visible apres un certain scroll. */
   position: fixed;
   left: 1.5rem;
   bottom: 5rem;

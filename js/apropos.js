@@ -9,6 +9,7 @@ const ABOUT_INFO = [
 
 const infoContainer = document.querySelector("#info-container");
 
+// Transforme la source de donnees en cartes HTML uniquement si la section existe.
 if (infoContainer) {
   ABOUT_INFO.forEach((item) => {
     const card = document.createElement("article");
@@ -56,6 +57,7 @@ const ABOUT_TIMELINE = [
 
 const timelineContainer = document.querySelector("#timeline-container");
 
+// Construit la timeline dans l'ordre chronologique fourni par ABOUT_TIMELINE.
 if (timelineContainer) {
   ABOUT_TIMELINE.forEach((item) => {
     const timelineItem = document.createElement("article");
@@ -80,6 +82,7 @@ if (timelineContainer) {
 let CREATION_PROCESS_IMAGES = [];
 
 const shuffleImages = (images) => {
+  // Copie puis melange les images pour ne pas modifier la liste d'origine.
   const shuffledImages = [...images];
 
   for (let index = shuffledImages.length - 1; index > 0; index -= 1) {

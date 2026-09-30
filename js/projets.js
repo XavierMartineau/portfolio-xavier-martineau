@@ -2,6 +2,7 @@
 const categoryButtons = document.querySelectorAll(".project-category-btn");
 const projectCards = document.querySelectorAll(".project-card");
 
+// Anime l'apparition des cartes quand elles deviennent visibles dans la fenetre.
 // Révèle chaque carte uniquement lorsqu'elle entre dans la fenêtre.
 if ("IntersectionObserver" in window) {
   const projectRevealObserver = new IntersectionObserver(
@@ -43,6 +44,7 @@ if (effectsToggle) {
   });
 }
 
+// Maintient les filtres synchronises et masque les cartes hors categories selectionnees.
 categoryButtons.forEach((button) => {
   button.addEventListener("click", () => {
     if (button.dataset.category === "all") {

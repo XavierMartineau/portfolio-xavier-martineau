@@ -1,6 +1,7 @@
 /* Role : layout, medias et panneaux de la page detail projet. */
 /* Composants de la page détail projet. */
 .project-detail-page {
+  /* La teinte de la page est pilotee par la categorie du projet courant. */
   --project-accent: #00f3ff;
   --project-rgb: 0, 243, 255;
   min-height: 100vh;
@@ -16,6 +17,7 @@
   padding: 2rem 0 2rem;
 }
 .project-detail-header {
+  /* Ligne de contexte : position du projet, categorie et annee. */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -91,6 +93,7 @@
   outline-offset: 3px;
 }
 .external-project-modal {
+  /* Fenetre de confirmation affichee avant l'ouverture d'un site externe. */
   position: fixed;
   inset: 0;
   z-index: 200;
@@ -166,6 +169,7 @@
   }
 }
 .project-content-grid {
+  /* Deux colonnes sur bureau : metadonnees a gauche, contenu principal a droite. */
   display: grid;
   grid-template-columns: minmax(250px, 300px) minmax(0, 1fr);
   gap: 24px;
@@ -233,6 +237,7 @@
   background: rgba(0, 0, 0, 0.22);
 }
 .project-category-skills {
+  /* Les competences sont empilees et leurs pourcentages remplissent les barres au chargement. */
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -280,6 +285,7 @@
 }
 
 .project-loading {
+  /* Calque temporaire place au-dessus d'un media pendant son chargement. */
   inset: 0;
   display: flex;
   align-items: center;
@@ -298,6 +304,7 @@
   display: none !important;
 }
 @media (max-width: 899px) {
+  /* La page detail passe en colonne unique pour preserver la lisibilite mobile. */
   .project-detail {
     width: min(100% - 2rem, 700px);
     padding-top: 1.25rem;

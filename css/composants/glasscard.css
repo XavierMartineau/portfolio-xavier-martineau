@@ -4,6 +4,7 @@
 =========================== */
 
 .glass-card {
+  /* Carte des statistiques : transparence, flou et reflet interne. */
   position: relative;
   padding: 2rem;
   text-align: center;
@@ -43,6 +44,7 @@
 ========================================================= */
 
 .gc {
+  /* Base commune des cartes catalogue, completee par les variantes de projet. */
   --gc-color: #7b80ff;
   --gc-rgb: 123, 128, 255;
   position: relative;
@@ -84,6 +86,7 @@
 }
 
 .project-background {
+  /* Image de fond decorative, volontairement agrandie et floutee. */
   position: absolute;
   inset: -12px;
   z-index: -2;
