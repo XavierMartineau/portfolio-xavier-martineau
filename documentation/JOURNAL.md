@@ -1020,3 +1020,69 @@
 - Documentation de 24 fichiers HTML, CSS et JavaScript.
 - Ajout de 68 commentaires sans modifier le fonctionnement du portfolio.
 - Vérification globale des fichiers après les modifications.
+
+---
+
+## Date: 2026-09-30
+
+### Outil: GitHub Copilot
+
+### <u>Prompt</u>: Centraliser les données des projets dans `data/projects.json` avec `loadProjects()`.
+
+### Réponse:
+
+- Ajout des données des projets dans `data/projects.json`.
+- Création de `loadProjects()` et de la promesse partagée `projectsReady` dans `js/projects-data.js`.
+- Génération des cartes de l'accueil et de la page projets depuis la source JSON.
+- Utilisation des mêmes données JSON pour la page de détail.
+- Adaptation des filtres et de la navigation pour attendre le chargement des projets.
+
+---
+
+### Outil: GitHub Copilot
+
+### <u>Prompt</u>: Corriger l'identifiant du projet Atelier chromatique et ses références d'images.
+
+### Réponse:
+
+- Remplacement des références du projet `7` par l'identifiant `6`.
+- Correction du fichier image vers `projet_06_atelier_chromatique.webp`.
+- Suppression des anciennes images `.png` et `.jpg` inutilisées.
+- Conservation uniquement des images `.webp` dans `assets/images`.
+
+---
+
+### Outil: GitHub Copilot
+
+### <u>Prompt</u>: Améliorer le popup de confirmation avant l'ouverture d'un projet externe.
+
+### Réponse:
+
+- Amélioration des dimensions et des espacements du popup.
+- Correction de la taille du titre pour éviter une coupure maladroite.
+- Amélioration des boutons, de l'ombre, de la bordure et de l'animation.
+- Adaptation du popup aux écrans mobiles.
+
+---
+
+### Outil: GitHub Copilot
+
+### <u>Prompt</u>: Corriger le bouton « Projet suivant ».
+
+### Réponse:
+
+- Correction de l'initialisation de la navigation précédent/suivant.
+- Les projets sont maintenant parcourus selon les identifiants présents dans le JSON.
+- Le bouton suivant est masqué automatiquement sur le dernier projet.
+
+---
+
+### Outil: GitHub Copilot
+
+### <u>Prompt</u>: Créer un commit en français et pousser les changements sur GitHub.
+
+### Réponse:
+
+- Création du commit `7fb0c0e` avec le message `Centraliser les projets et ameliorer l interface`.
+- Push réussi sur la branche `origin/3.0`.
+- Vérification finale : dépôt local propre et synchronisé avec GitHub.
