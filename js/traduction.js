@@ -418,8 +418,21 @@ window.translatePortfolio = (language = document.documentElement.lang) => {
   }
 };
 
+const languageSwitcher = document.querySelector(".language-switcher");
+
+languageSwitcher?.addEventListener("animationend", (event) => {
+  if (event.animationName === "language-switch-transition") {
+    languageSwitcher.classList.remove("is-switching");
+  }
+});
+
 document.querySelectorAll(".language-switcher button").forEach((button) => {
   button.addEventListener("click", () => {
+    if (languageSwitcher) {
+      languageSwitcher.classList.remove("is-switching");
+      void languageSwitcher.offsetWidth;
+      languageSwitcher.classList.add("is-switching");
+    }
     setLanguage(button.dataset.language);
   });
 });
