@@ -109,8 +109,8 @@ const translations = {
       "The main challenge was creating a smooth 3D animation while mastering modeling, lighting and rendering for each shot.",
     "Le principal défi était de concevoir une navigation interactive où chaque choix modifie le parcours tout en restant claire et intuitive.":
       "The main challenge was designing interactive navigation where each choice changes the journey while remaining clear and intuitive.",
-    "Le principal défi était de construire un symbole de bouclier simple et reconnaissable, adaptable aux supports imprimés et numériques.":
-      "The main challenge was building a simple, recognizable shield symbol adaptable to print and digital media.",
+    "Le principal défi était de composer les multiples formes courbes du bouclier et de maîtriser les multiples dégradés pour créer un rendu harmonieux et reconnaissable.":
+      "The main challenge was composing the shield's multiple curved shapes and mastering its multiple gradients to create a harmonious and recognizable result.",
     "Le principal défi était d'équilibrer les formes, les couleurs et la typographie pour créer une composition festive et lisible.":
       "The main challenge was balancing shapes, colors and typography to create a festive and readable composition.",
     "Le principal défi était de créer une interface interactive où les couleurs et les formes restent lisibles et harmonieuses sur chaque écran.":
@@ -124,11 +124,11 @@ const translations = {
     "Une identité visuelle forte, reconnaissable et suffisamment flexible pour accompagner différents supports.":
       "A strong, recognizable visual identity flexible enough to work across different media.",
     "Une illustration vectorielle festive où le sapin, les couleurs et la typographie forment un ensemble chaleureux.":
-      "A festive vector illustration where the tree, colors and typography create a warm and cohesive whole.",
+      "A festive vector illustration where the tree, reindeer, colors and typography create a warm and cohesive whole.",
     "Un site web expérimental qui transforme l'exploration des couleurs en une expérience visuelle interactive.":
       "An experimental website that turns color exploration into an interactive visual experience.",
     "Une illustration vectorielle festive qui met en scène un sapin de Noël dans une composition colorée, structurée par des formes, des contrastes et une typographie chaleureuse.":
-      "A festive vector illustration featuring a Christmas tree in a colorful composition shaped by forms, contrasts and warm typography.",
+      "A festive vector illustration featuring a Christmas tree and a reindeer in a colorful composition shaped by forms, contrasts and warm typography.",
     "Une expérience interactive fluide qui met l'utilisateur au cœur du parcours et donne du relief à chaque interaction.":
       "A smooth interactive experience that puts the user at the center and gives depth to every interaction.",
     "Un site web expérimental consacré à l’exploration des couleurs, des formes et des compositions, pensé comme un atelier interactif où chaque écran devient une nouvelle expérience visuelle.":

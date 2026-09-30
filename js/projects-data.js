@@ -44,7 +44,7 @@ window.portfolioProjects = {
     image: "Projet_05_noel.webp",
     secondaryImage: "Projet_05_2_noel.webp",
     description:
-      "Une illustration vectorielle festive qui met en scène un sapin de Noël dans une composition colorée, structurée par des formes, des contrastes et une typographie chaleureuse.",
+      "Une illustration vectorielle festive qui met en scène un sapin de Noël et un renne dans une composition colorée, structurée par des formes, des contrastes et une typographie chaleureuse.",
     technologies: ["Vectoriel", "Illustration", "Couleur", "Composition"],
   },
   7: {

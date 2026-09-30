@@ -44,7 +44,7 @@ const projectChallenges = {
   1: "Le principal défi était de créer une animation 3D fluide en maîtrisant la modélisation, l'éclairage et le rendu de chaque plan.",
   2: "Le principal défi était de concevoir une navigation interactive où chaque choix modifie le parcours tout en restant claire et intuitive.",
   3: "Le principal défi était de créer les dégradés vectoriels dans les yeux de Stitch, tout en conservant un rendu naturel et expressif.",
-  4: "Le principal défi était de construire un symbole de bouclier simple et reconnaissable, adaptable aux supports imprimés et numériques.",
+  4: "Le principal défi était de composer les multiples formes courbes du bouclier et de maîtriser les multiples dégradés pour créer un rendu harmonieux et reconnaissable.",
   5: "Le principal défi était d'équilibrer les formes, les couleurs et la typographie pour créer une composition festive et lisible.",
   7: "Le principal défi était de créer une interface interactive où les couleurs et les formes restent lisibles et harmonieuses sur chaque écran.",
 };
@@ -109,7 +109,7 @@ const projectResults = {
   2: "Une expérience web narrative qui transforme l'exploration en une suite de choix engageants.",
   3: "Une illustration vectorielle expressive de Stitch, finalisée avec des couleurs vives et des dégradés précis dans les yeux.",
   4: "Une identité visuelle forte, reconnaissable et suffisamment flexible pour accompagner différents supports.",
-  5: "Une illustration vectorielle festive où le sapin, les couleurs et la typographie forment un ensemble chaleureux.",
+  5: "Une illustration vectorielle festive où le sapin, le renne, les couleurs et la typographie forment un ensemble chaleureux.",
   7: "Un site web expérimental qui transforme l'exploration des couleurs en une expérience visuelle interactive.",
 };
 setText(

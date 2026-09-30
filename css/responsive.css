@@ -65,6 +65,13 @@
     padding: 0.6rem;
   }
 
+  .back-to-top {
+    min-width: 74px;
+    min-height: 38px;
+    padding: 0.55rem 0.75rem;
+    font-size: 0.56rem;
+  }
+
   .scroll-arrow {
     animation-range: 0 400px;
   }

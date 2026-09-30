@@ -43,7 +43,11 @@ const updateScrollIndicator = () => {
   const maxScroll = Math.max(window.innerHeight * 0.9, 1);
   const progress = Math.min(Math.max(window.scrollY / maxScroll, 0), 1);
   const startThreshold = progress < 0.04;
-  const travel = startThreshold ? 0 : progress * 210;
+  const arrowTravel = Math.max(
+    scrollLine.clientHeight - scrollArrow.offsetHeight,
+    0,
+  );
+  const travel = startThreshold ? 0 : progress * arrowTravel;
   const dotPosition = startThreshold
     ? "0%"
     : `${Math.min(progress * 100, 100)}%`;
