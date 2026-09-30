@@ -43,6 +43,34 @@ html {
       40px 40px;
   opacity: 0.3;
   pointer-events: none;
+  overflow: hidden;
+  animation: grid-drift 24s linear infinite;
+}
+
+.grid-bg::before,
+.grid-bg::after {
+  position: absolute;
+  width: 34rem;
+  height: 34rem;
+  border-radius: 50%;
+  content: "";
+  filter: blur(42px);
+  opacity: 0.14;
+  pointer-events: none;
+}
+
+.grid-bg::before {
+  top: 8%;
+  left: 8%;
+  background: radial-gradient(circle, rgba(0, 243, 255, 0.72), transparent 68%);
+  animation: background-halo-drift 18s ease-in-out infinite;
+}
+
+.grid-bg::after {
+  right: 5%;
+  bottom: 4%;
+  background: radial-gradient(circle, rgba(255, 0, 234, 0.62), transparent 68%);
+  animation: background-halo-drift-reverse 22s ease-in-out infinite;
 }
 
 /* Utilitaires   }de couleur néon. */

@@ -160,3 +160,36 @@
     transform: translateX(0) scale(1);
   }
 }
+
+@keyframes grid-drift {
+  from {
+    background-position:
+      0 0,
+      0 0;
+  }
+  to {
+    background-position:
+      40px 24px,
+      24px 40px;
+  }
+}
+
+@keyframes background-halo-drift {
+  0%,
+  100% {
+    transform: translate3d(-3%, -2%, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(4%, 3%, 0) scale(1.08);
+  }
+}
+
+@keyframes background-halo-drift-reverse {
+  0%,
+  100% {
+    transform: translate3d(3%, 2%, 0) scale(1.04);
+  }
+  50% {
+    transform: translate3d(-4%, -3%, 0) scale(0.96);
+  }
+}
