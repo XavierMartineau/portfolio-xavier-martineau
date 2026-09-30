@@ -558,6 +558,16 @@
     width: 100%;
   }
 
+  .external-project-dialog {
+    width: 100%;
+    padding: 1.35rem;
+    border-radius: 10px;
+  }
+
+  .external-project-dialog h2 {
+    font-size: clamp(1.55rem, 8vw, 1.9rem);
+  }
+
   .featured-section {
     padding-right: 1rem;
     padding-left: 1rem;

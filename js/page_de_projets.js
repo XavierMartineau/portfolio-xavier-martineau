@@ -1,6 +1,8 @@
 // Role : selection, rendu et interactions de la page detail projet.
 // Les projets sont centralisés dans projects-data.js pour éviter les doublons.
-const projects = window.portfolioProjects;
+import { projectsReady } from "./projects-data.js";
+
+const projects = await projectsReady;
 
 // =========================================================================
 // 2. RÉCUPÉRATION DE L’ID DU PROJET DANS L'URL
@@ -46,7 +48,7 @@ const projectChallenges = {
   3: "Le principal défi était de créer les dégradés vectoriels dans les yeux de Stitch, tout en conservant un rendu naturel et expressif.",
   4: "Le principal défi était de composer les multiples formes courbes du bouclier et de maîtriser les multiples dégradés pour créer un rendu harmonieux et reconnaissable.",
   5: "Le principal défi était d'équilibrer les formes, les couleurs et la typographie pour créer une composition festive et lisible.",
-  7: "Le principal défi était de créer une interface interactive où les couleurs et les formes restent lisibles et harmonieuses sur chaque écran.",
+  6: "Le principal défi était de créer une interface interactive où les couleurs et les formes restent lisibles et harmonieuses sur chaque écran.",
 };
 setText(
   "#project-challenge",
@@ -56,7 +58,7 @@ setText(
 
 const externalProjectLinks = {
   2: "https://xaviermartineau.github.io/La_Maison_xavier/",
-  7: "https://xaviermartineau.github.io/Atelier-chromatique-XM/",
+  6: "https://xaviermartineau.github.io/Atelier-chromatique-XM/",
 };
 const externalProjectLink = document.querySelector("#external-project-link");
 const externalProjectModal = document.querySelector("#external-project-modal");
@@ -110,7 +112,7 @@ const projectResults = {
   3: "Une illustration vectorielle expressive de Stitch, finalisée avec des couleurs vives et des dégradés précis dans les yeux.",
   4: "Une identité visuelle forte, reconnaissable et suffisamment flexible pour accompagner différents supports.",
   5: "Une illustration vectorielle festive où le sapin, le renne, les couleurs et la typographie forment un ensemble chaleureux.",
-  7: "Un site web expérimental qui transforme l'exploration des couleurs en une expérience visuelle interactive.",
+  6: "Un site web expérimental qui transforme l'exploration des couleurs en une expérience visuelle interactive.",
 };
 setText(
   "#project-result",
@@ -342,7 +344,7 @@ const embeddedProjects = {
     src: "https://xaviermartineau.github.io/La_Maison_xavier/",
     title: "La Maison interactive",
   },
-  7: {
+  6: {
     src: "https://xaviermartineau.github.io/Atelier-chromatique-XM/",
     title: "Atelier chromatique",
   },
@@ -546,7 +548,7 @@ if (returnProjectBtn) {
 // =========================================================================
 // 14. NAVIGATION DYNAMIQUE (PRÉCÉDENT / SUIVANT)
 // =========================================================================
-document.addEventListener("DOMContentLoaded", () => {
+{
   const indexEl = document.getElementById("project-index");
   const nextLinkEl = document.getElementById("next-project-link");
   const prevLinkEl = document.getElementById("prev-project-link");
@@ -580,6 +582,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
   }
-});
+}
 
 window.translatePortfolio?.();

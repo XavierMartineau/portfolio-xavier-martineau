@@ -1,5 +1,9 @@
 // Role : navigation entre projets, defilement et carousel de la page d'accueil.
 // Rend les cartes de projets accessibles depuis la grille et la page d'accueil.
+import { projectsReady } from "./projects-data.js";
+
+await projectsReady;
+
 const navigableProjectCards = document.querySelectorAll(
   ".project-card[data-project-id], .featured-card[data-project-id]",
 );

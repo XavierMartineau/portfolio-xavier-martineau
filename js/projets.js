@@ -1,4 +1,8 @@
 // Role : filtrage des cartes et effets d'affichage de la page projets.
+import { projectsReady } from "./projects-data.js";
+
+await projectsReady;
+
 const categoryButtons = document.querySelectorAll(".project-category-btn");
 const projectCards = document.querySelectorAll(".project-card");
 
