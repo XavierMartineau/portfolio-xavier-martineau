@@ -147,5 +147,5 @@ processus_creation/        Ressources liées au processus de création
 
 ## Notes
 
-- L'adresse `xavier.martineau@example.com` présente dans le bouton de contact doit être remplacée par l'adresse de contact finale avant la publication.
+- L'adresse de contact publique est `Xavier.g.martineau@gmail.com`.
 - Les dépendances et outils envisagés doivent rester cohérents avec l'implémentation réellement utilisée dans le projet.
