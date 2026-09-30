@@ -58,20 +58,26 @@
         </h3>
       </a>
 
-      <input class="menu-checkbox" type="checkbox" id="menu-toggle" />
+      <input
+        class="menu-checkbox"
+        type="checkbox"
+        id="menu-toggle"
+        aria-label="Ouvrir le menu de navigation"
+        aria-controls="primary-navigation"
+      />
 
-      <nav class="navbar-links">
-        <h3>
+      <nav class="navbar-links" id="primary-navigation">
+        <div>
           <a href="accueil.html" class="active" data-i18n="Accueil">Accueil</a>
-        </h3>
-        <h3><a href="projets.html" data-i18n="PROJETS">PROJETS</a></h3>
-        <h3><a href="apropos.html" data-i18n="À PROPOS">À PROPOS</a></h3>
-        <h3>
+        </div>
+        <div><a href="projets.html" data-i18n="PROJETS">PROJETS</a></div>
+        <div><a href="apropos.html" data-i18n="À PROPOS">À PROPOS</a></div>
+        <div>
           <a href="contact.html" data-i18n="CONTACT">CONTACT</a>
-        </h3>
-        <h3 class="mobile-menu-cta">
+        </div>
+        <div class="mobile-menu-cta">
           <a href="contact.html" data-i18n="ENGAGEZ-MOI">ENGAGEZ-MOI</a>
-        </h3>
+        </div>
       </nav>
       <div class="language-switcher" aria-label="Choisir la langue">
         <button type="button" data-language="fr" aria-pressed="true">FR</button>
@@ -86,11 +92,11 @@
       </label>
 
       <div class="navbar-right">
-        <h3>
+        <div>
           <a href="contact.html" class="btn-engage" data-i18n="Engagez‑moi"
             >Engagez‑moi</a
           >
-        </h3>
+        </div>
       </div>
     </header>
 
@@ -123,17 +129,17 @@
 
             <!-- HERO BUTTONS -->
             <div class="hero-buttons spaced-buttons">
-              <h2>
+              <div>
                 <a href="projets.html" class="btn-primary">Voir mes projets</a>
-              </h2>
-              <h2>
+              </div>
+              <div>
                 <a
                   href="mailto:xavier.martineau@example.com"
                   class="btn-outline"
                   data-i18n="Me contacter"
                   >Me contacter</a
                 >
-              </h2>
+              </div>
             </div>
 
             <!-- AVAILABILITY -->
@@ -197,11 +203,11 @@
               </h2>
             </div>
 
-            <h3>
+            <div>
               <a href="projets.html" class="btn-outline featured-link">
                 Voir tout →
               </a>
-            </h3>
+            </div>
           </div>
 
           <!-- CONTENEUR DE LA GRILLE DES PROJETS -->

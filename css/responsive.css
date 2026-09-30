@@ -349,8 +349,7 @@
   }
 
   .hero-buttons {
-    flex-direction: column;
-    align-items: stretch;
+    grid-template-columns: 1fr;
   }
 
   .hero-buttons h2,
@@ -1194,7 +1193,6 @@
   .scroll-line {
     height: 105px;
   }
-
   .featured-section {
     padding-right: 0.75rem;
     padding-left: 0.75rem;
@@ -1234,5 +1232,11 @@
   .featured-header {
     padding-right: 0;
     padding-left: 0;
+  }
+}
+
+@media (max-width: 402px) {
+  .hero-buttons {
+    grid-template-columns: 1fr !important;
   }
 }

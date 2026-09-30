@@ -355,7 +355,7 @@
 /* Mise en page compacte et menu déroulant sur mobile */
 @media (max-width: 1100px) {
   .navbar {
-    position: absolute;
+    position: fixed;
     box-sizing: border-box;
     height: 76px;
     min-height: 76px;
@@ -403,7 +403,7 @@
     display: flex;
   }
 
-  .navbar-links h3 {
+  .navbar-links div {
     margin: 0;
   }
 
@@ -455,6 +455,25 @@
   .navbar-right {
     display: none;
     order: 3;
+  }
+}
+
+@media (min-width: 1101px) {
+  .navbar-links {
+    display: flex;
+  }
+
+  .menu-toggle,
+  .menu-checkbox {
+    display: none;
+  }
+
+  .navbar-right {
+    display: block;
+  }
+
+  .mobile-menu-cta {
+    display: none;
   }
 }
 
