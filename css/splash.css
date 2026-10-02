@@ -243,6 +243,22 @@ body {
   font-size: 0.85rem;
 }
 
+.skill-games {
+  color: #aeb2ff;
+}
+
+.skill-web {
+  color: #ff8bf5;
+}
+
+.skill-design {
+  color: #7df9ff;
+}
+
+.skill-code {
+  color: #c2a5ff;
+}
+
 /* ====== BARRE DE PROGRESSION ====== */
 .progress {
   width: 100%;

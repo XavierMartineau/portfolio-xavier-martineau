@@ -149,7 +149,7 @@ if (categorySkillsContainer) {
   categorySkillsContainer.innerHTML = selectedCategorySkills
     .map(
       ([label, level]) => `
-        <div class="project-skill" style="--skill-level: ${level}%">
+        <div class="project-skill skill-level-${level}">
           <div class="project-skill-header">
             <span>${label}</span>
             <strong>${level}%</strong>

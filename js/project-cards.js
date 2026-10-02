@@ -29,8 +29,8 @@ const createFeaturedCard = (projectId, project) => {
     <div class="featured-top"></div>
     <img class="featured-background" src="../assets/images/${project.image}" alt="Aperçu du projet ${project.name}" aria-hidden="true" />
     <div class="featured-meta">
-      <h4 class="featured-category">${project.category}</h4>
-      <h5 class="featured-year">${project.year}</h5>
+      <span class="featured-category">${project.category}</span>
+      <span class="featured-year">${project.year}</span>
     </div>
     <h3 class="featured-title">${project.name}</h3>
     <p class="featured-desc">${project.description}</p>
@@ -53,8 +53,8 @@ const createProjectCard = (projectId, project) => {
     <img class="project-background" loading="lazy" src="../assets/images/${project.image}" alt="Aperçu du projet ${project.name}" aria-hidden="true" />
     ${project.secondaryImage ? `<img class="project-background project-background-secondary" loading="lazy" src="../assets/images/${project.secondaryImage}" alt="Vue secondaire du projet ${project.name}" aria-hidden="true" />` : ""}
     <div class="gc-meta">
-      <h4 class="gc-project-category">${project.category}</h4>
-      <h5 class="gc-year">${project.year}</h5>
+      <span class="gc-project-category">${project.category}</span>
+      <span class="gc-year">${project.year}</span>
     </div>
     <h3 class="gc-title">${project.name}</h3>
     <div class="gc-technologies" aria-label="Technologies utilisées">

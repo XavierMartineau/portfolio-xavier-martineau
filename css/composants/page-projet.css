@@ -302,6 +302,30 @@
 .project-category-skills.is-loaded .project-skill-bar span {
   width: var(--skill-level);
 }
+
+.project-skill.skill-level-60 {
+  --skill-level: 60%;
+}
+
+.project-skill.skill-level-65 {
+  --skill-level: 65%;
+}
+
+.project-skill.skill-level-75 {
+  --skill-level: 75%;
+}
+
+.project-skill.skill-level-80 {
+  --skill-level: 80%;
+}
+
+.project-skill.skill-level-85 {
+  --skill-level: 85%;
+}
+
+.project-skill.skill-level-95 {
+  --skill-level: 95%;
+}
 .project-loading,
 .project-media-fallback {
   position: absolute;
