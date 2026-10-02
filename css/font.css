@@ -9,6 +9,7 @@
     format("truetype");
   font-weight: 400;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -17,14 +18,16 @@
   src: url("../assets/fonts/speedy/SpeedyRegular-7BLoE.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
   /* Police des labels courts, des rubriques et des informations de contexte. */
   font-family: "Syne";
   src: url("../assets/fonts/syne/Syne-VariableFont_wght.ttf") format("truetype");
-  font-weight: 600;
+  font-weight: 100 900;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -32,8 +35,9 @@
   font-family: "Space-Grotesk";
   src: url("../assets/fonts/space/SpaceGrotesk-VariableFont_wght.ttf")
     format("truetype");
-  font-weight: 400;
+  font-weight: 100 900;
   font-style: normal;
+  font-display: swap;
 }
 
 /* ===========================
@@ -76,7 +80,7 @@ h3.glass-value {
   font-weight: 400;
   font-size: clamp(0.95rem, 1.5vw, 1.1rem);
   line-height: 1.6;
-  color: #888899;
+  color: #b9b9c9;
 }
 
 /* H4 — Syne : labels, sous-sections et petits titres */
@@ -86,7 +90,7 @@ h4.section-label {
   font-size: 0.75rem;
   letter-spacing: 0.25em;
   text-transform: uppercase;
-  color: #888899;
+  color: #b9b9c9;
 }
 
 /* H4 — Syne pour les libellés courts des panneaux projet. */
@@ -136,7 +140,7 @@ h4.detail-label {
 .glass-label {
   font-family: "Inter", monospace;
   font-size: 0.75rem;
-  color: #888899;
+  color: #b9b9c9;
   letter-spacing: 0.15em;
 }
 

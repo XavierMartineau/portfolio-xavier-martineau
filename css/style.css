@@ -1,4 +1,4 @@
-﻿/* Role : styles globaux, variables, utilitaires et layouts de pages. */
+/* Role : styles globaux, variables, utilitaires et layouts de pages. */
 /* ==========================================================================
    1. VARIABLES & RESET GLOBAL
    ========================================================================== */
@@ -79,7 +79,7 @@ html {
 .section-label {
   font-size: 0.7rem;
   letter-spacing: 0.25em;
-  color: #888899;
+  color: #b9b9c9;
   text-transform: uppercase;
 }
 
@@ -344,7 +344,7 @@ html[lang="en"] .contact-title-en {
 .contact-header p {
   max-width: 640px;
   margin-top: 1rem;
-  color: #888899;
+  color: #b9b9c9;
 }
 
 .contact-grid {
@@ -485,7 +485,7 @@ html[lang="en"] .contact-title-en {
 
 .contact-success p {
   margin: 0;
-  color: #888899;
+  color: #b9b9c9;
 }
 
 .contact-sidebar {
@@ -597,7 +597,7 @@ html[lang="en"] .contact-title-en {
 
 .contact-card p {
   margin: 0;
-  color: #888899;
+  color: #b9b9c9;
   line-height: 1.6;
 }
 
@@ -756,7 +756,7 @@ html[lang="en"] .contact-title-en {
 }
 
 .hero-desc {
-  color: #888899;
+  color: #b9b9c9;
   font-size: 1.2rem;
   line-height: 1.6;
   max-width: 600px;
@@ -870,7 +870,7 @@ html[lang="en"] .contact-title-en {
 
 .glass-label {
   font-size: 0.75rem;
-  color: #888899;
+  color: #b9b9c9;
   letter-spacing: 0.15em;
 }
 
@@ -1475,7 +1475,7 @@ html[lang="en"] .contact-title-en {
   justify-content: center;
   gap: 1rem;
   margin-top: 3rem;
-  color: #9a9aaa;
+  color: #c7c7d6;
   font-family: monospace;
   font-size: 0.7rem;
   letter-spacing: 0.16em;
@@ -1994,7 +1994,7 @@ html[lang="en"] .contact-title-en {
   gap: 0.4rem;
   padding-bottom: 1rem;
   border-bottom: 1px solid rgba(0, 243, 255, 0.25);
-  color: #888899;
+  color: #b9b9c9;
   font-family: monospace;
   font-size: 0.7rem;
 }
@@ -2383,7 +2383,7 @@ html[lang="en"] .contact-title-en {
   font-size: 1.05rem;
 }
 .bio-secondary {
-  color: #888899;
+  color: #b9b9c9;
   font-size: 0.95rem;
 }
 
@@ -2561,7 +2561,7 @@ html[lang="en"] .contact-title-en {
 }
 .about-timeline-description {
   margin: 0.45rem 0 0;
-  color: #888899;
+  color: #b9b9c9;
   font-size: 0.85rem;
   line-height: 1.5;
 }
@@ -2603,7 +2603,7 @@ html[lang="en"] .contact-title-en {
 .creation-process-copy p {
   max-width: 27rem;
   margin: 0 0 0.8rem;
-  color: #888899;
+  color: #b9b9c9;
   line-height: 1.6;
 }
 

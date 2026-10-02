@@ -5,13 +5,15 @@
     <!-- Metadonnees et dependances visuelles de la page d'accueil. -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="robots" content="noindex, nofollow" />
+    <meta name="author" content="Xavier Martineau" />
+    <meta name="theme-color" content="#0d0d12" />
     <title>Accueil – Xavier Martineau</title>
     <meta
       name="description"
       content="Accueil du portfolio de Xavier Martineau : création web, design 2D, animation 3D et projets numériques."
     />
     <meta property="og:type" content="website" />
+    <meta property="og:locale" content="fr_CA" />
     <meta property="og:title" content="Accueil – Xavier Martineau" />
     <meta
       property="og:description"
@@ -23,6 +25,13 @@
     />
     <meta name="twitter:card" content="summary_large_image" />
     <link rel="icon" href="../assets/svg/Logo_svg.svg" type="image/svg+xml" />
+    <link
+      rel="preload"
+      href="../assets/fonts/speedy/SpeedyRegular-7BLoE.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin
+    />
 
     <!-- CSS -->
     <link rel="stylesheet" href="../css/composants/navigations.css" />
@@ -50,13 +59,19 @@
         <div class="logo">
           <div class="logo-glow"></div>
           <div class="logo-inner">
-            <img src="../assets/svg/Logo_svg.svg" alt="Logo XM" />
+            <img
+              src="../assets/svg/Logo_svg.svg"
+              alt="Logo de Xavier Martineau"
+              width="987"
+              height="1006"
+              decoding="async"
+            />
           </div>
         </div>
 
-        <h3 class="brand">
+        <div class="brand">
           Xavier <span class="brand-accent">Martineau</span>
-        </h3>
+        </div>
       </a>
 
       <input
@@ -75,9 +90,6 @@
         <div><a href="apropos.html" data-i18n="À PROPOS">À PROPOS</a></div>
         <div>
           <a href="contact.html" data-i18n="CONTACT">CONTACT</a>
-        </div>
-        <div class="mobile-menu-cta">
-          <a href="contact.html" data-i18n="ENGAGEZ-MOI">ENGAGEZ-MOI</a>
         </div>
       </nav>
       <div class="language-switcher" aria-label="Choisir la langue">
@@ -112,7 +124,7 @@
             <!-- Label -->
             <div class="hero-label">
               <div class="hero-label-line"></div>
-              <h4 class="section-label">Portfolio de Xavier Martineau</h4>
+              <p class="section-label">Portfolio de Xavier Martineau</p>
             </div>
 
             <!-- HERO TITLE -->
@@ -123,10 +135,10 @@
             </h1>
 
             <!-- HERO DESC -->
-            <h3 class="hero-desc">
+            <p class="hero-desc">
               Je crée des sites, des visuels et des projets numériques qui me
               permettent de mélanger technique et créativité.
-            </h3>
+            </p>
 
             <!-- HERO BUTTONS -->
             <div class="hero-buttons spaced-buttons">
@@ -146,7 +158,7 @@
             <!-- AVAILABILITY -->
             <div class="hero-availability">
               <div class="availability-dot"></div>
-              <h3>Disponible pour de nouveaux projets</h3>
+              <p>Disponible pour de nouveaux projets</p>
             </div>
           </div>
           <!-- END LEFT SIDE -->
@@ -156,15 +168,15 @@
             <!-- Stat 1 -->
             <div class="gc gc-indigo">
               <div class="gc-top"></div>
-              <h3 class="gc-value">4+</h3>
-              <h4 class="gc-label">Années d'expérience</h4>
+              <p class="gc-value">4+</p>
+              <p class="gc-label">Années d'expérience</p>
             </div>
 
             <!-- Stat 2 -->
             <div class="gc gc-rose">
               <div class="gc-top"></div>
-              <h3 class="gc-value">40+</h3>
-              <h4 class="gc-label">Projets livrés</h4>
+              <p class="gc-value">40+</p>
+              <p class="gc-label">Projets livrés</p>
             </div>
           </div>
           <!-- END RIGHT SIDE -->
@@ -196,7 +208,7 @@
             <div>
               <div class="featured-label">
                 <div class="featured-label-line"></div>
-                <h3>// Projets en vedette</h3>
+                <p>// Projets en vedette</p>
               </div>
 
               <h2 class="featured-title">
@@ -219,9 +231,9 @@
               aria-pressed="false"
               aria-label="Activer le texte et le blur"
             >
-              <h3 class="carousel-effects-toggle-label">
+              <span class="carousel-effects-toggle-label">
                 Activer texte + blur
-              </h3>
+              </span>
             </button>
 
             <button
@@ -245,12 +257,15 @@
                   class="featured-background"
                   src="../assets/images/projet_01_anim_3d.webp"
                   alt="Aperçu du projet Animation & 3D"
-                  aria-hidden="true"
+                  width="320"
+                  height="180"
+                  loading="lazy"
+                  decoding="async"
                 />
 
                 <div class="featured-meta">
-                  <h4 class="featured-category">3D</h4>
-                  <h5 class="featured-year">2025</h5>
+                  <span class="featured-category">3D</span>
+                  <span class="featured-year">2025</span>
                 </div>
 
                 <h3 class="featured-title">Animation &amp; 3D</h3>
@@ -282,12 +297,15 @@
                   class="featured-background"
                   src="../assets/images/projet_02_La_Maison.webp"
                   alt="Aperçu du projet La Maison"
-                  aria-hidden="true"
+                  width="2493"
+                  height="1357"
+                  loading="lazy"
+                  decoding="async"
                 />
 
                 <div class="featured-meta">
-                  <h4 class="featured-category">Site web</h4>
-                  <h5 class="featured-year">2024</h5>
+                  <span class="featured-category">Site web</span>
+                  <span class="featured-year">2024</span>
                 </div>
 
                 <h3 class="featured-title">La Maison</h3>
@@ -319,12 +337,15 @@
                   class="featured-background"
                   src="../assets/images/projet_03_stich.webp"
                   alt="Illustration du projet Stitch"
-                  aria-hidden="true"
+                  width="6268"
+                  height="6268"
+                  loading="lazy"
+                  decoding="async"
                 />
 
                 <div class="featured-meta">
-                  <h4 class="featured-category">2D</h4>
-                  <h5 class="featured-year">2025</h5>
+                  <span class="featured-category">2D</span>
+                  <span class="featured-year">2025</span>
                 </div>
 
                 <h3 class="featured-title">Stitch</h3>
@@ -364,12 +385,12 @@
     <!-- FOOTER -->
     <!-- PIED DE PAGE -->
     <footer class="footer">
-      <h3 data-i18n="© 2026 Xavier Martineau — Tous droits réservés">
+      <p data-i18n="© 2026 Xavier Martineau — Tous droits réservés">
         © 2026 Xavier Martineau — Tous droits réservés
-      </h3>
+      </p>
       <div class="footer-right">
         <div class="pulse-dot"></div>
-        <h3 data-i18n="Créé avec passion">Créé avec passion</h3>
+        <p data-i18n="Créé avec passion">Créé avec passion</p>
       </div>
     </footer>
     <script src="../js/traduction.js"></script>

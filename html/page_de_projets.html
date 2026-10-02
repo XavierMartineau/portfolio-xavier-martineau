@@ -5,7 +5,6 @@
     <!-- Metadonnees et dependances de la page detail projet. -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="robots" content="noindex, nofollow" />
     <title>Projet – Xavier Martineau</title>
     <meta
       name="description"
@@ -48,8 +47,8 @@
         <span class="project-category" id="project-category">Projet</span>
         <span class="project-year" id="project-year">2025</span>
       </div>
-      <h2 class="project-detail-title" id="project-title">Chargement...</h2>
-      <h3 class="project-detail-intro" id="project-description"></h3>
+      <h1 class="project-detail-title" id="project-title">Chargement...</h1>
+      <p class="project-detail-intro" id="project-description"></p>
       <div
         class="project-scroll-hint"
         aria-label="Faire défiler pour voir la suite"
@@ -73,12 +72,14 @@
           id="project-image"
           src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
           alt="Aperçu du projet sélectionné"
+          decoding="async"
         />
         <img
           id="project-secondary-image"
           class="is-secondary"
           src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs="
           alt="Vue secondaire du projet sélectionné"
+          decoding="async"
         />
         <!-- AJOUTE CETTE LIGNE ICI : -->
         <div id="project-interactive" class="project-interactive" hidden></div>
@@ -178,23 +179,23 @@
         <div class="project-sidebar">
           <article class="detail-panel project-overview-panel">
             <div class="project-overview-item project-overview-category">
-              <h4 class="detail-label">// CATÉGORIE</h4>
+              <p class="detail-label">// CATÉGORIE</p>
               <strong id="project-category-panel">3D</strong>
             </div>
 
             <div class="project-overview-item project-overview-year">
-              <h4 class="detail-label">// STATUT / ANNÉE</h4>
+              <p class="detail-label">// STATUT / ANNÉE</p>
               <p id="project-year-panel">2025</p>
             </div>
 
             <div class="project-overview-item project-overview-technologies">
-              <h4 class="detail-label">// TECHNOLOGIES</h4>
+              <p class="detail-label">// TECHNOLOGIES</p>
               <div id="project-technologies" class="detail-tags"></div>
             </div>
           </article>
 
           <article class="detail-panel project-category-skills-panel">
-            <h4 class="detail-label">// COMPÉTENCES DU PROJET</h4>
+            <p class="detail-label">// COMPÉTENCES DU PROJET</p>
             <div
               id="project-category-skills"
               class="project-category-skills"
@@ -205,32 +206,32 @@
         <!-- COLONNE DE DROITE -->
         <div class="project-main-text">
           <article class="detail-panel-large">
-            <h4 class="detail-label">// DESCRIPTION</h4>
-            <h3 class="detail-copy" id="project-summary">
+            <p class="detail-label">// DESCRIPTION</p>
+            <p class="detail-copy" id="project-summary">
               Un générique de fin sombre où chaque élément renforce la tension
               et la dernière note dramatique de l'histoire.
-            </h3>
+            </p>
           </article>
 
           <article class="detail-panel-large">
-            <h4 class="detail-label">// DÉFI TECHNIQUE</h4>
-            <h3 class="detail-copy" id="project-challenge">
+            <p class="detail-label">// DÉFI TECHNIQUE</p>
+            <p class="detail-copy" id="project-challenge">
               Le principal défi était d'assurer une fluidité optimale et une
               cohérence visuelle parfaite pour chaque interaction utilisateur.
-            </h3>
+            </p>
           </article>
 
           <article class="detail-panel-large">
-            <h4 class="detail-label">// RÉSULTAT</h4>
-            <h3 class="detail-copy" id="project-result">
+            <p class="detail-label">// RÉSULTAT</p>
+            <p class="detail-copy" id="project-result">
               Un projet abouti, performant et prêt pour l'intégration en
               production au sein du portfolio.
-            </h3>
+            </p>
           </article>
 
           <!-- AJOUT : Bloc Stack Complet en bas de la colonne de droite -->
           <article class="detail-panel-large">
-            <h4 class="detail-label">// STACK COMPLET</h4>
+            <p class="detail-label">// STACK COMPLET</p>
             <div class="detail-tags" id="project-full-stack"></div>
           </article>
 

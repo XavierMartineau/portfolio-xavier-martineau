@@ -43,14 +43,14 @@
     padding: 1.1rem 0.75rem; /* Réduit les marges intérieures */
     text-align: center; /* Centre le texte proprement */
     margin-top: 2rem;
-    font-size: 0.68rem;
+    font-size: 0.75rem;
     line-height: 1.4;
   }
 
   .footer > span,
   .footer-right span {
     max-width: 100%;
-    font-size: 0.68rem;
+    font-size: 0.75rem;
   }
 
   .footer-right {
