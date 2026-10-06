@@ -34,7 +34,7 @@
       crossorigin
     />
 
-    <!-- CSS -->
+    <!-- Feuilles de style partagees puis styles propres a l'accueil et au carousel. -->
     <link rel="stylesheet" href="../css/composants/navigations.css" />
     <link rel="stylesheet" href="../css/body.css" />
     <link rel="stylesheet" href="../css/footer.css" />
@@ -53,8 +53,7 @@
     <!-- GRILLE DE FOND -->
     <div class="grid-bg"></div>
 
-    <!-- NAVIGATION PRINCIPALE -->
-    <!-- NAVBAR -->
+    <!-- Navigation partagee : marque, liens de pages, choix de langue et menu mobile. -->
     <header class="navbar">
       <a href="../index.html" class="navbar-left">
         <div class="logo">
@@ -114,13 +113,12 @@
       </div>
     </header>
 
-    <!-- CONTENU PRINCIPAL -->
-    <!-- CONTENU HOME -->
+    <!-- Contenu principal de l'accueil : presentation, statistiques et projets vedettes. -->
     <main class="home-content">
-      <!-- HERO -->
+      <!-- Hero : resume du portfolio, actions principales et disponibilite. -->
       <section class="home-hero">
         <div class="hero-grid">
-          <!-- LEFT SIDE -->
+          <!-- Colonne de gauche : accroche, description et liens d'action. -->
           <div class="hero-left">
             <!-- Label -->
             <div class="hero-label">
@@ -164,7 +162,7 @@
           </div>
           <!-- END LEFT SIDE -->
 
-          <!-- RIGHT SIDE — STATS -->
+          <!-- Colonne de droite : statistiques principales du portfolio. -->
           <div class="hero-stats">
             <!-- Stat 1 -->
             <div class="gc gc-indigo">
@@ -184,7 +182,7 @@
         </div>
         <!-- END HERO GRID -->
 
-        <!-- INDICATEUR DE DÉFILEMENT -->
+        <!-- Indicateur interactif qui invite a descendre vers les projets. -->
         <div
           class="scroll-indicator"
           aria-label="Indicateur de scroll vers les projets en vedette"
@@ -200,7 +198,7 @@
       </section>
       <!-- END HERO -->
 
-      <!-- FEATURED PROJECTS -->
+      <!-- Projets mis en avant : cartes de secours remplacees par les donnees JS. -->
       <section class="featured-section reveal-on-scroll" id="featured-projects">
         <!-- FEATURED WRAPPER -->
         <div class="featured-wrapper">
@@ -224,7 +222,7 @@
             </div>
           </div>
 
-          <!-- CONTENEUR DE LA GRILLE DES PROJETS -->
+          <!-- Controles du carousel et conteneur des cartes en vedette. -->
           <div class="featured-grid-container">
             <button
               class="carousel-effects-toggle"
@@ -245,7 +243,7 @@
               <span aria-hidden="true">←</span>
             </button>
 
-            <!-- FEATURED GRID -->
+            <!-- La grille recoit les cartes creees depuis data/projects.json. -->
             <div class="featured-grid">
               <!-- Project 1 -->
               <a
@@ -383,8 +381,7 @@
       <!-- END FEATURED PROJECTS -->
     </main>
 
-    <!-- FOOTER -->
-    <!-- PIED DE PAGE -->
+    <!-- Pied de page commun : droits d'auteur et indicateur de statut. -->
     <footer class="footer">
       <p data-i18n="© 2026 Xavier Martineau — Tous droits réservés">
         © 2026 Xavier Martineau — Tous droits réservés
@@ -394,6 +391,7 @@
         <p data-i18n="Créé avec passion">Créé avec passion</p>
       </div>
     </footer>
+    <!-- Scripts de traduction, rendu des projets et navigation du carousel. -->
     <script src="../js/traduction.js"></script>
     <script type="module" src="../js/project-cards.js"></script>
     <script type="module" src="../js/project-navigation.js"></script>

@@ -170,6 +170,7 @@
   width: 100%;
 }
 
+/* Selecteur de langue avec son indicateur actif anime. */
 .language-switcher {
   position: relative;
   display: flex;
@@ -273,7 +274,7 @@
   }
 }
 
-/* Bouton hamburger mobile et ses trois barres */
+/* Menu mobile : case de controle cachee, bouton visible et animation des barres. */
 .menu-toggle {
   display: none;
   align-items: center;
@@ -379,6 +380,7 @@
 
 /* Mise en page compacte et menu déroulant sur mobile */
 @media (max-width: 1100px) {
+  /* Remplace les liens horizontaux par un menu deroulant compact. */
   .navbar {
     position: fixed;
     box-sizing: border-box;

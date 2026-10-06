@@ -34,6 +34,7 @@
   min-height: 360px;
 }
 
+/* Couche image decor, puis contenu positionne au-dessus pour rester lisible. */
 .featured-background {
   /* L'image agrandie et floutee sert de fond d'ambiance derriere le contenu. */
   position: absolute;
@@ -100,7 +101,7 @@
   --card-rgb: 255, 0, 234;
 }
 
-/* Grille des cartes de la page projets. */
+/* Grille du catalogue : etat initial, revelation et masquage par filtre. */
 .projects-grid .gc {
   /* Les cartes sont revelees par IntersectionObserver via la classe is-visible. */
   min-height: 360px;

@@ -1,5 +1,6 @@
 /* Role : animations et transitions partagees entre les composants. */
 
+/* Animations reutilisables du splash et de son bouton d'entree. */
 /* Animations déplacées depuis footer.css. */
 /* Fait respirer le point d'etat situe dans le pied de page. */
 @keyframes footer-pulse {
@@ -61,6 +62,7 @@
   }
 }
 
+/* Animations du hero, des indicateurs de defilement et des cartes vedettes. */
 /* Animations déplacées depuis style.css. */
 /* Anime les indicateurs de progression et de defilement du hero. */
 @keyframes hero-pulse {
@@ -130,6 +132,7 @@
   }
 }
 
+/* Transitions propres aux medias et au changement de carte du carousel. */
 @keyframes project-expand-pulse {
   0%,
   100% {

@@ -3,6 +3,7 @@
   PROPRIÉTÉS GLOBALES DE BASE
 =========================== */
 
+/* Garantit le fond sombre et supprime les marges natives du navigateur. */
 body {
   /* Le fond et la couleur de texte par defaut sont herites par toutes les pages. */
   background: #0d0d12;

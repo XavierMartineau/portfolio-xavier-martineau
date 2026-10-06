@@ -226,6 +226,7 @@ body {
 }
 
 /* ====== COMPÉTENCES ====== */
+/* Pastilles de competences affichees sous le sous-titre de l'introduction. */
 .skills {
   display: flex;
   flex-wrap: wrap;
@@ -260,6 +261,7 @@ body {
 }
 
 /* ====== BARRE DE PROGRESSION ====== */
+/* Remplit progressivement la piste coloree pendant l'introduction. */
 .progress {
   width: 100%;
   height: 4px;
@@ -278,6 +280,7 @@ body {
 }
 
 /* ====== BOUTON D'ENTRÉE ====== */
+/* Le bouton reste la principale action interactive de cet ecran. */
 .enter-btn {
   width: 100%;
   padding: 0.9rem;
@@ -326,6 +329,7 @@ body {
 }
 
 /* ====== INFORMATIONS SECONDAIRES ====== */
+/* Version et identite affichees dans les coins de l'ecran. */
 .meta {
   position: absolute;
   font-size: 0.75rem;
@@ -344,6 +348,7 @@ body {
 }
 
 /* ====== INDICATEUR DE CONNEXION ====== */
+/* Point anime accompagne du libelle de statut en ligne. */
 .online {
   position: absolute;
   top: 1.5rem;

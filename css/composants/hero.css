@@ -19,6 +19,7 @@
 }
 
 .hero-title {
+  /* Titre principal responsive de la page d'accueil. */
   font-size: clamp(2.8rem, 6vw, 5rem);
   font-weight: 700;
   line-height: 1.1;
@@ -52,6 +53,7 @@
 }
 
 .hero-stats {
+  /* Deux statistiques alignees a cote du texte en grand format. */
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 170px));
   align-content: center;
@@ -67,6 +69,7 @@
 }
 
 @media (min-width: 900px) {
+  /* Sur bureau, le texte et les statistiques occupent deux colonnes. */
   .hero-grid {
     grid-template-columns: 1fr 1fr;
   }

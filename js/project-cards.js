@@ -1,6 +1,7 @@
 // Role : rendu commun des cartes a partir des projets charges depuis le JSON.
 import { projectsReady } from "./projects-data.js";
 
+// SECTION 1 : conversion des categories en classes CSS et libelles reutilisables.
 const categoryToSlug = (category) =>
   category === "Site web" ? "site-web" : category.toLowerCase();
 
@@ -17,6 +18,7 @@ const technologiesMarkup = (project, className) =>
     .map((technology) => `<span class="${className}">${technology}</span>`)
     .join("");
 
+// SECTION 2 : fabrique les deux variantes de carte utilisees dans le portfolio.
 const createFeaturedCard = (projectId, project) => {
   const card = document.createElement("a");
   const color = categoryToColor(projectId);
@@ -67,6 +69,7 @@ const createProjectCard = (projectId, project) => {
 };
 
 const renderProjectCards = (projects) => {
+  // Remplace le contenu de secours uniquement dans les grilles presentes sur la page.
   const featuredGrid = document.querySelector(".featured-grid");
   const projectsGrid = document.querySelector("#projects-container");
   const entries = Object.entries(projects);
@@ -86,5 +89,5 @@ const renderProjectCards = (projects) => {
 const projects = await projectsReady;
 renderProjectCards(projects);
 
-// Retraduit les textes injectes si la langue anglaise est active.
+// Met a jour les cartes nouvellement injectees si la page est deja en anglais.
 window.translatePortfolio?.();

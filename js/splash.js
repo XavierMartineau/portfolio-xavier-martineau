@@ -7,6 +7,7 @@ const ctx = canvas.getContext("2d");
 const splash = document.getElementById("splash");
 const enterBtn = document.getElementById("enter-btn");
 
+// SECTION 1 : etat des particules et position du pointeur utilisee pour le halo.
 // Position initiale de la souris, placée hors écran au chargement
 let mouse = { x: -1000, y: -1000 };
 let particles = [];
@@ -22,7 +23,7 @@ function resize() {
 resize();
 window.addEventListener("resize", resize);
 
-// Palette utilisée par les particules lumineuses
+// SECTION 2 : palette partagee par les points dessines sur le canvas.
 const colors = ["#6366f1", "#ff00ea", "#00f3ff", "#63ff9b"];
 
 // Donnees et initialisation des particules.
@@ -104,7 +105,7 @@ function draw() {
 }
 draw();
 
-// Suit la position de la souris pour déplacer le halo lumineux
+// SECTION 3 : met a jour le centre du halo au mouvement de la souris.
 window.addEventListener("mousemove", (e) => {
   mouse = { x: e.clientX, y: e.clientY };
 });

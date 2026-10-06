@@ -1,5 +1,5 @@
 // Role : dictionnaire, rendu et controles de traduction du portfolio.
-// Donnees de traduction francais-anglais.
+// SECTION 1 : dictionnaire francais-anglais utilise par les textes et attributs.
 const translations = {
   en: {
     Accueil: "Home",
@@ -241,7 +241,7 @@ const translations = {
   },
 };
 
-// Etat de langue et index des noeuds textuels traduisibles.
+// SECTION 2 : langue sauvegardee et correspondances conservees entre traductions.
 const languageStorageKey = "portfolio-language";
 const supportedLanguages = ["fr", "en"];
 const savedLanguage = localStorage.getItem(languageStorageKey);
@@ -262,7 +262,7 @@ const preserveWhitespace = (source, replacement) => {
   return `${leadingWhitespace}${replacement}${trailingWhitespace}`;
 };
 
-// Traduction du contenu et mise a jour des controles de langue.
+// SECTION 3 : traduction des libelles accessibles et du texte des pages.
 const translateTextNodes = (language) => {
   // Traduit d'abord les attributs accessibles, puis les contenus marques et enfin le texte libre.
   document.querySelectorAll("[aria-label]").forEach((element) => {
@@ -387,6 +387,7 @@ const translateTextNodes = (language) => {
   });
 };
 
+// SECTION 4 : maintient la langue du document et les boutons en accord.
 const updateLanguageControls = (language) => {
   // Synchronise l'attribut lang, l'etat actif et l'accessibilite des boutons de langue.
   document.documentElement.lang = language;
@@ -443,7 +444,7 @@ document.querySelectorAll(".language-switcher button").forEach((button) => {
 
 setLanguage(currentLanguage);
 
-// Controle de navigation retour en haut.
+// SECTION 5 : bouton de retour en haut ajoute au document par ce script.
 const backToTop = document.createElement("button");
 backToTop.className = "back-to-top";
 backToTop.type = "button";
@@ -473,7 +474,7 @@ backToTop.addEventListener("click", () => {
 window.addEventListener("scroll", updateBackToTop, { passive: true });
 updateBackToTop();
 
-// Observation des ajouts DOM pour maintenir les traductions synchronisees.
+// SECTION 6 : retraduit les cartes ajoutees dynamiquement lorsque l'anglais est actif.
 let translationObserverTimer;
 const translationObserver = new MutationObserver(() => {
   if (document.documentElement.lang !== "en") {

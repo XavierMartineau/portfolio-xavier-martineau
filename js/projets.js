@@ -3,11 +3,13 @@ import { projectsReady } from "./projects-data.js";
 
 await projectsReady;
 
+// SECTION 1 : references aux boutons de filtre et cartes rendues dans le catalogue.
 const categoryButtons = document.querySelectorAll(".project-category-btn");
 const projectCards = document.querySelectorAll(".project-card");
 
 // Anime l'apparition des cartes quand elles deviennent visibles dans la fenetre.
 // Révèle chaque carte uniquement lorsqu'elle entre dans la fenêtre.
+// SECTION 2 : apparition progressive avec solution de repli sans IntersectionObserver.
 if ("IntersectionObserver" in window) {
   const projectRevealObserver = new IntersectionObserver(
     (entries, observer) => {
@@ -25,6 +27,7 @@ if ("IntersectionObserver" in window) {
 
 // Force ou rétablit le rendu hover des cartes sur mobile et tablette.
 const effectsToggle = document.querySelector(".projects-effects-toggle");
+// SECTION 3 : controle tactile des effets de survol sur les petits ecrans.
 if (effectsToggle) {
   const projectsPage = document.querySelector(".projects-page");
   const label = effectsToggle.querySelector(".projects-effects-toggle-label");
@@ -49,6 +52,7 @@ if (effectsToggle) {
 }
 
 // Maintient les filtres synchronises et masque les cartes hors categories selectionnees.
+// SECTION 4 : garde les boutons actifs synchronises et filtre les cartes visibles.
 categoryButtons.forEach((button) => {
   button.addEventListener("click", () => {
     if (button.dataset.category === "all") {

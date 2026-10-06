@@ -37,12 +37,11 @@
   </head>
 
   <body class="root">
-    <!-- Structure globale : fond, navigation, contenu et pied de page. -->
+    <!-- Structure globale : fond decoratif, navigation, catalogue et pied de page. -->
     <!-- GRILLE -->
     <div class="grid-bg"></div>
 
-    <!-- NAVIGATION PRINCIPALE -->
-    <!-- NAVBAR (Root) -->
+    <!-- Navigation principale : liens de pages, langues et menu compact. -->
     <header class="navbar projects-navbar">
       <a href="../index.html" class="navbar-left">
         <div class="logo">
@@ -98,8 +97,7 @@
       </div>
     </header>
 
-    <!-- CONTENU PRINCIPAL : FILTRES ET GRILLE DES PROJETS -->
-    <!-- PAGE PROJETS -->
+    <!-- Contenu principal : titre, filtres de categorie et cartes du catalogue. -->
     <main class="projects-page">
       <div class="projects-wrapper">
         <!-- HEADER -->
@@ -117,7 +115,9 @@
               Mes <span class="neon-rose">projets</span>
             </h2>
 
+            <!-- Chaque bouton active une categorie utilisee par projets.js. -->
             <div class="project-categories" aria-label="Filtrer les projets">
+              <!-- Sur petit ecran, permet d'activer les effets visuels des cartes. -->
               <button
                 class="project-category-btn active"
                 type="button"
@@ -161,6 +161,8 @@
           </div>
         </div>
 
+        <!-- Catalogue : cartes de secours enrichies et gerees par les scripts. -->
+        <!-- Les attributs data-category servent au filtrage sans recharger la page. -->
         <!-- GRID -->
         <div class="projects-grid" id="projects-container">
           <article
@@ -429,6 +431,7 @@
       </div>
     </footer>
 
+    <!-- Scripts pour la langue, le rendu des cartes et le filtrage du catalogue. -->
     <script src="../js/traduction.js"></script>
     <script type="module" src="../js/project-cards.js"></script>
     <script type="module" src="../js/projets.js"></script>

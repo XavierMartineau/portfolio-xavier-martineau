@@ -58,6 +58,7 @@
   display: none;
 }
 
+/* Etat force : montre le visuel complet meme sans interaction de survol. */
 .featured-grid-container.is-effects-forced
   .featured-card.has-featured-image
   .featured-background {

@@ -1,4 +1,5 @@
 // Role : donnees et rendu interactif de la page A propos.
+// SECTION 1 : informations personnelles affichees dans la premiere carte.
 // Génère les cartes d'informations personnelles de la page À propos.
 const ABOUT_INFO = [
   { label: "Localisation", value: "Montréal, QC", icon: "📍" },
@@ -23,6 +24,7 @@ if (infoContainer) {
   });
 }
 
+// SECTION 2 : donnees et construction de la timeline chronologique.
 // Donnees du parcours et rendu de la timeline.
 // Construit le parcours à partir d'une seule source de données.
 const ABOUT_TIMELINE = [
@@ -77,6 +79,7 @@ if (timelineContainer) {
   });
 }
 
+// SECTION 3 : preparation de la galerie et des controles de navigation.
 // Initialisation et controles de la galerie du processus de creation.
 // La liste des maquettes est stockée dans data/projects.json.
 let CREATION_PROCESS_IMAGES = [];
@@ -124,6 +127,7 @@ const creationStepAlt = (stepNumber) =>
     ? `Step ${stepNumber} of the creative process`
     : `Étape ${stepNumber} du processus de création`;
 
+// Ferme la visionneuse en passant par l'API native de l'element dialog.
 const closeCreationLightbox = () => {
   if (creationLightbox?.open) creationLightbox.close();
 };
@@ -192,6 +196,7 @@ const initializeCreationProcess = (images) => {
   });
 
   const updateCreationStack = (direction = "next") => {
+    // Affiche la carte active et les deux suivantes sans retirer les autres du DOM.
     const cards = [...creationProcessStack.children];
     const totalImages = cards.length;
 
@@ -217,6 +222,7 @@ const initializeCreationProcess = (images) => {
   };
 
   const changeCreationLightboxImage = (direction) => {
+    // Le modulo permet de boucler de la premiere image a la derniere et inversement.
     activeLightboxImage =
       (activeLightboxImage + direction + CREATION_PROCESS_IMAGES.length) %
       CREATION_PROCESS_IMAGES.length;
@@ -247,6 +253,7 @@ const initializeCreationProcess = (images) => {
     updateCreationStack("next");
   });
 
+  // L'animation automatique ne tourne que lorsque la section est visible.
   let creationProcessTimer = null;
   const stopCreationProcessAutoplay = () => {
     if (creationProcessTimer) {
@@ -293,7 +300,7 @@ const initializeCreationProcess = (images) => {
   updateCreationStack();
 };
 
-// Chargement des donnees externes et branchement des interactions de galerie.
+// SECTION 4 : chargement de la liste d'images et branchement de la visionneuse.
 fetch("../data/projects.json")
   .then((response) => {
     if (!response.ok) throw new Error("Impossible de charger les images");

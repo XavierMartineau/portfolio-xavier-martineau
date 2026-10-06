@@ -1,4 +1,5 @@
 // Role : chargement asynchrone des donnees partagees par les pages de projets.
+// Cette fonction centralise la lecture du JSON et signale explicitement une erreur HTTP.
 export const loadProjects = async () => {
   const response = await fetch(
     new URL("../data/projects.json", import.meta.url),
@@ -12,5 +13,5 @@ export const loadProjects = async () => {
   return data.projects;
 };
 
-// Une seule requete est partagee par les cartes, les filtres et la page detail.
+// Une seule promesse est partagee par les cartes, les filtres et la page detail.
 export const projectsReady = loadProjects();

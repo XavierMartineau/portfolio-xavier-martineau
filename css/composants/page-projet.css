@@ -16,6 +16,8 @@
   margin: 0 auto;
   padding: 2rem 0 2rem;
 }
+
+/* En-tete et commande de defilement au-dessus du media principal. */
 .project-detail-header {
   /* Ligne de contexte : position du projet, categorie et annee. */
   display: flex;
@@ -104,6 +106,8 @@
   backdrop-filter: blur(8px);
   animation: external-project-modal-in 0.25s ease-out both;
 }
+
+/* Dialog de confirmation : contenu, actions et apparition en fondu. */
 .external-project-modal[hidden] {
   display: none;
 }
@@ -202,6 +206,7 @@
   align-items: start;
 }
 
+/* Panneaux editoriaux et apercu des competences du projet courant. */
 /* Prépare les blocs hors écran et les révèle au passage du scroll. */
 .project-content-grid > *,
 .project-navigation-footer {
@@ -351,6 +356,8 @@
 .project-loading[hidden] {
   display: none !important;
 }
+
+/* Mise en page simplifiee lorsque les deux colonnes deviennent trop etroites. */
 @media (max-width: 899px) {
   /* La page detail passe en colonne unique pour preserver la lisibilite mobile. */
   .project-detail {

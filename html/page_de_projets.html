@@ -34,11 +34,11 @@
   </head>
 
   <body class="root project-detail-page">
-    <!-- Structure globale : fond, detail du projet et pied de page. -->
+    <!-- Structure globale : fond decoratif, detail dynamique et pied de page. -->
     <!-- GRILLE DE FOND -->
     <div class="grid-bg"></div>
 
-    <!-- CONTENU PRINCIPAL ET MEDIAS DU PROJET -->
+    <!-- Contenu principal : les champs sont remplis selon l'identifiant dans l'URL. -->
     <main class="project-detail" id="project-detail">
       <a class="project-back" href="projets.html" data-i18n="Retour aux projets"
         >← Retour aux projets</a
@@ -57,7 +57,7 @@
         <span data-i18n="DÉFILER">DÉFILER</span>
         <span class="project-scroll-arrow" aria-hidden="true">↓</span>
       </div>
-      <!-- Media principal, vue secondaire et etat de chargement du projet. -->
+      <!-- Zone de media : image, contenu integre, chargement et solution de repli. -->
       <section class="project-visual" aria-label="Aperçu du projet">
         <button
           id="project-expand"
@@ -135,6 +135,7 @@
         >Voir le projet dans un nouvel onglet ↗</a
       >
 
+      <!-- Confirmation affichee avant de quitter le portfolio vers un site externe. -->
       <div id="external-project-modal" class="external-project-modal" hidden>
         <div
           class="external-project-dialog"
@@ -173,10 +174,9 @@
         </div>
       </div>
 
-      <!-- Grille principale divisée en deux colonnes -->
-      <!-- Informations laterales et contenu editorial du projet selectionne. -->
+      <!-- Grille de detail : metadonnees a gauche et recit du projet a droite. -->
       <section class="project-content-grid">
-        <!-- COLONNE DE GAUCHE -->
+        <!-- Colonne laterale : categorie, annee, technologies et competences. -->
         <div class="project-sidebar">
           <article class="detail-panel project-overview-panel">
             <div class="project-overview-item project-overview-category">
@@ -204,7 +204,7 @@
           </article>
         </div>
 
-        <!-- COLONNE DE DROITE -->
+        <!-- Colonne editoriale : description, defi, resultat et navigation. -->
         <div class="project-main-text">
           <article class="detail-panel-large">
             <p class="detail-label">// DESCRIPTION</p>
@@ -230,12 +230,13 @@
             </p>
           </article>
 
-          <!-- AJOUT : Bloc Stack Complet en bas de la colonne de droite -->
+          <!-- Technologies complementaires affichees dans le bas du detail. -->
           <article class="detail-panel-large">
             <p class="detail-label">// STACK COMPLET</p>
             <div class="detail-tags" id="project-full-stack"></div>
           </article>
 
+          <!-- Liens dynamiques vers le projet precedent ou suivant. -->
           <div class="project-navigation-footer">
             <a
               href="#"
@@ -259,7 +260,7 @@
       </section>
     </main>
 
-    <!-- PIED DE PAGE -->
+    <!-- Pied de page commun : copyright et signature du portfolio. -->
     <footer class="footer">
       <span data-i18n="© 2026 Xavier Martineau — Tous droits réservés"
         >© 2026 Xavier Martineau — Tous droits réservés</span
@@ -270,6 +271,7 @@
       </div>
     </footer>
 
+    <!-- Chargement des traductions puis selection et rendu du projet courant. -->
     <script src="../js/traduction.js"></script>
     <script type="module" src="../js/page_de_projets.js"></script>
   </body>

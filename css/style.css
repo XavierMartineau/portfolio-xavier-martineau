@@ -104,6 +104,7 @@ html {
   -webkit-text-fill-color: transparent;
 }
 
+/* Regles communes des actions; chaque variante garde son propre etat de survol. */
 /* ==========================================================================
    4. BOUTONS GLOBAUX
    ========================================================================== */
@@ -489,6 +490,7 @@ html[lang="en"] .contact-title-en {
 }
 
 .contact-sidebar {
+  /* Colonne d'informations secondaires visible a cote de l'appel a l'action. */
   display: flex;
   flex-direction: column;
   gap: 1.1rem;
@@ -950,6 +952,7 @@ html[lang="en"] .contact-title-en {
   transform: none;
 }
 
+/* Visuel d'ambiance des cartes; les interactions le rendent progressivement net. */
 .featured-card {
   --card-color: #6366f1;
   --card-rgb: 99, 102, 241;
@@ -1516,6 +1519,7 @@ html[lang="en"] .contact-title-en {
 }
 
 .project-content-grid {
+  /* Les informations et le texte editorial forment les deux colonnes du detail. */
   display: grid;
   grid-template-columns: minmax(250px, 300px) minmax(0, 1fr);
   gap: 24px;

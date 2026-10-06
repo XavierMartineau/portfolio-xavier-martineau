@@ -33,11 +33,11 @@
   </head>
 
   <body class="root about-page">
-    <!-- Structure globale : fond, navigation, contenu et pied de page. -->
+    <!-- Structure globale : fond decoratif, navigation, contenu et pied de page. -->
     <!-- Arrière-plan commun du portfolio. -->
     <div class="grid-bg"></div>
 
-    <!-- Navigation principale avec la page À propos active. -->
+    <!-- Navigation principale : les liens de pages, langue et menu mobile. -->
     <header class="navbar">
       <a href="../index.html" class="navbar-left">
         <div class="logo">
@@ -96,7 +96,7 @@
     <!-- CONTENU PRINCIPAL -->
     <main class="about-page-container">
       <div class="about-max-width">
-        <!-- En-tête de la page. -->
+        <!-- En-tête de page : repere de section et nom du portfolio. -->
         <header class="about-header">
           <div class="about-header-line">
             <span class="about-line"></span>
@@ -105,7 +105,7 @@
           <h1 class="about-title">Xavier <span>Martineau</span></h1>
         </header>
 
-        <!-- Présentation et informations personnelles. -->
+        <!-- Presentation : biographie statique et informations injectees en JS. -->
         <section class="about-card" aria-labelledby="about-introduction">
           <div class="about-orb about-orb-indigo"></div>
           <div class="about-orb about-orb-rose"></div>
@@ -137,7 +137,7 @@
           </div>
         </section>
 
-        <!-- Parcours généré depuis les données du script. -->
+        <!-- Parcours : les etapes chronologiques sont construites par apropos.js. -->
         <section
           class="about-timeline-section"
           aria-labelledby="about-path-title"
@@ -155,7 +155,7 @@
           </div>
         </section>
 
-        <!-- Galerie des étapes de création. -->
+        <!-- Processus de creation : explication, compteur et galerie interactive. -->
         <section
           class="creation-process-section"
           aria-labelledby="creation-process-title"
@@ -195,6 +195,7 @@
       </div>
     </main>
 
+    <!-- Visionneuse plein ecran ouverte depuis une image de la galerie. -->
     <dialog class="creation-lightbox" id="creation-lightbox">
       <div class="creation-lightbox-content">
         <button
@@ -226,7 +227,7 @@
       </div>
     </dialog>
 
-    <!-- Pied de page commun. -->
+    <!-- Pied de page commun : copyright et signature du portfolio. -->
     <!-- PIED DE PAGE -->
     <footer class="footer">
       <span data-i18n="© 2026 Xavier Martineau — Tous droits réservés"
@@ -238,6 +239,7 @@
       </div>
     </footer>
 
+    <!-- Scripts de traduction puis remplissage des informations et galeries. -->
     <script src="../js/traduction.js"></script>
     <script src="../js/apropos.js"></script>
   </body>

@@ -2,6 +2,7 @@
 const contactForm = document.getElementById("contact-form");
 const contactSuccess = document.getElementById("contact-success");
 
+// Branche le retour de succes uniquement lorsque les deux elements sont presents.
 // Remplace le formulaire par le message de confirmation sans recharger la page.
 if (contactForm && contactSuccess) {
   contactForm.addEventListener("submit", (event) => {

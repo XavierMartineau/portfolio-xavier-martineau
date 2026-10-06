@@ -4,6 +4,7 @@ import { projectsReady } from "./projects-data.js";
 
 await projectsReady;
 
+// SECTION 1 : reperes DOM necessaires au defilement et a la navigation des cartes.
 const navigableProjectCards = document.querySelectorAll(
   ".project-card[data-project-id], .featured-card[data-project-id]",
 );
@@ -24,7 +25,7 @@ if (scrollArrow) {
 
 const featuredProjects = document.querySelector("#featured-projects");
 
-// Navigation vers les projets en vedette et mise a jour de l'indicateur de defilement.
+// SECTION 2 : acces clavier/clic aux projets vedettes et mise a jour du scroll.
 const scrollToFeaturedProjects = () => {
   featuredProjects?.scrollIntoView({ behavior: "smooth", block: "start" });
 };
@@ -69,6 +70,7 @@ window.addEventListener("scroll", updateScrollIndicator, { passive: true });
 window.addEventListener("resize", updateScrollIndicator);
 updateScrollIndicator();
 
+// SECTION 3 : rend chaque carte navigable a la souris et au clavier.
 navigableProjectCards.forEach((card) => {
   // Conserve le comportement de lien si une carte est cliquée directement.
   card.addEventListener("click", (event) => {
@@ -94,7 +96,7 @@ navigableProjectCards.forEach((card) => {
   }
 });
 
-// Rendu et evenements du carousel mobile/tablette.
+// SECTION 4 : carousel mobile/tablette, avec un index independant par grille.
 // Anime la pile uniquement lorsque les flèches mobile/tablette sont utilisées.
 document.querySelectorAll(".featured-grid").forEach((grid) => {
   // Chaque grille possede son propre index pour fonctionner sans etat global partage.
@@ -141,6 +143,7 @@ document.querySelectorAll(".featured-grid").forEach((grid) => {
     });
 });
 
+// SECTION 5 : interrupteur d'effets visuels pour les appareils tactiles.
 // Force ou rétablit le rendu produit par le hover desktop sur mobile.
 document.querySelectorAll(".carousel-effects-toggle").forEach((button) => {
   const container = button.closest(".featured-grid-container");

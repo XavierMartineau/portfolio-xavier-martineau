@@ -38,6 +38,7 @@
 .project-category-btn:hover {
   transform: scale(1.08);
 }
+/* Chaque position correspond a un filtre colore affiche dans le HTML. */
 .project-category-btn:nth-child(2) {
   --category-color: #7b80ff;
   --category-rgb: 123, 128, 255;

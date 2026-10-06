@@ -17,7 +17,7 @@
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Variantes */
+/* Variantes par type de projet : teinte, contour et fond du badge. */
 /* Une couleur differente permet d'identifier rapidement chaque famille de projet. */
 .couleur-categorie--3d {
   color: #00f3ff;

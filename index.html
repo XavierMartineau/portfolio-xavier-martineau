@@ -2,7 +2,7 @@
 <!doctype html>
 <html lang="fr">
   <head>
-    <!-- Metadonnees, identite de la page et feuilles de style de l'introduction. -->
+    <!-- Metadonnees de partage, identite du site et styles de l'ecran d'introduction. -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="index, follow" />
@@ -34,7 +34,7 @@
     <div class="grid-bg"></div>
 
     <div id="splash" class="splash">
-      <!-- Canvas pour les particules et lignes gérées en JS -->
+      <!-- Canvas anime par splash.js : particules, liaisons et halo de souris. -->
       <canvas id="splash-canvas" class="canvas"></canvas>
 
       <!-- Orbes animés pilotés en JavaScript -->
@@ -44,7 +44,7 @@
         <div class="orb orb-3"></div>
       </div>
 
-      <!-- Carte centrale (Glassmorphism) -->
+      <!-- Carte centrale : identite, competences, progression et bouton d'entree. -->
       <div class="card">
         <div class="card-top-line"></div>
 
@@ -75,7 +75,7 @@
           <div></div>
         </div>
 
-        <!-- ====== SECTION COMPÉTENCES ====== -->
+        <!-- Competences resumees affichees sous le titre du portfolio. -->
         <div class="skills">
           <span class="skill skill-games">Jeux vidéo</span>
           <span class="skill skill-web">Développeur HTML/CSS</span>
@@ -83,12 +83,12 @@
           <span class="skill skill-code">Gestion de code</span>
         </div>
 
-        <!-- Progression / chargement -->
+        <!-- Barre decorative animee pendant l'ecran d'introduction. -->
         <div class="progress">
           <div class="progress-bar"></div>
         </div>
 
-        <!-- Bouton d'entrée -->
+        <!-- Le clic declenche le fondu puis ouvre la page d'accueil du portfolio. -->
         <button id="enter-btn" class="enter-btn">
           <span class="texte-entrer">ENTRER DANS</span>
           <span><strong>MON PORTFOLIO</strong></span>
@@ -116,7 +116,7 @@
       </div>
     </div>
 
-    <!-- Scripts d'initialisation de l'introduction et des traductions. -->
+    <!-- Initialisation du fond anime, navigation et prise en charge de la langue. -->
     <script src="./js/splash.js"></script>
     <script src="./js/traduction.js"></script>
   </body>

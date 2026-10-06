@@ -4,6 +4,7 @@ import { projectsReady } from "./projects-data.js";
 
 const projects = await projectsReady;
 
+// SECTION 1 : identifiant courant, ordre des projets et donnees de presentation.
 // =========================================================================
 // 2. RÉCUPÉRATION DE L’ID DU PROJET DANS L'URL
 // =========================================================================
@@ -60,6 +61,7 @@ const externalProjectLinks = {
   2: "https://xaviermartineau.github.io/La_Maison_xavier/",
   6: "https://xaviermartineau.github.io/Atelier-chromatique-XM/",
 };
+// Les sites externes demandent une confirmation explicite avant leur ouverture.
 const externalProjectLink = document.querySelector("#external-project-link");
 const externalProjectModal = document.querySelector("#external-project-modal");
 const externalProjectCancel = document.querySelector(
@@ -120,7 +122,7 @@ setText(
     "Un projet abouti, performant et prêt pour l'intégration en production au sein du portfolio.",
 );
 
-// Donnees et rendu des competences selon la categorie du projet consulte.
+// SECTION 2 : contenus editoriaux et competences associes au projet selectionne.
 // Compétences affichées selon la catégorie du projet consulté.
 const categorySkills = {
   "3D": [
@@ -214,6 +216,7 @@ document.title = `${project.name} – Xavier Martineau`;
 // =========================================================================
 // 5. SÉLECTION DES ÉLÉMENTS VISUELS ET DU DOM
 // =========================================================================
+// References aux medias et messages de chargement manipules plus bas.
 const visual = document.querySelector(".project-visual");
 const projectImage = document.querySelector("#project-image");
 let secondaryImage = document.querySelector("#project-secondary-image");
@@ -391,6 +394,7 @@ const renderInteractive = () => {
 // =========================================================================
 // 9. LOGIQUE PRINCIPALE D’AFFICHAGE DE LA PAGE
 // =========================================================================
+// Choisit entre un embed, un media statique ou une maquette interactive.
 const isMobileScreen = window.matchMedia("(max-width: 768px)").matches;
 
 if (embeddedProjects[projectId] && projectEmbed) {
