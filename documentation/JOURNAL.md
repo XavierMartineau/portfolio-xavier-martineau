@@ -1086,3 +1086,44 @@
 - Création du commit `7fb0c0e` avec le message `Centraliser les projets et ameliorer l interface`.
 - Push réussi sur la branche `origin/3.0`.
 - Vérification finale : dépôt local propre et synchronisé avec GitHub.
+
+---
+
+## Date: 2026-10-07
+
+### Outil: GitHub Copilot
+
+### <u>Prompt</u>: Répondre aux cinq questions de suivi du projet.
+
+#### Question 01: Qu'est-ce que j'ai accompli depuis le dernier bloc?
+
+### Réponse:
+
+- J'ai ajouté des informations dans le fichier `PLANIFICATION.md` sur les types d'animation à intégrer dans le projet.
+- J'ai aussi créé et fini le design sur Figma.
+- J'ai poursuivi le développement du portfolio en centralisant les projets dans un fichier JSON et en améliorant la navigation, les descriptions et le popup de confirmation.
+- J'ai supprimé sur GitHub l'ancienne branche de sauvegarde `sauvegarde-main-avant-remplacement-2026-10-07`.
+
+#### Question 02: Quelle a été ma principale difficulté et comment je l'ai surmontée?
+
+### Réponse:
+
+- Ma plus grande dificulter etais de faire en sorte que ma branche 3.0 qui avais ete cree avant se transforme en branche main avec tout les commit précédent dessus. Je lai reussi avec l'aide de VS CODE AI
+
+#### Question 03: Qu'est-ce que j'ai appris que je ne savais pas avant?
+
+### Réponse:
+
+- J'ai appris à distinguer la branche distante sur GitHub de sa copie locale.
+
+#### Question 04: Quelle est ma prochaine étape concrète?
+
+### Réponse:
+
+- Me prepaper pour le jury porfolio de demain
+
+#### Question 05: Est-ce que j'ai utilisé l'IA? Si oui, pour quoi et qu'est-ce que ça m'a appris?
+
+### Réponse:
+
+- Oui, j'ai utilisé GitHub Copilot pour m'aider à supprimer l'ancienne branche de sauvegarde et à mettre à jour ce journal.
