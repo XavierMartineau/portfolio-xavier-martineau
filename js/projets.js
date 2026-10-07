@@ -1,4 +1,5 @@
 // Role : filtrage des cartes et effets d'affichage de la page projets.
+// Parcours : attend les projets, revele les cartes visibles, synchronise les effets tactiles et filtre le catalogue.
 import { projectsReady } from "./projects-data.js";
 
 await projectsReady;

@@ -1,4 +1,5 @@
 <!-- Role : page detaillee d'un projet selectionne. -->
+<!-- Parcours : charge les emplacements de contenu, presente les medias et details, puis les liens de navigation. -->
 <!doctype html>
 <html lang="fr">
   <head>
@@ -82,7 +83,7 @@
           alt="Vue secondaire du projet sélectionné"
           decoding="async"
         />
-        <!-- AJOUTE CETTE LIGNE ICI : -->
+        <!-- Zone reservee aux demos interactives integrees, activee selon les donnees du projet. -->
         <div id="project-interactive" class="project-interactive" hidden></div>
 
         <div
@@ -236,7 +237,7 @@
             <div class="detail-tags" id="project-full-stack"></div>
           </article>
 
-          <!-- Liens dynamiques vers le projet precedent ou suivant. -->
+          <!-- Liens dynamiques precedent/suivant et retour au catalogue, centres par les styles partages. -->
           <div class="project-navigation-footer">
             <a
               href="#"

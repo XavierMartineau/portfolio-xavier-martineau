@@ -1,4 +1,5 @@
 /* Role : boutons de filtrage et controle des effets de la page projets. */
+/* Etapes : disposition des filtres, etats de categorie, puis grille tactile a deux colonnes. */
 /* Composant filtres de la page projets. */
 .project-categories {
   /* Les filtres s'alignent a droite sur grand ecran. */

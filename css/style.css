@@ -1,4 +1,5 @@
 /* Role : styles globaux, variables, utilitaires et layouts de pages. */
+/* Parcours : fondations et utilitaires, composants partages, styles de page, puis ajustements d'ecran. */
 /* ==========================================================================
    1. VARIABLES & RESET GLOBAL
    ========================================================================== */
@@ -161,7 +162,7 @@ html {
 }
 
 .back-to-top {
-  /* Bouton injecte par traduction.js et visible uniquement avant le footer. */
+  /* Bouton injecte par traduction.js, visible a l'approche du footer et pendant son affichage. */
   position: fixed;
   left: 1.5rem;
   bottom: 5rem;
@@ -2289,6 +2290,7 @@ html[lang="en"] .contact-title-en {
 }
 
 .project-navigation-footer {
+  /* Chaque action de navigation reste centree, quelle que soit la largeur de l'ecran. */
   display: grid;
   grid-template-columns: minmax(0, 1fr);
   justify-items: center;

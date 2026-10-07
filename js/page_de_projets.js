@@ -1,5 +1,6 @@
 // Role : selection, rendu et interactions de la page detail projet.
 // Les projets sont centralisés dans projects-data.js pour éviter les doublons.
+// Parcours : selectionne un projet, remplit ses contenus/themes, initialise ses medias puis sa navigation.
 import { projectsReady } from "./projects-data.js";
 
 const projects = await projectsReady;

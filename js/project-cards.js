@@ -1,4 +1,5 @@
 // Role : rendu commun des cartes a partir des projets charges depuis le JSON.
+// Parcours : prepare les libelles de categorie, construit les cartes, remplit les grilles puis applique la langue.
 import { projectsReady } from "./projects-data.js";
 
 // SECTION 1 : conversion des categories en classes CSS et libelles reutilisables.

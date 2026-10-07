@@ -1,4 +1,5 @@
 /* Role : layout et composants visuels du hero de la page d'accueil. */
+/* Etapes : accroche et actions, statistiques, puis passage du layout empile au layout bureau. */
 /* Composant HERO de la page d'accueil. */
 .home-hero {
   /* Le hero occupe la premiere zone de lecture et reste centre dans la largeur globale. */

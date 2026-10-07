@@ -1,4 +1,5 @@
 ﻿/* Role : adaptations responsives communes aux pages et composants. */
+/* Les regles progressent des ecrans larges aux petits mobiles, puis respectent le mouvement reduit. */
 /* ==========================================================================
    RESPONSIVE GLOBAL
    Les composants gardent leurs styles de base dans leurs propres fichiers.

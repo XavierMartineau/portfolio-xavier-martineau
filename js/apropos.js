@@ -1,4 +1,5 @@
 // Role : donnees et rendu interactif de la page A propos.
+// Parcours : construit les informations et la timeline, puis charge la galerie et ses controles de visionneuse.
 // SECTION 1 : informations personnelles affichees dans la premiere carte.
 // Génère les cartes d'informations personnelles de la page À propos.
 const ABOUT_INFO = [

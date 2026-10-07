@@ -1,4 +1,5 @@
 /* Role : animations et transitions partagees entre les composants. */
+/* Les keyframes sont groupes par zone : footer, introduction, hero, medias, carousel et fond. */
 
 /* Animations reutilisables du splash et de son bouton d'entree. */
 /* Animations déplacées depuis footer.css. */

@@ -1,4 +1,5 @@
 // Role : dictionnaire, rendu et controles de traduction du portfolio.
+// Parcours : charge les correspondances, applique la langue, gere les boutons et retraduit le contenu ajoute.
 // SECTION 1 : dictionnaire francais-anglais utilise par les textes et attributs.
 const translations = {
   en: {
@@ -442,7 +443,7 @@ document.querySelectorAll(".language-switcher button").forEach((button) => {
 
 setLanguage(currentLanguage);
 
-// SECTION 5 : bouton de retour en haut ajoute au document par ce script.
+// SECTION 5 : bouton de retour en haut, absent du splash et actif a l'approche/pendant le footer.
 const footer = document.querySelector(".footer");
 if (!document.querySelector("#splash") && footer) {
   const backToTop = document.createElement("button");

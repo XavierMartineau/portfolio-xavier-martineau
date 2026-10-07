@@ -1,4 +1,5 @@
 /* Role : layout, medias et panneaux de la page detail projet. */
+/* Etapes : applique le theme du projet, structure le media et les details, puis gere les vues mobiles. */
 /* Composants de la page détail projet. */
 .project-detail-page {
   /* La teinte de la page est pilotee par la categorie du projet courant. */

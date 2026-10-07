@@ -1,4 +1,5 @@
 <!-- Role : catalogue filtrable des projets du portfolio. -->
+<!-- Parcours : navigation, filtres interactifs, cartes chargees depuis les donnees, puis pied de page. -->
 <!doctype html>
 <html lang="fr">
   <head>
@@ -57,7 +58,7 @@
           </div>
         </div>
 
-        <!-- H1 PRINCIPAL DU SITE -->
+        <!-- Marque du portfolio : le nom reste un lien vers la page d'introduction. -->
         <div class="brand">
           Xavier <span class="brand-accent">Martineau</span>
         </div>
@@ -105,12 +106,12 @@
           <div class="header-label">
             <div class="header-line"></div>
 
-            <!-- H3 POUR LE LABEL -->
+            <!-- Repere visuel qui annonce la section des realisations. -->
             <p>// Réalisations</p>
           </div>
 
           <div class="header-flex">
-            <!-- H2 POUR LE TITRE DE SECTION -->
+            <!-- Titre principal du catalogue, complete par l'accent colore. -->
             <h2 class="projects-title">
               Mes <span class="neon-rose">projets</span>
             </h2>
@@ -167,7 +168,7 @@
 
         <!-- Catalogue : cartes de secours enrichies et gerees par les scripts. -->
         <!-- Les attributs data-category servent au filtrage sans recharger la page. -->
-        <!-- GRID -->
+        <!-- Chaque carte de secours est remplacee par le rendu partage de project-cards.js. -->
         <div class="projects-grid" id="projects-container">
           <article
             class="gc gc-indigo project-card"

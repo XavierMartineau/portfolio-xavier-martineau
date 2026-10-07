@@ -1,4 +1,5 @@
 // Role : initialisation, dessin et transition de l'ecran d'introduction.
+// Parcours : mesure le canvas, cree les particules, anime le fond et redirige apres le clic d'entree.
 // ==============================
 // RÉFÉRENCES DE L'ÉCRAN D'INTRODUCTION
 // ==============================

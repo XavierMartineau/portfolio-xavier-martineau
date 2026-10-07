@@ -1,5 +1,6 @@
 // Role : navigation entre projets, defilement et carousel de la page d'accueil.
 // Rend les cartes de projets accessibles depuis la grille et la page d'accueil.
+// Parcours : attend les donnees, relie le scroll et les cartes, puis configure carousel et effets tactiles.
 import { projectsReady } from "./projects-data.js";
 
 await projectsReady;

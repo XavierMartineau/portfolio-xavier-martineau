@@ -1,4 +1,5 @@
 /* Role : chargement des polices locales et regles typographiques partagees. */
+/* Etapes : declare les fontes WOFF2 locales, puis les associe aux roles de texte du site. */
 /* ===========================
    FONT‑FACE LOCAUX
    =========================== */

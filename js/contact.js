@@ -1,4 +1,5 @@
 // Role : gestion de la soumission et de l'etat de succes du formulaire de contact.
+// Parcours : verifie la presence du formulaire et de son retour, puis remplace le formulaire apres envoi.
 const contactForm = document.getElementById("contact-form");
 const contactSuccess = document.getElementById("contact-success");
 
