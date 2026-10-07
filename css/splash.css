@@ -320,6 +320,39 @@ body {
   transform: translateY(-2px);
 }
 
+@media (max-width: 600px) {
+  .card {
+    padding: 2.75rem 1.25rem;
+  }
+
+  .enter-btn {
+    position: relative;
+    min-height: 4.25rem;
+    flex-direction: column;
+    gap: 0.2rem;
+    padding: 0.75rem 2.75rem 0.75rem 1rem;
+    font-size: 0.85rem;
+    line-height: 1.15;
+  }
+
+  .enter-btn > span {
+    white-space: nowrap;
+  }
+
+  .texte-entrer {
+    margin-right: 0;
+  }
+
+  .enter-btn svg {
+    position: absolute;
+    top: 50%;
+    right: 1rem;
+    transform: translateY(-50%);
+    animation: none;
+    will-change: auto;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .enter-btn,
   .enter-btn svg {

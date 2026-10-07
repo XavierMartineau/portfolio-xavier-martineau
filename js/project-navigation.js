@@ -151,19 +151,17 @@ document.querySelectorAll(".carousel-effects-toggle").forEach((button) => {
 
   button.addEventListener("click", () => {
     const effectsForced = container.classList.toggle("is-effects-forced");
+    const modeLabel = effectsForced ? "Image seule" : "Texte + flou";
 
     button.setAttribute("aria-pressed", String(effectsForced));
-    button.setAttribute(
-      "aria-label",
-      effectsForced
-        ? "Désactiver le texte et le blur"
-        : "Activer le texte et le blur",
-    );
+    button.dataset.i18nLabel = modeLabel;
+    button.setAttribute("aria-label", modeLabel);
 
     if (label) {
-      label.textContent = effectsForced
-        ? "Désactiver texte + blur"
-        : "Activer texte + blur";
+      label.dataset.i18n = modeLabel;
+      label.textContent = modeLabel;
     }
+
+    window.translatePortfolio?.();
   });
 });

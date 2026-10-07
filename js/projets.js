@@ -34,20 +34,18 @@ if (effectsToggle) {
 
   effectsToggle.addEventListener("click", () => {
     const effectsForced = projectsPage.classList.toggle("is-effects-forced");
+    const modeLabel = effectsForced ? "Image seule" : "Texte + flou";
 
     effectsToggle.setAttribute("aria-pressed", String(effectsForced));
-    effectsToggle.setAttribute(
-      "aria-label",
-      effectsForced
-        ? "Désactiver le texte et le blur"
-        : "Activer le texte et le blur",
-    );
+    effectsToggle.dataset.i18nLabel = modeLabel;
+    effectsToggle.setAttribute("aria-label", modeLabel);
 
     if (label) {
-      label.textContent = effectsForced
-        ? "Désactiver texte + blur"
-        : "Activer texte + blur";
+      label.dataset.i18n = modeLabel;
+      label.textContent = modeLabel;
     }
+
+    window.translatePortfolio?.();
   });
 }
 
