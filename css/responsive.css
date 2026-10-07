@@ -119,17 +119,20 @@
   }
 
   .project-navigation-footer {
-    grid-template-columns: 1fr;
-    justify-items: stretch;
+    grid-template-columns: minmax(0, 1fr);
+    justify-items: center;
     gap: 0.85rem;
     margin-top: 6rem;
   }
 
-  .nav-btn-prev,
-  .nav-btn-next,
-  .nav-btn-return {
+  .project-navigation-footer .nav-btn-prev,
+  .project-navigation-footer .nav-btn-next,
+  .project-navigation-footer .nav-btn-return {
     grid-column: 1;
-    width: 100%;
+    grid-row: auto;
+    justify-self: center;
+    width: fit-content;
+    max-width: 100%;
   }
 }
 
@@ -609,34 +612,28 @@
   }
 
   .project-navigation-footer {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .nav-btn-prev {
     grid-column: 1;
-    grid-row: 1;
-    width: 100%;
   }
 
   .nav-btn-next {
     grid-column: 1;
-    grid-row: 2;
-    width: 100%;
   }
 
   .nav-btn-return {
     grid-column: 1;
-    grid-row: 3;
-    justify-self: stretch;
-    width: 100% !important;
-    text-align: center;
+    grid-row: auto;
   }
 
   .project-navigation-footer .nav-btn {
-    justify-self: stretch;
+    justify-self: center;
     max-width: 100%;
     min-width: 0;
     box-sizing: border-box;
+    width: fit-content;
     text-align: center;
     overflow-wrap: anywhere;
   }
