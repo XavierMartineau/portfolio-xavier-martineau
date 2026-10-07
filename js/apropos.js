@@ -161,9 +161,10 @@ const initializeCreationProcess = (images) => {
             (filename, imageIndex) => `
               <div class="creation-process-frame">
                 <img
-                  src="${encodeURI(`../processus_creation/${filename}`)}"
+                  src="${encodeURI(`../processus_creation/miniatures/${filename}`)}"
                   alt="${creationStepAlt(boxIndex + imageIndex + 1)}"
                   ${boxIndex === 0 ? "" : 'loading="lazy"'}
+                  decoding="async"
                 />
               </div>
             `,

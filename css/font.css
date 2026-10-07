@@ -5,8 +5,8 @@
 @font-face {
   /* Police de lecture utilisee pour les descriptions et les informations detaillees. */
   font-family: "Inter";
-  src: url("../assets/fonts/inter/Inter-VariableFont_opszwght.ttf")
-    format("truetype");
+  src: url("../assets/fonts/inter/Inter-VariableFont_opszwght.woff2")
+    format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -15,7 +15,7 @@
 @font-face {
   /* Police expressive reservee aux titres principaux du portfolio. */
   font-family: "Speedy";
-  src: url("../assets/fonts/speedy/SpeedyRegular-7BLoE.ttf") format("truetype");
+  src: url("../assets/fonts/speedy/SpeedyRegular-7BLoE.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -24,7 +24,8 @@
 @font-face {
   /* Police des labels courts, des rubriques et des informations de contexte. */
   font-family: "Syne";
-  src: url("../assets/fonts/syne/Syne-VariableFont_wght.ttf") format("truetype");
+  src: url("../assets/fonts/syne/Syne-VariableFont_wght.woff2")
+    format("woff2");
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
@@ -33,8 +34,8 @@
 @font-face {
   /* Police des boutons, titres de sections et indicateurs de navigation. */
   font-family: "Space-Grotesk";
-  src: url("../assets/fonts/space/SpaceGrotesk-VariableFont_wght.ttf")
-    format("truetype");
+  src: url("../assets/fonts/space/SpaceGrotesk-VariableFont_wght.woff2")
+    format("woff2");
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;

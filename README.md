@@ -131,13 +131,13 @@ Le projet est un site statique. Aucun serveur ou système de compilation n'est n
 
 ```text
 index.html                 Splash screen et point d'entrée
-assets/                    Polices, images et SVG
+assets/                    Polices WOFF2, images et SVG
 css/                       Styles globaux, composants et responsive
 data/                      Données JSON du projet
 documentation/             Journal, planification et maquettes
 html/                      Pages du portfolio
 js/                        Traduction, navigation, splash et projets
-processus_creation/        Ressources liées au processus de création
+processus_creation/        Images originales et miniatures WebP du processus
 ```
 
 ## Documentation
