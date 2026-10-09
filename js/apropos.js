@@ -1,5 +1,5 @@
-// Role : donnees et rendu interactif de la page A propos.
-// Parcours : construit les informations et la timeline, puis charge la galerie et ses controles de visionneuse.
+// Role : construit le contenu de la page À propos et pilote sa galerie interactive.
+// Parcours : rend les informations et la chronologie, puis charge les maquettes et configure la visionneuse.
 // SECTION 1 : informations personnelles affichees dans la premiere carte.
 // Génère les cartes d'informations personnelles de la page À propos.
 const ABOUT_INFO = [
@@ -85,6 +85,7 @@ if (timelineContainer) {
 // La liste des maquettes est stockée dans data/projects.json.
 let CREATION_PROCESS_IMAGES = [];
 
+// Melange une copie pour garder la liste source intacte pendant le rendu.
 const shuffleImages = (images) => {
   // Copie puis melange les images pour ne pas modifier la liste d'origine.
   const shuffledImages = [...images];
@@ -128,11 +129,12 @@ const creationStepAlt = (stepNumber) =>
     ? `Step ${stepNumber} of the creative process`
     : `Étape ${stepNumber} du processus de création`;
 
-// Ferme la visionneuse en passant par l'API native de l'element dialog.
+// Ferme la visionneuse avec l'API native du dialogue, si elle est ouverte.
 const closeCreationLightbox = () => {
   if (creationLightbox?.open) creationLightbox.close();
 };
 
+// Cree la pile de maquettes et relie ses controles a l'element actuellement actif.
 const initializeCreationProcess = (images) => {
   if (!creationProcessStack) return;
 
@@ -143,6 +145,7 @@ const initializeCreationProcess = (images) => {
   let activeLightboxImage = 0;
 
   const updateCreationLightbox = () => {
+    // Synchronise le fichier, son texte alternatif et le compteur de la visionneuse.
     const filename = CREATION_PROCESS_IMAGES[activeLightboxImage];
     creationLightboxImage.src = encodeURI(`../processus_creation/${filename}`);
     creationLightboxImage.alt = `Étape ${activeLightboxImage + 1} du processus de création`;
@@ -255,7 +258,7 @@ const initializeCreationProcess = (images) => {
     updateCreationStack("next");
   });
 
-  // L'animation automatique ne tourne que lorsque la section est visible.
+  // Suspend la rotation hors ecran et respecte la preference de mouvement reduit.
   let creationProcessTimer = null;
   const stopCreationProcessAutoplay = () => {
     if (creationProcessTimer) {
@@ -302,7 +305,7 @@ const initializeCreationProcess = (images) => {
   updateCreationStack();
 };
 
-// SECTION 4 : chargement de la liste d'images et branchement de la visionneuse.
+// SECTION 4 : charge les noms de fichiers et initialise la galerie apres la reponse JSON.
 fetch("../data/projects.json")
   .then((response) => {
     if (!response.ok) throw new Error("Impossible de charger les images");

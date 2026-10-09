@@ -1,5 +1,5 @@
-// Role : dictionnaire, rendu et controles de traduction du portfolio.
-// Parcours : charge les correspondances, applique la langue, gere les boutons et retraduit le contenu ajoute.
+// Role : traduit les textes visibles et synchronise les controles de langue du portfolio.
+// Parcours : conserve les libelles source, applique la langue choisie et observe le contenu ajoute ensuite.
 // SECTION 1 : dictionnaire francais-anglais utilise par les textes et attributs.
 const translations = {
   en: {
@@ -242,6 +242,7 @@ const translations = {
 
 // SECTION 2 : langue sauvegardee et correspondances conservees entre traductions.
 const languageStorageKey = "portfolio-language";
+// Seules les langues presentes dans le dictionnaire peuvent etre memorisees.
 const supportedLanguages = ["fr", "en"];
 const savedLanguage = localStorage.getItem(languageStorageKey);
 const currentLanguage = supportedLanguages.includes(savedLanguage)
@@ -254,6 +255,8 @@ const englishToFrench = new Map(
 );
 
 const normalizeText = (text) => text.replace(/\s+/g, " ").trim();
+
+// Retablit les espaces de bord apres traduction pour preserver la structure du texte HTML.
 const preserveWhitespace = (source, replacement) => {
   // Conserve les espaces autour des textes pour ne pas casser la mise en page HTML.
   const leadingWhitespace = source.match(/^\s*/)?.[0] || "";
@@ -261,7 +264,7 @@ const preserveWhitespace = (source, replacement) => {
   return `${leadingWhitespace}${replacement}${trailingWhitespace}`;
 };
 
-// SECTION 3 : traduction des libelles accessibles et du texte des pages.
+// SECTION 3 : traduit les attributs accessibles, les textes balises et les noeuds de texte libres.
 const translateTextNodes = (language) => {
   // Traduit d'abord les attributs accessibles, puis les contenus marques et enfin le texte libre.
   document.querySelectorAll("[aria-label]").forEach((element) => {
@@ -386,7 +389,7 @@ const translateTextNodes = (language) => {
   });
 };
 
-// SECTION 4 : maintient la langue du document et les boutons en accord.
+// SECTION 4 : garde la langue declaree, le stockage et l'etat des boutons synchronises.
 const updateLanguageControls = (language) => {
   // Synchronise l'attribut lang, l'etat actif et l'accessibilite des boutons de langue.
   document.documentElement.lang = language;
@@ -415,6 +418,7 @@ const setLanguage = (language) => {
   updateLanguageControls(language);
 };
 
+// Point d'entree global appele apres l'ajout de contenu par les autres scripts.
 window.translatePortfolio = (language = document.documentElement.lang) => {
   if (supportedLanguages.includes(language)) {
     translateTextNodes(language);
@@ -443,7 +447,7 @@ document.querySelectorAll(".language-switcher button").forEach((button) => {
 
 setLanguage(currentLanguage);
 
-// SECTION 5 : bouton de retour en haut, absent du splash et actif a l'approche/pendant le footer.
+// SECTION 5 : ajoute un retour en haut sur les pages de contenu, pas sur l'ecran d'introduction.
 const footer = document.querySelector(".footer");
 if (!document.querySelector("#splash") && footer) {
   const backToTop = document.createElement("button");
@@ -488,7 +492,7 @@ if (!document.querySelector("#splash") && footer) {
   updateBackToTop();
 }
 
-// SECTION 6 : retraduit les cartes ajoutees dynamiquement lorsque l'anglais est actif.
+// SECTION 6 : retraduit les noeuds ajoutes dynamiquement sans observer les mutations en boucle.
 let translationObserverTimer;
 const translationObserver = new MutationObserver(() => {
   if (document.documentElement.lang !== "en") {

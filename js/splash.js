@@ -1,5 +1,5 @@
-// Role : initialisation, dessin et transition de l'ecran d'introduction.
-// Parcours : mesure le canvas, cree les particules, anime le fond et redirige apres le clic d'entree.
+// Role : anime le fond de l'introduction et ouvre la page d'accueil.
+// Parcours : ajuste le canvas, dessine les particules et leur halo, puis redirige apres validation.
 // ==============================
 // RÉFÉRENCES DE L'ÉCRAN D'INTRODUCTION
 // ==============================
@@ -8,8 +8,8 @@ const ctx = canvas.getContext("2d");
 const splash = document.getElementById("splash");
 const enterBtn = document.getElementById("enter-btn");
 
-// SECTION 1 : etat des particules et position du pointeur utilisee pour le halo.
-// Position initiale de la souris, placée hors écran au chargement
+// SECTION 1 : conserve les particules et la position du pointeur qui pilote le halo.
+// Le pointeur reste hors champ jusqu'au premier mouvement de la souris.
 let mouse = { x: -1000, y: -1000 };
 let particles = [];
 
@@ -27,7 +27,7 @@ window.addEventListener("resize", resize);
 // SECTION 2 : palette partagee par les points dessines sur le canvas.
 const colors = ["#6366f1", "#ff00ea", "#00f3ff", "#63ff9b"];
 
-// Donnees et initialisation des particules.
+// Cree les points une fois; leur position et leur apparence varient aleatoirement.
 // ==============================
 // INITIALISATION DES PARTICULES
 // ==============================
@@ -41,7 +41,7 @@ particles = Array.from({ length: 120 }, () => ({
   alpha: Math.random() * 0.38 + 0.14, // Contraste légèrement renforcé
 }));
 
-// Boucle de rendu et interactions de la souris.
+// Redessine le fond a chaque image et relance sa propre animation.
 // ==============================
 // BOUCLE DE DESSIN ET D'ANIMATION
 // ==============================
@@ -65,7 +65,7 @@ function draw() {
   ctx.fillStyle = grd;
   ctx.fillRect(0, 0, canvas.width, canvas.height);
 
-  // Mise à jour de la position de chaque particule et affichage
+  // Deplace chaque point et le fait reapparaitre de l'autre cote apres un bord.
   particles.forEach((p) => {
     // Déplacement de la particule et boucle infinie sur les bords de l'écran
     p.x = (p.x + p.vx + canvas.width) % canvas.width;
@@ -80,7 +80,7 @@ function draw() {
     ctx.globalAlpha = 1; // Réinitialisation de l'opacité globale
   });
 
-  // Connexion par des lignes entre les particules qui sont proches les unes des autres
+  // Relie uniquement chaque paire une fois; les lignes s'estompent avec la distance.
   for (let i = 0; i < particles.length; i++) {
     for (let j = i + 1; j < particles.length; j++) {
       const dx = particles[i].x - particles[j].x;

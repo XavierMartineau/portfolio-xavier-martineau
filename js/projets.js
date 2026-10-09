@@ -1,5 +1,5 @@
-// Role : filtrage des cartes et effets d'affichage de la page projets.
-// Parcours : attend les projets, revele les cartes visibles, synchronise les effets tactiles et filtre le catalogue.
+// Role : gere les filtres et les effets des cartes du catalogue de projets.
+// Parcours : attend leur rendu, revele les cartes visibles, puis synchronise filtres et commandes tactiles.
 import { projectsReady } from "./projects-data.js";
 
 await projectsReady;
@@ -10,7 +10,7 @@ const projectCards = document.querySelectorAll(".project-card");
 
 // Anime l'apparition des cartes quand elles deviennent visibles dans la fenetre.
 // Révèle chaque carte uniquement lorsqu'elle entre dans la fenêtre.
-// SECTION 2 : apparition progressive avec solution de repli sans IntersectionObserver.
+// SECTION 2 : revele les cartes a l'ecran et les affiche toutes si l'observateur manque.
 if ("IntersectionObserver" in window) {
   const projectRevealObserver = new IntersectionObserver(
     (entries, observer) => {
@@ -28,7 +28,7 @@ if ("IntersectionObserver" in window) {
 
 // Force ou rétablit le rendu hover des cartes sur mobile et tablette.
 const effectsToggle = document.querySelector(".projects-effects-toggle");
-// SECTION 3 : controle tactile des effets de survol sur les petits ecrans.
+// SECTION 3 : rend les effets de survol accessibles sur les appareils tactiles.
 if (effectsToggle) {
   const projectsPage = document.querySelector(".projects-page");
   const label = effectsToggle.querySelector(".projects-effects-toggle-label");
@@ -51,7 +51,7 @@ if (effectsToggle) {
 }
 
 // Maintient les filtres synchronises et masque les cartes hors categories selectionnees.
-// SECTION 4 : garde les boutons actifs synchronises et filtre les cartes visibles.
+// SECTION 4 : autorise plusieurs categories actives et masque les cartes sans correspondance.
 categoryButtons.forEach((button) => {
   button.addEventListener("click", () => {
     if (button.dataset.category === "all") {
@@ -78,6 +78,7 @@ categoryButtons.forEach((button) => {
       }
     }
 
+    // Un filtre de categorie peut etre combine avec les autres; « Tous » les desactive.
     const selectedCategories = Array.from(
       document.querySelectorAll(
         '.project-category-btn.active:not([data-category="all"])',

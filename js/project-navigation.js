@@ -1,6 +1,5 @@
-// Role : navigation entre projets, defilement et carousel de la page d'accueil.
-// Rend les cartes de projets accessibles depuis la grille et la page d'accueil.
-// Parcours : attend les donnees, relie le scroll et les cartes, puis configure carousel et effets tactiles.
+// Role : gere le defilement, l'acces aux projets et le carousel de l'accueil.
+// Parcours : attend le rendu des cartes, relie les controles clavier/souris, puis configure les effets tactiles.
 import { projectsReady } from "./projects-data.js";
 
 await projectsReady;
@@ -28,6 +27,7 @@ const featuredProjects = document.querySelector("#featured-projects");
 
 // SECTION 2 : acces clavier/clic aux projets vedettes et mise a jour du scroll.
 const scrollToFeaturedProjects = () => {
+  // La cible est facultative, car le meme script peut etre charge sur d'autres pages.
   featuredProjects?.scrollIntoView({ behavior: "smooth", block: "start" });
 };
 
@@ -47,6 +47,7 @@ const updateScrollIndicator = () => {
     return;
   }
 
+  // Normalise le defilement sur la premiere hauteur d'ecran et borne sa progression.
   const maxScroll = Math.max(window.innerHeight * 0.9, 1);
   const progress = Math.min(Math.max(window.scrollY / maxScroll, 0), 1);
   const startThreshold = progress < 0.04;
@@ -71,7 +72,7 @@ window.addEventListener("scroll", updateScrollIndicator, { passive: true });
 window.addEventListener("resize", updateScrollIndicator);
 updateScrollIndicator();
 
-// SECTION 3 : rend chaque carte navigable a la souris et au clavier.
+// SECTION 3 : conserve le lien natif des cartes-liens et rend les cartes restantes accessibles.
 navigableProjectCards.forEach((card) => {
   // Conserve le comportement de lien si une carte est cliquée directement.
   card.addEventListener("click", (event) => {
@@ -97,8 +98,7 @@ navigableProjectCards.forEach((card) => {
   }
 });
 
-// SECTION 4 : carousel mobile/tablette, avec un index independant par grille.
-// Anime la pile uniquement lorsque les flèches mobile/tablette sont utilisées.
+// SECTION 4 : pilote chaque carousel independamment et anime la carte selectionnee.
 document.querySelectorAll(".featured-grid").forEach((grid) => {
   // Chaque grille possede son propre index pour fonctionner sans etat global partage.
   const cards = [...grid.querySelectorAll(".featured-card")];
@@ -108,6 +108,7 @@ document.querySelectorAll(".featured-grid").forEach((grid) => {
     return;
   }
 
+  // Met a jour les classes de pile; le modulo permet de boucler aux deux extremites.
   const updateCarousel = (nextIndex, direction) => {
     grid.dataset.direction = direction;
 

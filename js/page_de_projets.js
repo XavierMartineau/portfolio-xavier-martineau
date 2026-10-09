@@ -1,11 +1,11 @@
-// Role : selection, rendu et interactions de la page detail projet.
-// Les projets sont centralisés dans projects-data.js pour éviter les doublons.
-// Parcours : selectionne un projet, remplit ses contenus/themes, initialise ses medias puis sa navigation.
+// Role : selectionne un projet et configure son contenu, ses medias et ses controles.
+// Les donnees sont centralisees dans projects-data.js pour eviter les copies entre pages.
+// Parcours : lit l'identifiant d'URL, prepare le theme et les contenus, puis active medias et navigation.
 import { projectsReady } from "./projects-data.js";
 
 const projects = await projectsReady;
 
-// SECTION 1 : identifiant courant, ordre des projets et donnees de presentation.
+// SECTION 1 : determine le projet courant et prepare les reperes d'affichage.
 // =========================================================================
 // 2. RÉCUPÉRATION DE L’ID DU PROJET DANS L'URL
 // =========================================================================
@@ -19,9 +19,7 @@ const project = projects[projectId];
 let activeEmbedSource = null;
 let projectMuted = false;
 
-// =========================================================================
-// 3. FONCTION UTILITAIRE POUR INSERER LES TEXTES
-// =========================================================================
+// Insere un texte uniquement si l'element correspondant existe sur cette page.
 const setText = (selector, value) => {
   const el = document.querySelector(selector);
   if (el) el.textContent = value;
@@ -62,7 +60,7 @@ const externalProjectLinks = {
   2: "https://xaviermartineau.github.io/La_Maison_xavier/",
   6: "https://xaviermartineau.github.io/Atelier-chromatique-XM/",
 };
-// Les sites externes demandent une confirmation explicite avant leur ouverture.
+// Les liens sortants attendent une confirmation pour eviter une ouverture accidentelle.
 const externalProjectLink = document.querySelector("#external-project-link");
 const externalProjectModal = document.querySelector("#external-project-modal");
 const externalProjectCancel = document.querySelector(
@@ -123,8 +121,7 @@ setText(
     "Un projet abouti, performant et prêt pour l'intégration en production au sein du portfolio.",
 );
 
-// SECTION 2 : contenus editoriaux et competences associes au projet selectionne.
-// Compétences affichées selon la catégorie du projet consulté.
+// SECTION 2 : affiche les competences pertinentes pour la categorie selectionnee.
 const categorySkills = {
   "3D": [
     ["Modélisation 3D", 75],
@@ -232,12 +229,14 @@ const projectMediaFallbackMessage = document.querySelector(
 );
 let mediaFallbackTimer = null;
 
+// Affiche un lien de remplacement si le media externe ne se charge pas a temps.
 const showMediaFallback = () => {
   if (projectMediaFallback && project.youtubeUrl) {
     projectMediaFallback.hidden = false;
   }
 };
 
+// Relance le delai du message de secours pour la video du premier projet.
 const resetMediaFallbackTimer = () => {
   if (mediaFallbackTimer) {
     window.clearTimeout(mediaFallbackTimer);
@@ -278,7 +277,7 @@ const markImageAsLoaded = () => {
   }
 };
 
-// Termine immédiatement l'état de chargement pour les projets qui utilisent une image.
+// Termine le chargement visuel lorsque le projet utilise une image locale.
 const finishStaticMediaLoading = () => {
   if (!activeEmbedSource) {
     setEmbedLoading(false);
@@ -296,9 +295,7 @@ if (projectEmbed) {
   projectEmbed.addEventListener("error", showMediaFallback);
 }
 
-// =========================================================================
-// 6. GESTION DE L'AFFICHAGE DES IMAGES
-// =========================================================================
+// SECTION 6 : injecte une image secondaire seulement pour les projets qui en ont une.
 if (project.secondaryImage) {
   let imagesContainer = visual.querySelector(".images-container");
   if (!imagesContainer) {
@@ -395,7 +392,7 @@ const renderInteractive = () => {
 // =========================================================================
 // 9. LOGIQUE PRINCIPALE D’AFFICHAGE DE LA PAGE
 // =========================================================================
-// Choisit entre un embed, un media statique ou une maquette interactive.
+// Choisit le mode de presentation selon les medias disponibles et le type de projet.
 const isMobileScreen = window.matchMedia("(max-width: 768px)").matches;
 
 if (embeddedProjects[projectId] && projectEmbed) {
@@ -444,7 +441,7 @@ if (embeddedProjects[projectId] && projectEmbed) {
   }
 }
 
-// Révèle les panneaux au fur et à mesure qu'ils approchent de la fenêtre.
+// Revele les panneaux a l'approche de l'ecran, avec affichage immediat en repli.
 const detailPanels = document.querySelectorAll(
   ".project-content-grid > *, .project-navigation-footer",
 );
@@ -464,9 +461,7 @@ if ("IntersectionObserver" in window) {
   detailPanels.forEach((panel) => panel.classList.add("is-content-ready"));
 }
 
-// =========================================================================
-// 10. GESTION DES RESSOURCES DES IFRAMES (STOP / REPRENDRE)
-// =========================================================================
+// SECTION 10 : suspend l'iframe hors de la page et la restaure au retour.
 const stopEmbeddedProject = () => {
   if (!activeEmbedSource || !projectEmbed) {
     return;
@@ -498,9 +493,7 @@ document.addEventListener("visibilitychange", () => {
 
 window.addEventListener("pagehide", stopEmbeddedProject);
 
-// =========================================================================
-// 11. BOUTON AGRANDIR
-// =========================================================================
+// SECTION 11 : synchronise l'agrandissement du media et l'etat accessible du bouton.
 const expandBtn = document.querySelector("#project-expand");
 const projectVisual = document.querySelector(".project-visual");
 
@@ -515,15 +508,14 @@ if (expandBtn && projectVisual) {
   });
 }
 
-// =========================================================================
-// 12. GÉNÉRATION DES TAGS DE TECHNOLOGIES
-// =========================================================================
+// SECTION 12 : construit les tags de technologies avec la couleur de categorie.
 const technologyCategoryClasses = {
   "3D": "couleur-categorie--3d",
   "2D": "couleur-categorie--2d",
   "Site web": "couleur-categorie--site",
 };
 
+// Remplace le contenu du conteneur indique par les technologies du projet courant.
 const renderTechnologyTags = (selector) => {
   const technologies = document.querySelector(selector);
   if (!technologies || !project.technologies) return;
@@ -550,9 +542,7 @@ if (returnProjectBtn) {
   returnProjectBtn.href = "projets.html";
 }
 
-// =========================================================================
-// 14. NAVIGATION DYNAMIQUE (PRÉCÉDENT / SUIVANT)
-// =========================================================================
+// SECTION 14 : configure les liens precedent/suivant selon l'ordre numerique des projets.
 {
   const indexEl = document.getElementById("project-index");
   const nextLinkEl = document.getElementById("next-project-link");

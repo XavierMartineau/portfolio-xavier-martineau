@@ -1,25 +1,30 @@
-// Role : rendu commun des cartes a partir des projets charges depuis le JSON.
-// Parcours : prepare les libelles de categorie, construit les cartes, remplit les grilles puis applique la langue.
+// Role : construit les cartes du catalogue et des projets en vedette depuis les donnees JSON.
+// Parcours : normalise les categories, fabrique chaque variante de carte, puis met a jour les grilles.
 import { projectsReady } from "./projects-data.js";
 
 // SECTION 1 : conversion des categories en classes CSS et libelles reutilisables.
+// Convertit une categorie en valeur stable utilisee par les filtres CSS et JavaScript.
 const categoryToSlug = (category) =>
   category === "Site web" ? "site-web" : category.toLowerCase();
 
+// Associe une couleur de presentation a chaque identifiant de projet.
 const categoryToColor = (projectId) =>
   ({ 1: "indigo", 2: "rose", 3: "cyan", 4: "rose", 5: "indigo", 6: "indigo" })[
     projectId
   ] || "indigo";
 
+// Renvoie la classe du badge partagee par les etiquettes de categorie.
 const categoryToBadgeClass = (category) =>
   category === "3D" ? "3d" : category === "Site web" ? "site" : "2d";
 
+// Genere les badges de technologie pour la carte de detail du catalogue.
 const technologiesMarkup = (project, className) =>
   project.technologies
     .map((technology) => `<span class="${className}">${technology}</span>`)
     .join("");
 
 // SECTION 2 : fabrique les deux variantes de carte utilisees dans le portfolio.
+// Construit un lien compact utilise dans le carousel de la page d'accueil.
 const createFeaturedCard = (projectId, project) => {
   const card = document.createElement("a");
   const color = categoryToColor(projectId);
@@ -44,6 +49,7 @@ const createFeaturedCard = (projectId, project) => {
   return card;
 };
 
+// Construit une carte complete, avec les attributs requis par les filtres.
 const createProjectCard = (projectId, project) => {
   const card = document.createElement("article");
   const badgeClass = categoryToBadgeClass(project.category);
@@ -69,8 +75,8 @@ const createProjectCard = (projectId, project) => {
   return card;
 };
 
+// Remplace les cartes de secours uniquement dans les grilles presentes sur la page.
 const renderProjectCards = (projects) => {
-  // Remplace le contenu de secours uniquement dans les grilles presentes sur la page.
   const featuredGrid = document.querySelector(".featured-grid");
   const projectsGrid = document.querySelector("#projects-container");
   const entries = Object.entries(projects);
