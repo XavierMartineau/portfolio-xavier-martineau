@@ -21,10 +21,12 @@
   width: 2.75rem;
   height: 2.75rem;
   padding: 0;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(0, 243, 255, 0.55);
   border-radius: 50%;
-  background: rgba(0, 0, 0, 0.62);
-  color: #ffffff;
+  background:
+    linear-gradient(135deg, rgba(0, 243, 255, 0.16), transparent 55%),
+    rgba(8, 10, 20, 0.88);
+  color: #00f3ff;
   font-size: 1.35rem;
   line-height: 1;
   cursor: pointer;
@@ -32,18 +34,31 @@
   transition:
     background-color 0.25s ease,
     border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    color 0.25s ease,
     transform 0.25s ease;
+  box-shadow:
+    0 0 12px rgba(0, 243, 255, 0.24),
+    inset 0 0 10px rgba(0, 243, 255, 0.1);
+  text-shadow: 0 0 8px currentColor;
 }
 
 .carousel-btn:hover,
 .carousel-btn:focus-visible {
-  background: rgba(123, 128, 255, 0.92);
-  border-color: #7b80ff;
+  background:
+    linear-gradient(135deg, rgba(0, 243, 255, 0.3), rgba(255, 0, 234, 0.22)),
+    rgba(8, 10, 20, 0.96);
+  border-color: #ff00ea;
+  color: #ffffff;
+  box-shadow:
+    0 0 16px rgba(0, 243, 255, 0.5),
+    0 0 22px rgba(255, 0, 234, 0.32),
+    inset 0 0 12px rgba(0, 243, 255, 0.18);
   transform: translateY(-50%) scale(1.08);
 }
 
 .carousel-btn:focus-visible {
-  outline: 2px solid #ffffff;
+  outline: 2px solid #00f3ff;
   outline-offset: 3px;
 }
 
@@ -78,7 +93,25 @@
   /* Sur mobile, le carousel devient une pile navigable par fleches. */
   .featured-grid-container {
     box-sizing: border-box;
-    padding: 0 3.25rem 4rem;
+    padding: 0 2.75rem 4rem;
+  }
+
+  /* Les cartes superposees restent dans la grille pour que sa hauteur
+     s'adapte a leur contenu au lieu de couper les textes sur mobile. */
+  .featured-grid {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    grid-auto-rows: auto;
+    min-height: 0 !important;
+    overflow: visible;
+  }
+
+  .featured-grid .featured-card {
+    position: relative;
+    grid-area: 1 / 1;
+    inset: auto;
+    height: auto;
+    min-height: 0 !important;
   }
 
   .featured-grid-container .carousel-btn {

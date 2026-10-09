@@ -31,6 +31,32 @@ body {
 
 html {
   scroll-behavior: smooth;
+  scrollbar-color: #00f3ff #101018;
+  scrollbar-width: thin;
+}
+
+/* La barre de defilement reprend les accents neon cyan, indigo et magenta du site. */
+html::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+html::-webkit-scrollbar-track {
+  border: 1px solid rgba(0, 243, 255, 0.16);
+  background: #101018;
+}
+
+html::-webkit-scrollbar-thumb {
+  border: 2px solid #101018;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #00f3ff, #6366f1 55%, #ff00ea);
+  box-shadow:
+    0 0 10px rgba(0, 243, 255, 0.45),
+    0 0 14px rgba(255, 0, 234, 0.25);
+}
+
+html::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #63ff9b, #00f3ff 55%, #ff00ea);
 }
 
 /* Fond grille commun. */
@@ -2938,4 +2964,40 @@ html[lang="en"] .contact-title-en {
   font-family: monospace;
   font-size: 0.75rem;
   letter-spacing: 0.12em;
+}
+
+/* Curseur fleche personnalise et variante interactive assortis a l'identite neon. */
+html body {
+  cursor: url("../assets/svg/cursor-cyberpunk.svg") 3 1, auto;
+}
+
+html body :is(
+  a,
+  button,
+  [role="button"],
+  input[type="button"],
+  input[type="submit"],
+  input[type="reset"],
+  label[for],
+  select,
+  summary,
+  .gc,
+  .featured-card,
+  .scroll-indicator
+) {
+  cursor: url("../assets/svg/cursor-cyberpunk-link.svg") 9 5, pointer;
+}
+
+/* Preserve le curseur texte dans les champs de saisie et zones editables. */
+html body :is(
+  input[type="text"],
+  input[type="email"],
+  input[type="search"],
+  input[type="url"],
+  input[type="tel"],
+  input[type="password"],
+  textarea,
+  [contenteditable="true"]
+) {
+  cursor: text;
 }

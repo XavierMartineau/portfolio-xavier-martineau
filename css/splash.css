@@ -398,5 +398,14 @@ body {
   background: #00f3ff;
   border-radius: 50%;
   box-shadow: 0 0 6px #00f3ff;
+}
+
+/* Garde le curseur cyberpunk sur l'ecran d'introduction, avant l'accueil. */
+html body {
+  cursor: url("../assets/svg/cursor-cyberpunk.svg") 3 1, auto;
+}
+
+html body :is(a, button, [role="button"], .enter-btn) {
+  cursor: url("../assets/svg/cursor-cyberpunk-link.svg") 9 5, pointer;
   animation: splash-pulse 1.4s infinite;
 }
