@@ -1711,7 +1711,8 @@ html[lang="en"] .contact-title-en {
   text-align: center;
 }
 
-.project-overview-technologies .detail-tags {
+.project-overview-technologies .detail-tags,
+.project-overview-tools .software-list {
   margin-top: 0.8rem;
 }
 

@@ -206,7 +206,7 @@ const translations = {
     "DÉFI TECHNIQUE": "TECHNICAL CHALLENGE",
     RÉSULTAT: "RESULT",
     "MODE DE RÉALISATION": "PROJECT FORMAT",
-    "LOGICIELS UTILISÉS": "SOFTWARE USED",
+    "OUTILS": "TOOLS",
     "STACK COMPLET": "FULL STACK",
     "Cette vidéo est disponible sur YouTube.":
       "This video is available on YouTube.",
