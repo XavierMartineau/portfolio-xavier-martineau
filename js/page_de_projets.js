@@ -623,6 +623,52 @@ const renderTechnologyTags = (selector) => {
 renderTechnologyTags("#project-technologies");
 renderTechnologyTags("#project-full-stack");
 
+// SECTION 12B : logiciels utilises par projet, avec leur icone SVG locale.
+const softwareCatalog = {
+  maya: { name: "Autodesk Maya", icon: "maya.svg" },
+  davinci: { name: "DaVinci Resolve", icon: "davinci-resolve.svg" },
+  photoshop: { name: "Adobe Photoshop", icon: "photoshop.svg" },
+  illustrator: { name: "Adobe Illustrator", icon: "illustrator.svg" },
+  github: { name: "GitHub", icon: "github.svg" },
+  vscode: { name: "Visual Studio Code", icon: "vscode.svg" },
+};
+
+const projectSoftware = {
+  1: ["maya", "davinci"],
+  2: ["github", "vscode"],
+  3: ["illustrator"],
+  4: ["illustrator"],
+  5: ["photoshop", "illustrator"],
+  6: ["github", "vscode"],
+};
+
+const renderSoftware = () => {
+  const panel = document.querySelector("#project-software-panel");
+  const list = document.querySelector("#project-software");
+  const keys = projectSoftware[Number(projectId)] || [];
+  if (!panel || !list || keys.length === 0) {
+    // Cache le panneau quand aucun logiciel n'est associe au projet.
+    return;
+  }
+
+  list.replaceChildren();
+  keys.forEach((key) => {
+    const software = softwareCatalog[key];
+    const item = document.createElement("span");
+    item.className = "software-item";
+    const icon = document.createElement("img");
+    icon.src = `../assets/svg/outils/${software.icon}`;
+    icon.alt = "";
+    icon.width = 32;
+    icon.height = 32;
+    item.append(icon, document.createTextNode(software.name));
+    list.append(item);
+  });
+  panel.hidden = false;
+};
+
+renderSoftware();
+
 // =========================================================================
 // 13. LIEN DE RETOUR À LA LISTE DES PROJETS
 // =========================================================================

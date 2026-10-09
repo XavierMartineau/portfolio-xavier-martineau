@@ -1143,3 +1143,15 @@
 - Conservation du lien du projet dans « Voir le projet dans un nouvel onglet » et du lien YouTube pour la vidéo.
 
 ---
+
+### Outil: GitHub Copilot
+
+### <u>Prompt</u>: Ajouter dans chaque projet les icônes SVG des logiciels utilisés.
+
+### Réponse:
+
+- Création d'icônes SVG locales dans `assets/svg/outils/` (Maya, DaVinci Resolve, Photoshop, Illustrator, GitHub, Visual Studio Code).
+- Nouveau panneau « LOGICIELS UTILISÉS » sur la page projet, rendu par `page_de_projets.js` selon le projet.
+- Ajout du style des puces et de la traduction anglaise.
+
+---

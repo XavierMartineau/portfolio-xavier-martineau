@@ -2385,6 +2385,33 @@ html[lang="en"] .contact-title-en {
   margin-top: 1rem;
 }
 
+/* Logiciels utilises : puces avec icone SVG et nom. */
+.software-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.software-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.4rem 0.8rem 0.4rem 0.4rem;
+  border: 1px solid rgba(0, 240, 255, 0.45);
+  border-radius: 5px;
+  background: rgba(0, 240, 255, 0.07);
+  color: #d9faff;
+  font-family: "Space-Grotesk", sans-serif;
+  font-size: 0.85rem;
+}
+
+.software-item img {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+}
+
 .detail-tags span {
   padding: 0.4rem 0.75rem;
   border: 1px solid rgba(123, 128, 255, 0.5);
