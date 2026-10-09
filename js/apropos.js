@@ -13,6 +13,7 @@ const infoContainer = document.querySelector("#info-container");
 
 // Transforme la source de donnees en cartes HTML uniquement si la section existe.
 if (infoContainer) {
+  // Garde le script reutilisable sur les pages qui n'affichent pas ces renseignements.
   ABOUT_INFO.forEach((item) => {
     const card = document.createElement("article");
     card.className = "about-info-card";
@@ -62,6 +63,7 @@ const timelineContainer = document.querySelector("#timeline-container");
 
 // Construit la timeline dans l'ordre chronologique fourni par ABOUT_TIMELINE.
 if (timelineContainer) {
+  // Rend une carte par entree, en gardant les textes regroupes dans la constante.
   ABOUT_TIMELINE.forEach((item) => {
     const timelineItem = document.createElement("article");
     timelineItem.className = "about-timeline-item";
@@ -131,11 +133,13 @@ const creationStepAlt = (stepNumber) =>
 
 // Ferme la visionneuse avec l'API native du dialogue, si elle est ouverte.
 const closeCreationLightbox = () => {
+  // L'API close ne s'applique que si la fenetre modale est ouverte.
   if (creationLightbox?.open) creationLightbox.close();
 };
 
 // Cree la pile de maquettes et relie ses controles a l'element actuellement actif.
 const initializeCreationProcess = (images) => {
+  // La page peut etre chargee sans galerie; dans ce cas, il n'y a rien a initialiser.
   if (!creationProcessStack) return;
 
   CREATION_PROCESS_IMAGES = shuffleImages(images);
@@ -149,12 +153,14 @@ const initializeCreationProcess = (images) => {
     const filename = CREATION_PROCESS_IMAGES[activeLightboxImage];
     creationLightboxImage.src = encodeURI(`../processus_creation/${filename}`);
     creationLightboxImage.alt = `Étape ${activeLightboxImage + 1} du processus de création`;
+    // Le compteur est facultatif, mais l'image agrandie reste utilisable sans lui.
     if (creationLightboxCaption) {
       creationLightboxCaption.textContent = `Étape ${String(activeLightboxImage + 1).padStart(2, "0")} / ${String(CREATION_PROCESS_IMAGES.length).padStart(2, "0")}`;
     }
   };
 
   creationProcessBoxes.forEach((box, boxIndex) => {
+    // Cree une vignette navigable par image; seule la premiere est chargee immediatement.
     const imageCard = document.createElement("figure");
     imageCard.className = "creation-process-card";
     imageCard.dataset.index = String(boxIndex);
@@ -190,6 +196,7 @@ const initializeCreationProcess = (images) => {
 
     imageCard.querySelectorAll(".creation-process-expand").forEach((button) => {
       button.addEventListener("click", () => {
+        // N'ouvre la modale que si son image peut etre mise a jour.
         if (!creationLightbox || !creationLightboxImage) return;
         activeLightboxImage = Number(button.dataset.imageIndex);
         activeCreationBox = activeLightboxImage;
@@ -209,6 +216,7 @@ const initializeCreationProcess = (images) => {
       const distance = (index - activeCreationBox + totalImages) % totalImages;
       card.className = "creation-process-card";
 
+      // La distance circulaire determine les cartes visibles autour de la selection.
       if (distance === 0) card.classList.add("is-active");
       if (distance === 1) card.classList.add("is-next");
       if (distance === 2) card.classList.add("is-next-two");
@@ -261,6 +269,7 @@ const initializeCreationProcess = (images) => {
   // Suspend la rotation hors ecran et respecte la preference de mouvement reduit.
   let creationProcessTimer = null;
   const stopCreationProcessAutoplay = () => {
+    // Libere la minuterie et remet son identifiant a zero pour autoriser un redemarrage.
     if (creationProcessTimer) {
       window.clearInterval(creationProcessTimer);
       creationProcessTimer = null;
@@ -268,6 +277,7 @@ const initializeCreationProcess = (images) => {
   };
 
   const startCreationProcessAutoplay = () => {
+    // Evite un doublon, une animation inutile a une image ou un mouvement non souhaite.
     if (
       creationProcessTimer ||
       creationProcessBoxes.length < 2 ||
@@ -288,6 +298,7 @@ const initializeCreationProcess = (images) => {
   );
 
   if (creationProcessSection && "IntersectionObserver" in window) {
+    // Lance la rotation uniquement pendant que la section est visible a l'ecran.
     const creationProcessObserver = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -308,6 +319,7 @@ const initializeCreationProcess = (images) => {
 // SECTION 4 : charge les noms de fichiers et initialise la galerie apres la reponse JSON.
 fetch("../data/projects.json")
   .then((response) => {
+    // Rejette explicitement les reponses invalides avant de lire les donnees de galerie.
     if (!response.ok) throw new Error("Impossible de charger les images");
     return response.json();
   })
@@ -318,6 +330,7 @@ fetch("../data/projects.json")
 
 creationLightboxClose?.addEventListener("click", closeCreationLightbox);
 creationLightbox?.addEventListener("click", (event) => {
+  // Un clic sur l'arriere-plan ferme la visionneuse; un clic dans l'image la conserve.
   if (event.target === creationLightbox) closeCreationLightbox();
 });
 

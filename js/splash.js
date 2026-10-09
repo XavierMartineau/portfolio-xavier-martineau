@@ -8,6 +8,8 @@ const ctx = canvas.getContext("2d");
 const splash = document.getElementById("splash");
 const enterBtn = document.getElementById("enter-btn");
 
+// Les coordonnees initiales hors canvas evitent d'afficher le halo avant un mouvement.
+
 // SECTION 1 : conserve les particules et la position du pointeur qui pilote le halo.
 // Le pointeur reste hors champ jusqu'au premier mouvement de la souris.
 let mouse = { x: -1000, y: -1000 };
@@ -21,6 +23,7 @@ function resize() {
   canvas.width = window.innerWidth;
   canvas.height = window.innerHeight;
 }
+// Ajuste le canvas au chargement initial avant d'attacher les redimensionnements.
 resize();
 window.addEventListener("resize", resize);
 
@@ -45,6 +48,7 @@ particles = Array.from({ length: 120 }, () => ({
 // ==============================
 // BOUCLE DE DESSIN ET D'ANIMATION
 // ==============================
+// Dessine une image du fond; requestAnimationFrame relance ensuite cette meme fonction.
 function draw() {
   // Une frame complete efface, redessine les particules et programme la suivante.
   // Efface le contenu précédent du canvas à chaque frame
@@ -102,12 +106,14 @@ function draw() {
   }
 
   // Demande à la prochaine image de relancer la fonction draw (boucle d'animation)
+  // La boucle d'animation se poursuit tant que l'ecran d'introduction est ouvert.
   requestAnimationFrame(draw);
 }
 draw();
 
 // SECTION 3 : met a jour le centre du halo au mouvement de la souris.
 window.addEventListener("mousemove", (e) => {
+  // Le halo suit les coordonnees du pointeur dans la fenetre.
   mouse = { x: e.clientX, y: e.clientY };
 });
 
@@ -115,6 +121,7 @@ window.addEventListener("mousemove", (e) => {
 // TRANSITION VERS LA PAGE D'ACCUEIL
 // ==============================
 enterBtn.addEventListener("click", () => {
+  // Termine le fondu avant de naviguer vers le contenu principal.
   splash.style.opacity = "0"; // Fait disparaître la page en fondu
   setTimeout(() => {
     window.location.href = "./html/accueil.html"; // Redirige vers la page d'accueil après 0.6 seconde

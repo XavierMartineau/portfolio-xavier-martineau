@@ -209,3 +209,25 @@ Netlify permet d'avoir un nom de domaine gratuit et plus professionnel qu'un sim
 #### Au contact des cartes de parcours
 
 ---
+
+# Planification des liens externes et des solutions de secours
+
+## Liens des pages de projet
+
+- Conserver une destination officielle distincte pour chaque démonstration web et chaque vidéo.
+- Garder le lien « Voir le projet dans un nouvel onglet » synchronisé avec la destination officielle du projet.
+- Si une démonstration web intégrée ne se charge pas, afficher une carte de secours qui permet d'ouvrir le portfolio officiel :
+  `https://xaviermartineau.github.io/portfolio-xavier-martineau/`
+- Si la vidéo intégrée ne se charge pas, proposer son lien de visionnement sur YouTube.
+- Vérifier les destinations des liens et leur comportement sur ordinateur et mobile lors des prochaines mises à jour des projets.
+- Garder une page 404 personnalisée accessible pour les adresses invalides, avec un retour vers l'accueil et le catalogue.
+
+---
+
+# Commentaires du code JavaScript
+
+- Continuer à documenter le rôle des grandes sections et des blocs conditionnels qui déterminent le comportement des pages.
+- Expliquer les conditions de repli, les changements d'état accessibles et les effets de bord sans ajouter de commentaires ligne par ligne.
+- Mettre à jour les commentaires associés lorsqu'un comportement ou une destination de lien est modifié.
+
+---

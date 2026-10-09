@@ -3,9 +3,10 @@
 const contactForm = document.getElementById("contact-form");
 const contactSuccess = document.getElementById("contact-success");
 
-// Remplace le formulaire par la confirmation sans navigation ni rechargement.
+// N'installe le comportement que si le formulaire et sa confirmation sont tous deux presents.
 if (contactForm && contactSuccess) {
   contactForm.addEventListener("submit", (event) => {
+    // Evite le rechargement natif puis affiche l'etat de confirmation.
     event.preventDefault();
     contactForm.style.display = "none";
     contactSuccess.classList.add("is-visible");

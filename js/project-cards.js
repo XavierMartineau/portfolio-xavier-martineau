@@ -26,6 +26,7 @@ const technologiesMarkup = (project, className) =>
 // SECTION 2 : fabrique les deux variantes de carte utilisees dans le portfolio.
 // Construit un lien compact utilise dans le carousel de la page d'accueil.
 const createFeaturedCard = (projectId, project) => {
+  // Les cartes vedettes sont des liens complets pour rester accessibles au clavier.
   const card = document.createElement("a");
   const color = categoryToColor(projectId);
   const extraClass = projectId === 3 ? " project-stitch" : "";
@@ -51,6 +52,7 @@ const createFeaturedCard = (projectId, project) => {
 
 // Construit une carte complete, avec les attributs requis par les filtres.
 const createProjectCard = (projectId, project) => {
+  // La carte de catalogue porte les metadonnees utilisees par les filtres et la navigation.
   const card = document.createElement("article");
   const badgeClass = categoryToBadgeClass(project.category);
 
@@ -77,16 +79,19 @@ const createProjectCard = (projectId, project) => {
 
 // Remplace les cartes de secours uniquement dans les grilles presentes sur la page.
 const renderProjectCards = (projects) => {
+  // Une meme source alimente les grilles presentes, sans exiger qu'elles existent toutes.
   const featuredGrid = document.querySelector(".featured-grid");
   const projectsGrid = document.querySelector("#projects-container");
   const entries = Object.entries(projects);
 
   featuredGrid?.replaceChildren(
+    // Le carousel d'accueil ne montre que les trois projets vedettes.
     ...entries
       .filter(([projectId]) => ["1", "2", "3"].includes(projectId))
       .map(([projectId, project]) => createFeaturedCard(projectId, project)),
   );
   projectsGrid?.replaceChildren(
+    // Le catalogue complet conserve tous les projets fournis par le JSON.
     ...entries.map(([projectId, project]) =>
       createProjectCard(projectId, project),
     ),

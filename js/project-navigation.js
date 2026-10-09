@@ -15,11 +15,13 @@ const scrollLine = document.querySelector(".scroll-line");
 const scrollDot = document.querySelector(".scroll-dot");
 
 if (scrollIndicator) {
+  // Rend l'indicateur interactif et expose son etat aux technologies d'assistance.
   scrollIndicator.style.pointerEvents = "auto";
   scrollIndicator.setAttribute("aria-hidden", "false");
 }
 
 if (scrollArrow) {
+  // Laisse les clics traverser la fleche vers le lien indicateur.
   scrollArrow.style.pointerEvents = "none";
 }
 
@@ -34,6 +36,7 @@ const scrollToFeaturedProjects = () => {
 if (scrollIndicator) {
   scrollIndicator.addEventListener("click", scrollToFeaturedProjects);
   scrollIndicator.addEventListener("keydown", (event) => {
+    // Les touches habituelles d'activation des liens declenchent aussi le defilement.
     if (event.key === "Enter" || event.key === " ") {
       event.preventDefault();
       scrollToFeaturedProjects();
@@ -70,12 +73,14 @@ const updateScrollIndicator = () => {
 
 window.addEventListener("scroll", updateScrollIndicator, { passive: true });
 window.addEventListener("resize", updateScrollIndicator);
+// Positionne l'indicateur correctement des l'ouverture, avant le premier scroll.
 updateScrollIndicator();
 
 // SECTION 3 : conserve le lien natif des cartes-liens et rend les cartes restantes accessibles.
 navigableProjectCards.forEach((card) => {
   // Conserve le comportement de lien si une carte est cliquée directement.
   card.addEventListener("click", (event) => {
+    // Ne remplace pas l'action des liens et boutons imbriques dans une carte.
     if (event.target.closest("a, button")) {
       return;
     }
@@ -135,6 +140,7 @@ document.querySelectorAll(".featured-grid").forEach((grid) => {
     .querySelectorAll(".carousel-btn")
     .forEach((button) => {
       button.addEventListener("click", () => {
+        // Calcule le sens et l'index suivant, puis laisse updateCarousel gerer la pile.
         const isPrevious = button.classList.contains("carousel-prev");
         const direction = isPrevious ? "previous" : "next";
         const offset = isPrevious ? -1 : 1;
@@ -152,6 +158,7 @@ document.querySelectorAll(".carousel-effects-toggle").forEach((button) => {
   const label = button.querySelector(".carousel-effects-toggle-label");
 
   button.addEventListener("click", () => {
+    // Synchronise l'etat visuel du conteneur avec le libelle et aria-pressed.
     const effectsForced = container.classList.toggle("is-effects-forced");
     const modeLabel = effectsForced ? "Image seule" : "Texte + flou";
 

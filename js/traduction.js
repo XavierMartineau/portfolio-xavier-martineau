@@ -272,8 +272,10 @@ const savedLanguage = localStorage.getItem(languageStorageKey);
 const currentLanguage = supportedLanguages.includes(savedLanguage)
   ? savedLanguage
   : "fr";
+// Memorise le texte source par noeud pour pouvoir changer de langue plusieurs fois.
 const originalTextByNode = new WeakMap();
 const translatableTextNodes = [];
+// Prepare la table inverse necessaire au retour vers le francais apres traduction.
 const englishToFrench = new Map(
   Object.entries(translations.en).map(([french, english]) => [english, french]),
 );
@@ -292,18 +294,21 @@ const preserveWhitespace = (source, replacement) => {
 const translateTextNodes = (language) => {
   // Traduit d'abord les attributs accessibles, puis les contenus marques et enfin le texte libre.
   document.querySelectorAll("[aria-label]").forEach((element) => {
+    // Conserve le libelle d'origine avant sa premiere traduction.
     const originalLabel = element.dataset.i18nLabel || element.ariaLabel;
     if (!element.dataset.i18nLabel) {
       element.dataset.i18nLabel = originalLabel;
     }
 
     const translatedLabel = translations.en[originalLabel];
+    // Ne remplace que les libelles repertories dans le dictionnaire.
     if (translatedLabel) {
       element.ariaLabel = language === "en" ? translatedLabel : originalLabel;
     }
   });
 
   document.querySelectorAll("[data-i18n-label]").forEach((element) => {
+    // Traduit les libelles accessibles explicitement relies a une cle stable.
     const key = element.dataset.i18nLabel;
     element.setAttribute(
       "aria-label",
@@ -312,11 +317,13 @@ const translateTextNodes = (language) => {
   });
 
   document.querySelectorAll("[data-i18n]").forEach((element) => {
+    // Les elements marques sont remplaces en bloc pour conserver une traduction exacte.
     const key = element.dataset.i18n;
     element.textContent = language === "en" ? translations.en[key] || key : key;
   });
 
   if (language !== "en") {
+    // Au retour en francais, restaure les noeuds anglais sans toucher au balisage marque.
     const walker = document.createTreeWalker(
       document.body,
       NodeFilter.SHOW_TEXT,
@@ -327,6 +334,7 @@ const translateTextNodes = (language) => {
     }
 
     textNodes.forEach((node) => {
+      // Ignore le code, le CSS, les textes deja geres et les controles de langue.
       if (
         node.parentElement.closest(
           "script, style, [data-i18n], .language-switcher",
@@ -346,6 +354,7 @@ const translateTextNodes = (language) => {
       const restoredFrenchText = frenchText || englishToFrench.get(originalKey);
 
       if (restoredFrenchText) {
+        // Preserve le prefixe des libelles de section et les espaces HTML autour du noeud.
         const restoredText = hasSectionPrefix
           ? `// ${restoredFrenchText}`
           : restoredFrenchText;
@@ -364,6 +373,7 @@ const translateTextNodes = (language) => {
   }
 
   textNodes.forEach((node) => {
+    // Exclut les zones dont le contenu est gere par attribut ou ne doit pas etre traduit.
     if (
       node.parentElement.closest(
         "script, style, [data-i18n], .language-switcher",
@@ -373,6 +383,7 @@ const translateTextNodes = (language) => {
     }
 
     if (!originalTextByNode.has(node)) {
+      // Enregistre le texte initial avant de le modifier pour permettre un retour fiable.
       originalTextByNode.set(node, node.nodeValue);
       translatableTextNodes.push(node);
     }
@@ -394,6 +405,7 @@ const translateTextNodes = (language) => {
       normalizeText(node.nodeValue) !==
         normalizeText(storedTranslatedText || "")
     ) {
+      // Detecte un contenu remplace par un autre script et actualise la reference source.
       originalNodeText = node.nodeValue;
       originalTextByNode.set(node, originalNodeText);
     }
@@ -405,6 +417,7 @@ const translateTextNodes = (language) => {
       : originalText;
     const translatedText = translations.en[translationKey];
     if (translatedText) {
+      // Reapplique le marqueur de section et les espaces du noeud d'origine.
       const formattedTranslation = hasSectionPrefix
         ? `// ${translatedText}`
         : translatedText;
@@ -418,6 +431,7 @@ const updateLanguageControls = (language) => {
   // Synchronise l'attribut lang, l'etat actif et l'accessibilite des boutons de langue.
   document.documentElement.lang = language;
   document.querySelectorAll(".language-switcher button").forEach((button) => {
+    // Synchronise l'etat visuel et ARIA de chaque choix de langue.
     const isActive = button.dataset.language === language;
     button.classList.toggle("active", isActive);
     button.setAttribute("aria-pressed", String(isActive));
@@ -444,6 +458,7 @@ const setLanguage = (language) => {
 
 // Point d'entree global appele apres l'ajout de contenu par les autres scripts.
 window.translatePortfolio = (language = document.documentElement.lang) => {
+  // Ignore les langues non prises en charge avant toute modification du document.
   if (supportedLanguages.includes(language)) {
     translateTextNodes(language);
     updateLanguageControls(language);
@@ -453,6 +468,7 @@ window.translatePortfolio = (language = document.documentElement.lang) => {
 const languageSwitcher = document.querySelector(".language-switcher");
 
 languageSwitcher?.addEventListener("animationend", (event) => {
+  // Retire la classe d'animation une fois sa transition terminee.
   if (event.animationName === "language-switch-transition") {
     languageSwitcher.classList.remove("is-switching");
   }
@@ -461,6 +477,7 @@ languageSwitcher?.addEventListener("animationend", (event) => {
 document.querySelectorAll(".language-switcher button").forEach((button) => {
   button.addEventListener("click", () => {
     if (languageSwitcher) {
+      // Redemarre l'animation meme lorsque le selecteur a deja cette classe.
       languageSwitcher.classList.remove("is-switching");
       void languageSwitcher.offsetWidth;
       languageSwitcher.classList.add("is-switching");
@@ -474,6 +491,7 @@ setLanguage(currentLanguage);
 // SECTION 5 : ajoute un retour en haut sur les pages de contenu, pas sur l'ecran d'introduction.
 const footer = document.querySelector(".footer");
 if (!document.querySelector("#splash") && footer) {
+  // Le bouton est ajoute aux pages de contenu qui possedent un pied de page.
   const backToTop = document.createElement("button");
   backToTop.className = "back-to-top";
   backToTop.type = "button";
@@ -481,6 +499,7 @@ if (!document.querySelector("#splash") && footer) {
   document.body.appendChild(backToTop);
 
   const updateBackToTop = () => {
+    // Montre le retour en haut seulement apres le debut du defilement et a proximite du footer.
     const footerBounds = footer.getBoundingClientRect();
     const distanceToFooter = footerBounds.top - window.innerHeight;
     const isNearFooter =
@@ -499,6 +518,7 @@ if (!document.querySelector("#splash") && footer) {
   };
 
   backToTop.addEventListener("click", () => {
+    // Respecte le reglage systeme de mouvement reduit lors du retour en haut.
     window.scrollTo({
       top: 0,
       behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches
@@ -511,6 +531,7 @@ if (!document.querySelector("#splash") && footer) {
   window.addEventListener("resize", updateBackToTop);
   const main = document.querySelector("main");
   if (main) {
+    // Recalcule la position si le contenu principal change de hauteur apres son chargement.
     new ResizeObserver(updateBackToTop).observe(main);
   }
   updateBackToTop();
@@ -520,17 +541,21 @@ if (!document.querySelector("#splash") && footer) {
 let translationObserverTimer;
 const translationObserver = new MutationObserver(() => {
   if (document.documentElement.lang !== "en") {
+    // Il n'y a rien a retraduire tant que la page est en francais.
     return;
   }
 
+  // Regroupe les mutations simultanees pour eviter plusieurs parcours du document.
   window.clearTimeout(translationObserverTimer);
   translationObserverTimer = window.setTimeout(() => {
+    // Confirme la langue courante apres le delai avant de traduire les noeuds ajoutes.
     if (document.documentElement.lang === "en") {
       translateTextNodes("en");
     }
   }, 0);
 });
 
+// Observe les ajouts et changements de texte pour maintenir la langue active.
 translationObserver.observe(document.body, {
   childList: true,
   characterData: true,

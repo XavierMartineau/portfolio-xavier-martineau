@@ -12,6 +12,7 @@ const projectCards = document.querySelectorAll(".project-card");
 // Révèle chaque carte uniquement lorsqu'elle entre dans la fenêtre.
 // SECTION 2 : revele les cartes a l'ecran et les affiche toutes si l'observateur manque.
 if ("IntersectionObserver" in window) {
+  // Les cartes entrent et sortent de leur etat anime selon leur visibilite.
   const projectRevealObserver = new IntersectionObserver(
     (entries, observer) => {
       entries.forEach((entry) => {
@@ -23,6 +24,7 @@ if ("IntersectionObserver" in window) {
 
   projectCards.forEach((card) => projectRevealObserver.observe(card));
 } else {
+  // Affiche toutes les cartes si le navigateur ne prend pas en charge l'observateur.
   projectCards.forEach((card) => card.classList.add("is-visible"));
 }
 
@@ -30,10 +32,12 @@ if ("IntersectionObserver" in window) {
 const effectsToggle = document.querySelector(".projects-effects-toggle");
 // SECTION 3 : rend les effets de survol accessibles sur les appareils tactiles.
 if (effectsToggle) {
+  // Recupere les elements lies au bouton pour actualiser le mode et son libelle.
   const projectsPage = document.querySelector(".projects-page");
   const label = effectsToggle.querySelector(".projects-effects-toggle-label");
 
   effectsToggle.addEventListener("click", () => {
+    // Alterne entre l'image seule et le texte avec flou, puis actualise l'accessibilite.
     const effectsForced = projectsPage.classList.toggle("is-effects-forced");
     const modeLabel = effectsForced ? "Image seule" : "Texte + flou";
 
@@ -55,6 +59,7 @@ if (effectsToggle) {
 categoryButtons.forEach((button) => {
   button.addEventListener("click", () => {
     if (button.dataset.category === "all") {
+      // « Tous » annule les filtres individuels et redevient le seul bouton actif.
       categoryButtons.forEach((categoryButton) => {
         categoryButton.classList.toggle(
           "active",
@@ -62,6 +67,7 @@ categoryButtons.forEach((button) => {
         );
       });
     } else {
+      // Un filtre individuel se combine aux autres; « Tous » est desactive.
       const allButton = document.querySelector(
         '.project-category-btn[data-category="all"]',
       );
@@ -74,6 +80,7 @@ categoryButtons.forEach((button) => {
       );
 
       if (selectedButtons.length === 0) {
+        // Revenir a zero filtre equivaut a afficher tous les projets.
         allButton.classList.add("active");
       }
     }
@@ -90,6 +97,7 @@ categoryButtons.forEach((button) => {
       .classList.contains("active");
 
     projectCards.forEach((card) => {
+      // Une carte reste visible si tous les projets ou sa categorie sont selectionnes.
       const shouldHide =
         !showAll && !selectedCategories.includes(card.dataset.category);
 

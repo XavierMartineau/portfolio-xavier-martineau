@@ -16,6 +16,7 @@ const requestedId = Number.parseInt(
 const projectId = projects[requestedId] ? requestedId : 1;
 const project = projects[projectId];
 
+// Garde l'URL active pour suspendre et restaurer le media integre si necessaire.
 let activeEmbedSource = null;
 let projectMuted = false;
 
@@ -28,6 +29,7 @@ const setText = (selector, value) => {
 const projectOrder = Object.keys(projects)
   .map(Number)
   .sort((a, b) => a - b);
+// Affiche la position du projet selon la liste reelle, meme si ses identifiants changent.
 const projectPosition = projectOrder.indexOf(projectId) + 1;
 
 setText(
@@ -50,6 +52,7 @@ const projectChallenges = {
   5: "Le principal défi était d'équilibrer les formes, les couleurs et la typographie pour créer une composition festive et lisible.",
   6: "Le principal défi était de créer une interface interactive où les couleurs et les formes restent lisibles et harmonieuses sur chaque écran.",
 };
+// Associe chaque projet a son defi; le texte generique couvre les ajouts futurs.
 setText(
   "#project-challenge",
   projectChallenges[projectId] ||
@@ -60,7 +63,7 @@ const externalProjectLinks = {
   2: "https://xaviermartineau.github.io/La_Maison_xavier/",
   6: "https://xaviermartineau.github.io/Atelier-chromatique-XM/",
 };
-// Les liens sortants attendent une confirmation pour eviter une ouverture accidentelle.
+// Memorise les controles du lien sortant pour gerer la confirmation et son accessibilite.
 const externalProjectLink = document.querySelector("#external-project-link");
 const externalProjectModal = document.querySelector("#external-project-modal");
 const externalProjectCancel = document.querySelector(
@@ -71,11 +74,13 @@ const externalProjectContinue = document.querySelector(
 );
 
 if (project.category !== "Site web") {
+  // Les projets non web n'ont pas de site externe a ouvrir.
   externalProjectLink?.remove();
   externalProjectModal?.remove();
 }
 
 if (externalProjectLink && externalProjectLinks[projectId]) {
+  // Configure la destination et n'ouvre le site qu'apres confirmation explicite.
   externalProjectLink.href = externalProjectLinks[projectId];
   externalProjectLink.hidden = false;
   externalProjectLink.addEventListener("click", (event) => {
@@ -95,12 +100,14 @@ if (externalProjectLink && externalProjectLinks[projectId]) {
   });
 
   externalProjectModal?.addEventListener("click", (event) => {
+    // Un clic sur le voile ferme le dialogue; un clic dans son contenu le conserve.
     if (event.target === externalProjectModal) {
       externalProjectCancel?.click();
     }
   });
 
   document.addEventListener("keydown", (event) => {
+    // Echap annule la confirmation comme le bouton Annuler.
     if (event.key === "Escape" && externalProjectModal?.hidden === false) {
       externalProjectCancel?.click();
     }
@@ -139,6 +146,7 @@ const realizationDetails =
           status: "Projet personnel — réalisé seul.",
         };
 
+// Rend visibles uniquement les precisions d'annee fournies pour La Maison.
 setText("#project-realization-status", realizationDetails.status);
 if (realizationDetails.year2024) {
   setText("#project-realization-2024", realizationDetails.year2024);
@@ -174,6 +182,7 @@ const categorySkillsContainer = document.querySelector(
 const selectedCategorySkills = categorySkills[project.category] || [];
 
 if (categorySkillsContainer) {
+  // Cree les jauges depuis les competences associees a la categorie du projet.
   categorySkillsContainer.innerHTML = selectedCategorySkills
     .map(
       ([label, level]) => `
@@ -217,11 +226,13 @@ const categoryThemes = {
 };
 
 const categoryTheme = categoryThemes[project.category] || categoryThemes["3D"];
+// Applique la couleur de categorie aux composants qui utilisent les variables CSS.
 document.body.classList.add(categoryTheme.className);
 document.body.style.setProperty("--project-accent", categoryTheme.color);
 document.body.style.setProperty("--project-rgb", categoryTheme.rgb);
 
 if (categoryElement) {
+  // Ajoute une classe specifique pour styliser le badge de categorie courant.
   categoryElement.classList.add("couleur-categorie");
 
   switch (project.category) {
@@ -261,16 +272,19 @@ let mediaFallbackTimer = null;
 
 // Affiche le lien de secours adapte au media externe du projet.
 const showMediaFallback = () => {
-  const fallbackUrl = project.youtubeUrl || externalProjectLinks[projectId];
+  const fallbackUrl =
+    project.youtubeUrl || "https://xaviermartineau.github.io/portfolio-xavier-martineau/";
   if (
     !projectMediaFallback ||
     !projectMediaFallbackMessage ||
     !projectFallbackLink ||
     !fallbackUrl
   ) {
+    // Ne presente pas de bouton si le media ou sa destination de secours manque.
     return;
   }
 
+  // Utilise YouTube pour la video et le portfolio GitHub pour les demos web.
   const isVideo = Boolean(project.youtubeUrl);
   const message = isVideo
     ? "Cette vidéo est disponible sur YouTube."
@@ -296,6 +310,7 @@ const showMediaFallback = () => {
 
 // Affiche une solution de rechange si un embed reste bloque au chargement.
 const resetMediaFallbackTimer = () => {
+  // Annule le compte a rebours precedent pour eviter un affichage concurrent.
   if (mediaFallbackTimer) {
     window.clearTimeout(mediaFallbackTimer);
   }
@@ -332,17 +347,20 @@ const finishStaticMediaLoading = () => {
 
 if (projectEmbed) {
   projectEmbed.addEventListener("load", () => {
+    // Cache le chargement et annule le secours des qu'un embed termine sa navigation.
     setEmbedLoading(false);
     if (mediaFallbackTimer) {
       window.clearTimeout(mediaFallbackTimer);
       mediaFallbackTimer = null;
     }
   });
+  // Affiche le lien de secours si le navigateur signale une erreur de chargement.
   projectEmbed.addEventListener("error", showMediaFallback);
 }
 
 // SECTION 6 : injecte une image secondaire seulement pour les projets qui en ont une.
 if (project.secondaryImage) {
+  // Regroupe les deux vues dans un conteneur afin de les presenter ensemble.
   let imagesContainer = visual.querySelector(".images-container");
   if (!imagesContainer) {
     imagesContainer = document.createElement("div");
@@ -351,6 +369,7 @@ if (project.secondaryImage) {
   }
 
   if (projectImage) {
+    // Prepare et deplace l'image principale avant d'ajouter sa vue secondaire.
     projectImage.addEventListener("load", markImageAsLoaded, { once: true });
     projectImage.src = `../assets/images/${project.image}`;
     projectImage.alt = `${project.name} - ${project.description}`;
@@ -359,6 +378,7 @@ if (project.secondaryImage) {
   }
 
   if (!secondaryImage) {
+    // Cree l'emplacement secondaire si le HTML initial ne l'a pas fourni.
     secondaryImage = document.createElement("img");
     secondaryImage.id = "project-secondary-image";
   }
@@ -368,6 +388,7 @@ if (project.secondaryImage) {
   secondaryImage.classList.remove("is-secondary");
   imagesContainer.appendChild(secondaryImage);
 } else {
+  // Les projets a une seule image gardent le rendu simple et retirent l'emplacement inutile.
   if (projectImage) {
     projectImage.addEventListener("load", markImageAsLoaded, { once: true });
     projectImage.src = `../assets/images/${project.image}`;
@@ -442,11 +463,13 @@ const renderInteractive = () => {
 const isMobileScreen = window.matchMedia("(max-width: 768px)").matches;
 
 if (embeddedProjects[projectId] && projectEmbed) {
+  // Charge le site ou la video integree, avec un lien alternatif si le chargement echoue.
   const embeddedProject = embeddedProjects[projectId];
   activeEmbedSource = embeddedProject.src;
 
   setEmbedLoading(true);
   if (projectId === 1 && window.location.protocol === "file:") {
+    // Sur file://, YouTube ne recoit pas de referer valide; proposer tout de suite le lien direct.
     showMediaFallback();
   } else {
     resetMediaFallbackTimer();
@@ -458,6 +481,7 @@ if (embeddedProjects[projectId] && projectEmbed) {
   if (projectImage) projectImage.hidden = true;
 
   if (visual) {
+    // Le media adapte la hauteur du cadre selon qu'il s'agit d'un site ou d'une video.
     if (project.category === "Site web") {
       visual.classList.add("project-visual-interactive");
     } else {
@@ -465,15 +489,18 @@ if (embeddedProjects[projectId] && projectEmbed) {
     }
   }
 } else if (project.category === "Site web") {
+  // Affiche la maquette interactive locale pour les sites sans embed dedie.
   if (visual) visual.classList.add("project-visual-interactive");
   renderInteractive();
 } else if (project.category === "3D") {
+  // Laisse le lien video disponible si aucun lecteur integre n'est configure.
   if (visual) visual.classList.add("project-visual-media");
   if (youtubeLink) {
     youtubeLink.hidden = false;
     youtubeLink.href = project.youtubeUrl;
   }
 } else {
+  // Les projets visuels simples utilisent leur image locale en plein cadre.
   if (visual) {
     visual.classList.add(
       "stitch-mode",
@@ -497,6 +524,7 @@ const detailPanels = document.querySelectorAll(
 );
 
 if ("IntersectionObserver" in window) {
+  // Revele chaque colonne lorsqu'elle approche de l'ecran.
   const detailObserver = new IntersectionObserver(
     (entries, observer) => {
       entries.forEach((entry) => {
@@ -508,24 +536,29 @@ if ("IntersectionObserver" in window) {
 
   detailPanels.forEach((panel) => detailObserver.observe(panel));
 } else {
+  // Sans IntersectionObserver, ne laisse pas les panneaux masques par leur etat initial.
   detailPanels.forEach((panel) => panel.classList.add("is-content-ready"));
 }
 
 // SECTION 10 : suspend l'iframe hors de la page et la restaure au retour.
 const stopEmbeddedProject = () => {
   if (!activeEmbedSource || !projectEmbed) {
+    // Les pages sans embed n'ont aucune ressource externe a suspendre.
     return;
   }
+  // Libere la ressource du lecteur quand l'onglet quitte le premier plan.
   projectEmbed.src = "about:blank";
   setEmbedLoading(false);
 };
 
 const resumeEmbeddedProject = () => {
   if (projectMuted || !projectEmbed) {
+    // Ne relance pas un lecteur absent ou explicitement mis en pause.
     return;
   }
 
   if (activeEmbedSource && projectEmbed.getAttribute("src") === "about:blank") {
+    // Recharge uniquement les embeds qui ont ete suspendus.
     setEmbedLoading(true);
     projectEmbed.src = activeEmbedSource;
     projectEmbed.hidden = false;
@@ -534,6 +567,7 @@ const resumeEmbeddedProject = () => {
 };
 
 document.addEventListener("visibilitychange", () => {
+  // Suspend les medias en arriere-plan pour limiter leur consommation de ressources.
   if (document.hidden) {
     stopEmbeddedProject();
   } else {
@@ -548,6 +582,7 @@ const expandBtn = document.querySelector("#project-expand");
 const projectVisual = document.querySelector(".project-visual");
 
 if (expandBtn && projectVisual) {
+  // Bascule le media en plein ecran et maintient l'etat du bouton synchronise.
   expandBtn.addEventListener("click", () => {
     const isExpanded = projectVisual.classList.toggle("is-expanded");
     expandBtn.setAttribute("aria-pressed", String(isExpanded));
@@ -568,8 +603,12 @@ const technologyCategoryClasses = {
 // Remplace le contenu du conteneur indique par les technologies du projet courant.
 const renderTechnologyTags = (selector) => {
   const technologies = document.querySelector(selector);
-  if (!technologies || !project.technologies) return;
+  if (!technologies || !project.technologies) {
+    // Ignore les emplacements absents ou les projets sans liste de technologies.
+    return;
+  }
 
+  // Reconstruit les etiquettes pour eviter de conserver celles d'un autre projet.
   technologies.replaceChildren();
   const categoryClass = technologyCategoryClasses[project.category] || "";
 
@@ -589,6 +628,7 @@ renderTechnologyTags("#project-full-stack");
 // =========================================================================
 const returnProjectBtn = document.querySelector("#return-project");
 if (returnProjectBtn) {
+  // Garantit que le bouton de retour pointe toujours vers le catalogue local.
   returnProjectBtn.href = "projets.html";
 }
 
@@ -599,29 +639,35 @@ if (returnProjectBtn) {
   const prevLinkEl = document.getElementById("prev-project-link");
 
   if (indexEl) {
+    // Trie les identifiants disponibles plutot que de supposer une suite sans trou.
     const activeProjectIds = Object.keys(projects)
       .map(Number)
       .sort((a, b) => a - b);
     const currentIndex = activeProjectIds.indexOf(projectId);
 
     if (currentIndex !== -1) {
+      // Les extremites de la liste n'ont pas de lien precedent ou suivant.
       const nextNum = activeProjectIds[currentIndex + 1];
       const prevNum = activeProjectIds[currentIndex - 1];
 
       if (nextLinkEl) {
         if (nextNum) {
+          // Relie au prochain projet existant et rend le bouton visible.
           nextLinkEl.href = `page_de_projets.html?project=${nextNum}`;
           nextLinkEl.classList.remove("is-hidden");
         } else {
+          // Cache le lien suivant quand le projet courant est le dernier.
           nextLinkEl.classList.add("is-hidden");
         }
       }
 
       if (prevLinkEl) {
         if (prevNum) {
+          // Relie au projet precedent disponible.
           prevLinkEl.href = `page_de_projets.html?project=${prevNum}`;
           prevLinkEl.classList.remove("is-hidden");
         } else {
+          // Cache le lien precedent pour le premier projet de la liste.
           prevLinkEl.classList.add("is-hidden");
         }
       }
