@@ -60,6 +60,61 @@
 .projects-effects-toggle {
   display: none;
 }
+
+/* Repere discret sous les filtres, avec un lien direct vers la premiere carte. */
+.projects-scroll-hint {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+  gap: 0.55rem;
+  max-width: 100%;
+  margin: 0 auto 1.5rem;
+  padding: 0.55rem 0.85rem;
+  border: 1px solid rgba(0, 243, 255, 0.24);
+  border-radius: 999px;
+  background: rgba(0, 243, 255, 0.04);
+  color: #00f3ff;
+  font-family: monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  line-height: 1.4;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition:
+    border-color 0.25s ease,
+    background-color 0.25s ease,
+    box-shadow 0.25s ease,
+    color 0.25s ease;
+}
+
+.projects-scroll-hint:hover,
+.projects-scroll-hint:focus-visible {
+  border-color: rgba(255, 0, 234, 0.65);
+  background: rgba(0, 243, 255, 0.09);
+  box-shadow:
+    0 0 16px rgba(0, 243, 255, 0.16),
+    0 0 20px rgba(255, 0, 234, 0.1);
+  color: #ffffff;
+}
+
+.projects-scroll-hint:focus-visible {
+  outline: 2px solid #00f3ff;
+  outline-offset: 3px;
+}
+
+.projects-scroll-arrow {
+  color: #63ff9b;
+  font-size: 1rem;
+  line-height: 1;
+  animation: scroll-arrow-bob 1.8s ease-in-out infinite;
+}
+
+#projects-container {
+  scroll-margin-top: 6rem;
+}
+
 @media (max-width: 899px) {
   /* Deux colonnes gardent les quatre filtres visibles et faciles a toucher. */
   .project-categories {
@@ -98,5 +153,10 @@
     margin: 0;
     font-size: 0.72rem;
     font-weight: 700;
+  }
+
+  .projects-scroll-hint {
+    margin-bottom: 1.25rem;
+    font-size: 0.62rem;
   }
 }

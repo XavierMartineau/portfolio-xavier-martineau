@@ -155,6 +155,8 @@ const translations = {
     "Ouvrir le menu": "Open menu",
     "Filtrer les projets": "Filter projects",
     "Faire défiler pour voir la suite": "Scroll to see more",
+    "Défiler pour découvrir tous les projets":
+      "Scroll to explore all projects",
     "Aperçu du projet": "Project preview",
     "Technologies utilisées": "Technologies used",
     "Animation 3D": "3D animation",
