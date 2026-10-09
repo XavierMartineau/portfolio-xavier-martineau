@@ -17,6 +17,21 @@
   }
 }
 
+/* Fait pulser doucement la lueur de la barre de defilement Chromium/WebKit. */
+@keyframes scrollbar-neon-pulse {
+  0%,
+  100% {
+    box-shadow:
+      0 0 7px rgba(0, 243, 255, 0.35),
+      0 0 12px rgba(99, 102, 241, 0.16);
+  }
+  50% {
+    box-shadow:
+      0 0 12px rgba(0, 243, 255, 0.7),
+      0 0 18px rgba(255, 0, 234, 0.3);
+  }
+}
+
 /* Progression du chargement, pulsation du bouton et mouvement de sa fleche. */
 @keyframes load {
   from {

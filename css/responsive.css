@@ -1,5 +1,5 @@
 ﻿/* Role : adaptations responsives communes aux pages et composants. */
-/* Les regles progressent des ecrans larges aux petits mobiles, puis respectent le mouvement reduit. */
+/* Regles transversales responsive et exceptions pour les composants des pages. */
 /* ==========================================================================
    RESPONSIVE GLOBAL
    Les composants gardent leurs styles de base dans leurs propres fichiers.
@@ -147,9 +147,14 @@
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
+
+  /* Desactive aussi explicitement la pulsation du curseur de defilement. */
+  html::-webkit-scrollbar-thumb {
+    animation: none;
+  }
 }
 
-/* Media queries déplacées depuis style.css. */
+/* Affichage desktop : restaure les cartes vedettes en colonnes simultanees. */
 @media (min-width: 900px) {
   /* Sur grand ecran, le carousel devient une grille de trois cartes simultanees. */
   .hero-grid {
@@ -1099,8 +1104,7 @@
     letter-spacing: 0.06em;
   }
 
-  /* Les deux statistiques occupent chacune une colonne sur mobile. */
-  /* Sur téléphone, les espacements et la typographie deviennent plus compacts. */
+  /* Garde deux statistiques cote a cote tout en reduisant les espacements. */
   .hero-stats {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
