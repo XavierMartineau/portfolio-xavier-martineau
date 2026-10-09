@@ -85,8 +85,8 @@ const translations = {
     "Email direct": "Direct email",
     Réseaux: "Networks",
     "Réponse moyenne": "Average response",
-    "1 semaine ou moins": "1 week or less",
-    "En jours ouvrables": "Within business days",
+    "5 jours ouvrables ou moins": "5 business days or less",
+    "Du lundi au vendredi": "Monday to Friday",
     "M'écrire par courriel": "Email me",
     "Parlons de votre projet": "Let's talk about your project",
     "Une idée, une question ou un projet à construire ? Écris-moi.":

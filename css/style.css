@@ -102,7 +102,7 @@ html::-webkit-scrollbar-thumb:hover {
   animation: background-halo-drift-reverse 22s ease-in-out infinite;
 }
 
-/* Utilitaires   }de couleur néon. */
+/* Classes utilitaires pour appliquer les dégradés néon aux textes. */
 .section-label {
   font-size: 0.7rem;
   letter-spacing: 0.25em;
@@ -2409,12 +2409,9 @@ html[lang="en"] .contact-title-en {
 }
 
 /* ==========================================================================
-   14. MÉDIAS QUERIES GLOBAUX & RESPONSIVE (POUR ÉCRANS < PC)
+   14. COMPOSANTS DE LA PAGE À PROPOS
+   Ces règles restent ici car la page partage la feuille globale du portfolio.
    ========================================================================== */
-
-/* Réduit les grilles classiques sur les écrans intermédiaires. */
-/* Ajustements spécifiques aux très petits écrans. */
-/* Composants de la page À propos intégrés au fichier commun. */
 .about-copy h2 {
   margin: 0 0 1rem;
   color: #e8e8f0;

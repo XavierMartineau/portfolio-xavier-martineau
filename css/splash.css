@@ -322,6 +322,7 @@ body {
 }
 
 @media (max-width: 600px) {
+  /* Reduit les marges de la carte et repositionne la fleche dans le bouton. */
   .card {
     padding: 2.75rem 1.25rem;
   }
@@ -355,6 +356,7 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  /* Respecte le reglage systeme en arretant les animations du bouton d'entree. */
   .enter-btn,
   .enter-btn svg {
     animation: none;
@@ -398,14 +400,14 @@ body {
   background: #00f3ff;
   border-radius: 50%;
   box-shadow: 0 0 6px #00f3ff;
+  animation: splash-pulse 1.4s infinite;
 }
 
-/* Garde le curseur cyberpunk sur l'ecran d'introduction, avant l'accueil. */
+/* Le pointeur personnalise est partage avec les pages de contenu. */
 html body {
   cursor: url("../assets/svg/cursor-cyberpunk.svg") 3 1, auto;
 }
 
 html body :is(a, button, [role="button"], .enter-btn) {
   cursor: url("../assets/svg/cursor-cyberpunk-link.svg") 9 5, pointer;
-  animation: splash-pulse 1.4s infinite;
 }
