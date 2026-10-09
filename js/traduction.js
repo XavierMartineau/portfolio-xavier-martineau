@@ -210,6 +210,9 @@ const translations = {
     "Cette vidéo est disponible sur YouTube.":
       "This video is available on YouTube.",
     "Regarder la vidéo sur YouTube": "Watch the video on YouTube",
+    "Ce projet ne s’affiche pas correctement.":
+      "This project isn’t displaying correctly.",
+    "Voir le projet officiel": "View the official project",
     "// SIGNAL PERDU": "// SIGNAL LOST",
     "Cette page est introuvable.": "This page can’t be found.",
     "La page demandée n’existe pas ou a été déplacée. Retrouvons le bon chemin.":

@@ -1856,7 +1856,7 @@ html[lang="en"] .contact-title-en {
   font-size: 0.78rem;
 }
 
-.project-media-fallback--youtube {
+.project-media-fallback--card {
   inset: 0;
   display: flex;
   flex-direction: column;
@@ -1884,14 +1884,14 @@ html[lang="en"] .contact-title-en {
   box-shadow: 0 0 28px rgba(255, 23, 68, 0.4);
 }
 
-.project-media-fallback--youtube strong {
+.project-media-fallback--card strong {
   max-width: 32rem;
   font-family: "Space-Grotesk", sans-serif;
   font-size: clamp(1.15rem, 3vw, 1.7rem);
   line-height: 1.4;
 }
 
-.project-media-fallback--youtube a {
+.project-media-fallback--card a {
   padding: 0.85rem 1.2rem;
   border-color: #ff1744;
   border-radius: 999px;
@@ -1902,10 +1902,27 @@ html[lang="en"] .contact-title-en {
   box-shadow: 0 0 22px rgba(255, 23, 68, 0.18);
 }
 
-.project-media-fallback--youtube a:hover,
-.project-media-fallback--youtube a:focus-visible {
+.project-media-fallback--card a:hover,
+.project-media-fallback--card a:focus-visible {
   background: #ff1744;
   box-shadow: 0 0 28px rgba(255, 23, 68, 0.4);
+}
+
+.project-media-fallback--project .project-youtube-mark {
+  border: 1px solid rgba(0, 243, 255, 0.75);
+  background: linear-gradient(135deg, #6366f1, #ff00ea);
+  box-shadow: 0 0 28px rgba(var(--project-rgb), 0.35);
+}
+
+.project-media-fallback--project a {
+  border-color: var(--project-accent);
+  background: rgba(var(--project-rgb), 0.12);
+}
+
+.project-media-fallback--project a:hover,
+.project-media-fallback--project a:focus-visible {
+  background: rgba(var(--project-rgb), 0.3);
+  box-shadow: 0 0 28px rgba(var(--project-rgb), 0.4);
 }
 
 .project-media-fallback[hidden] {

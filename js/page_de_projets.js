@@ -255,37 +255,55 @@ const projectMediaFallback = document.querySelector("#project-media-fallback");
 const projectMediaFallbackMessage = document.querySelector(
   "#project-media-fallback-message",
 );
+const projectFallbackMark = document.querySelector("#project-fallback-mark");
+const projectFallbackLink = document.querySelector("#project-youtube");
 let mediaFallbackTimer = null;
 
-// Affiche un lien de remplacement si le media externe ne se charge pas a temps.
+// Affiche le lien de secours adapte au media externe du projet.
 const showMediaFallback = () => {
-  if (projectMediaFallback && project.youtubeUrl) {
-    projectMediaFallback.hidden = false;
+  const fallbackUrl = project.youtubeUrl || externalProjectLinks[projectId];
+  if (
+    !projectMediaFallback ||
+    !projectMediaFallbackMessage ||
+    !projectFallbackLink ||
+    !fallbackUrl
+  ) {
+    return;
   }
+
+  const isVideo = Boolean(project.youtubeUrl);
+  const message = isVideo
+    ? "Cette vidéo est disponible sur YouTube."
+    : "Ce projet ne s’affiche pas correctement.";
+  const linkLabel = isVideo
+    ? "Regarder la vidéo sur YouTube"
+    : "Voir le projet officiel";
+
+  projectMediaFallbackMessage.dataset.i18n = message;
+  projectMediaFallbackMessage.textContent = message;
+  projectFallbackLink.dataset.i18n = linkLabel;
+  projectFallbackLink.textContent = `${linkLabel} ↗`;
+  projectFallbackLink.href = fallbackUrl;
+  projectFallbackMark.textContent = isVideo ? "▶" : "↗";
+  projectMediaFallback.classList.toggle(
+    "project-media-fallback--project",
+    !isVideo,
+  );
+  projectMediaFallback.classList.add("project-media-fallback--card");
+  projectMediaFallback.hidden = false;
+  window.translatePortfolio?.();
 };
 
-// Relance le delai du message de secours pour une video integree.
+// Affiche une solution de rechange si un embed reste bloque au chargement.
 const resetMediaFallbackTimer = () => {
   if (mediaFallbackTimer) {
     window.clearTimeout(mediaFallbackTimer);
   }
 
-  if (projectId === 1 && project.youtubeUrl) {
-    mediaFallbackTimer = window.setTimeout(showMediaFallback, 8000);
+  if (project.youtubeUrl || externalProjectLinks[projectId]) {
+    mediaFallbackTimer = window.setTimeout(showMediaFallback, 10000);
   }
 };
-
-if (projectMediaFallback && project.youtubeUrl) {
-  const fallbackLink = projectMediaFallback.querySelector("#project-youtube");
-  if (fallbackLink) {
-    fallbackLink.href = project.youtubeUrl;
-  }
-
-  if (projectMediaFallbackMessage && projectId !== 1) {
-    projectMediaFallbackMessage.textContent =
-      "Oups, le contenu du projet n'a pas pu être chargé.";
-  }
-}
 
 // Affiche un état lisible uniquement pendant le chargement d'un embed externe.
 const setEmbedLoading = (isLoading) => {
@@ -430,7 +448,6 @@ if (embeddedProjects[projectId] && projectEmbed) {
   setEmbedLoading(true);
   if (projectId === 1 && window.location.protocol === "file:") {
     showMediaFallback();
-    projectMediaFallback?.classList.add("project-media-fallback--youtube");
   } else {
     resetMediaFallbackTimer();
   }
