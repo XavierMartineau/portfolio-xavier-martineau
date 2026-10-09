@@ -159,7 +159,7 @@ h4.detail-label {
   font-family: "Inter", sans-serif;
 }
 
-/* Familles utilisées par les composants de l'interface */
+/* Polices des interfaces recurrentes : badges, boutons, cartes et metadonnees. */
 .section-label,
 .navbar-links a,
 .featured-card .featured-category,
@@ -191,7 +191,7 @@ h4.detail-label {
    APPLICATION DES POLICES
    =========================== */
 
-/* Valeurs par defaut appliquees ensuite a l'ensemble des pages. */
+/* Valeurs par defaut heritees par les pages, avec exceptions explicites ci-dessus. */
 body {
   font-family: "Inter", sans-serif;
 }

@@ -12,7 +12,7 @@
 }
 
 .carousel-btn {
-  /* Les controles restent superposes au carousel sans modifier sa largeur. */
+  /* Les fleches sont placees au-dessus des cartes sans reduire leur espace. */
   position: absolute;
   z-index: 4;
   top: 50%;
@@ -74,7 +74,7 @@
   display: none;
 }
 
-/* Etat force : montre le visuel complet meme sans interaction de survol. */
+/* Mode tactile force : affiche l'image nette a la place du texte de la carte. */
 .featured-grid-container.is-effects-forced
   .featured-card.has-featured-image
   .featured-background {

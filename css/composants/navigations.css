@@ -379,7 +379,7 @@
   outline-offset: 3px;
 }
 
-/* Mise en page compacte et menu déroulant sur mobile */
+/* Sous 1100 px, les liens se replient dans un menu accessible a la demande. */
 @media (max-width: 1100px) {
   /* Remplace les liens horizontaux par un menu deroulant compact. */
   .navbar {
@@ -487,6 +487,7 @@
 }
 
 @media (min-width: 1101px) {
+  /* Sur grand ecran, restaure la navigation horizontale et masque le hamburger. */
   .navbar-links {
     display: flex;
   }
@@ -505,7 +506,7 @@
   }
 }
 
-/* Ajustements supplémentaires pour les petits téléphones */
+/* Ajuste les controles de navigation aux tres petits telephones. */
 @media (max-width: 430px) {
   .navbar {
     padding: 0 0.75rem;

@@ -75,6 +75,7 @@
 }
 
 .projects-grid .gc {
+  /* Isole les calques de fond de carte pour que les images restent sous le contenu. */
   border-color: rgba(var(--gc-rgb), 0.45);
   display: flex;
   flex-direction: column;
@@ -113,6 +114,7 @@
 }
 
 .projects-grid .gc::after {
+  /* Assombrit l'image de fond pour garder le texte lisible dans tous les etats. */
   content: "";
   position: absolute;
   inset: 0;
@@ -449,6 +451,7 @@
 ========================================================= */
 
 @media (max-width: 900px) {
+  /* Reduit les cartes catalogue avant le passage a une seule colonne. */
   .gc {
     padding: 1.1rem 1.2rem;
   }
@@ -461,6 +464,7 @@
 }
 
 @media (max-width: 600px) {
+  /* Compacte les cartes et leurs libelles sur les ecrans de telephone. */
   .gc {
     padding: 1rem;
   }

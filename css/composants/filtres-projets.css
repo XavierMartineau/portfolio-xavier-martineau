@@ -29,6 +29,7 @@
     color 0.25s ease,
     transform 0.25s ease;
 }
+/* Le bouton actif conserve la teinte de categorie definie par sa position dans le HTML. */
 .project-category-btn.active,
 .project-category-btn:hover {
   background: rgba(20, 20, 32, 0.9);
@@ -39,7 +40,7 @@
 .project-category-btn:hover {
   transform: scale(1.08);
 }
-/* Chaque position correspond a un filtre colore affiche dans le HTML. */
+/* Ces variantes suivent l'ordre des filtres : tous, 3D, 2D, web, puis jeu. */
 .project-category-btn:nth-child(2) {
   --category-color: #7b80ff;
   --category-rgb: 123, 128, 255;

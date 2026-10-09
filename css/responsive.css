@@ -151,7 +151,7 @@
 
 /* Media queries déplacées depuis style.css. */
 @media (min-width: 900px) {
-  /* Sur PC, les trois projets sont visibles côte à côte. */
+  /* Sur grand ecran, le carousel devient une grille de trois cartes simultanees. */
   .hero-grid {
     grid-template-columns: 1fr 1fr;
   }
@@ -181,6 +181,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  /* L'indicateur reste visible, mais son animation ne suit plus le defilement. */
   .scroll-arrow,
   .scroll-line::after,
   .reveal-on-scroll {
@@ -196,6 +197,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  /* Les cartes restent visibles meme si leur animation de revelation est desactivee. */
   .projects-grid .gc {
     opacity: 1;
     transform: none;
@@ -340,6 +342,7 @@
 }
 
 @media (max-width: 1024px) {
+  /* Le catalogue passe a deux colonnes avant sa disposition mobile en une colonne. */
   .featured-grid,
   .projects-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -347,6 +350,7 @@
 }
 
 @media (max-width: 402px) {
+  /* Les tres petits ecrans recoivent des marges et un titre plus compacts. */
   .home-hero {
     min-height: auto;
     padding: 8rem 1rem 4rem;
@@ -527,6 +531,7 @@
 }
 
 @media (max-width: 600px) {
+  /* Recalibre les animations de defilement pour la hauteur reduite des telephones. */
   @keyframes scroll-arrow-follow-mobile {
     from {
       transform: translateY(0);
@@ -641,6 +646,7 @@
 }
 
 @media (max-width: 800px) {
+  /* Empile les informations, la chronologie et la galerie de la page À propos. */
   .about-page-container {
     width: 100%;
     padding: 6.75rem 1rem 3rem;
@@ -769,6 +775,7 @@
 }
 
 @media (max-width: 480px) {
+  /* Affine les cartes et les controles de la galerie sur les petits telephones. */
   .about-info-grid {
     grid-template-columns: 1fr;
   }
@@ -796,6 +803,7 @@
 }
 
 @media (max-width: 375px) {
+  /* Evite que les blocs de la page À propos debordent sur les ecrans etroits. */
   .about-page-container {
     padding-right: 0.75rem;
     padding-left: 0.75rem;
@@ -839,6 +847,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  /* Affiche les contenus de la page À propos sans transition de revelation. */
   .reveal-on-scroll {
     opacity: 1;
     transform: none;
@@ -852,6 +861,7 @@
 }
 
 @media (max-width: 1200px) {
+  /* Resserre les marges du hero et de la section vedette a mesure que l'ecran retrecit. */
   .home-hero,
   .featured-section {
     padding-right: 1.5rem;
@@ -1230,6 +1240,7 @@
 }
 
 @media (max-width: 320px) {
+  /* Derniers ajustements pour les viewports de 320 px et moins. */
   .brand {
     font-size: 0.76rem;
   }

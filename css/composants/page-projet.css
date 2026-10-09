@@ -18,7 +18,7 @@
   padding: 2rem 0 2rem;
 }
 
-/* En-tete et commande de defilement au-dessus du media principal. */
+/* Contexte du projet et invitation a defiler au-dessus du media principal. */
 .project-detail-header {
   /* Ligne de contexte : position du projet, categorie et annee. */
   display: flex;
@@ -108,7 +108,7 @@
   animation: external-project-modal-in 0.25s ease-out both;
 }
 
-/* Dialog de confirmation : contenu, actions et apparition en fondu. */
+/* Dialogue de confirmation : masque natif, contenu, actions et apparition. */
 .external-project-modal[hidden] {
   display: none;
 }
@@ -389,6 +389,7 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  /* Supprime les mouvements decoratifs et revele le contenu sans animation. */
   .project-scroll-arrow {
     animation: none;
   }

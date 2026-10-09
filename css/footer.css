@@ -34,17 +34,17 @@
   animation: footer-pulse 1.4s infinite;
 }
 
-/* Animation du point indiquant que le site est actif */
+/* Le point anime partage ses images-cles avec animation.css. */
 /* ===========================
   ADAPTATION MOBILE
 =========================== */
 @media (max-width: 768px) {
-  /* Sur telephone, le pied de page devient une pile centree et compacte. */
+  /* Sur petit ecran, le copyright et le statut passent sur deux lignes centrees. */
   .footer {
-    flex-direction: column; /* Empile le copyright et "BUILT WITH PASSION" l'un sous l'autre */
+    flex-direction: column;
     gap: 0.6rem;
-    padding: 1.1rem 0.75rem; /* Réduit les marges intérieures */
-    text-align: center; /* Centre le texte proprement */
+    padding: 1.1rem 0.75rem;
+    text-align: center;
     margin-top: 2rem;
     font-size: 0.75rem;
     line-height: 1.4;

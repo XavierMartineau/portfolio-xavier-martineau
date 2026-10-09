@@ -32,6 +32,7 @@
 }
 
 .featured-card.has-featured-image {
+  /* Reserve une hauteur confortable pour l'image et le texte de la carte vedette. */
   min-height: 360px;
 }
 
@@ -88,6 +89,7 @@
 }
 
 .featured-card.indigo {
+  /* Les variables locales alignent bordure, halo et fonds sur la couleur du projet. */
   --card-color: #7b80ff;
   --card-rgb: 123, 128, 255;
 }

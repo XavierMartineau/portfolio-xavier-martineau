@@ -1,9 +1,7 @@
 /* Role : animations et transitions partagees entre les composants. */
 /* Les keyframes sont groupes par zone : footer, introduction, hero, medias, carousel et fond. */
 
-/* Animations reutilisables du splash et de son bouton d'entree. */
-/* Animations déplacées depuis footer.css. */
-/* Fait respirer le point d'etat situe dans le pied de page. */
+/* Le point de statut du pied de page pulse sans modifier sa position. */
 @keyframes footer-pulse {
   0% {
     opacity: 1;
@@ -19,7 +17,7 @@
   }
 }
 
-/* Animations déplacées depuis splash.css. */
+/* Progression du chargement, pulsation du bouton et mouvement de sa fleche. */
 @keyframes load {
   from {
     width: 0%;
@@ -63,9 +61,7 @@
   }
 }
 
-/* Animations du hero, des indicateurs de defilement et des cartes vedettes. */
-/* Animations déplacées depuis style.css. */
-/* Anime les indicateurs de progression et de defilement du hero. */
+/* Pulsation du statut du hero et animation des indicateurs de defilement. */
 @keyframes hero-pulse {
   0% {
     opacity: 1;
@@ -127,13 +123,13 @@
 }
 
 @keyframes project-loading-spin {
-  /* Rotation continue du marqueur de chargement des medias. */
+  /* Rotation continue du marqueur affiche pendant le chargement des medias. */
   to {
     transform: rotate(360deg);
   }
 }
 
-/* Transitions propres aux medias et au changement de carte du carousel. */
+/* Effet d'attente du media et entrees directionnelles des cartes du carousel. */
 @keyframes project-expand-pulse {
   0%,
   100% {
