@@ -205,7 +205,17 @@ const translations = {
     DESCRIPTION: "DESCRIPTION",
     "DÉFI TECHNIQUE": "TECHNICAL CHALLENGE",
     RÉSULTAT: "RESULT",
+    "MODE DE RÉALISATION": "PROJECT FORMAT",
     "STACK COMPLET": "FULL STACK",
+    "Projet personnel — réalisé seul.": "Personal project — created independently.",
+    "Projet scolaire — réalisé en équipe.":
+      "School project — created as part of a team.",
+    "Projet scolaire réalisé en équipe avec Marc et Antoine.":
+      "School project created as a team with Marc and Antoine.",
+    "En 2024, mon rôle était de créer la structure du site, d’assurer la fluidité de la navigation et de concevoir les pages.":
+      "In 2024, my role was to create the site's structure, ensure smooth navigation and design its pages.",
+    "En 2026, j’ai réalisé une refonte personnelle complète du projet, entièrement par moi-même.":
+      "In 2026, I completed a full personal redesign of the project entirely on my own.",
     "Modélisation 3D": "3D modeling",
     "MAYA et rendu": "MAYA and rendering",
     "Couleur et image": "Color and imagery",

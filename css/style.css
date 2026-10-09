@@ -219,7 +219,7 @@ html::-webkit-scrollbar-corner {
   /* Bouton injecte par traduction.js, visible a l'approche du footer et pendant son affichage. */
   position: fixed;
   left: 1.5rem;
-  bottom: 5rem;
+  bottom: 6rem;
   z-index: 50;
   display: inline-flex;
   align-items: center;

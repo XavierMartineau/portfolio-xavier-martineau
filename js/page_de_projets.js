@@ -121,6 +121,34 @@ setText(
     "Un projet abouti, performant et prêt pour l'intégration en production au sein du portfolio.",
 );
 
+// Precise si le projet est personnel ou scolaire et distingue les deux versions de La Maison.
+const realizationDetails =
+  projectId === 1
+    ? {
+        status: "Projet scolaire — réalisé en équipe.",
+      }
+    : projectId === 2
+      ? {
+          status: "Projet scolaire réalisé en équipe avec Marc et Antoine.",
+          year2024:
+            "En 2024, mon rôle était de créer la structure du site, d’assurer la fluidité de la navigation et de concevoir les pages.",
+          year2026:
+            "En 2026, j’ai réalisé une refonte personnelle complète du projet, entièrement par moi-même.",
+        }
+      : {
+          status: "Projet personnel — réalisé seul.",
+        };
+
+setText("#project-realization-status", realizationDetails.status);
+if (realizationDetails.year2024) {
+  setText("#project-realization-2024", realizationDetails.year2024);
+  document.querySelector("#project-realization-2024").hidden = false;
+}
+if (realizationDetails.year2026) {
+  setText("#project-realization-2026", realizationDetails.year2026);
+  document.querySelector("#project-realization-2026").hidden = false;
+}
+
 // SECTION 2 : affiche les competences pertinentes pour la categorie selectionnee.
 const categorySkills = {
   "3D": [
