@@ -264,7 +264,7 @@ const showMediaFallback = () => {
   }
 };
 
-// Relance le delai du message de secours pour la video du premier projet.
+// Relance le delai du message de secours pour une video integree.
 const resetMediaFallbackTimer = () => {
   if (mediaFallbackTimer) {
     window.clearTimeout(mediaFallbackTimer);
@@ -365,10 +365,6 @@ if (project.secondaryImage) {
 // 7. LISTE DES PROJETS AVEC IFRAME EMBED
 // =========================================================================
 const embeddedProjects = {
-  1: {
-    src: "https://www.youtube.com/embed/Bkvwrvg_bws?si=VICC3QMpiGek1nlQ",
-    title: "Vidéo Animation 3D",
-  },
   2: {
     src: "https://xaviermartineau.github.io/La_Maison_xavier/",
     title: "La Maison interactive",
@@ -450,6 +446,10 @@ if (embeddedProjects[projectId] && projectEmbed) {
   if (youtubeLink) {
     youtubeLink.hidden = false;
     youtubeLink.href = project.youtubeUrl;
+  }
+  if (projectMediaFallback && project.youtubeUrl) {
+    projectMediaFallback.hidden = false;
+    projectMediaFallback.classList.add("project-media-fallback--youtube");
   }
 } else {
   if (visual) {

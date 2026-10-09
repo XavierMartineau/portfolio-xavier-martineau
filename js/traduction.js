@@ -207,6 +207,15 @@ const translations = {
     RÉSULTAT: "RESULT",
     "MODE DE RÉALISATION": "PROJECT FORMAT",
     "STACK COMPLET": "FULL STACK",
+    "Cette vidéo est disponible sur YouTube.":
+      "This video is available on YouTube.",
+    "Regarder la vidéo sur YouTube": "Watch the video on YouTube",
+    "// SIGNAL PERDU": "// SIGNAL LOST",
+    "Cette page est introuvable.": "This page can’t be found.",
+    "La page demandée n’existe pas ou a été déplacée. Retrouvons le bon chemin.":
+      "The page you requested doesn’t exist or has moved. Let’s get you back on track.",
+    "Retour à l’accueil": "Back to home",
+    "Voir les projets": "View projects",
     "Projet personnel — réalisé seul.": "Personal project — created independently.",
     "Projet scolaire — réalisé en équipe.":
       "School project — created as part of a team.",

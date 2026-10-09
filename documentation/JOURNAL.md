@@ -1121,6 +1121,7 @@
 ### Réponse:
 
 - Me prepaper pour le jury porfolio de demain
+- Corriger les erreur que le jury va me nommer
 
 #### Question 05: Est-ce que j'ai utilisé l'IA? Si oui, pour quoi et qu'est-ce que ça m'a appris?
 
