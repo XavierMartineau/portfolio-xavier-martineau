@@ -1139,10 +1139,7 @@
 
 - Ajout de commentaires explicatifs aux conditions, événements, états de repli et blocs de navigation des scripts JavaScript.
 - Précision des commentaires dans la traduction, la galerie À propos, les filtres du catalogue, le carousel, les cartes et le chargement partagé des projets.
-- Documentation dans `PLANIFICATION.md` des destinations des liens de projet et des comportements de secours pour les embeds YouTube et les démonstrations web.
 - Ajout d'une carte de secours pour les démonstrations intégrées, avec un lien vers le portfolio GitHub Pages : `https://xaviermartineau.github.io/portfolio-xavier-martineau/`.
 - Conservation du lien du projet dans « Voir le projet dans un nouvel onglet » et du lien YouTube pour la vidéo.
-- Création d'une page 404 personnalisée avec des liens vers l'accueil et le catalogue des projets.
-- Vérification des commentaires et des fichiers JavaScript avec le vérificateur de problèmes.
 
 ---
