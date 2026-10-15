@@ -158,6 +158,41 @@ if (realizationDetails.year2026) {
   document.querySelector("#project-realization-2026").hidden = false;
 }
 
+// Repartition des taches : affichee seulement pour les projets realises en equipe.
+const projectTasks = {
+  1: [
+    {
+      person: "Moi",
+      tasks:
+        "Création des scènes de décor, de l'arrière-plan et du soleil, organisation des éléments et mouvements de caméra.",
+    },
+    {
+      person: "Maxime Rocheleau",
+      tasks: "Le montage, la musique et les molécules de particules de couleur.",
+    },
+  ],
+};
+const tasksPanel = document.querySelector("#project-tasks-panel");
+const tasksList = document.querySelector("#project-tasks");
+if (tasksPanel && tasksList && projectTasks[projectId]) {
+  projectTasks[projectId].forEach(({ person, tasks }) => {
+    const item = document.createElement("div");
+    item.className = "task-item";
+
+    const name = document.createElement("strong");
+    name.className = "task-person";
+    name.textContent = person;
+
+    const description = document.createElement("p");
+    description.className = "detail-copy";
+    description.textContent = tasks;
+
+    item.append(name, description);
+    tasksList.appendChild(item);
+  });
+  tasksPanel.hidden = false;
+}
+
 // SECTION 2 : affiche les competences pertinentes pour la categorie selectionnee.
 const categorySkills = {
   "3D": [

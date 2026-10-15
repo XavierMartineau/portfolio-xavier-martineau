@@ -206,6 +206,12 @@ const translations = {
     "DÉFI TECHNIQUE": "TECHNICAL CHALLENGE",
     RÉSULTAT: "RESULT",
     "MODE DE RÉALISATION": "PROJECT FORMAT",
+    "RÉPARTITION DES TÂCHES": "TASK BREAKDOWN",
+    Moi: "Me",
+    "Création des scènes de décor, de l'arrière-plan et du soleil, organisation des éléments et mouvements de caméra.":
+      "Creation of the set scenes, background and sun, arrangement of the elements and camera movements.",
+    "Le montage, la musique et les molécules de particules de couleur.":
+      "Editing, music and the colored particle molecules.",
     "OUTILS": "TOOLS",
     "STACK COMPLET": "FULL STACK",
     "Cette vidéo est disponible sur YouTube.":

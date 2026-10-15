@@ -170,12 +170,19 @@ const initializeCreationProcess = (images) => {
           .map(
             (filename, imageIndex) => `
               <div class="creation-process-frame">
-                <img
-                  src="${encodeURI(`../processus_creation/miniatures/${filename}`)}"
-                  alt="${creationStepAlt(boxIndex + imageIndex + 1)}"
-                  ${boxIndex === 0 ? "" : 'loading="lazy"'}
-                  decoding="async"
-                />
+                <!-- Mobile : miniature 400x375; ordinateur : version 800x750. -->
+                <picture>
+                  <source
+                    media="(max-width: 600px)"
+                    srcset="${encodeURI(`../processus_creation/miniatures/${filename}`)}"
+                  />
+                  <img
+                    src="${encodeURI(`../processus_creation/${filename}`)}"
+                    alt="${creationStepAlt(boxIndex + imageIndex + 1)}"
+                    ${boxIndex === 0 ? "" : 'loading="lazy"'}
+                    decoding="async"
+                  />
+                </picture>
               </div>
             `,
           )
