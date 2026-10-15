@@ -34,13 +34,11 @@ Un site multipage permet de garder une structure minimaliste et claire, avec des
 
 ### Type
 
-#### Netlify
+#### GitHub Pages
 
 ### Justification
 
-Netlify permet d'avoir un nom de domaine gratuit et plus professionnel qu'un simple nom complet avec GitHub Pages. Il est simple à utiliser et offre une meilleure présentation du site.
-
----
+#### GitHub Pages permet d'avoir un nom de domaine gratuit et simple
 
 # Animations
 
