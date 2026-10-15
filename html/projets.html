@@ -229,13 +229,20 @@
             data-category="site-web"
           >
             <div class="gc-top"></div>
-            <img
-              class="project-background"
-              loading="lazy"
-              decoding="async"
-              src="../assets/images/projet_02_La_Maison.webp"
-              alt="Aperçu du projet La Maison"
-            />
+            <!-- Version verticale allégée chargée seulement sur mobile. -->
+            <picture>
+              <source
+                media="(max-width: 600px)"
+                srcset="../assets/images/projet_02_La_Maison_mobile.webp"
+              />
+              <img
+                class="project-background"
+                loading="lazy"
+                decoding="async"
+                src="../assets/images/projet_02_La_Maison.webp"
+                alt="Aperçu du projet La Maison"
+              />
+            </picture>
             <div class="gc-meta">
               <span class="gc-project-category">Site web</span>
               <span class="gc-year">2024</span>
@@ -353,6 +360,13 @@
             data-category="site-web"
           >
             <div class="gc-top"></div>
+            <img
+              class="project-background"
+              loading="lazy"
+              decoding="async"
+              src="../assets/images/projet_05_echoes.webp"
+              alt="Aperçu du projet ECHOES"
+            />
             <div class="gc-meta">
               <span class="gc-project-category">Site web</span>
               <span class="gc-year">2026</span>
@@ -382,13 +396,20 @@
             data-category="site-web"
           >
             <div class="gc-top"></div>
-            <img
-              class="project-background"
-              loading="lazy"
-              src="../assets/images/projet_06_atelier_chromatique.webp"
-              alt="Aperçu du projet Atelier chromatique"
-              decoding="async"
-            />
+            <!-- Version verticale allégée chargée seulement sur mobile. -->
+            <picture>
+              <source
+                media="(max-width: 600px)"
+                srcset="../assets/images/projet_06_atelier_chromatique_mobile.webp"
+              />
+              <img
+                class="project-background"
+                loading="lazy"
+                src="../assets/images/projet_06_atelier_chromatique.webp"
+                alt="Aperçu du projet Atelier chromatique"
+                decoding="async"
+              />
+            </picture>
             <div class="gc-meta">
               <span class="gc-project-category">Site web</span>
               <span class="gc-year">2025-2026</span>

@@ -295,15 +295,22 @@
                 data-project-id="2"
               >
                 <div class="featured-top"></div>
-                <img
-                  class="featured-background"
-                  src="../assets/images/projet_02_La_Maison.webp"
-                  alt="Aperçu du projet La Maison"
-                  width="2493"
-                  height="1357"
-                  loading="lazy"
-                  decoding="async"
-                />
+                <!-- Version verticale allégée chargée seulement sur mobile. -->
+                <picture>
+                  <source
+                    media="(max-width: 600px)"
+                    srcset="../assets/images/projet_02_La_Maison_mobile.webp"
+                  />
+                  <img
+                    class="featured-background"
+                    src="../assets/images/projet_02_La_Maison.webp"
+                    alt="Aperçu du projet La Maison"
+                    width="2493"
+                    height="1357"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </picture>
 
                 <div class="featured-meta">
                   <span class="featured-category">Site web</span>

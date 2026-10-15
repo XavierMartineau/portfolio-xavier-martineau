@@ -37,6 +37,7 @@
       "name": "ECHOES",
       "category": "Site web",
       "year": "2026",
+      "image": "projet_05_echoes.webp",
       "description": "Projet bêta : une expérience de science-fiction spatiale mêlant énigmes et narration immersive.",
       "technologies": ["Web", "Narration", "Expérience interactive"]
     },
@@ -51,26 +52,10 @@
   },
   "creationProcess": {
     "images": [
-      "Maquette  PC dun projet-1.webp",
-      "Maquette Menu Portable A propos-1.webp",
-      "Maquette Menu Portable Acceuil-1.webp",
-      "Maquette Menu Portable Compé-1.webp",
-      "Maquette Menu Portable CONTACT-1.webp",
-      "Maquette Menu Portable Projets-1.webp",
-      "Maquette PC A propos-1.webp",
-      "Maquette PC Accueil-1.webp",
-      "Maquette PC Compé-1.webp",
-      "Maquette PC CONTACT-1.webp",
-      "Maquette PC dun projet plein ecran-1.webp",
-      "Maquette PC Page atérisage-1.webp",
-      "Maquette PC Projets-1.webp",
-      "Maquette Portable A propos-1.webp",
-      "Maquette portable Acceuil-1.webp",
-      "Maquette Portable Compé-1.webp",
-      "Maquette Portable CONTACT-1.webp",
-      "Maquette portable Page Atérisage-1.webp",
-      "Maquette Portable Projets-1.webp",
-      "Xavier Martineau - Moodboard-1.webp"
+      "etape_01.webp",
+      "etape_02.webp",
+      "etape_03.webp",
+      "moodboard.webp"
     ]
   }
 }
