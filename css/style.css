@@ -2572,33 +2572,10 @@ html[lang="en"] .contact-title-en {
   border: 1px solid rgba(123, 128, 255, 0.25);
   border-radius: 10px;
   background: rgba(255, 255, 255, 0.045);
-  transition:
-    transform 0.3s ease,
-    border-color 0.3s ease,
-    box-shadow 0.3s ease,
-    background-color 0.3s ease;
-}
-
-.about-info-card:hover {
-  border-color: #7b80ff;
-  background: rgba(123, 128, 255, 0.1);
-  box-shadow:
-    0 10px 24px rgba(0, 0, 0, 0.28),
-    0 0 22px rgba(123, 128, 255, 0.2),
-    inset 0 0 18px rgba(123, 128, 255, 0.06);
-  transform: translateY(-7px) scale(1.025);
 }
 .about-info-icon {
   margin-bottom: 0.35rem;
   font-size: 1.3rem;
-  transition:
-    transform 0.3s ease,
-    filter 0.3s ease;
-}
-
-.about-info-card:hover .about-info-icon {
-  filter: drop-shadow(0 0 7px rgba(123, 128, 255, 0.75));
-  transform: translateY(-2px) scale(1.15) rotate(-6deg);
 }
 .about-info-label {
   margin-top: 0;

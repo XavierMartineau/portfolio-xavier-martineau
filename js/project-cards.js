@@ -36,7 +36,7 @@ const createFeaturedCard = (projectId, project) => {
   card.dataset.projectId = projectId;
   card.innerHTML = `
     <div class="featured-top"></div>
-    <img class="featured-background" src="../assets/images/${project.image}" alt="Aperçu du projet ${project.name}" aria-hidden="true" />
+    ${project.image ? `<img class="featured-background" src="../assets/images/${project.image}" alt="Aperçu du projet ${project.name}" aria-hidden="true" />` : ""}
     <div class="featured-meta">
       <span class="featured-category">${project.category}</span>
       <span class="featured-year">${project.year}</span>
@@ -61,7 +61,7 @@ const createProjectCard = (projectId, project) => {
   card.dataset.category = categoryToSlug(project.category);
   card.innerHTML = `
     <div class="gc-top"></div>
-    <img class="project-background" loading="lazy" src="../assets/images/${project.image}" alt="Aperçu du projet ${project.name}" aria-hidden="true" />
+    ${project.image ? `<img class="project-background" loading="lazy" src="../assets/images/${project.image}" alt="Aperçu du projet ${project.name}" aria-hidden="true" />` : ""}
     ${project.secondaryImage ? `<img class="project-background project-background-secondary" loading="lazy" src="../assets/images/${project.secondaryImage}" alt="Vue secondaire du projet ${project.name}" aria-hidden="true" />` : ""}
     <div class="gc-meta">
       <span class="gc-project-category">${project.category}</span>

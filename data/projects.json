@@ -34,13 +34,11 @@
       "technologies": ["Vectoriel", "Illustration", "Couleur", "Composition"]
     },
     "5": {
-      "name": "Noël vectoriel",
-      "category": "2D",
-      "year": "2024",
-      "image": "Projet_05_noel.webp",
-      "secondaryImage": "Projet_05_2_noel.webp",
-      "description": "Une illustration vectorielle festive qui met en scène un sapin de Noël et un renne dans une composition colorée, structurée par des formes, des contrastes et une typographie chaleureuse.",
-      "technologies": ["Vectoriel", "Illustration", "Couleur", "Composition"]
+      "name": "ECHOES",
+      "category": "Site web",
+      "year": "2026",
+      "description": "Projet bêta : une expérience de science-fiction spatiale mêlant énigmes et narration immersive.",
+      "technologies": ["Web", "Narration", "Expérience interactive"]
     },
     "6": {
       "name": "Atelier chromatique",

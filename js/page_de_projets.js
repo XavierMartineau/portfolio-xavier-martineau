@@ -49,7 +49,7 @@ const projectChallenges = {
   2: "Le principal défi était de concevoir une navigation interactive où chaque choix modifie le parcours tout en restant claire et intuitive.",
   3: "Le principal défi était de créer les dégradés vectoriels dans les yeux de Stitch, tout en conservant un rendu naturel et expressif.",
   4: "Le principal défi était de composer les multiples formes courbes du bouclier et de maîtriser les multiples dégradés pour créer un rendu harmonieux et reconnaissable.",
-  5: "Le principal défi était d'équilibrer les formes, les couleurs et la typographie pour créer une composition festive et lisible.",
+  5: "Le principal défi était de créer une expérience narrative immersive où les énigmes et l'atmosphère de science-fiction se renforcent mutuellement.",
   6: "Le principal défi était de créer une interface interactive où les couleurs et les formes restent lisibles et harmonieuses sur chaque écran.",
 };
 // Associe chaque projet a son defi; le texte generique couvre les ajouts futurs.
@@ -61,6 +61,7 @@ setText(
 
 const externalProjectLinks = {
   2: "https://xaviermartineau.github.io/La_Maison_xavier/",
+  5: "https://xaviermartineau.github.io/ECHOES-Fragments-of-Reality-XM/",
   6: "https://xaviermartineau.github.io/Atelier-chromatique-XM/",
 };
 // Memorise les controles du lien sortant pour gerer la confirmation et son accessibilite.
@@ -119,7 +120,7 @@ const projectResults = {
   2: "Une expérience web narrative qui transforme l'exploration en une suite de choix engageants.",
   3: "Une illustration vectorielle expressive de Stitch, finalisée avec des couleurs vives et des dégradés précis dans les yeux.",
   4: "Une identité visuelle forte, reconnaissable et suffisamment flexible pour accompagner différents supports.",
-  5: "Une illustration vectorielle festive où le sapin, le renne, les couleurs et la typographie forment un ensemble chaleureux.",
+  5: "Une expérience de science-fiction spatiale qui mêle énigmes et narration immersive.",
   6: "Un site web expérimental qui transforme l'exploration des couleurs en une expérience visuelle interactive.",
 };
 setText(
@@ -368,7 +369,7 @@ if (project.secondaryImage) {
     visual.prepend(imagesContainer);
   }
 
-  if (projectImage) {
+  if (projectImage && project.image) {
     // Prepare et deplace l'image principale avant d'ajouter sa vue secondaire.
     projectImage.addEventListener("load", markImageAsLoaded, { once: true });
     projectImage.src = `../assets/images/${project.image}`;
@@ -389,7 +390,7 @@ if (project.secondaryImage) {
   imagesContainer.appendChild(secondaryImage);
 } else {
   // Les projets a une seule image gardent le rendu simple et retirent l'emplacement inutile.
-  if (projectImage) {
+  if (projectImage && project.image) {
     projectImage.addEventListener("load", markImageAsLoaded, { once: true });
     projectImage.src = `../assets/images/${project.image}`;
     projectImage.alt = `${project.name} - ${project.description}`;
@@ -411,6 +412,10 @@ const embeddedProjects = {
   2: {
     src: "https://xaviermartineau.github.io/La_Maison_xavier/",
     title: "La Maison interactive",
+  },
+  5: {
+    src: "https://xaviermartineau.github.io/ECHOES-Fragments-of-Reality-XM/",
+    title: "ECHOES — Fragments de la réalité",
   },
   6: {
     src: "https://xaviermartineau.github.io/Atelier-chromatique-XM/",
@@ -638,7 +643,7 @@ const projectSoftware = {
   2: ["github", "vscode"],
   3: ["illustrator"],
   4: ["illustrator"],
-  5: ["photoshop", "illustrator"],
+  5: ["github", "vscode"],
   6: ["github", "vscode"],
 };
 

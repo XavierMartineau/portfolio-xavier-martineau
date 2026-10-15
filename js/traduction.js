@@ -23,7 +23,7 @@ const translations = {
       "I create websites, visuals and digital projects that blend technical skill with creativity.",
     "Disponible pour de nouveaux projets": "Available for new projects",
     "Années d'expérience": "Years of experience",
-    "Projets livrés": "Projects delivered",
+    "Projets réalisés": "Projects completed",
     Réalisations: "Selected work",
     "Mes projets": "My projects",
     Mes: "My",
@@ -112,8 +112,8 @@ const translations = {
       "The main challenge was designing interactive navigation where each choice changes the journey while remaining clear and intuitive.",
     "Le principal défi était de composer les multiples formes courbes du bouclier et de maîtriser les multiples dégradés pour créer un rendu harmonieux et reconnaissable.":
       "The main challenge was composing the shield's multiple curved shapes and mastering its multiple gradients to create a harmonious and recognizable result.",
-    "Le principal défi était d'équilibrer les formes, les couleurs et la typographie pour créer une composition festive et lisible.":
-      "The main challenge was balancing shapes, colors and typography to create a festive and readable composition.",
+    "Le principal défi était de créer une expérience narrative immersive où les énigmes et l'atmosphère de science-fiction se renforcent mutuellement.":
+      "The main challenge was creating an immersive narrative experience where the puzzles and science-fiction atmosphere reinforce each other.",
     "Le principal défi était de créer une interface interactive où les couleurs et les formes restent lisibles et harmonieuses sur chaque écran.":
       "The main challenge was creating an interactive interface where colors and shapes remain clear and harmonious on every screen.",
     "Une illustration vectorielle expressive de Stitch, finalisée avec des couleurs vives et des dégradés précis dans les yeux.":
@@ -124,12 +124,12 @@ const translations = {
       "A narrative web experience that turns exploration into a series of engaging choices.",
     "Une identité visuelle forte, reconnaissable et suffisamment flexible pour accompagner différents supports.":
       "A strong, recognizable visual identity flexible enough to work across different media.",
-    "Une illustration vectorielle festive où le sapin, les couleurs et la typographie forment un ensemble chaleureux.":
-      "A festive vector illustration where the tree, reindeer, colors and typography create a warm and cohesive whole.",
+    "Une expérience de science-fiction spatiale qui mêle énigmes et narration immersive.":
+      "A science-fiction experience that combines puzzles and immersive storytelling.",
     "Un site web expérimental qui transforme l'exploration des couleurs en une expérience visuelle interactive.":
       "An experimental website that turns color exploration into an interactive visual experience.",
-    "Une illustration vectorielle festive qui met en scène un sapin de Noël dans une composition colorée, structurée par des formes, des contrastes et une typographie chaleureuse.":
-      "A festive vector illustration featuring a Christmas tree and a reindeer in a colorful composition shaped by forms, contrasts and warm typography.",
+    "Projet bêta : une expérience de science-fiction spatiale mêlant énigmes et narration immersive.":
+      "Beta project: a science-fiction experience combining puzzles and immersive storytelling.",
     "Une expérience interactive fluide qui met l'utilisateur au cœur du parcours et donne du relief à chaque interaction.":
       "A smooth interactive experience that puts the user at the center and gives depth to every interaction.",
     "Un site web expérimental consacré à l’exploration des couleurs, des formes et des compositions, pensé comme un atelier interactif où chaque écran devient une nouvelle expérience visuelle.":
