@@ -55,6 +55,20 @@ const createProjectCard = (projectId, project) => {
   // La carte de catalogue porte les metadonnees utilisees par les filtres et la navigation.
   const card = document.createElement("article");
   const badgeClass = categoryToBadgeClass(project.category);
+  const betaMarkup = project.beta
+    ? `
+    <div class="gc-project-status">
+      <span class="gc-project-status-label" data-i18n="BÊTA · EN CONSTRUCTION">BÊTA · EN CONSTRUCTION</span>
+      <span class="gc-project-status-progress">
+        <span data-i18n="Avancement">Avancement</span>
+        <strong>${project.beta.progress} %</strong>
+        <span aria-hidden="true">·</span>
+        <span data-i18n="Part réalisée avec l’IA">Part réalisée avec l’IA</span>
+        <strong>${project.beta.aiContribution} %</strong>
+      </span>
+    </div>
+    <p class="gc-project-credit" data-i18n="Projet personnel imaginé et créé par moi, pour le plaisir.">${project.beta.creatorNote}</p>`
+    : "";
 
   card.className = `gc gc-${categoryToColor(projectId)} project-card`;
   card.dataset.projectId = projectId;
@@ -68,6 +82,7 @@ const createProjectCard = (projectId, project) => {
       <span class="gc-year">${project.year}</span>
     </div>
     <h3 class="gc-title">${project.name}</h3>
+    ${betaMarkup}
     <div class="gc-technologies" aria-label="Technologies utilisées">
       ${technologiesMarkup(project, `couleur-categorie couleur-categorie--${badgeClass}`)}
     </div>

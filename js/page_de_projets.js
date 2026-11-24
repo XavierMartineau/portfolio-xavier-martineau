@@ -44,6 +44,14 @@ setText("#project-description", project.description);
 setText("#project-summary", project.description);
 setText("#project-category-panel", project.category);
 
+const projectBetaBanner = document.querySelector("#project-beta-banner");
+if (projectBetaBanner && project.beta) {
+  projectBetaBanner.hidden = false;
+  setText("#project-beta-progress", `${project.beta.progress} %`);
+  setText("#project-beta-ai", `${project.beta.aiContribution} %`);
+  setText("#project-beta-credit", project.beta.creatorNote);
+}
+
 const projectChallenges = {
   1: "Le principal défi était de créer une animation 3D fluide en maîtrisant la modélisation, l'éclairage et le rendu de chaque plan.",
   2: "Le principal défi était de concevoir une navigation interactive où chaque choix modifie le parcours tout en restant claire et intuitive.",
@@ -84,6 +92,20 @@ if (externalProjectLink && externalProjectLinks[projectId]) {
   // Configure la destination et n'ouvre le site qu'apres confirmation explicite.
   externalProjectLink.href = externalProjectLinks[projectId];
   externalProjectLink.hidden = false;
+  if (projectId === 5) {
+    const externalProjectMessage = document.querySelector(
+      "#external-project-message",
+    );
+    const message =
+      "Pour profiter de toutes les fonctionnalités d’ECHOES, ouvre l’expérience complète dans un nouvel onglet.";
+    const linkLabel = "Ouvrir ECHOES dans un nouvel onglet";
+    if (externalProjectMessage) {
+      externalProjectMessage.dataset.i18n = message;
+      externalProjectMessage.textContent = message;
+    }
+    externalProjectLink.dataset.i18n = linkLabel;
+    externalProjectLink.textContent = `${linkLabel} ↗`;
+  }
   externalProjectLink.addEventListener("click", (event) => {
     event.preventDefault();
     externalProjectModal?.removeAttribute("hidden");
@@ -450,7 +472,7 @@ const embeddedProjects = {
   },
   5: {
     src: "https://xaviermartineau.github.io/ECHOES-Fragments-of-Reality-XM/",
-    title: "ECHOES — Fragments de la réalité",
+    title: "Aperçu ECHOES en lecture seule",
   },
   6: {
     src: "https://xaviermartineau.github.io/Atelier-chromatique-XM/",
@@ -515,6 +537,13 @@ if (embeddedProjects[projectId] && projectEmbed) {
     resetMediaFallbackTimer();
   }
   projectEmbed.hidden = false;
+  if (projectId === 5) {
+    const previewOverlay = document.querySelector("#project-preview-overlay");
+    projectEmbed.classList.add("project-embed-preview-only");
+    projectEmbed.tabIndex = -1;
+    projectEmbed.setAttribute("aria-hidden", "true");
+    if (previewOverlay) previewOverlay.hidden = false;
+  }
   projectEmbed.src = embeddedProject.src;
   projectEmbed.title = embeddedProject.title;
   projectEmbed.classList.add("project-embed-active");
@@ -524,6 +553,9 @@ if (embeddedProjects[projectId] && projectEmbed) {
     // Le media adapte la hauteur du cadre selon qu'il s'agit d'un site ou d'une video.
     if (project.category === "Site web") {
       visual.classList.add("project-visual-interactive");
+      if (projectId === 5) {
+        visual.classList.add("project-visual-beta");
+      }
     } else {
       visual.classList.add("project-visual-media");
     }

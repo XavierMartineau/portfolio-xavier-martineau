@@ -51,6 +51,42 @@
       </div>
       <h1 class="project-detail-title" id="project-title">Chargement...</h1>
       <p class="project-detail-intro" id="project-description"></p>
+      <aside
+        class="project-beta-banner"
+        id="project-beta-banner"
+        aria-label="Statut du projet bêta"
+        hidden
+      >
+        <div class="project-beta-heading">
+          <strong class="project-beta-label" data-i18n="BÊTA · EN CONSTRUCTION"
+            >BÊTA · EN CONSTRUCTION</strong
+          >
+          <p class="project-beta-progress">
+            <span data-i18n="Avancement">Avancement</span>
+            <strong id="project-beta-progress">50 %</strong>
+            <span aria-hidden="true">·</span>
+            <span data-i18n="Part réalisée avec l’IA">Part réalisée avec l’IA</span>
+            <strong id="project-beta-ai">50 %</strong>
+          </p>
+        </div>
+        <p
+          class="project-beta-credit"
+          id="project-beta-credit"
+          data-i18n="Projet personnel imaginé et créé par moi, pour le plaisir."
+        >
+          Projet personnel imaginé et créé par moi, pour le plaisir.
+        </p>
+      </aside>
+        <a
+          id="external-project-link"
+          class="external-project-link"
+          href="#"
+          target="_blank"
+          rel="noopener noreferrer"
+          data-i18n="Voir le projet dans un nouvel onglet"
+          hidden
+          >Voir le projet dans un nouvel onglet ↗</a
+        >
       <div
         class="project-scroll-hint"
         aria-label="Faire défiler pour voir la suite"
@@ -130,18 +166,23 @@
           allowfullscreen
           hidden
         ></iframe>
+        <div
+          id="project-preview-overlay"
+          class="project-preview-overlay"
+          role="note"
+          aria-label="Aperçu ECHOES en lecture seule"
+          hidden
+        >
+          <strong data-i18n="Aperçu en lecture seule"
+            >Aperçu en lecture seule</strong
+          >
+          <span
+            data-i18n="Ouvre ECHOES dans un nouvel onglet pour profiter de toutes ses fonctionnalités."
+            >Ouvre ECHOES dans un nouvel onglet pour profiter de toutes ses
+            fonctionnalités.</span
+          >
+        </div>
       </section>
-
-      <a
-        id="external-project-link"
-        class="external-project-link"
-        href="#"
-        target="_blank"
-        rel="noopener noreferrer"
-        data-i18n="Voir le projet dans un nouvel onglet"
-        hidden
-        >Voir le projet dans un nouvel onglet ↗</a
-      >
 
       <!-- Confirmation affichee avant de quitter le portfolio vers un site externe. -->
       <div id="external-project-modal" class="external-project-modal" hidden>
@@ -159,6 +200,7 @@
             Quitter le portfolio ?
           </h2>
           <p
+            id="external-project-message"
             data-i18n="Vous allez ouvrir le projet complet dans un nouvel onglet."
           >
             Vous allez ouvrir le projet complet dans un nouvel onglet.

@@ -46,13 +46,26 @@
   height: calc(100% + 24px);
   object-fit: cover;
   object-position: center;
-  opacity: 0.8;
-  filter: blur(8px);
+  opacity: 0.66;
+  filter: blur(5px);
   transform: scale(1.04);
   pointer-events: none;
   transition:
     opacity 0.4s ease,
     filter 0.4s ease;
+}
+
+.featured-card.has-featured-image::after {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(8, 10, 16, 0.18),
+    rgba(8, 10, 16, 0.72)
+  );
+  content: "";
+  pointer-events: none;
 }
 
 .featured-card.project-stitch .featured-background {
@@ -62,15 +75,8 @@
 .featured-card.has-featured-image:hover .featured-background,
 .featured-card.has-featured-image:active .featured-background,
 .featured-card.has-featured-image:focus-visible .featured-background {
-  opacity: 1;
-  filter: blur(0);
-}
-
-.featured-card.has-featured-image:hover > :not(.featured-background),
-.featured-card.has-featured-image:active > :not(.featured-background),
-.featured-card.has-featured-image:focus-visible > :not(.featured-background) {
-  opacity: 0;
-  transition: opacity 0.25s ease;
+  opacity: 0.84;
+  filter: blur(2px);
 }
 
 .featured-card:hover {
@@ -133,6 +139,52 @@
 .projects-grid .gc.is-visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+.projects-grid .gc-project-status {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem 0.7rem;
+  margin: 0 0 0.7rem;
+}
+
+.gc-project-status-label {
+  padding: 0.3rem 0.55rem;
+  border: 1px solid rgba(0, 243, 255, 0.48);
+  border-radius: 999px;
+  background: rgba(0, 243, 255, 0.09);
+  color: #8cf7ff;
+  font-family: monospace;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.gc-project-status-progress {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.3rem;
+  color: #e2e2eb;
+  font-family: monospace;
+  font-size: 0.7rem;
+}
+
+.gc-project-status-progress strong {
+  color: #ffffff;
+}
+
+.gc-project-credit {
+  margin: 0 0 1rem;
+  color: #c7c7d6;
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+
+.projects-grid .gc-project-status,
+.projects-grid .gc-project-credit {
+  transition: opacity 0.25s ease;
 }
 
 .projects-grid .project-card.is-hidden {

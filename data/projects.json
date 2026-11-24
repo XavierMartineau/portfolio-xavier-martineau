@@ -39,7 +39,12 @@
       "year": "2026",
       "image": "projet_05_echoes.webp",
       "description": "Projet bêta : une expérience de science-fiction spatiale mêlant énigmes et narration immersive.",
-      "technologies": ["Web", "Narration", "Expérience interactive"]
+      "technologies": ["Web", "Narration", "Expérience interactive"],
+      "beta": {
+        "progress": 50,
+        "aiContribution": 50,
+        "creatorNote": "Projet personnel imaginé et créé par moi, pour le plaisir."
+      }
     },
     "6": {
       "name": "Atelier chromatique",

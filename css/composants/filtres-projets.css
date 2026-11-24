@@ -42,20 +42,20 @@
 }
 /* Ces variantes suivent l'ordre des filtres : tous, 3D, 2D, web, puis jeu. */
 .project-category-btn:nth-child(2) {
-  --category-color: #7b80ff;
-  --category-rgb: 123, 128, 255;
+  --category-color: #a0a4ff;
+  --category-rgb: 160, 164, 255;
 }
 .project-category-btn:nth-child(3) {
-  --category-color: #00f3ff;
-  --category-rgb: 0, 243, 255;
+  --category-color: #83d6df;
+  --category-rgb: 131, 214, 223;
 }
 .project-category-btn:nth-child(4) {
-  --category-color: #ff00ea;
-  --category-rgb: 255, 0, 234;
+  --category-color: #d3a2eb;
+  --category-rgb: 211, 162, 235;
 }
 .project-category-btn:nth-child(5) {
-  --category-color: #63ff9b;
-  --category-rgb: 99, 255, 155;
+  --category-color: #9cdbb5;
+  --category-rgb: 156, 219, 181;
 }
 .projects-effects-toggle {
   display: none;

@@ -88,7 +88,7 @@ Les projets actuellement référencés dans les données du portfolio sont :
 | La Maison           | Site web  | 2024      | Web, UX/UI, design, responsive                |
 | Stitch              | 2D        | 2025      | Vectoriel, illustration, couleur, composition |
 | Logo-bouclier       | 2D        | 2026      | Vectoriel, illustration, couleur, composition |
-| Noël vectoriel      | 2D        | 2024      | Vectoriel, illustration, couleur, composition |
+| ECHOES              | Site web  | 2026      | Bêta en construction, avancement 50 %, réalisation avec l'IA à 50 % |
 | Atelier chromatique | Site web  | 2025-2026 | Web, UX/UI, design, responsive                |
 
 ## Fonctionnalités du portfolio

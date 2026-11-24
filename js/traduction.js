@@ -130,6 +130,12 @@ const translations = {
       "An experimental website that turns color exploration into an interactive visual experience.",
     "Projet bêta : une expérience de science-fiction spatiale mêlant énigmes et narration immersive.":
       "Beta project: a science-fiction experience combining puzzles and immersive storytelling.",
+    "BÊTA · EN CONSTRUCTION": "BETA · IN PROGRESS",
+    Avancement: "Progress",
+    "Part réalisée avec l’IA": "Made with AI",
+    "Projet personnel imaginé et créé par moi, pour le plaisir.":
+      "A personal project imagined and created by me for fun.",
+    "Statut du projet bêta": "Beta project status",
     "Une expérience interactive fluide qui met l'utilisateur au cœur du parcours et donne du relief à chaque interaction.":
       "A smooth interactive experience that puts the user at the center and gives depth to every interaction.",
     "Un site web expérimental consacré à l’exploration des couleurs, des formes et des compositions, pensé comme un atelier interactif où chaque écran devient une nouvelle expérience visuelle.":
@@ -146,9 +152,16 @@ const translations = {
     "Projet suivant →": "Next project →",
     "Voir le projet →": "View project →",
     "Voir le projet dans un nouvel onglet": "View the project in a new tab",
+    "Ouvrir ECHOES dans un nouvel onglet": "Open ECHOES in a new tab",
     "Quitter le portfolio ?": "Leave the portfolio?",
     "Vous allez ouvrir le projet complet dans un nouvel onglet.":
       "The complete project will open in a new tab.",
+    "Pour profiter de toutes les fonctionnalités d’ECHOES, ouvre l’expérience complète dans un nouvel onglet.":
+      "To access all ECHOES features, open the full experience in a new tab.",
+    "Aperçu ECHOES en lecture seule": "ECHOES read-only preview",
+    "Aperçu en lecture seule": "Read-only preview",
+    "Ouvre ECHOES dans un nouvel onglet pour profiter de toutes ses fonctionnalités.":
+      "Open ECHOES in a new tab to use all of its features.",
     Annuler: "Cancel",
     Continuer: "Continue",
     "Choisir la langue": "Choose language",
