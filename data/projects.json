@@ -38,6 +38,7 @@
       "category": "Site web",
       "year": "2026",
       "image": "projet_05_echoes.webp",
+      "video": "Video_echoes.mp4",
       "description": "Projet bêta : une expérience de science-fiction spatiale mêlant énigmes et narration immersive.",
       "technologies": ["Web", "Narration", "Expérience interactive"],
       "beta": {

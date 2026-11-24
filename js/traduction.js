@@ -153,15 +153,12 @@ const translations = {
     "Voir le projet →": "View project →",
     "Voir le projet dans un nouvel onglet": "View the project in a new tab",
     "Ouvrir ECHOES dans un nouvel onglet": "Open ECHOES in a new tab",
+    "Vidéo de présentation d’ECHOES": "ECHOES presentation video",
+    "La vidéo de présentation ne peut pas être lue ici.":
+      "The presentation video cannot be played here.",
     "Quitter le portfolio ?": "Leave the portfolio?",
     "Vous allez ouvrir le projet complet dans un nouvel onglet.":
       "The complete project will open in a new tab.",
-    "Pour profiter de toutes les fonctionnalités d’ECHOES, ouvre l’expérience complète dans un nouvel onglet.":
-      "To access all ECHOES features, open the full experience in a new tab.",
-    "Aperçu ECHOES en lecture seule": "ECHOES read-only preview",
-    "Aperçu en lecture seule": "Read-only preview",
-    "Ouvre ECHOES dans un nouvel onglet pour profiter de toutes ses fonctionnalités.":
-      "Open ECHOES in a new tab to use all of its features.",
     Annuler: "Cancel",
     Continuer: "Continue",
     "Choisir la langue": "Choose language",

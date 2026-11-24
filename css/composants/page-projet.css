@@ -153,60 +153,26 @@
   outline-offset: 3px;
 }
 
-.project-visual-beta {
-  min-height: 600px;
+.project-visual-video {
+  min-height: 700px;
 }
 
-.project-visual-beta .project-embed {
-  min-height: 600px;
-  pointer-events: none;
-}
-
-.project-preview-overlay {
+.project-video {
   position: absolute;
   inset: 0;
-  z-index: 6;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 0.45rem;
-  padding: clamp(1.25rem, 4vw, 2.5rem);
-  box-sizing: border-box;
-  background: linear-gradient(
-    180deg,
-    transparent 42%,
-    rgba(8, 10, 16, 0.84) 100%
-  );
-  color: #f0f1f7;
-  text-align: center;
-  pointer-events: none;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background: #080912;
+  object-fit: cover;
 }
 
-.project-preview-overlay[hidden] {
+.project-video[hidden] {
   display: none !important;
 }
 
-.project-preview-overlay strong {
-  color: var(--project-accent);
-  font-family: monospace;
-  font-size: 0.78rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-}
-
-.project-preview-overlay span {
-  max-width: 46ch;
-  font-size: 0.9rem;
-  line-height: 1.6;
-}
-
-.project-visual-beta::after {
-  background: linear-gradient(
-    180deg,
-    rgba(5, 5, 12, 0.02),
-    rgba(5, 5, 12, 0.18)
-  );
+.project-visual.is-expanded .project-video {
+  min-height: 0;
 }
 .external-project-modal {
   /* Fenetre de confirmation affichee avant l'ouverture d'un site externe. */

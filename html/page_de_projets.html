@@ -77,16 +77,16 @@
           Projet personnel imaginé et créé par moi, pour le plaisir.
         </p>
       </aside>
-        <a
-          id="external-project-link"
-          class="external-project-link"
-          href="#"
-          target="_blank"
-          rel="noopener noreferrer"
-          data-i18n="Voir le projet dans un nouvel onglet"
-          hidden
-          >Voir le projet dans un nouvel onglet ↗</a
-        >
+      <a
+        id="external-project-link"
+        class="external-project-link"
+        href="#"
+        target="_blank"
+        rel="noopener noreferrer"
+        data-i18n="Voir le projet dans un nouvel onglet"
+        hidden
+        >Voir le projet dans un nouvel onglet ↗</a
+      >
       <div
         class="project-scroll-hint"
         aria-label="Faire défiler pour voir la suite"
@@ -119,6 +119,18 @@
           alt="Vue secondaire du projet sélectionné"
           decoding="async"
         />
+        <video
+          id="project-video"
+          class="project-video"
+          preload="metadata"
+          playsinline
+          muted
+          loop
+          controls
+          hidden
+          aria-label="Vidéo de présentation d’ECHOES"
+          data-i18n-label="Vidéo de présentation d’ECHOES"
+        ></video>
         <!-- Zone reservee aux demos interactives integrees, activee selon les donnees du projet. -->
         <div id="project-interactive" class="project-interactive" hidden></div>
 
@@ -166,22 +178,6 @@
           allowfullscreen
           hidden
         ></iframe>
-        <div
-          id="project-preview-overlay"
-          class="project-preview-overlay"
-          role="note"
-          aria-label="Aperçu ECHOES en lecture seule"
-          hidden
-        >
-          <strong data-i18n="Aperçu en lecture seule"
-            >Aperçu en lecture seule</strong
-          >
-          <span
-            data-i18n="Ouvre ECHOES dans un nouvel onglet pour profiter de toutes ses fonctionnalités."
-            >Ouvre ECHOES dans un nouvel onglet pour profiter de toutes ses
-            fonctionnalités.</span
-          >
-        </div>
       </section>
 
       <!-- Confirmation affichee avant de quitter le portfolio vers un site externe. -->
@@ -200,7 +196,6 @@
             Quitter le portfolio ?
           </h2>
           <p
-            id="external-project-message"
             data-i18n="Vous allez ouvrir le projet complet dans un nouvel onglet."
           >
             Vous allez ouvrir le projet complet dans un nouvel onglet.

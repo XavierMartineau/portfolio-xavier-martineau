@@ -93,48 +93,41 @@ if (externalProjectLink && externalProjectLinks[projectId]) {
   externalProjectLink.href = externalProjectLinks[projectId];
   externalProjectLink.hidden = false;
   if (projectId === 5) {
-    const externalProjectMessage = document.querySelector(
-      "#external-project-message",
-    );
-    const message =
-      "Pour profiter de toutes les fonctionnalités d’ECHOES, ouvre l’expérience complète dans un nouvel onglet.";
     const linkLabel = "Ouvrir ECHOES dans un nouvel onglet";
-    if (externalProjectMessage) {
-      externalProjectMessage.dataset.i18n = message;
-      externalProjectMessage.textContent = message;
-    }
     externalProjectLink.dataset.i18n = linkLabel;
     externalProjectLink.textContent = `${linkLabel} ↗`;
+    externalProjectModal?.remove();
+  } else {
+    externalProjectLink.addEventListener("click", (event) => {
+      event.preventDefault();
+      externalProjectModal?.removeAttribute("hidden");
+      externalProjectContinue?.focus();
+    });
+
+    externalProjectCancel?.addEventListener("click", () => {
+      externalProjectModal?.setAttribute("hidden", "");
+      externalProjectLink.focus();
+    });
+
+    externalProjectContinue?.addEventListener("click", () => {
+      externalProjectModal?.setAttribute("hidden", "");
+      window.open(externalProjectLink.href, "_blank", "noopener,noreferrer");
+    });
+
+    externalProjectModal?.addEventListener("click", (event) => {
+      // Un clic sur le voile ferme le dialogue; un clic dans son contenu le conserve.
+      if (event.target === externalProjectModal) {
+        externalProjectCancel?.click();
+      }
+    });
+
+    document.addEventListener("keydown", (event) => {
+      // Echap annule la confirmation comme le bouton Annuler.
+      if (event.key === "Escape" && externalProjectModal?.hidden === false) {
+        externalProjectCancel?.click();
+      }
+    });
   }
-  externalProjectLink.addEventListener("click", (event) => {
-    event.preventDefault();
-    externalProjectModal?.removeAttribute("hidden");
-    externalProjectContinue?.focus();
-  });
-
-  externalProjectCancel?.addEventListener("click", () => {
-    externalProjectModal?.setAttribute("hidden", "");
-    externalProjectLink.focus();
-  });
-
-  externalProjectContinue?.addEventListener("click", () => {
-    externalProjectModal?.setAttribute("hidden", "");
-    window.open(externalProjectLink.href, "_blank", "noopener,noreferrer");
-  });
-
-  externalProjectModal?.addEventListener("click", (event) => {
-    // Un clic sur le voile ferme le dialogue; un clic dans son contenu le conserve.
-    if (event.target === externalProjectModal) {
-      externalProjectCancel?.click();
-    }
-  });
-
-  document.addEventListener("keydown", (event) => {
-    // Echap annule la confirmation comme le bouton Annuler.
-    if (event.key === "Escape" && externalProjectModal?.hidden === false) {
-      externalProjectCancel?.click();
-    }
-  });
 }
 
 const projectResults = {
@@ -268,18 +261,18 @@ const categoryElement = document.querySelector("#project-category");
 const categoryThemes = {
   "3D": {
     className: "category-3d",
-    color: "#00f3ff",
-    rgb: "0, 243, 255",
+    color: "#83d6df",
+    rgb: "131, 214, 223",
   },
   "2D": {
     className: "category-2d",
-    color: "#ff00ea",
-    rgb: "255, 0, 234",
+    color: "#d3a2eb",
+    rgb: "211, 162, 235",
   },
   "Site web": {
     className: "category-site",
-    color: "#6366f1",
-    rgb: "99, 102, 241",
+    color: "#a0a4ff",
+    rgb: "160, 164, 255",
   },
 };
 
@@ -315,6 +308,7 @@ document.title = `${project.name} – Xavier Martineau`;
 const visual = document.querySelector(".project-visual");
 const projectImage = document.querySelector("#project-image");
 let secondaryImage = document.querySelector("#project-secondary-image");
+const projectVideo = document.querySelector("#project-video");
 const interactive = document.querySelector("#project-interactive");
 const youtubeLink = document.querySelector("#project-youtube");
 const expandButton = document.querySelector("#project-expand");
@@ -331,7 +325,9 @@ let mediaFallbackTimer = null;
 // Affiche le lien de secours adapte au media externe du projet.
 const showMediaFallback = () => {
   const fallbackUrl =
-    project.youtubeUrl || "https://xaviermartineau.github.io/portfolio-xavier-martineau/";
+    project.youtubeUrl ||
+    externalProjectLinks[projectId] ||
+    "https://xaviermartineau.github.io/portfolio-xavier-martineau/";
   if (
     !projectMediaFallback ||
     !projectMediaFallbackMessage ||
@@ -342,14 +338,17 @@ const showMediaFallback = () => {
     return;
   }
 
-  // Utilise YouTube pour la video et le portfolio GitHub pour les demos web.
-  const isVideo = Boolean(project.youtubeUrl);
-  const message = isVideo
+  const isVideo = Boolean(project.youtubeUrl || project.video);
+  const message = project.youtubeUrl
     ? "Cette vidéo est disponible sur YouTube."
-    : "Ce projet ne s’affiche pas correctement.";
-  const linkLabel = isVideo
+    : project.video
+      ? "La vidéo de présentation ne peut pas être lue ici."
+      : "Ce projet ne s’affiche pas correctement.";
+  const linkLabel = project.youtubeUrl
     ? "Regarder la vidéo sur YouTube"
-    : "Voir le projet officiel";
+    : projectId === 5
+      ? "Ouvrir ECHOES dans un nouvel onglet"
+      : "Voir le projet officiel";
 
   projectMediaFallbackMessage.dataset.i18n = message;
   projectMediaFallbackMessage.textContent = message;
@@ -470,10 +469,6 @@ const embeddedProjects = {
     src: "https://xaviermartineau.github.io/La_Maison_xavier/",
     title: "La Maison interactive",
   },
-  5: {
-    src: "https://xaviermartineau.github.io/ECHOES-Fragments-of-Reality-XM/",
-    title: "Aperçu ECHOES en lecture seule",
-  },
   6: {
     src: "https://xaviermartineau.github.io/Atelier-chromatique-XM/",
     title: "Atelier chromatique",
@@ -523,8 +518,78 @@ const renderInteractive = () => {
 // =========================================================================
 // Choisit le mode de presentation selon les medias disponibles et le type de projet.
 const isMobileScreen = window.matchMedia("(max-width: 768px)").matches;
+let projectVideoIsVisible = false;
+const updateProjectVideoPlayback = () => {
+  if (!projectVideo || projectVideo.hidden) return;
 
-if (embeddedProjects[projectId] && projectEmbed) {
+  const shouldPlay = !document.hidden && projectVideoIsVisible;
+  if (shouldPlay && projectVideo.paused) {
+    const playback = projectVideo.play();
+    playback?.catch((error) => {
+      console.error("Impossible de lancer la vidéo ECHOES.", error);
+    });
+  } else if (!shouldPlay && !projectVideo.paused) {
+    projectVideo.pause();
+  }
+};
+
+if (project.video && projectVideo) {
+  if (visual) visual.classList.add("project-visual-media", "project-visual-video");
+  projectVideo.poster = `../assets/images/${project.image}`;
+  projectVideo.loop = true;
+  projectVideo.muted = true;
+  projectVideo.hidden = false;
+  setEmbedLoading(true);
+  projectVideo.addEventListener(
+    "loadeddata",
+    () => {
+      setEmbedLoading(false);
+      updateProjectVideoPlayback();
+    },
+    { once: true },
+  );
+  projectVideo.addEventListener(
+    "error",
+    () => {
+      setEmbedLoading(false);
+      projectVideo.pause();
+      projectVideo.hidden = true;
+      showMediaFallback();
+    },
+    { once: true },
+  );
+  projectVideo.src = `../assets/video/${project.video}`;
+  if (projectImage) projectImage.hidden = true;
+
+  if ("IntersectionObserver" in window) {
+    const videoVisibilityObserver = new IntersectionObserver(
+      ([entry]) => {
+        projectVideoIsVisible =
+          entry.isIntersecting && entry.intersectionRatio >= 0.25;
+        updateProjectVideoPlayback();
+      },
+      { threshold: [0, 0.25] },
+    );
+    videoVisibilityObserver.observe(visual || projectVideo);
+  } else {
+    const updateVideoVisibility = () => {
+      const bounds = projectVideo.getBoundingClientRect();
+      projectVideoIsVisible =
+        bounds.width > 0 &&
+        bounds.height > 0 &&
+        bounds.bottom > 0 &&
+        bounds.top < window.innerHeight &&
+        bounds.right > 0 &&
+        bounds.left < window.innerWidth;
+      updateProjectVideoPlayback();
+    };
+    window.addEventListener("scroll", updateVideoVisibility, {
+      passive: true,
+    });
+    window.addEventListener("resize", updateVideoVisibility);
+    updateVideoVisibility();
+  }
+} else if (embeddedProjects[projectId] && projectEmbed) {
   // Charge le site ou la video integree, avec un lien alternatif si le chargement echoue.
   const embeddedProject = embeddedProjects[projectId];
   activeEmbedSource = embeddedProject.src;
@@ -537,13 +602,6 @@ if (embeddedProjects[projectId] && projectEmbed) {
     resetMediaFallbackTimer();
   }
   projectEmbed.hidden = false;
-  if (projectId === 5) {
-    const previewOverlay = document.querySelector("#project-preview-overlay");
-    projectEmbed.classList.add("project-embed-preview-only");
-    projectEmbed.tabIndex = -1;
-    projectEmbed.setAttribute("aria-hidden", "true");
-    if (previewOverlay) previewOverlay.hidden = false;
-  }
   projectEmbed.src = embeddedProject.src;
   projectEmbed.title = embeddedProject.title;
   projectEmbed.classList.add("project-embed-active");
@@ -553,9 +611,6 @@ if (embeddedProjects[projectId] && projectEmbed) {
     // Le media adapte la hauteur du cadre selon qu'il s'agit d'un site ou d'une video.
     if (project.category === "Site web") {
       visual.classList.add("project-visual-interactive");
-      if (projectId === 5) {
-        visual.classList.add("project-visual-beta");
-      }
     } else {
       visual.classList.add("project-visual-media");
     }
@@ -612,8 +667,9 @@ if ("IntersectionObserver" in window) {
   detailPanels.forEach((panel) => panel.classList.add("is-content-ready"));
 }
 
-// SECTION 10 : suspend l'iframe hors de la page et la restaure au retour.
+// SECTION 10 : suspend les medias hors de la page et les restaure au retour.
 const stopEmbeddedProject = () => {
+  projectVideo?.pause();
   if (!activeEmbedSource || !projectEmbed) {
     // Les pages sans embed n'ont aucune ressource externe a suspendre.
     return;
@@ -624,8 +680,9 @@ const stopEmbeddedProject = () => {
 };
 
 const resumeEmbeddedProject = () => {
+  updateProjectVideoPlayback();
   if (projectMuted || !projectEmbed) {
-    // Ne relance pas un lecteur absent ou explicitement mis en pause.
+    // La vidéo locale est gérée indépendamment de l'iframe.
     return;
   }
 
@@ -648,6 +705,7 @@ document.addEventListener("visibilitychange", () => {
 });
 
 window.addEventListener("pagehide", stopEmbeddedProject);
+window.addEventListener("pageshow", resumeEmbeddedProject);
 
 // SECTION 11 : synchronise l'agrandissement du media et l'etat accessible du bouton.
 const expandBtn = document.querySelector("#project-expand");
