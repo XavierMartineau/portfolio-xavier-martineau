@@ -309,6 +309,7 @@ const visual = document.querySelector(".project-visual");
 const projectImage = document.querySelector("#project-image");
 let secondaryImage = document.querySelector("#project-secondary-image");
 const projectVideo = document.querySelector("#project-video");
+const projectVideoNote = document.querySelector("#project-video-note");
 const interactive = document.querySelector("#project-interactive");
 const youtubeLink = document.querySelector("#project-youtube");
 const expandButton = document.querySelector("#project-expand");
@@ -539,6 +540,7 @@ if (project.video && projectVideo) {
   projectVideo.loop = true;
   projectVideo.muted = true;
   projectVideo.hidden = false;
+  if (projectId === 5 && projectVideoNote) projectVideoNote.hidden = false;
   setEmbedLoading(true);
   projectVideo.addEventListener(
     "loadeddata",
@@ -554,6 +556,7 @@ if (project.video && projectVideo) {
       setEmbedLoading(false);
       projectVideo.pause();
       projectVideo.hidden = true;
+      if (projectVideoNote) projectVideoNote.hidden = true;
       showMediaFallback();
     },
     { once: true },

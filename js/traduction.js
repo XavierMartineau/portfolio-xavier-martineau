@@ -154,6 +154,8 @@ const translations = {
     "Voir le projet dans un nouvel onglet": "View the project in a new tab",
     "Ouvrir ECHOES dans un nouvel onglet": "Open ECHOES in a new tab",
     "Vidéo de présentation d’ECHOES": "ECHOES presentation video",
+    "ECHOES est en bêta et n’est pas encore entièrement optimisé. Pour le moment, ouvrez l’expérience dans un nouvel onglet. Attention : il peut solliciter fortement et faire chauffer les appareils moins puissants.":
+      "ECHOES is in beta and is not yet fully optimized. For now, open the experience in a new tab. Warning: it may heavily strain and heat up less powerful devices.",
     "La vidéo de présentation ne peut pas être lue ici.":
       "The presentation video cannot be played here.",
     "Quitter le portfolio ?": "Leave the portfolio?",
